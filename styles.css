@@ -37,7 +37,7 @@ p {
     --primary-font-family: "Open Source Sans";
 }
 
-button {
+button { /** may need to be changed when animating **/
   --button-hover-gradient: radial-gradient(
       56.45% 249.34% at 0% -41%,
       var(--button-gradient-one) 0%,
