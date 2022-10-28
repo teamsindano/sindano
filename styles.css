@@ -5,11 +5,14 @@
 
 :root {
   /** COLORS **/
-  --background-color: #bcaec6; /** will it change? **/
+  --primary-background-color: #F5F5F5;
+  --secondary-background-color: #bcaec6;
   --default-text-color: #000000;
-  --alternate-text-color: #ffffff;
-  --default-component-color: #283592;
+  --alternate-text-color: #ffff;
   --default-button-color: #ec1e7b;
+  --default-component-color: #283592;
+  --alternate-component-color: rgba(236, 30, 123, 10%);
+  
   --color-aqua: #1ea6ae; /** this color was listed. Not sure where in design **/
 
   /** FONT SPECIFICS **/
