@@ -12,6 +12,15 @@
   --default-button-color: #ec1e7b;
   --color-aqua: #1ea6ae; /** this color was listed. Not sure where in design **/
 
+  /** FONT SPECIFICS **/
+  --primary-font-family: "Open Source Sans";
+  --primary-font-size: 20px;
+  --primary-font-weight: 600;
+
+  --secondary-font-family: "League Spartan";
+  --secondary-font-size: 52px;
+  --secondary-font-weight: 700;
+
   /** COMPONENTS **/
   --rectangle-color: var(--default-button-color);
   --dropdown-open-color: var(--default-button-color);
@@ -23,36 +32,23 @@
   --button-gradient-two-A: rgba(255, 78, 158, 0.5); /** #ff4e9e80 **/
   --button-gradient-three: rgba(255, 152, 198, 1); /** #ff98c6 **/
   --button-gradient-three-A: rgba(255, 255, 255, 0); /** #ffffff00 **/
-}
 
-h2 { /** h1 or h2 ? **/
-  --secondary-font-family: "League Spartan";
-  --font-size-header: 52px;
-  --font-weight-default: 700;
-}
-
-p {
-    --primary-font-size: 20px;
-    --primary-font-weight: 600;
-    --primary-font-family: "Open Source Sans";
-}
-
-button { /** may need to be changed when animating **/
+  /** may need to be changed when animating **/
   --button-hover-gradient: radial-gradient(
-      56.45% 249.34% at 0% -41%,
-      var(--button-gradient-one) 0%,
-      var(--button-gradient-one-A) 100%
-    ),
-    radial-gradient(
-      126.73% 516.01% at 20.16% 100%,
-      var(--button-gradient-two) 0%,
-      var(--button-gradient-two-A) 100%
-    ),
-    radial-gradient(
-      12.9% 50% at 103.23% 0%,
-      var(--button-gradient-three) 0%,
-      var(--button-gradient-three-A) 100%
-    );
+    56.45% 249.34% at 0% -41%,
+    var(--button-gradient-one) 0%,
+    var(--button-gradient-one-A) 100%
+  ),
+  radial-gradient(
+    126.73% 516.01% at 20.16% 100%,
+    var(--button-gradient-two) 0%,
+    var(--button-gradient-two-A) 100%
+  ),
+  radial-gradient(
+    12.9% 50% at 103.23% 0%,
+    var(--button-gradient-three) 0%,
+    var(--button-gradient-three-A) 100%
+  );
 }
 
 /** Instructions [REMOVE WHEN PROJECT DONE]
