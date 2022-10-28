@@ -4,20 +4,25 @@
  */
 
 :root {
+  /** COLORS **/
   --background-color: #bcaec6; /** will it change? **/
-
   --default-text-color: #000000;
   --alternate-text-color: #ffffff;
   --default-component-color: #283592;
   --default-button-color: #ec1e7b;
   --color-aqua: #1ea6ae; /** this color was listed. Not sure where in design **/
 
-  --primary-font-size: 20px;
-  --primary-font-weight: 600;
-  --primary-font-family: "Open Source Sans";
-
+  /** COMPONENTS **/
   --rectangle-color: var(--default-button-color);
   --dropdown-open-color: var(--default-button-color);
+
+  /** Button Gradient colors (in order) **/
+  --button-gradient-one: rgba(255, 241, 113, 0.8); /** #fff171cc **/
+  --button-gradient-one-A: rgba(255, 241, 113, 0); /** #fff17100 **/
+  --button-gradient-two: var(--default-button-color);
+  --button-gradient-two-A: rgba(255, 78, 158, 0.5); /** #ff4e9e80 **/
+  --button-gradient-three: rgba(255, 152, 198, 1); /** #ff98c6 **/
+  --button-gradient-three-A: rgba(255, 255, 255, 0); /** #ffffff00 **/
 }
 
 h2 {
@@ -26,17 +31,29 @@ h2 {
   --font-weight-default: 700;
 }
 
-button {
-  --button-default-color: var(--default-button-color);
-  --button-hover-gradient: radial-gradient(
-      56.45% 249.34% at 0% -41%,
-      #fff171cc 0%,
-      #fff17100 100%
-    ),
-    radial-gradient(126.73% 516.01% at 20.16% 100%, var(--default-button-color) 0%, #ff4e9e80 100%),
-    radial-gradient(12.9% 50% at 103.23% 0%, #ff98c6 0%, #ffffff00 100%);
+p {
+    --primary-font-size: 20px;
+    --primary-font-weight: 600;
+    --primary-font-family: "Open Source Sans";
 }
 
+button {
+  --button-hover-gradient: radial-gradient(
+      56.45% 249.34% at 0% -41%,
+      var(--button-gradient-one) 0%,
+      var(--button-gradient-one-A) 100%
+    ),
+    radial-gradient(
+      126.73% 516.01% at 20.16% 100%,
+      var(--button-gradient-two) 0%,
+      var(--button-gradient-two-A) 100%
+    ),
+    radial-gradient(
+      12.9% 50% at 103.23% 0%,
+      var(--button-gradient-three) 0%,
+      var(--button-gradient-three-A) 100%
+    );
+}
 
 /** Instructions [REMOVE WHEN PROJECT DONE]
 
