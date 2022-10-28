@@ -25,7 +25,7 @@
   --button-gradient-three-A: rgba(255, 255, 255, 0); /** #ffffff00 **/
 }
 
-h2 {
+h2 { /** h1 or h2 ? **/
   --secondary-font-family: "League Spartan";
   --font-size-default: 52px;
   --font-weight-default: 700;
