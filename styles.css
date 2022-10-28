@@ -27,7 +27,7 @@
 
 h2 { /** h1 or h2 ? **/
   --secondary-font-family: "League Spartan";
-  --font-size-default: 52px;
+  --font-size-header: 52px;
   --font-weight-default: 700;
 }
 
