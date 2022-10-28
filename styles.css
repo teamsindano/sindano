@@ -1,0 +1,27 @@
+:root {
+    --background-default: #BCAEC6; /** will it change? **/
+
+    --color-black: #000000;
+    --color-white: #FFFFFF;
+    --color-blue: #283592;
+    --color-pink: #EC1E7B;
+    --color-aqua: #1EA6AE;
+    --font-size-default: 20px;
+    --font-family-text: 'Open Source Sans';
+    
+    --rectangle-color: var(--color-pink);
+
+    --dropdown-default-color: var(--color-blue);
+    --dropdown-open-color: var(--color-pink);
+}
+
+h2 {
+    --font-family-header: 'League Spartan';
+    --font-size-default: 52px;
+    --font-weight-default: 700;
+}
+
+
+button {
+    --button-default-color: var(--color-pink);
+}
