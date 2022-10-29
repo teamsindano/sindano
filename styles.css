@@ -24,10 +24,6 @@
   --secondary-font-size: 52px;
   --secondary-font-weight: 700;
 
-  /** COMPONENTS **/
-  --rectangle-color: var(--default-button-color);
-  --dropdown-open-color: var(--default-button-color);
-
   /** BUTTON GRADIENT COLORS (in order) **/
   --button-gradient-one: rgba(255, 241, 113, 0.8); /** #fff171cc **/
   --button-gradient-one-A: rgba(255, 241, 113, 0); /** #fff17100 **/
