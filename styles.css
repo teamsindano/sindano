@@ -5,14 +5,14 @@
 
 :root {
   /** COLORS **/
-  --primary-background-color: #F5F5F5;
+  --primary-background-color: #f5f5f5;
   --secondary-background-color: #bcaec6;
   --default-text-color: #000000;
   --alternate-text-color: #ffff;
   --default-button-color: #ec1e7b;
   --default-component-color: #283592;
   --alternate-component-color: rgba(236, 30, 123, 10%);
-  
+
   --color-aqua: #1ea6ae; /** this color was listed. Not sure where in design **/
 
   /** FONT SPECIFICS **/
@@ -28,7 +28,7 @@
   --rectangle-color: var(--default-button-color);
   --dropdown-open-color: var(--default-button-color);
 
-  /** Button Gradient colors (in order) **/
+  /** BUTTON GRADIENT COLORS (in order) **/
   --button-gradient-one: rgba(255, 241, 113, 0.8); /** #fff171cc **/
   --button-gradient-one-A: rgba(255, 241, 113, 0); /** #fff17100 **/
   --button-gradient-two: var(--default-button-color);
@@ -36,22 +36,53 @@
   --button-gradient-three: rgba(255, 152, 198, 1); /** #ff98c6 **/
   --button-gradient-three-A: rgba(255, 255, 255, 0); /** #ffffff00 **/
 
-  /** may need to be changed when animating **/
+  /** BUTTON GRADIENT (may need to be changed when animating) **/
   --button-hover-gradient: radial-gradient(
-    56.45% 249.34% at 0% -41%,
-    var(--button-gradient-one) 0%,
-    var(--button-gradient-one-A) 100%
-  ),
-  radial-gradient(
-    126.73% 516.01% at 20.16% 100%,
-    var(--button-gradient-two) 0%,
-    var(--button-gradient-two-A) 100%
-  ),
-  radial-gradient(
-    12.9% 50% at 103.23% 0%,
-    var(--button-gradient-three) 0%,
-    var(--button-gradient-three-A) 100%
-  );
+      56.45% 249.34% at 0% -41%,
+      var(--button-gradient-one) 0%,
+      var(--button-gradient-one-A) 100%
+    ),
+    radial-gradient(
+      126.73% 516.01% at 20.16% 100%,
+      var(--button-gradient-two) 0%,
+      var(--button-gradient-two-A) 100%
+    ),
+    radial-gradient(
+      12.9% 50% at 103.23% 0%,
+      var(--button-gradient-three) 0%,
+      var(--button-gradient-three-A) 100%
+    );
+
+  /** TEXT GRADIENT COLORS (in order) **/
+  --text-gradient-four: rgba(255, 252, 170, 0.2);
+  --text-gradient-one: rgba(40, 53, 146, 0.5);
+  --text-gradient-one-A: rgba(255, 255, 255, 0);
+  --text-gradient-two: rgba(219, 204, 229, 1);
+  --text-gradient-two-A: rgba(255, 255, 255, 1);
+  --text-gradient-three: var(--button-gradient-three);
+  --text-gradient-three-A: var(--text-gradient-one-A);
+
+  /** TEXT GRADIENT **/
+  --text-gradient: linear-gradient(
+      0deg,
+      var(--text-gradient-four),
+      var(--text-gradient-four)
+    ),
+    radial-gradient(
+      36.59% 109.52% at 41% 133.93%,
+      var(--text-gradient-one),
+      var(--text-gradient-one-A)
+    )
+    radial-gradient(
+      32.69% 229.69% at 24.66% -36.61%,
+      var(--text-gradient-two),
+      var(--text-gradient-two-A)
+    )
+    radial-gradient(
+      35.15% 301.82% at 87.81% -28.57%,
+      var(--text-gradient-three),
+      var(--text-gradient-three-A)
+    );
 }
 
 /** Instructions [REMOVE WHEN PROJECT DONE]
