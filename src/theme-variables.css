@@ -14,11 +14,11 @@
   --light-pink: rgba(236, 30, 123, 10%);
 
   /** FONT SPECIFICS **/
-  --primary-font-family: "Open Source Sans";
+  --primary-font-family: "Open Source Sans", sans-serif;
   --primary-default-font-size: 20px;
   --primary-default-font-weight: 600;
 
-  --secondary-font-family: "League Spartan";
+  --secondary-font-family: "League Spartan", sans-serif;
   --secondary-default-font-size: 52px;
   --secondary-default-font-weight: 700;
 
