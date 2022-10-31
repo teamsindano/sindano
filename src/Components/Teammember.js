@@ -24,10 +24,17 @@ const Text = styled.p`
   line-height: 20px;
   color: #0000;
 `;
+/**
+ * color: #0000 should be color: var(--default-text-color);
+ * font-family: "Open Sauce Sans", sans-serif should be var(--primary-font-family);
+ */
 
 const BoldText = styled(Text)`
   font-weight: 700;
 `;
+/**
+ * font-weight: 700 should be font-weight: var(--secondary-default-font-weight)
+ */
 
 const TeamMember = ({ photo, name, pronouns, headline }) => {
   const placeholder = {
@@ -37,7 +44,7 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
     pronouns: "(dog/retriever)",
     headline: "Good Boy",
   };
-
+// Check if `<Text><BoldText>{name}</BoldText>{pronouns}</Text>` works
   return (
     <div>
       <Container>
