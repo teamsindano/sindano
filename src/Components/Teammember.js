@@ -1,11 +1,11 @@
 /**
- * The Teammember Component
+ * The Team Member Component
  * @author [Sam](https://github.com/Samm96)
  *
  * React template to create team members.
  */
 
-const TeamMember = ({ photo, name, pronouns, title }) => {
+const TeamMember = ({ photo, name, pronouns, headline }) => {
   // note: remember to replace values with variables from theme file
 
   const Container = styled.div`
@@ -38,21 +38,20 @@ const TeamMember = ({ photo, name, pronouns, title }) => {
   };
 
   return (
-    <div className="team-member">
-      <Container className="team-member__container">
+    <div>
+      <Container>
         <Photo
-          className="team-member__photo"
           src={photo || placeholder.profile}
           alt="Placeholder Img"
         />
-        <BoldText className="team-member__name">
+        <BoldText>
           {name || placeholder.names}
         </BoldText>
-        <Text className="team-member__pronouns">
+        <Text>
           {pronouns ? pronouns || placeholder.pronoun : ""}
         </Text>
-        <Text className="team-member__headline">
-          {title || placeholder.occupation}
+        <Text>
+          {headline || placeholder.occupation}
         </Text>
       </Container>
     </div>
