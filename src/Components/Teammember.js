@@ -21,6 +21,7 @@ const Text = styled.p`
   font-family: "Open Sauce Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
+  line-height: 20px;
   color: #0000;
 `;
 
@@ -41,7 +42,7 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
     <div>
       <Container>
         <Photo src={photo || placeholder.photo} alt="Placeholder Img" />
-        <BoldText>{name || placeholder.name}</BoldText>
+        <BoldText>{name + " "|| placeholder.name + " "}</BoldText>
         <Text>{pronouns ? pronouns || placeholder.pronouns : ""}</Text>
         <Text>{headline || placeholder.headline}</Text>
       </Container>
