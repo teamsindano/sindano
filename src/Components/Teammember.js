@@ -30,28 +30,28 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
   `;
 
   const placeholder = {
-    profile:
+    photo:
       "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=962&q=80",
-    names: "Woofers",
-    pronoun: "(dog/retriever)",
-    occupation: "Good Boy",
+    name: "Woofers",
+    pronouns: "(dog/retriever)",
+    headline: "Good Boy",
   };
 
   return (
     <div>
       <Container>
         <Photo
-          src={photo || placeholder.profile}
+          src={photo || placeholder.photo}
           alt="Placeholder Img"
         />
         <BoldText>
-          {name || placeholder.names}
+          {name || placeholder.name}
         </BoldText>
         <Text>
-          {pronouns ? pronouns || placeholder.pronoun : ""}
+          {pronouns ? pronouns || placeholder.pronouns : ""}
         </Text>
         <Text>
-          {headline || placeholder.occupation}
+          {headline || placeholder.headline}
         </Text>
       </Container>
     </div>
