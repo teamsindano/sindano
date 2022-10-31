@@ -1,5 +1,7 @@
-const TeamMember = ({ name, pronouns, title }) => {
+const TeamMember = ({ photo, name, pronouns, title }) => {
   const placeholder = {
+    profile:
+      "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=962&q=80",
     names: "Woofers",
     pronoun: "(dog/retriever)",
     occupation: "Good Boy",
@@ -10,7 +12,7 @@ const TeamMember = ({ name, pronouns, title }) => {
       <div className="team-member__container">
         <img
           className="team-member__photo"
-          src="https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=962&q=80"
+          src={photo || placeholder.profile}
           alt="Placeholder Img"
         />
         <p className="team-member__name">{name || placeholder.names}</p>
