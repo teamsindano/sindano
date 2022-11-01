@@ -15,7 +15,7 @@ function Unfold()  {
         <div className="unfold" onClick={toggleComponent}>
             <div className="unfold__header">
                 <h3 className="unfold__header-text">For healthcare system</h3>
-                <button className="unfold__header-button"><Arrow/></button>
+                <button className={`unfold__header-button ${open ? 'unfold__header-button-down': ''}`}><Arrow/></button>
             </div>
             <div className={`unfold__content ${open ? 'unfold__content-open' : ''}`}>
                 <div>

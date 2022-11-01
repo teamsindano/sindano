@@ -19,7 +19,7 @@
     margin: 0;
     background: none;
     align-self: center;
-    transition: margin-top 0.6s;
+    transition: 0.5s;
 }
 
 .unfold:hover .unfold__header-button {
@@ -27,17 +27,25 @@
 }
 
 .unfold__content {
+    opacity: 0;
     max-height: 0;
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    margin-top: 40px;
-    -webkit-transition: max-height 1s ease;
-    -moz-transition: max-height 1s ease;
-    -o-transition: max-height 1s ease;
-    transition: max-height 1s ease;
+    -webkit-transition: all 0.8s ease-out;
+    -moz-transition: all 0.8s ease-out;
+    -o-transition: all 0.8s ease-out;
+    transition: all 0.8s ease-out;
 }
 
 .unfold__content-open {
-    max-height: 800px;
+    max-height: 400px;
+    opacity: 1;
 }
+
+.unfold__header-button-down {
+    transform-origin: center;
+    transform: rotate(-180deg);
+    margin-top: 10px;
+}
+
