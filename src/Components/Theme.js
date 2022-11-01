@@ -25,9 +25,9 @@ const theme = {
     header: {
       font_family: ["League Spartan", "sans-serif"],
       sizes: {
-        header_small_default: "52px",
-        header_medium: "56px",
-        header_large: "68px",
+        header_s_default: "52px",
+        header_m: "56px",
+        header_l: "68px",
       },
       weight: "700",
     },
@@ -35,10 +35,10 @@ const theme = {
     text: {
       font_family: ["Open Source Sans", "sans-serif"],
       sizes: {
-        text_xsmall: "12px",
-        text_small: "14px",
-        text_medium: "16px",
-        text_large_default: "20px",
+        text_xs: "12px",
+        text_s: "14px",
+        text_m: "16px",
+        text_l_default: "20px",
       },
       weights: {
         black: "800",
