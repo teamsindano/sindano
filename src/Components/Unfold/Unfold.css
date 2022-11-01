@@ -27,20 +27,16 @@
 }
 
 .unfold__content {
-    opacity: 0;
     max-height: 0;
     overflow: hidden;
     display: flex;
     flex-direction: row;
-    -webkit-transition: all 0.8s ease-out;
-    -moz-transition: all 0.8s ease-out;
-    -o-transition: all 0.8s ease-out;
-    transition: all 0.8s ease-out;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
 .unfold__content-open {
-    max-height: 400px;
-    opacity: 1;
+    max-height: 1000px;
+    transition: max-height 1s ease-in-out;
 }
 
 .unfold__header-button-down {
