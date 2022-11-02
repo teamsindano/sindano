@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 /**
  * The Team Member Component
  * @author [Sam](https://github.com/Samm96)
@@ -5,36 +7,47 @@
  * React template to create team members.
  */
 
-// note: remember to replace values with variables from theme file
+// note: remember to replace values with Theme.js props
 
 const Container = styled.div`
-  max-width: 361px;
+  max-width: 351px;
+  display: flex;
+`;
+
+const TextContainer = styled(Container)`
+  margin: 0 0 0 20px;
+  max-width: 205px;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+const NameContainer = styled(Container)`
+  width: fit-content;
 `;
 
 const Photo = styled.img`
   border-radius: 50%;
   width: 126px;
   height: 126px;
+  object-fit: cover;
+  background-position: center;
 `;
 
-const Text = styled.p`
+const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   font-family: "Open Sauce Sans", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-  color: #0000;
-`;
-/**
- * color: #0000 should be color: var(--default-text-color);
- * font-family: "Open Sauce Sans", sans-serif should be var(--primary-font-family);
- */
+  color: #000000;
 
-const BoldText = styled(Text)`
-  font-weight: 700;
+  margin: 0;
+  padding; 0;
+
+  &.teammember__name {
+    font-weight: 700;
+    margin: 0 3px 0 0;
+  }
 `;
-/**
- * font-weight: 700 should be font-weight: var(--secondary-default-font-weight)
- */
 
 const TeamMember = ({ photo, name, pronouns, headline }) => {
   const placeholder = {
@@ -42,17 +55,25 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
       "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=962&q=80",
     name: "Woofers",
     pronouns: "(dog/retriever)",
-    headline: "Good Boy",
+    headline: "Good Boy with the bestest behavior. He deserves a treat. Woof woof woof",
   };
-// Check if `<Text><BoldText>{name}</BoldText>{pronouns}</Text>` works
+
   return (
-    <div>
+    <div className="teammember">
       <Container>
         <Photo src={photo || placeholder.photo} alt="Placeholder Img" />
-        <BoldText>{name + " "|| placeholder.name + " "}</BoldText>
-        <Text>{pronouns ? pronouns || placeholder.pronouns : ""}</Text>
-        <Text>{headline || placeholder.headline}</Text>
+        <TextContainer>
+          <NameContainer>
+            <Text className="teammember__name">{name || placeholder.name}</Text>
+            <Text>{pronouns ? pronouns : placeholder.pronouns}</Text>
+          </NameContainer>
+          <Text className="teammember__body">
+            {headline || placeholder.headline}
+          </Text>
+        </TextContainer>
       </Container>
     </div>
   );
 };
+
+export default TeamMember;
