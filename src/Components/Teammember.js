@@ -11,6 +11,7 @@ import styled from "styled-components";
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   max-width: 351px;
+  width: 100%;
   display: flex;
 
   &.teammember__text-container {
