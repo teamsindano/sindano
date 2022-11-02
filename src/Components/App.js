@@ -1,8 +1,11 @@
 import './App.css';
+import Chart from './Chart';
 
 function App() {
   return (
-    <div className='page'></div>
+    <div className='page'>
+      <Chart />
+    </div>
   );
 }
 
