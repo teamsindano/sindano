@@ -10,28 +10,35 @@ import styled from "styled-components";
 
 // replace css values with Theme.js props
 
-const Section = styled.div`
-    background-color: #F5F5F5;
+const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 100px 0 40px 80px;
+
+  &.about__container {
     margin: 0;
-    padding: 100px 0 40px 80px;
+    padding: 0 0 0 80px;
+  }
 `;
 
 const Header = styled.h2`
-    font-family: "League Spartan", sans-serif;
-    font-size: 52px;
-    font-weight: 700;
-    line-height: 52px;
-    color: #283592;
-    margin: 0;
-    padding: 0;
+  font-family: "League Spartan", sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 52px;
+  color: #283592;
+  margin: 0;
+  padding: 0;
 `;
 
 const About = () => {
   return (
-  <Section>
-    <Header>What We Do</Header>
-    {/** add 4 unfold components here **/}
-  </Section>
+    <Container>
+      <Header>What We Do</Header>
+      <Container className="about__container">
+        {/** add 4 unfold components here **/}
+        </Container>
+    </Container>
   );
 };
 
