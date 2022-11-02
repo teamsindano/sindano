@@ -4,9 +4,9 @@ import { ThemeProvider } from "styled-components";
 /**
  * The CSS Themes
  * @author [Sam](https://github.com/Samm96)
- * 
+ *
  * To use the 'ThemeProvider', you need to install the following:
- * 
+ *
  * `npm install styled-components`
  */
 
@@ -112,7 +112,7 @@ const theme = {
 };
 
 const Theme = ({ children }) => {
-    <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 export default Theme;
