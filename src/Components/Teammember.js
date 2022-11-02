@@ -9,20 +9,20 @@ import styled from "styled-components";
 
 // note: remember to replace values with Theme.js props
 
-const Container = styled.div`
+const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   max-width: 351px;
   display: flex;
-`;
 
-const TextContainer = styled(Container)`
-  margin: 0 0 0 20px;
-  max-width: 205px;
-  flex-direction: column;
-  justify-content: center;
-`;
+  &.teammember__text-container {
+    margin: 0 0 0 20px;
+    max-width: 205px;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-const NameContainer = styled(Container)`
-  width: fit-content;
+  &.teammember__name-container {
+    width: fit-content;
+  }
 `;
 
 const Photo = styled.img`
@@ -55,22 +55,21 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
       "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=962&q=80",
     name: "Woofers",
     pronouns: "(dog/retriever)",
-    headline: "Good Boy with the bestest behavior. He deserves a treat. Woof woof woof",
+    headline:
+      "Good Boy with the bestest behavior. He deserves a treat. Woof woof woof",
   };
 
   return (
     <div className="teammember">
       <Container>
         <Photo src={photo || placeholder.photo} alt="Placeholder Img" />
-        <TextContainer>
-          <NameContainer>
+        <Container className="teammember__text-container">
+          <Container className="teammember__name-container">
             <Text className="teammember__name">{name || placeholder.name}</Text>
             <Text>{pronouns ? pronouns : placeholder.pronouns}</Text>
-          </NameContainer>
-          <Text className="teammember__body">
-            {headline || placeholder.headline}
-          </Text>
-        </TextContainer>
+          </Container>
+          <Text>{headline || placeholder.headline}</Text>
+        </Container>
       </Container>
     </div>
   );
