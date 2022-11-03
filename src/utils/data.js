@@ -31,6 +31,11 @@ const data = {
   },
   team: [
     {
+      image: TaraMarchallHill,
+      name: 'Tara Marshall-Hill (she/her)',
+      title: 'Founder of Sindano Health',
+    },
+    {
       image: AnshulaNathan,
       name: 'Anshula Nathan (she/her)',
       title: 'Director of Research and Health Informatics',
