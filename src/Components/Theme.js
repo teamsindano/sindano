@@ -10,7 +10,7 @@ import { ThemeProvider } from "styled-components";
  * `npm install styled-components`
  */
 
-const theme = {
+export const theme = {
   colors: {
     primary_background: "#f5f5f5",
     secondary_background: "#bcaec6",
