@@ -1,3 +1,10 @@
+//images for team section
+import anshulaNathan from '../images/team/anshula_nathan.png';
+import nandiAllman from '../images/team/nandi_allman.png';
+import anyaMarshall from '../images/team/anya_marshall.png';
+import coleBuckle from '../images/team/cole_buckle.png';
+import ritChowdhury from '../images/team/rit_chowdhury.png';
+
 const data = {
   stats: {
     title:
@@ -29,35 +36,31 @@ const data = {
       },
     ],
   },
+
   team: [
     {
-      image: TaraMarchallHill,
-      name: 'Tara Marshall-Hill (she/her)',
-      title: 'Founder of Sindano Health',
-    },
-    {
-      image: AnshulaNathan,
+      image: anshulaNathan,
       name: 'Anshula Nathan (she/her)',
       title: 'Director of Research and Health Informatics',
     },
     {
-      image: NandiAllman,
+      image: nandiAllman,
       name: 'Nandi K. Allman (they/them)',
       title: 'Director of Product and Community',
     },
     {
-      image: AnyaMarshall,
+      image: anyaMarshall,
       name: 'Anya Marshall (she/her)',
       title:
         'Key Technical Advisor - Software Engineering, Product Development and Data Engineering',
     },
     {
-      image: ColeBuckle,
+      image: coleBuckle,
       name: 'Cole Buckle (she/her)',
       title: 'Software Development',
     },
     {
-      image: RitChowdhury,
+      image: ritChowdhury,
       name: 'Rit Chowdhury (he/him)',
       title: 'Consulting AI/ML Engineer',
     },
