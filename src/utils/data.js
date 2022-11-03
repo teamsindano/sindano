@@ -29,4 +29,32 @@ const data = {
       },
     ],
   },
+  team: [
+    {
+      image: AnshulaNathan,
+      name: 'Anshula Nathan (she/her)',
+      title: 'Director of Research and Health Informatics',
+    },
+    {
+      image: NandiAllman,
+      name: 'Nandi K. Allman (they/them)',
+      title: 'Director of Product and Community',
+    },
+    {
+      image: AnyaMarshall,
+      name: 'Anya Marshall (she/her)',
+      title:
+        'Key Technical Advisor - Software Engineering, Product Development and Data Engineering',
+    },
+    {
+      image: ColeBuckle,
+      name: 'Cole Buckle (she/her)',
+      title: 'Software Development',
+    },
+    {
+      image: RitChowdhury,
+      name: 'Rit Chowdhury (he/him)',
+      title: 'Consulting AI/ML Engineer',
+    },
+  ],
 };
