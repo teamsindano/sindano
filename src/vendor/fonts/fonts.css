@@ -1,0 +1,49 @@
+@font-face {
+  font-family: 'League Spartan';
+  font-weight: 700;
+  font-display: swap;
+  font-style: bold;
+  src: url('league-spartan/league-spartan-v6-latin-700.woff2') format('woff2'),
+       url('league-spartan/league-spartan-v6-latin-700.woff') format('woff'),
+       url('league-spartan/league-spartan-v6-latin-700.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 800;
+  font-display: swap;
+  font-style: bold;
+  src: url('open-sauce-sans/OpenSauceSans-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 700;
+  font-display: swap;
+  font-style: bold;
+  src: url('open-sauce-sans/OpenSauceSans-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 600;
+  font-display: swap;
+  font-style: bold;
+  src: url('open-sauce-sans/OpenSauceSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+  src: url('open-sauce-sans/OpenSauceSans-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url('open-sauce-sans/OpenSauceSans-Regular.ttf') format('truetype');
+}

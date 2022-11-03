@@ -1,8 +1,13 @@
-import './App.css';
+
 import Unfold from './Unfold/Unfold';
 import React from 'react';
+import Theme from "./Theme";
+import "./App.css";
+
 
 const data = [1,2,3,4];
+
+
 
 function App() {
 
@@ -17,13 +22,17 @@ function App() {
     }
 
   return (
-    <div className='page'>
+   
+    <Theme>
+      <div className='page'>
 
       {data.map((item) => 
         <Unfold key={item} id={item} openedItem={openedItem} toggleComponent={toggleComponent}/>
       )}
 
-    </div>
+      </div>
+      </Theme>
+   
   );
 }
 
