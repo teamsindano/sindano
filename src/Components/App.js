@@ -1,8 +1,14 @@
-import './App.css';
+import "./App.css";
+import Theme from "./Theme";
+import { theme } from "./Theme";
 
 function App() {
   return (
-    <div className='page'></div>
+    <>
+      <Theme>
+        <div className="page"></div>
+      </Theme>
+    </>
   );
 }
 
