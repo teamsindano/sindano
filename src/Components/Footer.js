@@ -3,17 +3,31 @@ import whiteLogo from '../images/sindano_health_logo_white.svg';
 import instagram from '../images/social/icon_instagram.svg';
 import twitter from '../images/social/icon_twitter.svg';
 import facebook from '../images/social/icon_facebook.svg';
+import styled from 'styled-components';
+
+const StyledFooter = styled.footer`
+  max-width: 1440px;
+  background: #283592;
+  color: white;
+  width: 100%;
+`;
+
+const Wrapper = styled.div`
+  padding: 40px 80px;
+  display: flex;
+`;
+const FirstColumn = styled.div``;
 
 function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer>
-      <div>
-        <div>
+    <StyledFooter>
+      <Wrapper>
+        <FirstColumn>
           <img src={whiteLogo} alt="Sindano logo"></img>
           <p>&copy; {currentYear} Sindano&#8482;</p>
           <p>All Rights Reserved</p>
-        </div>
+        </FirstColumn>
         <nav>
           <ul>
             <li>
@@ -57,8 +71,8 @@ function Footer() {
             <p>2748 Callison Lane, Newark, DE</p>
           </div>
         </div>
-      </div>
-    </footer>
+      </Wrapper>
+    </StyledFooter>
   );
 }
 
