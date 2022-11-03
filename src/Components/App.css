@@ -3,3 +3,9 @@
     margin: 0 auto;
     padding: 0 80px;
 }
+
+.test__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

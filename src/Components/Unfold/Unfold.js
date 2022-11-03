@@ -14,7 +14,7 @@ const HeaderButton = styled.button`
     align-self: center;
     transition: 0.5s;
     ${props => {
-        if (props.open) {
+        if (props.openedItem === props.id) {
         return `
             transform-origin: center;
             transform: rotate(-180deg);
@@ -31,6 +31,7 @@ const HeaderButton = styled.button`
         padding: 40px;
         background: #283592;
         border-radius: 20px;
+        margin-bottom: 40px;
         &:hover ${HeaderButton} {
             margin-top: 10px;
         }
@@ -64,7 +65,7 @@ const HeaderButton = styled.button`
         flex-direction: row;
         transition: all 0.5s cubic-bezier(0, 1, 0, 1);
         ${props => {
-            if (props.open) {
+            if (props.openedItem === props.id) {
             return `
                 opacity: 1;
                 max-height: 1000px;
@@ -103,24 +104,22 @@ const HeaderButton = styled.button`
     `;
 
 
-function Unfold()  {
-
-    const [open, setOpen] = React.useState(false);
-
-    const toggleComponent = (event) => {
-        event.preventDefault();
-        setOpen(!open);
-    }
+function Unfold({id, toggleComponent, openedItem})  {
 
     
 
+    const handleClick = (event) => {
+        event.preventDefault();
+        toggleComponent(id, openedItem);
+    }
+
     return (
-        <UnfoldWrapper onClick={toggleComponent}>
+        <UnfoldWrapper onClick={handleClick}>
             <Header>
                 <HeaderTitle>For healthcare system</HeaderTitle>
-                <HeaderButton open={open}><Arrow/></HeaderButton>
+                <HeaderButton openedItem={openedItem} id={id}><Arrow/></HeaderButton>
             </Header>
-            <UnfoldContent open={open}>
+            <UnfoldContent openedItem={openedItem} id={id}>
                 <div>
                     <UnfoldText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</UnfoldText>
                     <UnfoldButton>Request a call</UnfoldButton>
