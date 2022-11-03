@@ -108,7 +108,7 @@ const Chart = () => {
         <List>
           {chartData.map((data, index) => (
             <Item>
-                <Text key={index} className="chart__fact">{DataTransfer.content}</Text>
+                <Text key={index} className="chart__fact">{data.content}</Text>
                 <Bar />
                 <Text key={index + ".2"} className="chart__number">{data.number}</Text>
             </Item>
