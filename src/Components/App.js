@@ -24,13 +24,13 @@ function App() {
   return (
    
     <Theme>
-      <div className='page'>
+        <div className='page'>
 
-      {data.map((item) => 
-        <Unfold key={item} id={item} openedItem={openedItem} toggleComponent={toggleComponent}/>
-      )}
+        {data.map((item) => 
+          <Unfold key={item} id={item} openedItem={openedItem} toggleComponent={toggleComponent}/>
+        )}
 
-      </div>
+        </div>
       </Theme>
    
   );

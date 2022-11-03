@@ -13,6 +13,7 @@ const DataWrapper = styled.div`
 `;
 
 const DataFigure = styled.h2`
+    font-family: ${props => props.theme.fonts.header.font_family[0]};
     width: max-content;
     font-weight: 700;
     font-size: 68px;
@@ -22,6 +23,7 @@ const DataFigure = styled.h2`
 `;
 
 const DataText = styled.p`
+    font-family: ${props => props.theme.fonts.text.font_family[0]};
     font-weight: 600;
     font-size: 16px;
     line-height: 1.25;
@@ -29,7 +31,8 @@ const DataText = styled.p`
 `;
 
 const DataButton = styled.button`
-      width: 16px;
+        font-family: ${props => props.theme.fonts.text.font_family[0]};
+        width: 16px;
         height: 20px;
         border: none;
         position: absolute;

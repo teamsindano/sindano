@@ -46,6 +46,7 @@ const HeaderButton = styled.button`
     `;
 
     const HeaderTitle = styled.h3`
+        font-family: ${props => props.theme.fonts.text.font_family[0]};
         padding: 0;
         margin: 0;
         font-weight: 800;
@@ -54,7 +55,7 @@ const HeaderButton = styled.button`
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-        background-image: linear-gradient(0deg, rgba(255, 252, 170, 0.2), rgba(255, 252, 170, 0.2)), radial-gradient(110.58% 110.58% at 40.19% 148.08%, rgba(40, 53, 146, 0.5) 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(141.03% 3248.2% at 71.91% -110.26%, #FF98C6 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(93.91% 3215.11% at 1.53% 100%, #DBCCE5 0%, #FFFFFF 100%) 
+        background-image: ${props => props.theme.gradients.text};
     `;
 
     const UnfoldContent = styled.div`
@@ -81,6 +82,7 @@ const HeaderButton = styled.button`
     const UnfoldText = styled.p`
         margin: 0;
         padding: 0;
+        font-family: ${props => props.theme.fonts.text.font_family[0]};
         font-weight: 400;
         font-size: 16px;
         line-height: 1.25;
@@ -88,6 +90,8 @@ const HeaderButton = styled.button`
     `;
 
     const UnfoldButton = styled.button`
+        font-family: ${props => props.theme.fonts.text.font_family[0]};
+        white-space: nowrap;
         width: 170px;
         height: 50px;
         color: #fff;
@@ -101,6 +105,9 @@ const HeaderButton = styled.button`
         font-size: 16px;
         line-height: 1.25;
         cursor: pointer;
+        &:hover {
+            background: ${props => props.theme.gradients.button_hover};
+        }
     `;
 
 
