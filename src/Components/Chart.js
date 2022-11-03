@@ -9,17 +9,17 @@ import styled from "styled-components";
 
 /** background color is placeholder for now */
 
-const widths = {
-    78: "369px",
-    74: "351px",
-    70: "332px",
-    69: "327px",
-    68: "323px",
-    67: "317px",
-    66: "313px",
-    64: "304px",
-    62: "293px",
-};
+// const widths = {
+//     78: "369px",
+//     74: "351px",
+//     70: "332px",
+//     69: "327px",
+//     68: "323px",
+//     67: "317px",
+//     66: "313px",
+//     64: "304px",
+//     62: "293px",
+// };
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   max-width: 785px;
@@ -64,7 +64,36 @@ const Bar = styled.span`
   height: 12px;
 `;
 
+const List = styled.ul`
+  margin: 0 auto 0;
+  padding: 0 0 47px;
+  width: 701px;
+`;
+
+const Item = styled.li`
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Chart = () => {
+
+  // move to a utils file
+  const data = [
+    { content: "Covered by my health insurance", number: 78 },
+    { content: "Cost I have to pay", number: 74 },
+    { content: "Past experience was good", number: 74 },
+    { content: "A clinician has good expertise (eg, training, schooling)", number: 70 },
+    { content: "Friendliness of the staff", number: 69 },
+    { content: "A facility has a good reputation/scored well", number: 68 },
+    { content: "A clinician has a good reputation/scored well", number: 68 },
+    { content: "Facilities were up-to-date/nice", number: 68 },
+    { content: "How convenient the choices are for when can get care", number: 67 },
+    { content: "The care provider has my medical history/information", number: 64 },
+    { content: "Following your clinician's recommendation", number: 62 },
+  ];
 
   return (
     <Container>
@@ -76,13 +105,15 @@ const Chart = () => {
         Respondents ranked 8-10 on a 10-point scale, %
       </Text>
       <Container className="chart__statistics">
-        <ul>
-            <li>
-                <Text className="chart__fact">Covered by my health insurance</Text>
+        <List>
+          {data.map((d, index) => (
+            <Item>
+                <Text key={index} className="chart__fact">{d.content}</Text>
                 <Bar />
-                <Text>78</Text>
-            </li>
-        </ul>
+                <Text key={index + ".2"} className="chart__number">{d.number}</Text>
+            </Item>
+          ))}
+        </List>
       </Container>
     </Container>
   );
