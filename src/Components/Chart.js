@@ -81,7 +81,7 @@ const Item = styled.li`
 const Chart = () => {
 
   // move to a utils file
-  const data = [
+  const chartData = [
     { content: "Covered by my health insurance", number: 78 },
     { content: "Cost I have to pay", number: 74 },
     { content: "Past experience was good", number: 74 },
@@ -106,11 +106,11 @@ const Chart = () => {
       </Text>
       <Container className="chart__statistics">
         <List>
-          {data.map((d, index) => (
+          {chartData.map((data, index) => (
             <Item>
-                <Text key={index} className="chart__fact">{d.content}</Text>
+                <Text key={index} className="chart__fact">{DataTransfer.content}</Text>
                 <Bar />
-                <Text key={index + ".2"} className="chart__number">{d.number}</Text>
+                <Text key={index + ".2"} className="chart__number">{data.number}</Text>
             </Item>
           ))}
         </List>
