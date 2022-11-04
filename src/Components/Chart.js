@@ -9,17 +9,45 @@ import styled from "styled-components";
 
 /** background color is placeholder for now */
 
-// const widths = {
-//     78: "369px",
-//     74: "351px",
-//     70: "332px",
-//     69: "327px",
-//     68: "323px",
-//     67: "317px",
-//     66: "313px",
-//     64: "304px",
-//     62: "293px",
-// };
+// move to a utils file
+const chartData = [
+  { content: "Covered by my health insurance", number: 78 },
+  { content: "Cost I have to pay", number: 74 },
+  { content: "Past experience was good", number: 74 },
+  {
+    content: "A clinician has good expertise (eg, training, schooling)",
+    number: 70,
+  },
+  { content: "Friendliness of the staff", number: 69 },
+  { content: "A facility has a good reputation/scored well", number: 68 },
+  { content: "A clinician has a good reputation/scored well", number: 68 },
+  { content: "Facilities were up-to-date/nice", number: 68 },
+  {
+    content: "How convenient the choices are for when can get care",
+    number: 67,
+  },
+  {
+    content: "How convenient the choices are for where to get care",
+    number: 66,
+  },
+  {
+    content: "The care provider has my medical history/information",
+    number: 64,
+  },
+  { content: "Following your clinician's recommendation", number: 62 },
+];
+
+const widths = {
+  78: "369px",
+  74: "351px",
+  70: "332px",
+  69: "327px",
+  68: "323px",
+  67: "317px",
+  66: "313px",
+  64: "304px",
+  62: "293px",
+};
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   max-width: 785px;
@@ -54,9 +82,13 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
 
   &.chart__fact {
     text-align: left;
+    margin: 0;
+  }
+
+  &.chart__number {
+    margin: 0;
   }
 `;
-
 
 const Bar = styled.span`
   background-color: #283592;
@@ -79,38 +111,28 @@ const Item = styled.li`
 `;
 
 const Chart = () => {
-
-  // move to a utils file
-  const chartData = [
-    { content: "Covered by my health insurance", number: 78 },
-    { content: "Cost I have to pay", number: 74 },
-    { content: "Past experience was good", number: 74 },
-    { content: "A clinician has good expertise (eg, training, schooling)", number: 70 },
-    { content: "Friendliness of the staff", number: 69 },
-    { content: "A facility has a good reputation/scored well", number: 68 },
-    { content: "A clinician has a good reputation/scored well", number: 68 },
-    { content: "Facilities were up-to-date/nice", number: 68 },
-    { content: "How convenient the choices are for when can get care", number: 67 },
-    { content: "The care provider has my medical history/information", number: 64 },
-    { content: "Following your clinician's recommendation", number: 62 },
-  ];
-
   return (
     <Container>
       <Container className="chart__heading">
-        <Text className="chart__text-heading">The importance of information</Text>
-        <Text className="chart__text-heading">when deciding on where to receive care</Text>
+        <Text className="chart__text-heading">
+          The importance of information
+        </Text>
+        <Text className="chart__text-heading">
+          when deciding on where to receive care
+        </Text>
       </Container>
-      <Text>
-        Respondents ranked 8-10 on a 10-point scale, %
-      </Text>
+      <Text>Respondents ranked 8-10 on a 10-point scale, %</Text>
       <Container className="chart__statistics">
         <List>
           {chartData.map((data, index) => (
             <Item>
-                <Text key={index} className="chart__fact">{data.content}</Text>
-                <Bar />
-                <Text key={index + ".2"} className="chart__number">{data.number}</Text>
+              <Text key={index} className="chart__fact">
+                {data.content}
+              </Text>
+              <Bar className="chart__bar" />
+              <Text key={index + ".2"} className="chart__number">
+                {data.number}
+              </Text>
             </Item>
           ))}
         </List>
