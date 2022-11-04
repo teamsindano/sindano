@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { data } from "../utils/data";
+import React, { useEffect, useState } from 'react';
 
 /**
  * The Chart Component
@@ -67,7 +68,12 @@ const Bar = styled.span`
   background-color: ${props => `${props.theme.colors.default_component_blue}`};
   border-radius: 2px;
   height: 12px;
+  width: ${props => `${props.theme.currentWidth}`}
 `;
+
+const theme = {
+  currentWidth: ""
+};
 
 const List = styled.ul`
   margin: 0 auto 0;
@@ -84,6 +90,12 @@ const Item = styled.li`
 `;
 
 const Chart = () => {
+  const [width, setWidth] = useState('');
+
+  useEffect(() => {
+    console.log(width)
+  })
+
   return (
     <Container>
       <Container className="chart__heading">
@@ -102,7 +114,7 @@ const Chart = () => {
               <Text key={index} className="chart__fact">
                 {d.content}
               </Text>
-              <Bar className="chart__bar" />
+              <Bar className="chart__bar" size={({ currentWidth: width })} />
               <Text key={index + ".2"} className="chart__number">
                 {d.number}
               </Text>
