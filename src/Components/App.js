@@ -1,11 +1,15 @@
 import './App.css';
 import Chart from './Chart';
+import Theme from "./Theme";
+import { theme } from "./Theme";
 
 function App() {
   return (
-    <div className='page'>
-      <Chart />
-    </div>
+    <>
+      <Theme>
+        <div className="page"></div>
+      </Theme>
+    </>
   );
 }
 
