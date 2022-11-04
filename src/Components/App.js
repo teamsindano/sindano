@@ -1,11 +1,17 @@
-import './App.css';
+import "./App.css";
+import Theme from "./Theme";
+import { theme } from "./Theme";
 import TeamMember from './Teammember';
 
 function App() {
   return (
-    <div className='page'>
+    <>
+      <Theme>
+        <div className="page">
       <TeamMember></TeamMember>
     </div>
+      </Theme>
+    </>
   );
 }
 
