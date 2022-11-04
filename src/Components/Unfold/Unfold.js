@@ -87,6 +87,7 @@ const HeaderButton = styled.button`
         font-size: 16px;
         line-height: 1.25;
         color: #fff;
+        margin-bottom: 16px;
     `;
 
     const UnfoldButton = styled.button`
@@ -111,7 +112,7 @@ const HeaderButton = styled.button`
     `;
 
 
-function Unfold({id, toggleComponent, openedItem})  {
+function Unfold({id, toggleComponent, openedItem, cardTitle, text})  {
 
     
 
@@ -123,12 +124,14 @@ function Unfold({id, toggleComponent, openedItem})  {
     return (
         <UnfoldWrapper onClick={handleClick}>
             <Header>
-                <HeaderTitle>For healthcare system</HeaderTitle>
+                <HeaderTitle>{cardTitle}</HeaderTitle>
                 <HeaderButton openedItem={openedItem} id={id}><Arrow/></HeaderButton>
             </Header>
             <UnfoldContent openedItem={openedItem} id={id}>
                 <div>
-                    <UnfoldText>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</UnfoldText>
+                    {text.map((paragraph) => {
+                        return <UnfoldText>{paragraph}</UnfoldText>
+                    })}
                     <UnfoldButton>Request a call</UnfoldButton>
                 </div>
                 <div>

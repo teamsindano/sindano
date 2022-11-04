@@ -1,11 +1,12 @@
 //images for team section
-import anshulaNathan from '../images/team/anshula_nathan.png';
-import nandiAllman from '../images/team/nandi_allman.png';
-import anyaMarshall from '../images/team/anya_marshall.png';
-import coleBuckle from '../images/team/cole_buckle.png';
-import ritChowdhury from '../images/team/rit_chowdhury.png';
+import anshulaNathan from '../Images/team/anshula_nathan.png';
+import nandiAllman from '../Images/team/nandi_allman.png';
+import anyaMarshall from '../Images/team/anya_marshall.png';
+import coleBuckle from '../Images/team/cole_buckle.png';
+import ritChowdhury from '../Images/team/rit_chowdhury.png';
+import pieChart from '../Images/piechart.svg';
 
-const data = {
+export const data = {
   statsCards: [
     {
       id: 1,
