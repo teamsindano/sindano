@@ -102,4 +102,55 @@ const data = {
       ],
     },
   ],
+
+  unfoldDataCard: [
+    {
+      id: 1,
+      dataTitle: '71%',
+      dataContent: [
+        'Of providers reported Mental and behavioral health as the most significant need for the LGBTQ+ community',
+      ],
+      source:
+        'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
+    },
+    {
+      id: 2,
+      dataTitle: 'Discrimination deters seeking care',
+      dataContent: {
+        bar1: '7%',
+        bar2: '23%',
+        bar1Explanation: 'Non-LGBTQIA+',
+        bar2Explanation: 'LGBTQIA+',
+      },
+      source:
+        'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
+    },
+    {
+      id: 3,
+      dataTitle: '50%',
+      dataContent: [
+        'Of full-time U.S. workers have left previous roles due, at least in part, to mental health reasons.',
+        'This number Rises to:',
+        '81% of Gen Z respondents',
+        '68% of Millenial respondens',
+        '32% when considering voluntary departures',
+      ],
+      source:
+        'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
+    },
+    {
+      id: 4,
+      dataContent: {
+        image: pieChart,
+        pink: 'Mental Disorders',
+        grey: 'Diabetes',
+        palePurple: 'Cardiovascular diseases',
+        teal: 'Chronic respiratory disease',
+        blue: 'Cancer',
+      },
+      text: 'In 10\u00b9\u00b2 US$',
+      source:
+        'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
+    },
+  ],
 };
