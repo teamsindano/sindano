@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 const DataWrapper = styled.div`
@@ -11,6 +12,7 @@ const DataWrapper = styled.div`
     border-radius: 20px;
     position: relative;
 `;
+
 
 const DataFigure = styled.h2`
     font-family: ${props => props.theme.fonts.header.font_family[0]};
@@ -45,7 +47,10 @@ const DataButton = styled.button`
         line-height: 1.25;
 `;
 
+
+
 const Data = () => {
+
  return (
     <DataWrapper>
         <DataFigure>71%</DataFigure>
