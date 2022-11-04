@@ -35,17 +35,17 @@ const Photo = styled.img`
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
-  font-family: "Open Sauce Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
+  font-family: ${props => `${props.theme.fonts.text.font_family}`};
+  font-size: ${props => `${props.theme.fonts.text.sizes.text_s}`};
+  font-weight: ${props => `${props.theme.fonts.text.weights.normal}`};
   line-height: 20px;
-  color: #000000;
+  color: ${props => `${props.theme.colors.default_text_color}`};
 
   margin: 0;
   padding; 0;
 
   &.teammember__name {
-    font-weight: 700;
+    font-weight: ${props => `${props.theme.fonts.text.weights.bold}`};
     margin: 0 3px 0 0;
   }
 `;
