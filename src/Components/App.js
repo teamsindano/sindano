@@ -2,13 +2,16 @@
 import Unfold from './Unfold/Unfold';
 import React from 'react';
 import Theme from "./Theme";
-import "./App.css";
 import { data } from '../utils/data';
+import styled from "styled-components";
 
 
-// const data = [1,2,3,4];
 
-
+const Page = styled.div`
+  width: 1280px;
+    margin: 0 auto;
+    padding: 0 80px;
+`;
 
 function App() {
 
@@ -25,13 +28,13 @@ function App() {
   return (
    
     <Theme>
-        <div className='page'>
+        <Page>
 
         {data.whatWeDoCard.map((item) => 
           <Unfold key={item.id} id={item.id} cardTitle={item.cardTitle} text={item.text} openedItem={openedItem} toggleComponent={toggleComponent}/>
         )}
 
-        </div>
+        </Page>
       </Theme>
    
   );
