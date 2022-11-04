@@ -10,8 +10,7 @@ import styled from "styled-components";
 // note: remember to replace values with Theme.js props
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  max-width: 351px;
-  width: 100%;
+  width: 351px;
   display: flex;
 
   &.teammember__text-container {
