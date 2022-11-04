@@ -15,24 +15,32 @@ const data = {
         cardHeader: '76%',
         cardText:
           'Reported experiencing at least one symptom of a mental health condition in the past year',
+        source:
+          'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
       },
       {
         id: 2,
         cardHeader: '2-4x',
         cardText:
           'Times LGBTQ+ American adults are more likely to experience depression, anxiety and suicidal ideation than non-LGBTQ+ American adults',
+        source:
+          'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
       },
       {
         id: 3,
         cardHeader: '6x',
         cardText:
           'LGBTQ+ teens are six times more likely to experience symptoms of depression than non-LGBTQ+ identifying teens.',
+        source:
+          'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
       },
       {
         id: 4,
         cardHeader: '22%',
         cardText:
           'Of transgender individuals say they have avoided doctors or health care our of concern they would be discriminated against.',
+        source:
+          'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
       },
     ],
   },
