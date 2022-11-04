@@ -1,4 +1,5 @@
 import Unfold from './Unfold';
+import { data } from '../../utils/data';
 
 export default {
   /* 👇 The title prop is optional.
@@ -9,4 +10,9 @@ export default {
   component: Unfold,
 };
 
-export const UnfoldComponent = (args) => <Unfold {...args}/>;
+const Template = (args) => <Unfold {...args}/>;
+
+export const UnfoldComponent= Template.bind({});
+UnfoldComponent.args = {
+  text: data.whatWeDoCard[0].text,
+};
