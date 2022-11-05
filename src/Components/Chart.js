@@ -8,11 +8,8 @@ import { data } from "../utils/data";
  * Location with the group of Unfold components reside
  */
 
-/** background color is placeholder for now */
-
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  max-width: 785px;
-  width: 100%;
+  width: 785px;
   background: ${(props) => `${props.theme.gradients.component}`};
   border-radius: 20px;
 
@@ -42,27 +39,35 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   }
 
   &.chart__fact {
-    text-align: left;
+    text-align: right;
+    width: 317px;
     margin: 0;
+    grid-column: 1;
   }
 
   &.chart__number {
     margin: 0;
+    grid-column: 3;
   }
 `;
 
 const Bar = styled.span`
+  margin: 0 8px 0;
   background-color: ${(props) =>
     `${props.theme.colors.default_component_blue}`};
   border-radius: 2px;
   height: 12px;
   width: ${(props) => `${props.size.currentWidth}`};
+  grid-column: 2;
 `;
 
 const List = styled.ul`
-  margin: 0 auto 0;
-  padding: 0 0 47px;
-  width: 701px;
+  width: fit-content;
+  margin: 40px auto 0;
+  padding: 0 0 46px;
+  display: grid;
+  grid-template-columns: fit-content;
+  grid-gap: 14px;
 `;
 
 const Item = styled.li`
@@ -70,7 +75,6 @@ const Item = styled.li`
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: space-between;
 `;
 
 const size = {
