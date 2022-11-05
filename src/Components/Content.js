@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+/**
+ * Content Component
+ * @author [J. Hartsek](https://github.com/JHartsek)
+ */
+
 const Section = styled.section`
   max-width: 620px;
   display: flex;
