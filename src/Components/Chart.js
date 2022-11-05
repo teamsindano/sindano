@@ -121,7 +121,24 @@ const config = {
   type: "bar",
   data: barData,
   options: {
+    plugins: {
+      title: {
+          display: false,
+      },
+    },
     indexAxis: "y",
+    scales: {
+      xAxis: {
+        grid: {
+          display: false,
+        }
+      },
+      yAxis: {
+        grid: {
+          display: false,
+        }
+      },
+    },
   },
 };
 
