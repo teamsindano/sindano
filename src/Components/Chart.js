@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { data } from "../utils/data";
-import React, { useEffect, useState } from 'react';
 
 /**
  * The Chart Component
@@ -11,22 +10,10 @@ import React, { useEffect, useState } from 'react';
 
 /** background color is placeholder for now */
 
-const widths = {
-  78: "369px",
-  74: "351px",
-  70: "332px",
-  69: "327px",
-  68: "323px",
-  67: "317px",
-  66: "313px",
-  64: "304px",
-  62: "293px",
-};
-
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   max-width: 785px;
   width: 100%;
-  background: ${props => `${props.theme.gradients.component}`};
+  background: ${(props) => `${props.theme.gradients.component}`};
   border-radius: 20px;
 
   &.chart__heading {
@@ -37,18 +24,18 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
-  font-family: ${props => `${props.theme.fonts.text.font_family}`};
+  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
   margin: 16px 0 0;
-  font-size: ${props => `${props.theme.fonts.text.sizes.text_xs}`};
+  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_xs}`};
   line-height: 14px;
-  font-weight: ${props => `${props.theme.fonts.text.weights.normal}`};
+  font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
 
   text-align: center;
 
   &.chart__text-heading {
-    font-size: ${props => `${props.theme.fonts.text.sizes.text_m}`};
+    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
     line-height: 20px;
-    font-weight: ${props => `${props.theme.fonts.header.weight}`};
+    font-weight: ${(props) => `${props.theme.fonts.header.weight}`};
 
     margin: 0;
     padding: 0;
@@ -65,15 +52,12 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const Bar = styled.span`
-  background-color: ${props => `${props.theme.colors.default_component_blue}`};
+  background-color: ${(props) =>
+    `${props.theme.colors.default_component_blue}`};
   border-radius: 2px;
   height: 12px;
-  width: ${props => `${props.theme.currentWidth}`}
+  width: ${(props) => `${props.size.currentWidth}`};
 `;
-
-const theme = {
-  currentWidth: ""
-};
 
 const List = styled.ul`
   margin: 0 auto 0;
@@ -89,13 +73,23 @@ const Item = styled.li`
   justify-content: space-between;
 `;
 
+const size = {
+  currentWidth: "",
+};
+
+const widths = {
+  78: "369px",
+  74: "351px",
+  70: "332px",
+  69: "327px",
+  68: "323px",
+  67: "317px",
+  66: "313px",
+  64: "304px",
+  62: "293px",
+};
+
 const Chart = () => {
-  const [width, setWidth] = useState('');
-
-  useEffect(() => {
-    console.log(width)
-  })
-
   return (
     <Container>
       <Container className="chart__heading">
@@ -110,12 +104,16 @@ const Chart = () => {
       <Container className="chart__statistics">
         <List>
           {data.chartStats.map((d, index) => (
-            <Item>
-              <Text key={index} className="chart__fact">
+            <Item key={index}>
+              <Text key={index + ".1"} className="chart__fact">
                 {d.content}
               </Text>
-              <Bar className="chart__bar" size={({ currentWidth: width })} />
-              <Text key={index + ".2"} className="chart__number">
+              <Bar
+                key={index + ".2"}
+                className="chart__bar"
+                size={{ currentWidth: widths[d.number] }}
+              />
+              <Text key={index + ".3"} className="chart__number">
                 {d.number}
               </Text>
             </Item>
