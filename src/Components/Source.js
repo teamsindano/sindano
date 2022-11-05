@@ -23,7 +23,7 @@ const Container = styled.figure`
 
 const Info = styled.p`
   margin: 0;
-  font: ${(props) => props.theme.fonts.text.font_family[0]};
+  font: ${(props) => props.theme.fonts.text.font_family};
   font-size: ${(props) => props.theme.fonts.text.sizes.text_xs};
   font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
   line-height: 1.33;
