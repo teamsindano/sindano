@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { data } from "../utils/data";
+import Chart from "chart.js/auto";
 
 /**
  * The Chart Component
  * @author [Sam](https://github.com/Samm96)
  *
  * Location with the group of Unfold components reside
+ * look at this for how to use Chart.js <https://www.chartjs.org/docs/latest/getting-started/usage.html>
  */
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
@@ -77,6 +79,11 @@ const Item = styled.li`
   display: flex;
 `;
 
+const InfoLink = styled.a`
+  color: ${(props) => `${props.theme.colors.default_button_pink}`};
+  border: ${(props) => `2px solid ${props.theme.colors_default_button_pink}`};
+`;
+
 const size = {
   currentWidth: "",
 };
@@ -93,7 +100,34 @@ const widths = {
   62: "293px",
 };
 
-const Chart = () => {
+const labels = data.chartStats.map((d) => {
+  return d.content;
+});
+
+const numbers = data.chartStats.map((d) => {
+  return d.number;
+});
+
+const barData = {
+  labels: labels,
+  datasets: [
+    {
+      data: numbers,
+    },
+  ],
+};
+
+const config = {
+  type: "bar",
+  data: barData,
+  options: {
+    indexAxis: "y",
+  },
+};
+
+const myChart = new Chart(document.getElementById("statsChart"), config);
+
+const StatsChart = () => {
   return (
     <Container>
       <Container className="chart__heading">
@@ -106,26 +140,11 @@ const Chart = () => {
       </Container>
       <Text>Respondents ranked 8-10 on a 10-point scale, %</Text>
       <Container className="chart__statistics">
-        <List>
-          {data.chartStats.map((d, index) => (
-            <Item key={index}>
-              <Text key={index + ".1"} className="chart__fact">
-                {d.content}
-              </Text>
-              <Bar
-                key={index + ".2"}
-                className="chart__bar"
-                size={{ currentWidth: widths[d.number] }}
-              />
-              <Text key={index + ".3"} className="chart__number">
-                {d.number}
-              </Text>
-            </Item>
-          ))}
-        </List>
+        <canvas id="statsChart" width="785px"></canvas>
       </Container>
+      <InfoLink>i</InfoLink>
     </Container>
   );
 };
 
-export default Chart;
+export default StatsChart;
