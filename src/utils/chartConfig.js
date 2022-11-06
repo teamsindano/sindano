@@ -15,7 +15,14 @@ const barData = {
   datasets: [
     {
       data: numbers,
+      color: theme.colors.default_text_color,
       backgroundColor: theme.colors.default_component_blue,
+      font: {
+        family: `${theme.fonts.text.font_family[0]}`,
+        weight: `${theme.fonts.text.weights.normal}`,
+        size: 12,
+        lineHeight: 14,
+      },
     },
   ],
 };
@@ -33,6 +40,7 @@ export const config = {
       title: {
         display: false,
       },
+      legend: false,
     },
     indexAxis: "y",
     scales: {
