@@ -15,16 +15,20 @@ const barData = {
   datasets: [
     {
       data: numbers,
+      backgroundColor: theme.colors.default_component_blue,
     },
   ],
 };
-
-Chart.defaults.backgroundColor = theme.colors.default_component_blue;
 
 export const config = {
   type: "bar",
   data: barData,
   options: {
+    elements: {
+      bar: {
+        borderRadius: 2,
+      },
+    },
     plugins: {
       title: {
         display: false,
