@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { data } from "../utils/data";
 import Chart from "chart.js/auto";
+import { config } from "../utils/chartConfig";
 
 /**
  * The Chart Component
@@ -83,64 +83,6 @@ const InfoLink = styled.a`
   color: ${(props) => `${props.theme.colors.default_button_pink}`};
   border: ${(props) => `2px solid ${props.theme.colors_default_button_pink}`};
 `;
-
-const size = {
-  currentWidth: "",
-};
-
-const widths = {
-  78: "369px",
-  74: "351px",
-  70: "332px",
-  69: "327px",
-  68: "323px",
-  67: "317px",
-  66: "313px",
-  64: "304px",
-  62: "293px",
-};
-
-const labels = data.chartStats.map((d) => {
-  return d.content;
-});
-
-const numbers = data.chartStats.map((d) => {
-  return d.number;
-});
-
-const barData = {
-  labels: labels,
-  datasets: [
-    {
-      data: numbers,
-    },
-  ],
-};
-
-const config = {
-  type: "bar",
-  data: barData,
-  options: {
-    plugins: {
-      title: {
-          display: false,
-      },
-    },
-    indexAxis: "y",
-    scales: {
-      xAxis: {
-        grid: {
-          display: false,
-        }
-      },
-      yAxis: {
-        grid: {
-          display: false,
-        }
-      },
-    },
-  },
-};
 
 const myChart = new Chart(document.getElementById("statsChart"), config);
 
