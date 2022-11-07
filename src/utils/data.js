@@ -120,13 +120,45 @@ export const data = {
     },
     {
       id: 2,
-      dataTitle: 'Discrimination deters seeking care',
-      dataContent: {
-        bar1: '7%',
-        bar2: '23%',
-        bar1Explanation: 'Non-LGBTQIA+',
-        bar2Explanation: 'LGBTQIA+',
-      },
+      options: { plugins:
+        {
+        legend : {
+            display: true,
+            position: 'bottom',
+            align: 'start',
+            labels : {
+                textAlign: 'left',
+                boxWidth: 10, 
+                boxHeight: 10,
+                font: {
+                    size: 10,
+                    weight: 400,
+                }},
+            title: {
+                text: 'In 1012 US$',
+                display: true,
+                padding: 10,
+                position: 'bottom',
+            }
+            }
+         },
+         datalabels: {
+            align: 'center',
+         } },
+      data: { labels: ['Mental disorders', 'Diabetis','Cardiovascular diseases', 'Chronic respiratory diseases', 'Cancer'],
+      datasets: [{
+        data: [16.3, 1.7, 15.6, 4.8, 8.3],
+        datalabels: {color: 'white'},
+        backgroundColor: [
+          '#EC1E7B',
+          '#A7A7A7',
+          '#BCAEC6',
+          '#1EA6AE',
+          '#283592'
+        ],
+        borderWidth: 0.5,
+      }],
+      borderColor: "#fff",},
       source:
         'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
     },
@@ -145,15 +177,77 @@ export const data = {
     },
     {
       id: 4,
-      dataContent: {
-        image: pieChart,
-        pink: 'Mental Disorders',
-        grey: 'Diabetes',
-        palePurple: 'Cardiovascular diseases',
-        teal: 'Chronic respiratory disease',
-        blue: 'Cancer',
+      options: {  scales: {
+        x: {
+          ticks: {display: false},    
+          grid: {
+            display: false,
+            drawBorder: false,
+          },
+        },
+        y: {
+          ticks: {display: false},
+          grid: {
+            display: false,
+            drawBorder: false,
+          },
+        },
       },
-      text: 'In 10\u00b9\u00b2 US$',
+    plugins: {
+            title: {
+                text: ['Discrimination deters', 'seeking care'],
+                color: '#283592',
+                position: 'top',
+                align: 'center',
+                display: true,
+                padding: {
+                    bottom: 21
+                },
+                font: {
+                    size: 16,
+                    weight: 'bold',
+                    lineHeight: 1.25
+                }
+            },
+            legend: {
+            labels: {
+                generateLabels: function(chart) {
+                var labels = chart.data.labels;
+                var dataset = chart.data.datasets[0];
+                var legend = labels.map(function(label, index) {
+                   return {
+                      datasetIndex: 0,
+                      fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
+                      strokeStyle: dataset.borderColor && dataset.borderColor[index],
+                      lineWidth: dataset.borderWidth,
+                      text: label
+                   }
+                });
+                return legend;
+             },
+             boxWidth: 10, 
+             boxHeight: 10,
+            },
+            position: 'bottom',
+            align: "start",
+            },
+           
+             datalabels: {
+                font: {
+                    weight: 'bold'
+                },
+                formatter: function(value, context) {
+                  return  value + '%';
+                }
+              }
+    },
+    indexAxis: 'y',},
+      data: { labels: ["Non-LGBTQIA+", "LGBTQIA+"],
+      datasets: [{
+          data: [7,23], 
+          datalabels: {color:"white"},
+          backgroundColor: [ '#BCAEC6', '#EC1E7B']
+      }],},
       source:
         'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
     },

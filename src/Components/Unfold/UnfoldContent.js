@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Data from "../Data/Data";
+import DataWrapper from '../Data/DataWrapper';
 import styled from "styled-components";
 import { UnfoldContext } from "./Unfold";
 
@@ -67,7 +67,7 @@ function UnfoldContent({ id, text }) {
         <UnfoldButton>Request a call</UnfoldButton>
       </div>
       <div>
-        <Data />
+        <DataWrapper unfoldId={id}/>
       </div>
     </UnfoldContentDiv>
   );
