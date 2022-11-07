@@ -24,8 +24,8 @@ function App() {
             <>
               <Unfold.Wrapper {...child}>
                 <Unfold.Header {...child} />
-              </Unfold.Wrapper>
                 <Unfold.Content {...child} />
+              </Unfold.Wrapper>
             </>
           ))}
        </Unfold>
