@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Chart as ChartJS, BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { barData, barOptions } from "../utils/chartConfig";
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 /**
  * The Chart Component
@@ -74,7 +75,7 @@ const StatsChart = () => {
       </Container>
       <Text>Respondents ranked 8-10 on a 10-point scale, %</Text>
       <Container className="chart__statistics">
-        <Bar type='bar' options={barOptions} data={barData} width="100%"></Bar>
+        <Bar type='horizontalBar' data={barData} plugins={[ChartDataLabels]} options={barOptions} width="100%" height="317px"></Bar>
       </Container>
       <InfoLink>i</InfoLink>
     </Container>

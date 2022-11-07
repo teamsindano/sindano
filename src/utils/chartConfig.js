@@ -19,8 +19,19 @@ const numbers = data.chartStats.map((d) => {
   return d.number;
 });
 
+export const barData = {
+  labels: labels,
+  datasets: [
+    {
+      data: numbers,
+      backgroundColor: theme.colors.default_component_blue,
+      barThickness: 12,
+    },
+  ],
+};
+
 export const barOptions = {
-    color: theme.colors.default_text_color,
+    maintainAspectRatio: false,
     indexAxis: "y",
     elements: {
       bar: {
@@ -43,11 +54,16 @@ export const barOptions = {
           },
         },
       },
+      datalabels: {
+        anchor: 'end',
+        align: 'right',
+        color: `${theme.colors.default_text_color}`,
+      },
     },
     scales: {
       xAxis: {
         ticks:{
-          beginAtZero: false,
+          display: false,
         },
         grid: {
           display: true,
@@ -62,6 +78,7 @@ export const barOptions = {
           beginAtZero: true,
           stepSize: 1,
           color: theme.colors.default_text_color,
+          padding: 8,
         },
         grid: {
           display: true,
@@ -72,49 +89,5 @@ export const barOptions = {
         },
       },
     },
+
   };
-
-export const barData = {
-  labels: labels,
-  datasets: [
-    {
-      data: numbers,
-      backgroundColor: theme.colors.default_component_blue,
-    },
-  ],
-};
-
-// export const config = {
-//   options: {
-//     elements: {
-//       bar: {
-//         borderRadius: 2,
-//       },
-//     },
-//     plugins: {
-//       title: {
-//         display: false,
-//       },
-//       legend: false,
-//     },
-//     indexAxis: "y",
-//     scales: {
-//       xAxis: {
-//         grid: {
-//           display: true,
-//           drawOnChartArea: false,
-//           drawBorder: false,
-//           drawTicks: false,
-//         },
-//       },
-//       yAxis: {
-//         grid: {
-//           display: true,
-//           drawOnChartArea: false,
-//           drawBorder: false,
-//           drawTicks: false,
-//         },
-//       },
-//     },
-//   },
-// };
