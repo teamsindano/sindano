@@ -8,6 +8,7 @@ import { theme } from "../Components/Theme";
  * @author [Sam](https://github.com/Samm96)
  *
  * look at this for how to use Chart.js <https://www.chartjs.org/docs/latest/getting-started/usage.html>
+ * <https://react-chartjs-2.js.org/docs/migration-to-v4/>
  */
 
 const labels = data.chartStats.map((d) => {
@@ -19,11 +20,11 @@ const numbers = data.chartStats.map((d) => {
 });
 
 export const barOptions = {
+    color: theme.colors.default_text_color,
     indexAxis: "y",
     elements: {
       bar: {
         borderRadius: 2,
-        barThickness: 12,
       },
     },
     responsive: true,
@@ -31,7 +32,17 @@ export const barOptions = {
       title: {
         display: false,
       },
-      legend: false,
+      legend: {
+        display: false,
+        labels: {
+          font: {
+            family: `${theme.fonts.text.font_family[0]}`,
+            weight: `${theme.fonts.text.weights.normal}`,
+            size: 12,
+            lineHeight: "14px",
+          },
+        },
+      },
     },
     scales: {
       xAxis: {
@@ -50,12 +61,14 @@ export const barOptions = {
           autoSkip: false,
           beginAtZero: true,
           stepSize: 1,
+          color: theme.colors.default_text_color,
         },
         grid: {
           display: true,
           drawOnChartArea: false,
           drawBorder: false,
           drawTicks: false,
+          color: theme.colors.default_text_color,
         },
       },
     },
@@ -67,12 +80,6 @@ export const barData = {
     {
       data: numbers,
       backgroundColor: theme.colors.default_component_blue,
-      font: {
-        family: `${theme.fonts.text.font_family[0]}`,
-        weight: `${theme.fonts.text.weights.normal}`,
-        size: 12,
-        lineHeight: 14,
-      },
     },
   ],
 };

@@ -74,7 +74,7 @@ const StatsChart = () => {
       </Container>
       <Text>Respondents ranked 8-10 on a 10-point scale, %</Text>
       <Container className="chart__statistics">
-        <Bar type='bar' options={barOptions} data={barData} width="785px"></Bar>
+        <Bar type='bar' options={barOptions} data={barData} width="100%"></Bar>
       </Container>
       <InfoLink>i</InfoLink>
     </Container>
