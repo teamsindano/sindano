@@ -1,9 +1,8 @@
-
-import Unfold from './Unfold/Unfold';
 import React from 'react';
 import Theme from "./Theme";
 import { data } from '../utils/data';
 import styled from "styled-components";
+import Unfold from './Unfold/Unfold';
 
 
 
@@ -15,24 +14,21 @@ const Page = styled.div`
 
 function App() {
 
-  const [openedItem, setOpenedItem] = React.useState(null);
-
-    const toggleComponent = (id, openedItem) => {
-        if (id === openedItem) {
-          setOpenedItem(null);
-        } else {
-          setOpenedItem(id);
-        } 
-    }
-
   return (
    
     <Theme>
         <Page>
 
-        {data.whatWeDoCard.map((item) => 
-          <Unfold key={item.id} id={item.id} cardTitle={item.cardTitle} text={item.text} openedItem={openedItem} toggleComponent={toggleComponent}/>
-        )}
+        <Unfold>
+          {data.whatWeDoCard.map((child) => (
+            <>
+              <Unfold.Wrapper {...child}>
+                <Unfold.Header {...child} />
+              </Unfold.Wrapper>
+                <Unfold.Content {...child} />
+            </>
+          ))}
+       </Unfold>
 
         </Page>
       </Theme>

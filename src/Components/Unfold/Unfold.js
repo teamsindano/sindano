@@ -1,145 +1,27 @@
-import { ReactComponent as Arrow } from '../../Images/downward-arrow.svg';
-import React from 'react';
-import Data from '../Data/Data';
-import styled from "styled-components";
+import React, { createContext, useState } from "react";
+import UnfoldHeader from "./UnfoldHeader";
+import UnfoldContent from "./UnfoldContent";
+import UnfoldWrapper from "./UnfoldWrapper";
 
 
-const HeaderButton = styled.button`
-    width: 28px;
-    height: 14px;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    background: none;
-    align-self: center;
-    transition: 0.5s;
-    ${props => {
-        if (props.openedItem === props.id) {
-        return `
-            transform-origin: center;
-            transform: rotate(-180deg);
-            margin-top: 10px;
-        `;
-        } else {
-        return ``;
-        }
-    }}
-`;
+export const UnfoldContext = createContext();
 
-    const UnfoldWrapper = styled.div`
-        margin: 0;
-        padding: 40px;
-        background: #283592;
-        border-radius: 20px;
-        margin-bottom: 40px;
-        &:hover ${HeaderButton} {
-            margin-top: 10px;
-        }
-    `;
+function Unfold({ children }) {
+  const [activeItem, setActiveItem] = useState();
 
-    const Header = styled.div`
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
-    `;
+  const handleClick = (itemId) => {
+    setActiveItem(itemId);
+  };
 
-    const HeaderTitle = styled.h3`
-        font-family: ${props => props.theme.fonts.text.font_family[0]};
-        padding: 0;
-        margin: 0;
-        font-weight: 800;
-        font-size: 20px;
-        line-height: 1.5;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-image: ${props => props.theme.gradients.text};
-    `;
-
-    const UnfoldContent = styled.div`
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        display: flex;
-        flex-direction: row;
-        transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-        ${props => {
-            if (props.openedItem === props.id) {
-            return `
-                opacity: 1;
-                max-height: 1000px;
-                margin-top: 32px;
-                transition: max-height 1s ease-in-out;
-            `;
-            } else {
-            return ``;
-            }
-        }}
-    `;
-
-    const UnfoldText = styled.p`
-        margin: 0;
-        padding: 0;
-        font-family: ${props => props.theme.fonts.text.font_family[0]};
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 1.25;
-        color: #fff;
-        margin-bottom: 16px;
-    `;
-
-    const UnfoldButton = styled.button`
-        font-family: ${props => props.theme.fonts.text.font_family[0]};
-        white-space: nowrap;
-        width: 170px;
-        height: 50px;
-        color: #fff;
-        background-color: #EC1E7B;
-        padding: 15px 28px;
-        border: none;
-        margin: 0;
-        margin-top: 52px;
-        border-radius: 12px;
-        font-weight: 700;
-        font-size: 16px;
-        line-height: 1.25;
-        cursor: pointer;
-        &:hover {
-            background: ${props => props.theme.gradients.button_hover};
-        }
-    `;
-
-
-function Unfold({id, toggleComponent, openedItem, cardTitle, text})  {
-
-    
-
-    const handleClick = (event) => {
-        event.preventDefault();
-        toggleComponent(id, openedItem);
-    }
-
-    return (
-        <UnfoldWrapper onClick={handleClick}>
-            <Header>
-                <HeaderTitle>{cardTitle}</HeaderTitle>
-                <HeaderButton openedItem={openedItem} id={id}><Arrow/></HeaderButton>
-            </Header>
-            <UnfoldContent openedItem={openedItem} id={id}>
-                <div>
-                    {text.map((paragraph) => {
-                        return <UnfoldText>{paragraph}</UnfoldText>
-                    })}
-                    <UnfoldButton>Request a call</UnfoldButton>
-                </div>
-                <div>
-                    <Data/>
-                </div>
-            </UnfoldContent>
-        </UnfoldWrapper>
-    );
+  return (
+    <UnfoldContext.Provider value={{ activeItem, handleClick }}>
+      {children}
+    </UnfoldContext.Provider>
+  );
 }
+
+Unfold.Wrapper = UnfoldWrapper;
+Unfold.Header = UnfoldHeader;
+Unfold.Content = UnfoldContent;
 
 export default Unfold;

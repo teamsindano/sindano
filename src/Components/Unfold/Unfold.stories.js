@@ -1,18 +1,25 @@
-import Unfold from './Unfold';
-import { data } from '../../utils/data';
+import Unfold from "./Example";
+import { data } from "../../utils/data";
 
 export default {
   /* 👇 The title prop is optional.
-  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
-  * to learn how to generate automatic titles
-  */
-  title: 'Unfold',
+   * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+   * to learn how to generate automatic titles
+   */
+  title: "Example",
   component: Unfold,
 };
 
-const Template = (args) => <Unfold {...args}/>;
+const Template = ({ children, ...args }) => (
+  <Unfold {...args}>{children}</Unfold>
+);
 
-export const UnfoldComponent= Template.bind({});
+export const UnfoldComponent = Template.bind({});
 UnfoldComponent.args = {
-  text: data.whatWeDoCard[0].text,
+  children: data.whatWeDoCard.map((child) => (
+    <Unfold.Wrapper id={child.id}>
+      <Unfold.Header id={child.id} cardTitle={child.cardTitle} />
+      <Unfold.Content id={child.id} text={child.text} />
+    </Unfold.Wrapper>
+  )),
 };
