@@ -22,6 +22,11 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     margin: 0 auto 0;
     padding: 24px 0 0;
   }
+
+  &.chart__statistics {
+    margin: 15px auto 0;
+    padding: 0 0 5px;
+  }
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`

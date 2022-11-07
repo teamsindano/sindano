@@ -31,63 +31,68 @@ export const barData = {
 };
 
 export const barOptions = {
-    maintainAspectRatio: false,
-    indexAxis: "y",
-    elements: {
-      bar: {
-        borderRadius: 2,
+  maintainAspectRatio: false,
+  indexAxis: "y",
+  elements: {
+    bar: {
+      borderRadius: 2,
+    },
+  },
+  responsive: true,
+  plugins: {
+    title: {
+      display: false,
+    },
+    legend: {
+      display: false,
+      labels: {
+        font: {
+          family: `${theme.fonts.text.font_family[0]}`,
+          weight: `${theme.fonts.text.weights.normal}`,
+          size: 12,
+          lineHeight: "14px",
+        },
       },
     },
-    responsive: true,
-    plugins: {
-      title: {
+    datalabels: {
+      anchor: "end",
+      align: "right",
+      color: `${theme.colors.default_text_color}`,
+    },
+  },
+  layout: {
+    padding: {
+      right: 34,
+      left: 34,
+    },
+  },
+  scales: {
+    xAxis: {
+      ticks: {
         display: false,
       },
-      legend: {
-        display: false,
-        labels: {
-          font: {
-            family: `${theme.fonts.text.font_family[0]}`,
-            weight: `${theme.fonts.text.weights.normal}`,
-            size: 12,
-            lineHeight: "14px",
-          },
-        },
-      },
-      datalabels: {
-        anchor: 'end',
-        align: 'right',
-        color: `${theme.colors.default_text_color}`,
+      grid: {
+        display: true,
+        drawOnChartArea: false,
+        drawBorder: false,
+        drawTicks: false,
       },
     },
-    scales: {
-      xAxis: {
-        ticks:{
-          display: false,
-        },
-        grid: {
-          display: true,
-          drawOnChartArea: false,
-          drawBorder: false,
-          drawTicks: false,
-        },
+    yAxis: {
+      ticks: {
+        autoSkip: false,
+        beginAtZero: true,
+        stepSize: 1,
+        color: theme.colors.default_text_color,
+        padding: 8,
       },
-      yAxis: {
-        ticks:{
-          autoSkip: false,
-          beginAtZero: true,
-          stepSize: 1,
-          color: theme.colors.default_text_color,
-          padding: 8,
-        },
-        grid: {
-          display: true,
-          drawOnChartArea: false,
-          drawBorder: false,
-          drawTicks: false,
-          color: theme.colors.default_text_color,
-        },
+      grid: {
+        display: true,
+        drawOnChartArea: false,
+        drawBorder: false,
+        drawTicks: false,
+        color: theme.colors.default_text_color,
       },
     },
-
-  };
+  },
+};
