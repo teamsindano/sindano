@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import Chart from "chart.js/auto";
-import { config } from "../utils/chartConfig";
+import { Chart as ChartJS, BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip } from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import { barData, barOptions } from "../utils/chartConfig";
 
 /**
  * The Chart Component
@@ -53,38 +54,12 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   }
 `;
 
-const Bar = styled.span`
-  margin: 0 8px 0;
-  background-color: ${(props) =>
-    `${props.theme.colors.default_component_blue}`};
-  border-radius: 2px;
-  height: 12px;
-  width: ${(props) => `${props.size.currentWidth}`};
-  grid-column: 2;
-`;
-
-const List = styled.ul`
-  width: fit-content;
-  margin: 40px auto 0;
-  padding: 0 0 46px;
-  display: grid;
-  grid-template-columns: fit-content;
-  grid-gap: 14px;
-`;
-
-const Item = styled.li`
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-`;
-
 const InfoLink = styled.a`
   color: ${(props) => `${props.theme.colors.default_button_pink}`};
   border: ${(props) => `2px solid ${props.theme.colors_default_button_pink}`};
 `;
 
-const myChart = new Chart(document.getElementById("statsChart"), config);
+ChartJS.register(BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip);
 
 const StatsChart = () => {
   return (
@@ -99,7 +74,7 @@ const StatsChart = () => {
       </Container>
       <Text>Respondents ranked 8-10 on a 10-point scale, %</Text>
       <Container className="chart__statistics">
-        <canvas id="statsChart" width="785px"></canvas>
+        <Bar type='bar' options={barOptions} data={barData} width="785px"></Bar>
       </Container>
       <InfoLink>i</InfoLink>
     </Container>
