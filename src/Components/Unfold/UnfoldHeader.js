@@ -12,6 +12,9 @@ const HeaderButton = styled.button`
   background: none;
   align-self: center;
   transition: 0.5s;
+  :hover {
+    margin-top: 10px;
+  }
   ${(props) => {
     if (props.openedItem === props.id) {
       return `

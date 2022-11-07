@@ -23,7 +23,10 @@ const DataBlock = ({data}) => {
     return (
         <>
         <DataFigure>{data.dataTitle}</DataFigure>
-        <DataText>{data.dataContent}</DataText> 
+        {data.dataContent.map((content) => {
+           return <DataText>{content}</DataText> 
+        }) 
+        }
         </>
     )
 

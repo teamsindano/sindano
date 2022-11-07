@@ -2,26 +2,13 @@ import React, { useContext } from "react";
 import DataWrapper from '../Data/DataWrapper';
 import styled from "styled-components";
 import { UnfoldContext } from "./Unfold";
+import { AnimatePresence, motion } from "framer-motion";
 
-const UnfoldContentDiv = styled.div`
-  max-height: 0;
-  opacity: 0;
+const UnfoldContentDiv = styled(motion.div)`
   overflow: hidden;
   display: flex;
   flex-direction: row;
   transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-  ${(props) => {
-    if (props.openedItem === props.id) {
-      return `
-                opacity: 1;
-                max-height: 1000px;
-                margin-top: 32px;
-                transition: max-height 1s ease-in-out;
-            `;
-    } else {
-      return ``;
-    }
-  }}
 `;
 
 const UnfoldText = styled.p`
@@ -59,7 +46,37 @@ const UnfoldButton = styled.button`
 function UnfoldContent({ id, text }) {
   const { activeItem } = useContext(UnfoldContext);
   return (
-    <UnfoldContentDiv openedItem={activeItem} id={id}>
+    <AnimatePresence>
+    { (activeItem === id) && (<UnfoldContentDiv key="id"
+        initial={{
+                height: 0,
+                opacity: 0,
+              }}
+              animate={{
+                height: "auto",
+                opacity: 1,
+                transition: {
+                  height: {
+                    duration: 1,
+                  },
+                  opacity: {
+                    duration: 1,
+                  },
+                },
+              }}
+              exit={{
+                height: 0,
+                opacity: 0,
+                transition: {
+                  height: {
+                    duration: 1,
+                  },
+                  opacity: {
+                    duration: 1,
+                  },
+                },
+              }}
+        >
       <div>
         {text.map((paragraph) => {
           return <UnfoldText>{paragraph}</UnfoldText>;
@@ -69,7 +86,9 @@ function UnfoldContent({ id, text }) {
       <div>
         <DataWrapper unfoldId={id}/>
       </div>
-    </UnfoldContentDiv>
+    </UnfoldContentDiv>)
+    }
+  </AnimatePresence>
   );
 }
 

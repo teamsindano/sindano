@@ -7,9 +7,13 @@ import UnfoldWrapper from "./UnfoldWrapper";
 export const UnfoldContext = createContext();
 
 function Unfold({ children }) {
-  const [activeItem, setActiveItem] = useState();
+  const [activeItem, setActiveItem] = useState(null);
 
   const handleClick = (itemId) => {
+    if (itemId === activeItem) {
+      setActiveItem(null)
+      return;
+    }
     setActiveItem(itemId);
   };
 
