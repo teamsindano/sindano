@@ -5,7 +5,6 @@ import Teammember from '../Components/Teammember';
  * The Team Member Stories Component
  * @author [Sam](https://github.com/Samm96)
  *
- * React template to create team members.
  */
 
 export default {
