@@ -75,6 +75,7 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
 const Team = () => {
   return (
     <Container>
+      {/* replace with Content component*/}
       <Header>Our Story</Header>
       <Container className="team__top">
         <Container className="team__story-container">
