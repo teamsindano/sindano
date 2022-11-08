@@ -14,7 +14,7 @@ const Section = styled.section`
 
 const Title = styled.h2`
   margin: 0;
-  font: ${(props) => props.theme.fonts.header.font_family[0]};
+  font: ${(props) => props.theme.fonts.header.font_family};
   font-size: ${(props) => props.theme.fonts.header.sizes.header_s_default};
   font-weight: ${(props) => props.theme.fonts.header.weight};
   color: ${(props) => props.theme.colors.default_component_blue};
@@ -29,11 +29,12 @@ const Paragraphs = styled.div`
 
 const Paragraph = styled.p`
   margin: 0;
-  font: ${(props) => props.theme.fonts.text.font_family[0]};
+  font: ${(props) => props.theme.fonts.text.font_family};
   font-size: ${(props) => props.theme.fonts.text.sizes.text_l_default};
   font-weight: ${(props) => props.theme.fonts.text.weights.normal};
   line-height: 1.5;
 `;
+
 const Content = ({ header, details }) => {
   return (
     <Section>
