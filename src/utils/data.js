@@ -8,7 +8,7 @@ import pieChart from "../images/piechart.svg";
 
 export const data = {
   chartStats: [
-    { content: "Covered by my health insurance", number: 78 },
+    { content: "Covered by my health insurance plan", number: 78 },
     { content: "Cost I have to pay", number: 74 },
     { content: "Past experience was good", number: 74 },
     {

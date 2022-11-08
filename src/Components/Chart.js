@@ -12,6 +12,8 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
  * look at this for how to use Chart.js <https://www.chartjs.org/docs/latest/getting-started/usage.html>
  */
 
+ ChartJS.register(BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip);
+
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
   width: 785px;
@@ -26,8 +28,8 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   }
 
   &.chart__statistics {
-    margin: 15px auto 0;
-    padding: 0 0 23px;
+    margin: 20px auto 0;
+    padding: 0 0 47px;
   }
 `;
 
@@ -49,20 +51,23 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   }
 `;
 
-// wait for response from Juila
-const InfoLink = styled.a`
+const InfoLink = styled.button`
   color: ${(props) => `${props.theme.colors.default_button_pink}`};
-  font-weight: ${(props) => `${props.theme.fonts.text.weights.semi_bold}`};
-  width: 16px;
-  height: 20px;
+  font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
+  font-size: 10px;
+  width: 17px;
+  height: 16px;
+  padding: 0 0 2px 0;
   border: 3px solid;
-  padding: 0 2px;
   border-radius: 50%;
-  text-align: center;
   position: absolute;
-`;
+  bottom: 20px;
+  right: 25px;
 
-ChartJS.register(BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip);
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 const StatsChart = () => {
   return (

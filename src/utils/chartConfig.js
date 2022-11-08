@@ -25,7 +25,9 @@ export const barData = {
     {
       data: numbers,
       backgroundColor: theme.colors.default_component_blue,
-      barThickness: 12,
+      barThickness: 10,
+      borderRadius: 2,
+      borderSkipped: false,
     },
   ],
 };
@@ -33,11 +35,6 @@ export const barData = {
 export const barOptions = {
   maintainAspectRatio: false,
   indexAxis: "y",
-  elements: {
-    bar: {
-      borderRadius: 2,
-    },
-  },
   responsive: true,
   plugins: {
     title: {
@@ -62,7 +59,7 @@ export const barOptions = {
   },
   layout: {
     padding: {
-      right: 34,
+      right: 45,
       left: 34,
     },
   },
