@@ -78,6 +78,7 @@ const Team = () => {
       <Header>Our Story</Header>
       <Container className="team__top">
         <Container className="team__story-container">
+          {/* replace with Content component */}
           <Text>
             Sindano Health was founded by Tara Marshall-Hill to address the
             problems she faced in finding appropriate mental healthcare.
