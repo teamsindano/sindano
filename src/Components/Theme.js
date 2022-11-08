@@ -13,7 +13,7 @@ import { ThemeProvider } from "styled-components";
 export const theme = {
   colors: {
     primary_background: "#f5f5f5",
-    secondary_background: "rgba(188, 174, 198, 0.8)",
+    secondary_background: "rgba(188, 174, 198, 0.5)",
     default_text_color: "#000000",
     alt_text_white: "#ffff",
     default_button_pink: "#ec1e7b",

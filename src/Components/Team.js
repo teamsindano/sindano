@@ -12,12 +12,37 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   width: 100%;
   height: fit-content;
   margin: 0;
-  padding: 80px 0 0 80px;
+  padding: 80px 80px 0 80px;
+
+  &.team__top {
+    background-color: transparent;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 
   &.team__story-container {
     background-color: transparent;
     width: 550px;
     padding: 0;
+    grid-column: 1;
+  }
+
+  &.team__founder {
+    background-color: transparent;
+    width: 455px;
+    margin: 0;
+    padding: 0;
+    grid-column: 2;
+    justify-self: end;
+  }
+
+  &.team__founder-quote {
+    background-color: ${(props) => `${props.theme.colors.pink_opacity}`};
+    width: 455px;
+    margin: 0;
+    padding: 0;
+    border-radius: 20px;
   }
 `;
 
@@ -36,26 +61,53 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   font-size: ${(props) => `${props.theme.fonts.text.sizes.text_l_default}`};
   line-height: 30px;
   margin: 32px 0 0;
+
+  &.team__founder-quote-text {
+    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
+    font-style: ${(props) => `${props.theme.fonts.text.styles}`};
+    width: 407px;
+    line-height: 22px;
+    margin: 0 auto 0;
+    padding: 24px 0 24px 24px;
+  }
 `;
 
 const Team = () => {
   return (
     <Container>
       <Header>Our Story</Header>
-      <Container className="team__story-container">
-        <Text>
-          Sindano Health was founded by Tara Marshall-Hill to address the
-          problems she faced in finding appropriate mental healthcare. Motivated
-          to create a solution to the months-long process of what felt like "a
-          shot in the dark" to locate an&nbsp;appropriate and safe therapist for
-          her family's needs, Tara&nbsp;and her team designed a solution.
-        </Text>
-        <Text>
-          Sindano Health's insights provide greater patient experience
-          visibility for all stakeholders to close the knowledge
-          and&nbsp;competency gaps in mental healthcare for
-          LGBTQ+&nbsp;communities.
-        </Text>
+      <Container className="team__top">
+        <Container className="team__story-container">
+          <Text>
+            Sindano Health was founded by Tara Marshall-Hill to address the
+            problems she faced in finding appropriate mental healthcare.
+            Motivated to create a solution to the months-long process of what
+            felt like "a shot in the dark" to locate an&nbsp;appropriate and
+            safe therapist for her family's needs, Tara&nbsp;and her team
+            designed a solution.
+          </Text>
+          <Text>
+            Sindano Health's insights provide greater patient experience
+            visibility for all stakeholders to close the knowledge
+            and&nbsp;competency gaps in mental healthcare for
+            LGBTQ+&nbsp;communities.
+          </Text>
+        </Container>
+        <Container className="team__founder">
+          {/* Add team-member component here for founder */}
+          <Container className="team__founder-quote">
+            <Text className="team__founder-quote-text">
+              "As a queer Black woman, married to a queer Black&nbsp;nonbinary
+              person, with a queer Black autistic daughter, I'm creating the
+              solution my family needs. As&nbsp;it&nbsp;turns out, it's also the
+              solution our communities&nbsp;need. Sindano Health exists so no
+              other&nbsp;queer person from a racially marginalized background
+              ever has to check out of the continuum of&nbsp;care due to lack of
+              access to appropriate mental healthcare. Sindano Health exists
+              because we all deserve to thrive."
+            </Text>
+          </Container>
+        </Container>
       </Container>
     </Container>
   );
