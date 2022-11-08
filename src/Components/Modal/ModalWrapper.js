@@ -1,12 +1,13 @@
 import React, { createContext, useState} from "react";
 import styled from "styled-components";
+import { AnimatePresence, motion } from "framer-motion";
 
 /**
  * Modal Wrapper Component
  * @author [Peter Staal](https://github.com/pstaal)
  */
 
-const ModalPage = styled.div`
+const ModalPage = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +26,7 @@ const ModalPage = styled.div`
 
 const ModalContainer = styled.div`
     width: 619px;
+    padding: 40px;
     background-color: #fff;
     color: #000;
     border-radius: 20px;
@@ -33,11 +35,11 @@ const ModalContainer = styled.div`
     overflow: hidden;
 `;
 
-const ModalContext = createContext();
+export const ModalContext = createContext();
 
 function ModalWrapper({ children }) {
 
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     const openModal = () => {
      setIsOpen(true)
@@ -49,11 +51,39 @@ function ModalWrapper({ children }) {
   
   return (
     <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
-        <ModalPage>
-            <ModalContainer>
-                {children}
-            </ModalContainer>
-        </ModalPage>
+        <AnimatePresence>
+            {isOpen && (<ModalPage
+                key="modal"
+                initial={{ opacity: 0, visibility: 'hidden'}}
+                animate={{ 
+                    opacity: 1, 
+                    visibility: 'visible',
+                    transition: {
+                        visibility: {
+                        duration: 1,
+                        },
+                        opacity: {
+                        duration: 1,
+                        },
+                        }
+                    }}
+                exit={{
+                    opacity: 0, 
+                    visibility: 'hidden',
+                    transition: {
+                        visibility: {
+                        duration: 1,
+                        },
+                        opacity: {
+                        duration: 1,
+                        },
+                    }
+                    }}>
+                <ModalContainer>
+                    {children}
+                </ModalContainer>
+            </ModalPage>)}
+        </AnimatePresence>
     </ModalContext.Provider>
   );
 }
