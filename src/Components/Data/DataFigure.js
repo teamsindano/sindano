@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const DataFigure = styled.h2`
+const DataFigureDiv = styled.h2`
 font-family: ${props => props.theme.fonts.header.font_family[0]};
 width: max-content;
 font-weight: 700;
@@ -18,11 +18,11 @@ line-height: 1.25;
 color: #283592;
 `;
 
-const DataBlock = ({data}) => {
+const DataFigure= ({data}) => {
      
     return (
         <>
-        <DataFigure>{data.dataTitle}</DataFigure>
+        <DataFigureDiv>{data.dataTitle}</DataFigureDiv>
         {data.dataContent.map((content) => {
            return <DataText>{content}</DataText> 
         }) 
@@ -32,4 +32,4 @@ const DataBlock = ({data}) => {
 
 };
 
-export default DataBlock;
+export default DataFigure;

@@ -1,8 +1,10 @@
 import React, { useContext } from "react";
-import DataWrapper from '../Data/DataWrapper';
+import Data from '../Data/Data';
 import styled from "styled-components";
 import { UnfoldContext } from "./Unfold";
 import { AnimatePresence, motion } from "framer-motion";
+import renderData from "../../utils/renderData";
+import DataButton from "../Data/DataButton";
 
 const UnfoldContentDiv = styled(motion.div)`
   overflow: hidden;
@@ -84,7 +86,10 @@ function UnfoldContent({ id, text }) {
         <UnfoldButton>Request a call</UnfoldButton>
       </div>
       <div>
-        <DataWrapper unfoldId={id}/>
+        <Data>
+          {renderData(id)}
+          <DataButton/>
+        </Data>
       </div>
     </UnfoldContentDiv>)
     }
