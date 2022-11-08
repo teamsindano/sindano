@@ -1,11 +1,14 @@
-import './App.css';
-import About from './About';
+import "./App.css";
+import Theme from "./Theme";
+import { theme } from "./Theme";
 
 function App() {
   return (
-    <div className='page'>
-      <About />
-    </div>
+    <>
+      <Theme>
+        <div className="page"></div>
+      </Theme>
+    </>
   );
 }
 
