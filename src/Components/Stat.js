@@ -53,8 +53,15 @@ const Icon = styled.button`
   right: 20px;
 `;
 
+const SourceContainer = styled.div`
+  position: absolute;
+  top: 290px;
+`;
+
 const Stat = ({ number, caption }) => {
   const [isSourceOpen, setIsSourceOpen] = React.useState(false);
+  const sourceInfo =
+    'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S.';
 
   function handleIconClick() {
     setIsSourceOpen(!isSourceOpen);
@@ -65,7 +72,11 @@ const Stat = ({ number, caption }) => {
       <Number>{number}</Number>
       <Caption>{caption}</Caption>
       <Icon onClick={handleIconClick}> ⓘ </Icon>
-      {isSourceOpen && <Source />}
+      {isSourceOpen && (
+        <SourceContainer>
+          <Source info={sourceInfo} />
+        </SourceContainer>
+      )}
     </Container>
   );
 };
