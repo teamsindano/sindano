@@ -16,8 +16,6 @@ const Container = styled.figure`
   justify-content: flex-start;
   align-items: center;
   padding: 12px;
-  position: absolute;
-  top: 290px;
   z-index: 10;
 `;
 
