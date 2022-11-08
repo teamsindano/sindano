@@ -38,7 +38,7 @@ const Form = styled.form`
 `
 
 const ModalLabel = styled.label`
-    color: ${props => (props.error === '') ? '#000' : '#FF1A1A'};
+    color: ${props => (props.error === '' || props.error === undefined) ? '#000' : '#FF1A1A'};
     padding: 0;
     margin: 0;
     width: 100%;
@@ -52,7 +52,7 @@ const ModalLabel = styled.label`
 const ModalInput = styled.input`
     width: 100%;
     background: #FFFFFF;
-    border: 1px solid ${props => (props.error === '') ? '#000' : '#FF1A1A'};
+    border: 1px solid ${props => (props.error === '' || props.error === undefined) ? '#000' : '#FF1A1A'};
     border-radius: 12px;
     padding: 15px 20px;
     box-sizing: border-box;
@@ -115,19 +115,19 @@ function ModalForm() {
                 <ModalFormIcon src={linkedinIcon}/>
                 <ModalFormText>Auto-fill with LinkedIn</ModalFormText>
             </ModalFormTitle>
-        <ModalLabel error={errors.name} htmlFor="name">Name {errors.name !== '' ? `(${errors.name})` : ""}</ModalLabel>
+        <ModalLabel error={errors.name} htmlFor="name">Name {(errors.name !== '' && errors.name !== undefined) ? `(${errors.name})` : ""}</ModalLabel>
         <ModalInput error={errors.name} required type="text" id="name" name="name" placeholder="Tara Marshall-Hill" onChange={handleChange} value={values.name || ""}/>
         <ModalInputContainer>
             <ModalInputContainerDiv>
-                <ModalLabel error={errors.company} htmlFor="company">Company {errors.company !== '' ? `(${errors.company})` : ""}</ModalLabel>
+                <ModalLabel error={errors.company} htmlFor="company">Company {(errors.company !== '' && errors.company !== undefined) ? `(${errors.company})` : ""}</ModalLabel>
                 <ModalInput error={errors.company} required type="text" id="company" name="company" placeholder="Sindano Health" onChange={handleChange} value={values.company || ""}/>
             </ModalInputContainerDiv>
             <ModalInputContainerDiv>
-                <ModalLabel error={errors.title} htmlFor="title">Title {errors.title !== '' ? `(${errors.title})` : ""}</ModalLabel>
+                <ModalLabel error={errors.title} htmlFor="title">Title {(errors.title !== '' && errors.title !== undefined) ? `(${errors.title})` : ""}</ModalLabel>
                 <ModalInput error={errors.title} required type="text" id="title" name="title" placeholder="Founder" onChange={handleChange} value={values.title || ""}/>
             </ModalInputContainerDiv>
         </ModalInputContainer>
-        <ModalLabel error={errors.email} htmlFor="email">Email {errors.email !== '' ? `(${errors.email})` : ""}</ModalLabel>
+        <ModalLabel error={errors.email} htmlFor="email">Email {(errors.email !== '' && errors.email !== undefined) ? `(${errors.email})` : ""}</ModalLabel>
         <ModalInput error={errors.email} required type="email" id="email" name="email" placeholder="TaraMarshallHill@sindanohealth.com" onChange={handleChange} value={values.email || ""}/>
             <ModalInputContainer>
                 <ModalSubmitButton type="submit">Schedule Call</ModalSubmitButton>
