@@ -1,12 +1,21 @@
-import "./App.css";
 import Theme from "./Theme";
-import { theme } from "./Theme";
+import styled from "styled-components";
+import ModalWrapper from "./Modal/ModalWrapper";
+
+
+const Page = styled.div`
+  width: 1280px;
+    margin: 0 auto;
+    padding: 0 80px;
+`;
 
 function App() {
   return (
     <>
       <Theme>
-        <div className="page"></div>
+        <Page>
+          <ModalWrapper/>
+        </Page>
       </Theme>
     </>
   );

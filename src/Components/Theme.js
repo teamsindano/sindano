@@ -33,7 +33,7 @@ export const theme = {
     },
 
     text: {
-      font_family: ["Open Source Sans", "sans-serif"],
+      font_family: ["Open Sauce Sans", "sans-serif"],
       sizes: {
         text_xs: "12px",
         text_s: "14px",
