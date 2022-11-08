@@ -30,7 +30,7 @@ const Photo = styled.img`
   width: 126px;
   height: 126px;
   object-fit: cover;
-  background-position: center;
+  object-position: center;
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
@@ -80,7 +80,7 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
   return (
     <div className="teammember">
       <Container>
-        <Photo src={photo || placeholder.photo} alt="Placeholder Img" />
+        <Photo src={photo || placeholder.photo} alt={name || placeholder.name} />
         <Container className="teammember__text-container">
           <Container className="teammember__name-container">
             <Name>{name || placeholder.name}</Name>
