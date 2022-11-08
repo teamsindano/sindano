@@ -8,21 +8,20 @@ import { data } from "../utils/data";
  * React template to create team members.
  */
 
-// note: remember to replace values with Theme.js props
-
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   width: 399px;
   display: flex;
 
   &.teammember__text-container {
+    font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
+    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
+    font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
+    line-height: 20px;
+    color: ${(props) => `${props.theme.colors.default_text_color}`};
     margin: 0 0 0 20px;
     max-width: 253px;
     flex-direction: column;
     justify-content: center;
-  }
-
-  &.teammember__name-container {
-    width: fit-content;
   }
 `;
 
@@ -35,23 +34,13 @@ const Photo = styled.img`
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
-  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
-  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
-  font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
-  line-height: 20px;
-  color: ${(props) => `${props.theme.colors.default_text_color}`};
-
   margin: 0;
   padding; 0;
 `;
 
 const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
-  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
-  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
   font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
-  line-height: 20px;
-  color: ${(props) => `${props.theme.colors.default_text_color}`};
-
+  width: fit-content;
   margin: 0 3px 0 0;
   padding; 0;
 
@@ -99,6 +88,7 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
               {pronouns || placeholder.pronouns}
             </Name>
           </Container>
+          {/* delete placeholder text, replace with logic underneath */}
           <Text>{placeholder.headline}</Text>
           {/* {headline.includes("and") ||
           headline.includes("-") ? (
