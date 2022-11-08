@@ -8,10 +8,8 @@ import styled from "styled-components";
  * Location with the group of Unfold components reside
  */
 
-// replace css values with Theme.js props
-
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  background-color: #f5f5f5;
+  background-color: ${(props) => `${props.theme.colors.primary_background}`};
   margin: 0;
   padding: 100px 0 40px 80px;
 
@@ -22,11 +20,11 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const Header = styled.h2`
-  font-family: "League Spartan", sans-serif;
-  font-size: 52px;
-  font-weight: 700;
+  font-family: ${(props) => `${props.theme.fonts.header.font_family}`};
+  font-size: ${(props) => `${props.theme.fonts.header.sizes.header_s_default}`};
+  font-weight: ${(props) => `${props.theme.fonts.header.weight}`};
   line-height: 52px;
-  color: #283592;
+  color: ${(props) => `${props.theme.colors.default_component_blue}`};
   margin: 0;
   padding: 0;
 `;
