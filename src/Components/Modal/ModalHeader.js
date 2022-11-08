@@ -20,12 +20,13 @@ const ModalHeaderDiv = styled.div`
 
 
 const ModalHeaderTitle = styled.h2`
+    font-family: ${(props) => props.theme.fonts.header.font_family[0]};
     padding: 0;
     margin: 0;
     font-weight: 700;
     font-size: 52px;
     line-height: 1;
-    color: #283592;
+    color: ${(props) => props.theme.colors.default_component_blue};
 `;
 
 const ModalHeaderButton = styled.button`
@@ -50,7 +51,7 @@ function ModalHeader({text}) {
 
     return (
         <ModalHeaderDiv>
-            <ModalHeaderTitle>Blablabla</ModalHeaderTitle>
+            <ModalHeaderTitle>Request a call</ModalHeaderTitle>
             <ModalHeaderButton onClick={closeModal}/>
         </ModalHeaderDiv>
     );

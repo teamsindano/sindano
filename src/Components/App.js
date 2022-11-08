@@ -2,6 +2,7 @@ import Theme from "./Theme";
 import styled from "styled-components";
 import ModalWrapper from "./Modal/ModalWrapper";
 import ModalHeader from "./Modal/ModalHeader";
+import ModalForm from "./Modal/ModalForm";
 
 
 const Page = styled.div`
@@ -17,6 +18,7 @@ function App() {
         <Page>
           <ModalWrapper>
             <ModalHeader/>
+            <ModalForm/>
           </ModalWrapper>
         </Page>
       </Theme>
