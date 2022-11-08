@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+/**
+ * DataButton Component
+ * @author [Peter Staal](https://github.com/pstaal)
+ */
+
 const DataButtonWrapper = styled.button`
 font-family: ${props => props.theme.fonts.text.font_family[0]};
 width: 16px;

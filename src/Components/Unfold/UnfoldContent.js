@@ -6,6 +6,11 @@ import { AnimatePresence, motion } from "framer-motion";
 import renderData from "../../utils/renderData";
 import DataButton from "../Data/DataButton";
 
+/**
+ * Unfold Content Component
+ * @author [Peter Staal](https://github.com/pstaal)
+ */
+
 const UnfoldContentDiv = styled(motion.div)`
   overflow: hidden;
   display: flex;

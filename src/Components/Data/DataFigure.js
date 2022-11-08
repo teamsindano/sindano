@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+/**
+ * Data Figure Component
+ * @author [Peter Staal](https://github.com/pstaal)
+ */
+
 const DataFigureDiv = styled.h2`
 font-family: ${props => props.theme.fonts.header.font_family[0]};
 width: max-content;

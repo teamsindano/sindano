@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import DataButton from "./DataButton";
 import DataFigure from "./DataFigure";
+
+/**
+ * Data Component
+ * @author [Peter Staal](https://github.com/pstaal)
+ */
  
 const DataWrapper = styled.div`
     background-color: #fff;

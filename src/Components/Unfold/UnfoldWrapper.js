@@ -2,6 +2,11 @@ import React, { useContext } from "react";
 import { UnfoldContext } from "./Unfold";
 import styled from "styled-components";
 
+/**
+ * Unfold Wrapper Component
+ * @author [Peter Staal](https://github.com/pstaal)
+ */
+
 const HeaderButton = styled.button`
   width: 28px;
   height: 14px;

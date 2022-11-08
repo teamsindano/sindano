@@ -3,6 +3,11 @@ import UnfoldHeader from "./UnfoldHeader";
 import UnfoldContent from "./UnfoldContent";
 import UnfoldWrapper from "./UnfoldWrapper";
 
+/**
+ * Unfold Component
+ * @author [Peter Staal](https://github.com/pstaal)
+ */
+
 
 export const UnfoldContext = createContext();
 
