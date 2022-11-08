@@ -43,10 +43,21 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
 
   margin: 0;
   padding; 0;
+`;
 
-  &.teammember__name {
-    font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
-    margin: 0 3px 0 0;
+const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
+  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
+  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
+  font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
+  line-height: 20px;
+  color: ${(props) => `${props.theme.colors.default_text_color}`};
+
+  margin: 0 3px 0 0;
+  padding; 0;
+
+  &.teammember__pronouns {
+    font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
+    margin: 0;
   }
 `;
 
@@ -68,14 +79,10 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
     return (
       <>
         <Text>
-          {title.includes("and")
-            ? headlineSplit[0]
-            : `${headlineSplit[0]} -`}
+          {title.includes("and") ? headlineSplit[0] : `${headlineSplit[0]} -`}
         </Text>
         <Text>
-          {title.includes("and")
-            ? `and ${headlineSplit[1]}`
-            : headlineSplit[1]}
+          {title.includes("and") ? `and ${headlineSplit[1]}` : headlineSplit[1]}
         </Text>
       </>
     );
@@ -87,12 +94,10 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
         <Photo src={photo || placeholder.photo} alt="Placeholder Img" />
         <Container className="teammember__text-container">
           <Container className="teammember__name-container">
-            <Text className="teammember__name">
-              {name || placeholder.name}
-            </Text>
-            <Text>
+            <Name>{name || placeholder.name}</Name>
+            <Name className="teammember__pronouns">
               {pronouns || placeholder.pronouns}
-            </Text>
+            </Name>
           </Container>
           <Text>{placeholder.headline}</Text>
           {/* {headline.includes("and") ||
