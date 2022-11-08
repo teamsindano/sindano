@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import linkedinIcon from "../../Images/linkedin-icon.png";
+import useFormWithValidation from "../../utils/formValidationHook";
 
 /**
  * Modal Form Component
@@ -37,6 +38,7 @@ const Form = styled.form`
 `
 
 const ModalLabel = styled.label`
+    color: ${props => (props.error === '') ? '#000' : '#FF1A1A'};
     padding: 0;
     margin: 0;
     width: 100%;
@@ -50,7 +52,7 @@ const ModalLabel = styled.label`
 const ModalInput = styled.input`
     width: 100%;
     background: #FFFFFF;
-    border: 1px solid #000000;
+    border: 1px solid ${props => (props.error === '') ? '#000' : '#FF1A1A'};
     border-radius: 12px;
     padding: 15px 20px;
     box-sizing: border-box;
@@ -99,28 +101,36 @@ const SubmitText = styled.p`
 
 function ModalForm() {
 
+  const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const { name, company, title, email } = values;
+    // send off to backend
+  };
+
     return (
-        <Form>
+        <Form onSubmit={handleSubmit}>
             <ModalFormTitle>
                 <ModalFormIcon src={linkedinIcon}/>
                 <ModalFormText>Auto-fill with LinkedIn</ModalFormText>
             </ModalFormTitle>
-        <ModalLabel htmlFor="name">Name</ModalLabel>
-        <ModalInput type="text" id="name" placeholder="Tara Marshall-Hill"/>
+        <ModalLabel error={errors.name} htmlFor="name">Name {errors.name !== '' ? `(${errors.name})` : ""}</ModalLabel>
+        <ModalInput error={errors.name} required type="text" id="name" name="name" placeholder="Tara Marshall-Hill" onChange={handleChange} value={values.name || ""}/>
         <ModalInputContainer>
             <ModalInputContainerDiv>
-                <ModalLabel htmlFor="company">Company</ModalLabel>
-                <ModalInput type="text" id="company" placeholder="Sindano Health"/>
+                <ModalLabel error={errors.company} htmlFor="company">Company {errors.company !== '' ? `(${errors.company})` : ""}</ModalLabel>
+                <ModalInput error={errors.company} required type="text" id="company" name="company" placeholder="Sindano Health" onChange={handleChange} value={values.company || ""}/>
             </ModalInputContainerDiv>
             <ModalInputContainerDiv>
-                <ModalLabel htmlFor="title">Title</ModalLabel>
-                <ModalInput type="text" id="title" placeholder="Founder"/>
+                <ModalLabel error={errors.title} htmlFor="title">Title {errors.title !== '' ? `(${errors.title})` : ""}</ModalLabel>
+                <ModalInput error={errors.title} required type="text" id="title" name="title" placeholder="Founder" onChange={handleChange} value={values.title || ""}/>
             </ModalInputContainerDiv>
         </ModalInputContainer>
-        <ModalLabel htmlFor="email">Email</ModalLabel>
-        <ModalInput type="email" id="email" placeholder="TaraMarshallHill@sindanohealth.com"/>
+        <ModalLabel error={errors.email} htmlFor="email">Email {errors.email !== '' ? `(${errors.email})` : ""}</ModalLabel>
+        <ModalInput error={errors.email} required type="email" id="email" name="email" placeholder="TaraMarshallHill@sindanohealth.com" onChange={handleChange} value={values.email || ""}/>
             <ModalInputContainer>
-                <ModalSubmitButton>Schedule Call</ModalSubmitButton>
+                <ModalSubmitButton type="submit">Schedule Call</ModalSubmitButton>
                 <SubmitText>A member of our team will be in touch with you  to schedule a time to chat</SubmitText>
             </ModalInputContainer>
        </Form>

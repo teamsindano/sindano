@@ -18,13 +18,10 @@ const ModalPage = styled(motion.div)`
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-    ${'' /* visibility: hidden;
-    opacity: 0;
-    transition: opacity ease-out 0.5s, visibility 0s ease-out 0.5s; */}
 `;
 
 
-const ModalContainer = styled.div`
+const ModalContainer = styled(motion.div)`
     width: 619px;
     padding: 40px;
     background-color: #fff;
@@ -36,6 +33,28 @@ const ModalContainer = styled.div`
 `;
 
 export const ModalContext = createContext();
+
+const dropIn = {
+    hidden: {
+        y: "-100vh",
+        opacity: 0
+    },
+    visible: {
+        y: "0",
+        opacity: 1,
+        transition: {
+            duration: 0.1,
+            type: "spring",
+            damping: 25,
+            stiffness: 500
+        }
+    },
+    exit: {
+        y: "100vh",
+        opacity: 0
+    }
+
+}
 
 function ModalWrapper({ children }) {
 
@@ -52,34 +71,18 @@ function ModalWrapper({ children }) {
   return (
     <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
         <AnimatePresence>
-            {isOpen && (<ModalPage
-                key="modal"
-                initial={{ opacity: 0, visibility: 'hidden'}}
-                animate={{ 
-                    opacity: 1, 
-                    visibility: 'visible',
-                    transition: {
-                        visibility: {
-                        duration: 1,
-                        },
-                        opacity: {
-                        duration: 1,
-                        },
-                        }
-                    }}
-                exit={{
-                    opacity: 0, 
-                    visibility: 'hidden',
-                    transition: {
-                        visibility: {
-                        duration: 1,
-                        },
-                        opacity: {
-                        duration: 1,
-                        },
-                    }
-                    }}>
-                <ModalContainer>
+            {isOpen && (<ModalPage 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <ModalContainer 
+                    key="modal"
+                    variants={dropIn} 
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                    >
                     {children}
                 </ModalContainer>
             </ModalPage>)}
