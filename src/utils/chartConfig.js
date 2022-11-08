@@ -7,8 +7,7 @@ import { theme } from "../Components/Theme";
  * The Chart Component's Config
  * @author [Sam](https://github.com/Samm96)
  *
- * look at this for how to use Chart.js <https://www.chartjs.org/docs/latest/getting-started/usage.html>
- * <https://react-chartjs-2.js.org/docs/migration-to-v4/>
+ * Statistics chart config located in Main
  */
 
 const labels = data.chartStats.map((d) => {

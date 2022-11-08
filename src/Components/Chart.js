@@ -8,8 +8,7 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
  * The Chart Component
  * @author [Sam](https://github.com/Samm96)
  *
- * Location with the group of Unfold components reside
- * look at this for how to use Chart.js <https://www.chartjs.org/docs/latest/getting-started/usage.html>
+ * Chart that resides in Main
  */
 
  ChartJS.register(BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip);
