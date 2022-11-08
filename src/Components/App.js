@@ -1,11 +1,17 @@
-import './App.css';
-import Footer from './Footer';
+
+import "./App.css";
+import Theme from "./Theme";
+import { theme } from "./Theme";
+import Footer from "./Footer"
 
 function App() {
   return (
-    <div className="page">
-      <Footer />
-    </div>
+    <>
+      <Theme>
+        <div className="page"></div>
+        <Footer />
+      </Theme>
+    </>
   );
 }
 
