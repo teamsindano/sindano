@@ -13,7 +13,7 @@ import { ThemeProvider } from "styled-components";
 export const theme = {
   colors: {
     primary_background: "#f5f5f5",
-    secondary_background: "#bcaec6",
+    secondary_background: "rgba(188, 174, 198, 0.8)",
     default_text_color: "#000000",
     alt_text_white: "#ffff",
     default_button_pink: "#ec1e7b",
@@ -33,7 +33,7 @@ export const theme = {
     },
 
     text: {
-      font_family: ["Open Source Sans", "sans-serif"],
+      font_family: ["Open Sauce Sans", "sans-serif"],
       sizes: {
         text_xs: "12px",
         text_s: "14px",
