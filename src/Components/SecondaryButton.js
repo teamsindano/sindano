@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+/**
+ * Secondary Button Component
+ * @author [J. Hartsek](https://github.com/JHartsek)
+ */
+
 const SecondaryButton = styled.button`
   background-color: ${(props) => props.theme.colors.alt_text_white};
   color: ${(props) => props.theme.colors.default_button_pink};
