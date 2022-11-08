@@ -1,8 +1,8 @@
-
-import "./App.css";
-import Theme from "./Theme";
-import { theme } from "./Theme";
-import Footer from "./Footer"
+import './App.css';
+import Theme from './Theme';
+import { theme } from './Theme';
+import Footer from './Footer';
+import { ThemeProvider } from 'styled-components';
 
 function App() {
   return (
