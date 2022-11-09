@@ -59,6 +59,7 @@ const dropIn = {
 function ModalWrapper({ children }) {
 
     const [isOpen, setIsOpen] = useState(true);
+    const [isConfirmation, setIsConfirmation] = useState(false);
 
     const openModal = () => {
      setIsOpen(true)
@@ -66,10 +67,15 @@ function ModalWrapper({ children }) {
   
     const closeModal = () => {
       setIsOpen(false)
+      setIsConfirmation(false)
+     };
+
+     const handleSuccess = () => {
+        setIsConfirmation(true)
      };
   
   return (
-    <ModalContext.Provider value={{ isOpen, openModal, closeModal }}>
+    <ModalContext.Provider value={{ isOpen, openModal, closeModal, isConfirmation, handleSuccess }}>
         <AnimatePresence>
             {isOpen && (<ModalPage 
                 initial={{ opacity: 0 }}

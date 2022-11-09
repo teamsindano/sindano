@@ -45,13 +45,15 @@ const ModalHeaderButton = styled.button`
 `;
 
 
-function ModalHeader({text}) {
+function ModalHeader() {
     
-    const { closeModal } = useContext(ModalContext);
+    const { closeModal, isConfirmation } = useContext(ModalContext);
+
+    const title = isConfirmation ? "Thank you!" : "Request a call"
 
     return (
         <ModalHeaderDiv>
-            <ModalHeaderTitle>Request a call</ModalHeaderTitle>
+            <ModalHeaderTitle>{title}</ModalHeaderTitle>
             <ModalHeaderButton onClick={closeModal}/>
         </ModalHeaderDiv>
     );
