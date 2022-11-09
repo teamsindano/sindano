@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Source from './Source';
+import { data } from '../utils/data';
 import React from 'react';
 
 /**
@@ -60,8 +61,6 @@ const SourceContainer = styled.div`
 
 const Stat = ({ number, caption }) => {
   const [isSourceOpen, setIsSourceOpen] = React.useState(false);
-  const sourceInfo =
-    'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S.';
 
   function handleIconClick() {
     setIsSourceOpen(!isSourceOpen);
@@ -74,7 +73,7 @@ const Stat = ({ number, caption }) => {
       <Icon onClick={handleIconClick}> ⓘ </Icon>
       {isSourceOpen && (
         <SourceContainer>
-          <Source info={sourceInfo} />
+          <Source info={data.statsCards[0].source} />
         </SourceContainer>
       )}
     </Container>
