@@ -108,9 +108,23 @@ function ModalForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleSuccess();
-    const { name, company, title, email } = values;
-    // send off to backend
+
+        fetch('http://localhost:3001/', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(values),
+      })
+      .then((res) => {
+          resetForm();
+          handleSuccess();
+        })
+      .catch((error) => {
+        console.log(error)
+      })
+     
   };
 
     return (
