@@ -11,6 +11,7 @@ import graphic from "../images/insights_chart_graphic.svg";
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   width: 100%;
   background-color: ${(props) => `${props.theme.colors.primary_background}`};
+  color: ${(props) => `${props.theme.colors.default_text_color}`};
 
   &.insights__top {
     margin: 0 auto 0;
@@ -22,6 +23,10 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     padding: 200px 0 0;
   }
 
+  &.insights__info {
+    position: relative;
+  }
+
   &.insights__oval {
     background: ${(props) => `${props.theme.colors.pink_opacity}`};
     width: 324px;
@@ -29,13 +34,14 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     border-radius: 50%;
     filter: blur(50px);
     -webkit-filter: blur(50px);
+    position: absolute;
+    right: 0;
   }
 `;
 
 const Graphic = styled.img``;
 
 const MoreInfo = styled.p`
-  color: ${(props) => `${props.theme.colors.default_text_color}`};
   font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
   font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
   font-size: ${(props) => `${props.theme.fonts.text.sizes.text_l_default}`};
