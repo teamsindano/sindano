@@ -62,7 +62,7 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   line-height: 30px;
   margin: 32px 0 0;
 
-  &.team__founder-quote-text {
+  &.story__founder-quote-text {
     font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
     font-style: ${(props) => `${props.theme.fonts.text.styles}`};
     width: 407px;
