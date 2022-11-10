@@ -4,6 +4,8 @@ import instagram from '../images/social/icon_instagram.svg';
 import twitter from '../images/social/icon_twitter.svg';
 import facebook from '../images/social/icon_facebook.svg';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '../utils/animationVariants';
 
 /**
  * Footer Section
@@ -82,7 +84,12 @@ const CopyrightItem = styled.p`
 function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <StyledFooter>
+    <StyledFooter
+      as={motion.footer}
+      variants={sectionVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+    >
       <Wrapper>
         <FirstColumn>
           <Logo src={whiteLogo} alt="Sindano logo"></Logo>
