@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import background from '../images/hero_photo.png';
 import overlay from '../images/hero_photo_overlay.svg';
 
+/** @author [Ekaterina Cratcha](https://github.com/cratcha) */
+
 const HeroWrapper = styled.section`
   max-width: 1440px;
   width: 100%;
-
   position: relative;
+  margin: auto;
 `;
 
 const BackgroundImage = styled.img`
@@ -35,8 +37,6 @@ const Title = styled.h1`
   -webkit-text-fill-color: transparent;
   z-index: 3;
   position: absolute;
-  /*left: 5%;
-  top: 70%;*/
   margin-left: 5%;
   margin-top: 36%;
 `;
