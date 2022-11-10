@@ -1,6 +1,6 @@
-import "./App.css";
-import Theme from "./Theme";
-import { theme } from "./Theme";
+import './App.css';
+import Theme from './Theme';
+import { theme } from './Theme';
 
 function App() {
   return (
