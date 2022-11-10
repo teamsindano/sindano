@@ -18,6 +18,8 @@ const Container = styled.figure`
   align-items: center;
   padding: 12px;
   z-index: 10;
+  position: absolute;
+  top: 290px;
 `;
 
 const Info = styled.p`
@@ -42,10 +44,6 @@ const Icon = styled.button`
   right: 20px;
 `;
 
-const SourceContainer = styled.div`
-  position: absolute;
-  top: 290px;
-`;
 
 
 const Source = ({ info, fontColor }) => {
@@ -60,11 +58,9 @@ const Source = ({ info, fontColor }) => {
     <>
       <Icon onClick={handleIconClick} fontColor={fontColor}> ⓘ </Icon>
       {isSourceOpen && (
-      <SourceContainer>
           <Container>
             <Info>{info}</Info>
-        </Container>
-      </SourceContainer>
+          </Container>
      )
     }
     </>

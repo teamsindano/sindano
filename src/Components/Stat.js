@@ -41,20 +41,6 @@ const Caption = styled.figcaption`
   max-width: 258px;
 `;
 
-const Icon = styled.button`
-  margin: 0;
-  font: ${(props) => props.theme.fonts.text.font_family};
-  font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
-  font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
-  line-height: 1.25;
-  background-color: transparent;
-  border: none;
-  color: ${(props) => props.theme.colors.alt_text_white};
-  position: absolute;
-  bottom: 16px;
-  right: 20px;
-`;
-
 
 
 const variants = {
