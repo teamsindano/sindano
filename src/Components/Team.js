@@ -14,21 +14,21 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   margin: 0;
   padding: 80px 80px 0 80px;
 
-  &.team__top {
+  &.story {
     background-color: transparent;
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  &.team__story-container {
+  &.story__story-container {
     background-color: transparent;
     width: 550px;
     padding: 0;
     grid-column: 1;
   }
 
-  &.team__founder {
+  &.story__founder {
     background-color: transparent;
     width: 455px;
     margin: 0;
@@ -37,7 +37,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     justify-self: end;
   }
 
-  &.team__founder-quote {
+  &.story__founder-quote {
     background-color: ${(props) => `${props.theme.colors.pink_opacity}`};
     width: 455px;
     margin: 0;
@@ -72,13 +72,13 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   }
 `;
 
-const Team = () => {
+const Story = () => {
   return (
     <Container>
       {/* replace with Content component*/}
       <Header>Our Story</Header>
-      <Container className="team__top">
-        <Container className="team__story-container">
+      <Container className="story">
+        <Container className="story__story-container">
           {/* replace with Content component */}
           <Text>
             Sindano Health was founded by Tara Marshall-Hill to address the
@@ -95,10 +95,10 @@ const Team = () => {
             LGBTQ+&nbsp;communities.
           </Text>
         </Container>
-        <Container className="team__founder">
+        <Container className="story__founder">
           {/* Add team-member component here for founder */}
-          <Container className="team__founder-quote">
-            <Text className="team__founder-quote-text">
+          <Container className="story__founder-quote">
+            <Text className="story__founder-quote-text">
               "As a queer Black woman, married to a queer Black&nbsp;nonbinary
               person, with a queer Black autistic daughter, I'm creating the
               solution my family needs. As&nbsp;it&nbsp;turns out, it's also the
@@ -115,4 +115,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Story;
