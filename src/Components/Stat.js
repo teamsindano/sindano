@@ -27,14 +27,14 @@ const Container = styled(motion.figure)`
 
 const Number = styled.h4`
   margin: 0;
-  font: ${(props) => props.theme.fonts.header.font_family};
+  font-family: ${(props) => props.theme.fonts.header.font_family[0]};
   font-size: ${(props) => props.theme.fonts.header.sizes.header_l};
   font-weight: ${(props) => props.theme.fonts.header.weight};
   line-height: 0.93;
 `;
 const Caption = styled.figcaption`
   margin: 0;
-  font: ${(props) => props.theme.fonts.text.font_family};
+  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
   font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
   font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
   line-height: 1.25;
