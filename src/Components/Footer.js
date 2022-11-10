@@ -5,10 +5,15 @@ import twitter from '../images/social/icon_twitter.svg';
 import facebook from '../images/social/icon_facebook.svg';
 import styled from 'styled-components';
 
+/**
+ * Footer Section
+ * @author [Ekaterina Cratcha](https://github.com/cratcha) */
+
 const StyledFooter = styled.footer`
   max-width: 1440px;
-  background: #283592;
-  color: ${(props) => props.theme.colors.alt_text_white};
+  margin: auto;
+  background: ${(props) => `${props.theme.colors.default_component_blue}`};
+  color: ${(props) => `${props.theme.colors.alt_text_white}`};
   width: 100%;
   font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
   font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
