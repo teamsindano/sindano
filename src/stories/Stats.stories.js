@@ -14,7 +14,3 @@ export default {
 const Template = (args) => <Stats {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  title:
-    'The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America',
-};
