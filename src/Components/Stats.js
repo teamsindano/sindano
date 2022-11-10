@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { data } from '../utils/data';
+import Stat from './Stat';
 
 /**
  * Stats Component
@@ -22,17 +24,28 @@ const Title = styled.h2`
   max-width: 950px;
   padding-left: calc((100vw - 1280px) / 2);
 `;
+
 const Cards = styled.div`
   margin: 0;
   padding-left: calc((100vw - 1280px) / 2);
   display: flex;
   column-gap: 40px;
+  row-gap: 70px;
+  flex-wrap: wrap;
 `;
-const Stats = ({ title, children }) => {
+
+const Stats = () => {
   return (
     <Section>
-      <Title>{title}</Title>
-      <Cards>{children}</Cards>
+      <Title>
+        The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for
+        America
+      </Title>
+      <Cards>
+        {data.statsCards.map((card) => {
+          return <Stat number={card.cardHeader} caption={card.cardText} />;
+        })}
+      </Cards>
     </Section>
   );
 };
