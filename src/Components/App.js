@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import Theme from "./Theme";
 import { data } from '../utils/data';
@@ -21,10 +22,17 @@ const StatsContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 160px;
 `;
+=======
+import './App.css';
+import Theme from './Theme';
+import { theme } from './Theme';
+import Hero from './Hero';
+>>>>>>> development
 
 function App() {
 
   return (
+<<<<<<< HEAD
    
     <Theme>
         <Page>
@@ -44,6 +52,12 @@ function App() {
           </Unfold>
         ))}
         </Page>
+=======
+    <>
+      <Theme>
+        <div className="page"></div>
+        <Hero />
+>>>>>>> development
       </Theme>
    
   );
