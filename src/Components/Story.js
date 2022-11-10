@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 /**
- * The Team Component
+ * The Story Component
  * @author [Sam](https://github.com/Samm96)
  *
  * Section about the Sindano Team
