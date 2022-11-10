@@ -36,6 +36,7 @@ function App() {
             })
             }
           </StatsContainer>
+          <Title text="What We Do"/>
           {data.whatWeDoCard.map((item) => (
           <Unfold key={item.id}>
                 <Unfold.Header item={item} />

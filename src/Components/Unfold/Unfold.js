@@ -23,12 +23,14 @@ function Unfold({ children }) {
   const [activeItem, setActiveItem] = useState(null);
 
   const handleClick = (itemId) => {
+
     if (itemId === activeItem) {
+     
       setActiveItem(null)
       return;
     }
     setActiveItem(itemId);
-    console.log(itemId)
+  
   };
 
   return (

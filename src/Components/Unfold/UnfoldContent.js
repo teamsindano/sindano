@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { UnfoldContext } from "./Unfold";
 import { AnimatePresence, motion } from "framer-motion";
 import renderData from "../../utils/renderData";
-import Source from "../Source";
+
 
 /**
  * Unfold Content Component
@@ -54,7 +54,7 @@ function UnfoldContent({ item }) {
   const { activeItem } = useContext(UnfoldContext);
   return (
     <AnimatePresence>
-    { (activeItem === item.id) && (<UnfoldContentDiv key="id"
+    { (activeItem === item.id) && (<UnfoldContentDiv key={item.id}
         initial={{
                 height: 0,
                 opacity: 0,
@@ -93,7 +93,6 @@ function UnfoldContent({ item }) {
       <div>
         <Data>
           {renderData(item.id)}
-          <Source info={"test"} fontColor={"blue"}/>
         </Data>
       </div>
     </UnfoldContentDiv>)
