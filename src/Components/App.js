@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import Theme from "./Theme";
 import { data } from '../utils/data';
@@ -6,8 +5,7 @@ import styled from "styled-components";
 import Unfold from './Unfold/Unfold';
 import Stat from './Stat';
 import Title from './Title';
-
-
+import Hero from './Hero';
 
 const Page = styled.div`
   width: 1280px;
@@ -22,20 +20,14 @@ const StatsContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 160px;
 `;
-=======
-import './App.css';
-import Theme from './Theme';
-import { theme } from './Theme';
-import Hero from './Hero';
->>>>>>> development
 
 function App() {
 
   return (
-<<<<<<< HEAD
    
     <Theme>
         <Page>
+          <Hero/>
           <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America"/>
           <StatsContainer>
             {data.statsCards.map((card) => {
@@ -52,12 +44,6 @@ function App() {
           </Unfold>
         ))}
         </Page>
-=======
-    <>
-      <Theme>
-        <div className="page"></div>
-        <Hero />
->>>>>>> development
       </Theme>
    
   );

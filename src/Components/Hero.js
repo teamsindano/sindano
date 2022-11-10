@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import background from '../images/hero_photo.png';
-import overlay from '../images/hero_photo_overlay.svg';
+import background from '../Images/hero_photo.png';
+import overlay from '../Images/hero_photo_overlay.svg';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
 
@@ -13,6 +13,7 @@ const HeroWrapper = styled.section`
   width: 100%;
   position: relative;
   margin: auto;
+  height: 695px;
 `;
 
 const BackgroundImage = styled.img`
@@ -26,6 +27,8 @@ const OverlayImage = styled.img`
   position: absolute;
   width: 100%;
 `;
+
+
 const Title = styled.h1`
   font-family: ${(props) => `${props.theme.fonts.header.font_family}`};
   font-size: ${(props) => `${props.theme.fonts.header.sizes.header_m}`};
