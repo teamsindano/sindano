@@ -2,8 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import background from '../images/hero_photo.png';
 import overlay from '../images/hero_photo_overlay.svg';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '../utils/animationVariants';
 
-/** @author [Ekaterina Cratcha](https://github.com/cratcha) */
+/** Hero Section
+ *  @author [Ekaterina Cratcha](https://github.com/cratcha) */
 
 const HeroWrapper = styled.section`
   max-width: 1440px;
@@ -43,9 +46,17 @@ const Title = styled.h1`
 
 function Hero() {
   return (
-    <HeroWrapper>
-      <BackgroundImage src={background} alt=""></BackgroundImage>
-      <OverlayImage src={overlay} alt=""></OverlayImage>
+    <HeroWrapper
+      as={motion.footer}
+      variants={sectionVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+    >
+      <BackgroundImage
+        src={background}
+        alt="background photo of two women lying on the ground and holding hands"
+      ></BackgroundImage>
+      <OverlayImage src={overlay} alt="overlay design"></OverlayImage>
       <Title>
         Empowering Insights <br></br>for Equitable Mental Healthcare
       </Title>
