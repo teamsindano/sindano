@@ -6,7 +6,9 @@ import React from 'react';
  * @author [J. Hartsek](https://github.com/JHartsek)
  */
 
+
 const Container = styled.figure`
+  visibility: hidden;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.8);
   color: ${(props) => props.theme.colors.alt_text_white};
@@ -19,7 +21,7 @@ const Container = styled.figure`
   padding: 12px;
   z-index: 10;
   position: absolute;
-  top: 290px;
+  bottom: -65px;
 `;
 
 const Info = styled.p`
@@ -31,38 +33,33 @@ const Info = styled.p`
 `;
 
 const Icon = styled.button`
-  margin: 0;
-  font: ${(props) => props.theme.fonts.text.font_family};
-  font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
-  font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
-  line-height: 1.25;
-  background-color: transparent;
-  border: none;
-  color: ${(props) => props.fontColor === "white" ? props.theme.colors.alt_text_white : props.theme.colors.default_component_blue };
-  position: absolute;
-  bottom: 16px;
-  right: 20px;
+cursor: pointer;
+margin: 0;
+font: ${(props) => props.theme.fonts.text.font_family};
+font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
+font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
+line-height: 1.25;
+background-color: transparent;
+border: none;
+color: ${(props) => props.fontColor === "white" ? props.theme.colors.alt_text_white : props.theme.colors.default_component_blue };
+position: absolute;
+bottom: 16px;
+right: 20px;
+&:hover + ${Container} {
+  visibility: visible;
+}
 `;
 
 
 
 const Source = ({ info, fontColor }) => {
-  const [isSourceOpen, setIsSourceOpen] = React.useState(false);
-
-  function handleIconClick() {
-    setIsSourceOpen(!isSourceOpen);
-  }
-
 
   return (
     <>
-      <Icon onClick={handleIconClick} fontColor={fontColor}> ⓘ </Icon>
-      {isSourceOpen && (
+      <Icon fontColor={fontColor}> ⓘ </Icon>
           <Container>
             <Info>{info}</Info>
           </Container>
-     )
-    }
     </>
   )
 };
