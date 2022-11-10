@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { UnfoldContext } from "./Unfold";
 import { AnimatePresence, motion } from "framer-motion";
 import renderData from "../../utils/renderData";
-import DataButton from "../Data/DataButton";
+import Source from "../Source";
 
 /**
  * Unfold Content Component
@@ -50,11 +50,11 @@ const UnfoldButton = styled.button`
   }
 `;
 
-function UnfoldContent({ id, text }) {
+function UnfoldContent({ item }) {
   const { activeItem } = useContext(UnfoldContext);
   return (
     <AnimatePresence>
-    { (activeItem === id) && (<UnfoldContentDiv key="id"
+    { (activeItem === item.id) && (<UnfoldContentDiv key="id"
         initial={{
                 height: 0,
                 opacity: 0,
@@ -85,15 +85,15 @@ function UnfoldContent({ id, text }) {
               }}
         >
       <div>
-        {text.map((paragraph) => {
-          return <UnfoldText>{paragraph}</UnfoldText>;
+        {item.text.map((paragraph) => {
+          return <UnfoldText key={item.id}>{paragraph}</UnfoldText>;
         })}
         <UnfoldButton>Request a call</UnfoldButton>
       </div>
       <div>
         <Data>
-          {renderData(id)}
-          <DataButton/>
+          {renderData(item.id)}
+          <Source info={"test"} fontColor={"blue"}/>
         </Data>
       </div>
     </UnfoldContentDiv>)

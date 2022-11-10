@@ -1,14 +1,15 @@
 import styled from 'styled-components';
 import Source from './Source';
-import { data } from '../utils/data';
 import React from 'react';
+import { motion } from "framer-motion";
+import { data } from '../utils/data';
 
 /**
  * Stat Component
  * @author [J. Hartsek](https://github.com/JHartsek)
  */
 
-const Container = styled.figure`
+const Container = styled(motion.figure)`
   margin: 0;
   background-color: ${(props) => props.theme.colors.default_component_blue};
   color: ${(props) => props.theme.colors.alt_text_white};
@@ -54,28 +55,29 @@ const Icon = styled.button`
   right: 20px;
 `;
 
-const SourceContainer = styled.div`
-  position: absolute;
-  top: 290px;
-`;
 
-const Stat = ({ number, caption }) => {
-  const [isSourceOpen, setIsSourceOpen] = React.useState(false);
 
-  function handleIconClick() {
-    setIsSourceOpen(!isSourceOpen);
-  }
+const variants = {
+  offscreen: { y: 200, opacity: 0},
+  onscreen: { y: 0, opacity: 1},
+}
+
+const Stat = ({ id, cardHeader, cardText, source }) => {
+ 
+
+  const delay = id * 0.7;
 
   return (
-    <Container>
-      <Number>{number}</Number>
-      <Caption>{caption}</Caption>
-      <Icon onClick={handleIconClick}> ⓘ </Icon>
-      {isSourceOpen && (
-        <SourceContainer>
-          <Source info={data.statsCards[0].source} />
-        </SourceContainer>
-      )}
+    <Container
+        initial="offscreen"
+        whileInView="onscreen"
+        variants={variants}
+        viewport={{ once: true }}
+        transition={{ duration: 1, delay: delay}}
+     >
+      <Number>{cardHeader}</Number>
+      <Caption>{cardText}</Caption>
+      <Source info={source} fontColor={"white"}/>
     </Container>
   );
 };

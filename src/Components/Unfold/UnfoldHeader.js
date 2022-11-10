@@ -54,12 +54,12 @@ const HeaderTitle = styled.h3`
   background-image: ${(props) => props.theme.gradients.text};
 `;
 
-function UnfoldHeader({ id, cardTitle }) {
-  const { activeItem } = useContext(UnfoldContext);
+function UnfoldHeader({ item }) {
+  const { activeItem, handleClick } = useContext(UnfoldContext);
   return (
-    <Header>
-      <HeaderTitle>{cardTitle}</HeaderTitle>
-      <HeaderButton openedItem={activeItem} id={id}>
+    <Header onClick={() => handleClick(item.id)}>
+      <HeaderTitle>{item.cardTitle}</HeaderTitle>
+      <HeaderButton openedItem={activeItem} id={item.id}>
         <Arrow />
       </HeaderButton>
     </Header>

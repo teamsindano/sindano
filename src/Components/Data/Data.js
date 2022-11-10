@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import DataButton from "./DataButton";
 import DataFigure from "./DataFigure";
 
 /**
@@ -27,7 +26,6 @@ const Data = ({children}) => {
 };
 
 
-Data.Button = DataButton;
 Data.Figure = DataFigure;
 
 

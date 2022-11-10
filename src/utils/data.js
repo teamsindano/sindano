@@ -4,7 +4,6 @@ import nandiAllman from '../Images/team/nandi_allman.png';
 import anyaMarshall from '../Images/team/anya_marshall.png';
 import coleBuckle from '../Images/team/cole_buckle.png';
 import ritChowdhury from '../Images/team/rit_chowdhury.png';
-import pieChart from '../Images/piechart.svg';
 
 export const data = {
   statsCards: [

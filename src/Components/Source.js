@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import React from 'react';
 
 /**
  * Source Component
@@ -27,12 +28,47 @@ const Info = styled.p`
   line-height: 1.33;
 `;
 
-const Source = ({ info }) => {
+const Icon = styled.button`
+  margin: 0;
+  font: ${(props) => props.theme.fonts.text.font_family};
+  font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
+  font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
+  line-height: 1.25;
+  background-color: transparent;
+  border: none;
+  color: ${(props) => props.fontColor === "white" ? props.theme.colors.alt_text_white : props.theme.colors.default_component_blue };
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+`;
+
+const SourceContainer = styled.div`
+  position: absolute;
+  top: 290px;
+`;
+
+
+const Source = ({ info, fontColor }) => {
+  const [isSourceOpen, setIsSourceOpen] = React.useState(false);
+
+  function handleIconClick() {
+    setIsSourceOpen(!isSourceOpen);
+  }
+
+
   return (
-    <Container>
-      <Info>{info}</Info>
-    </Container>
-  );
+    <>
+      <Icon onClick={handleIconClick} fontColor={fontColor}> ⓘ </Icon>
+      {isSourceOpen && (
+      <SourceContainer>
+          <Container>
+            <Info>{info}</Info>
+        </Container>
+      </SourceContainer>
+     )
+    }
+    </>
+  )
 };
 
 export default Source;

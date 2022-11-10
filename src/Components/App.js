@@ -3,6 +3,8 @@ import Theme from "./Theme";
 import { data } from '../utils/data';
 import styled from "styled-components";
 import Unfold from './Unfold/Unfold';
+import Stat from './Stat';
+import Title from './Title';
 
 
 
@@ -12,24 +14,34 @@ const Page = styled.div`
     padding: 0 80px;
 `;
 
+const StatsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 160px;
+`;
+
 function App() {
 
   return (
    
     <Theme>
         <Page>
+          <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America"/>
+          <StatsContainer>
+            {data.statsCards.map((card) => {
 
-        <Unfold>
-          {data.whatWeDoCard.map((child) => (
-            <>
-              <Unfold.Wrapper {...child}>
-                <Unfold.Header {...child} />
-                <Unfold.Content {...child} />
-              </Unfold.Wrapper>
-            </>
-          ))}
-       </Unfold>
-
+            return <Stat id={card.id} key={card.id} source={card.source} cardHeader={card.cardHeader} cardText={card.cardText}/>
+            })
+            }
+          </StatsContainer>
+          {data.whatWeDoCard.map((item) => (
+          <Unfold key={item.id}>
+                <Unfold.Header item={item} />
+                <Unfold.Content item={item} />
+          </Unfold>
+        ))}
         </Page>
       </Theme>
    
