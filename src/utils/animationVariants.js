@@ -1,5 +1,5 @@
 /**
- * Animation for page sections and buttons
+ * Animation for page sections
  * @author [Ekaterina Cratcha](https://github.com/cratcha) */
 
 export const sectionVariants = {
@@ -13,12 +13,5 @@ export const sectionVariants = {
       delay: 0.2,
       duration: 3,
     },
-  },
-};
-
-export const buttonVariants = {
-  hover: {
-    scale: 1.1,
-    boxShadow: '0 0 20px rgba(236,30,123,0.5)',
   },
 };
