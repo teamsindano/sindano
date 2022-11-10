@@ -37,6 +37,19 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     position: absolute;
     right: 0;
   }
+
+  &.insights__big-oval {
+    background: ${(props) => `${props.theme.colors.pink_opacity}`};
+    width: 798px;
+    height: 480px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+    border-radius: 68px;
+    filter: blur(77px);
+    -webkit-filter: blur(77px);
+    position: absolute;
+    left: 0;
+  }
 `;
 
 const Graphic = styled.img``;
@@ -71,6 +84,7 @@ const InsightsSection = () => {
         {/* insert stat-chart component here */}
         <Container className="insights__info">
           <Container className="insights__oval"></Container>
+          <Container className="insights__big-oval"></Container>
           <MoreInfo>
             Want the LGBTQ+ Mental Healthcare Insights That Matter?
           </MoreInfo>
