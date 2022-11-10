@@ -19,8 +19,16 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   }
 
   &.insights__bottom {
-
     padding: 200px 0 0;
+  }
+
+  &.insights__oval {
+    background: ${(props) => `${props.theme.colors.pink_opacity}`};
+    width: 324px;
+    height: 233px;
+    border-radius: 50%;
+    filter: blur(50px);
+    -webkit-filter: blur(50px);
   }
 `;
 
@@ -56,7 +64,10 @@ const InsightsSection = () => {
       <Container className="insights__bottom">
         {/* insert stat-chart component here */}
         <Container className="insights__info">
-          <MoreInfo>Want the LGBTQ+ Mental Healthcare Insights That Matter?</MoreInfo>
+          <Container className="insights__oval"></Container>
+          <MoreInfo>
+            Want the LGBTQ+ Mental Healthcare Insights That Matter?
+          </MoreInfo>
           {/* insert primary button here */}
         </Container>
       </Container>
