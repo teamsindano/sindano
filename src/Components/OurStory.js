@@ -12,40 +12,42 @@ import Team from "./Team";
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   background-color: ${(props) => `${props.theme.colors.secondary_background}`};
-  width: 100%;
+  width: 1281px;
   height: fit-content;
   margin: 0;
-  padding: 80px 80px 0 80px;
+  padding: 80px 80px 85px 80px;
 
   &.story {
     background-color: transparent;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
   }
 
   &.story__story-container {
     background-color: transparent;
     width: 550px;
     padding: 0;
-    grid-column: 1;
   }
 
   &.story__founder {
     background-color: transparent;
-    width: 455px;
-    margin: 32px 0 16px;
+    width: 435px;
+    margin: 32px 0 0;
     padding: 0;
-    grid-column: 2;
-    justify-self: end;
   }
 
   &.story__founder-quote {
-    background-color: ${(props) => `${props.theme.colors.pink_opacity}`};
+    background-color: transparent;
     width: 455px;
     margin: 16px 0 0;
     padding: 0;
-    border-radius: 20px;
+  }
+
+  &.team__container {
+    background-color: transparent;
+    margin: 67px auto 0;
+    padding: 0;
   }
 `;
 
@@ -66,11 +68,13 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   margin: 32px 0 0;
 
   &.story__founder-quote-text {
+    background-color: ${(props) => `${props.theme.colors.pink_opacity}`};
     font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
     font-style: ${(props) => `${props.theme.fonts.text.styles}`};
+    border-radius: 20px;
     width: 407px;
     line-height: 22px;
-    margin: 0 auto 0;
+    margin: 0;
     padding: 24px 0 24px 24px;
   }
 `;
@@ -119,7 +123,9 @@ const OurStory = () => {
           </Container>
         </Container>
       </Container>
-      <Team />
+      <Container className="team__container">
+        <Team />
+      </Container>
     </Container>
   );
 };

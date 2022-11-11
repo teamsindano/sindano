@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+import { useState } from 'react';
 import styled from "styled-components";
 import { data } from "../utils/data";
 import TeamMember from "./Teammember";
@@ -10,9 +12,10 @@ import TeamMember from "./Teammember";
  */
 
 const Container = styled.div`
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    grid-gap: 65px 0;
 `;
 
 const Team = () => {

@@ -22,6 +22,10 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     flex-direction: column;
     justify-content: center;
   }
+
+  &.teammember__name-container {
+    width: fit-content;
+  }
 `;
 
 const Photo = styled.img`
@@ -44,6 +48,7 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
   padding; 0;
 
   &.teammember__pronouns {
+    width: fit-content;
     font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
     margin: 0;
   }
