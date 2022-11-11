@@ -10,7 +10,6 @@ const PrimaryButtonContainer = styled.button`
   padding: 15px 28px;
   border: none;
   margin: 0;
-  margin-top: 52px;
   border-radius: 12px;
   font-weight: 700;
   font-size: 16px;

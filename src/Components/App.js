@@ -8,7 +8,7 @@ import Title from './Title';
 import Hero from './Hero';
 import Footer from './Footer';
 import Faq from './Faq';
-import BarChart from './BarChart';
+import ChartSection from './ChartSection';
 
 const Page = styled.div`
   width: 1280px;
@@ -39,7 +39,7 @@ function App() {
             })
             }
           </StatsContainer>
-          <BarChart/>
+          <ChartSection/>
           <Title text="What We Do"/>
           {data.whatWeDoCard.map((item) => (
           <Unfold key={item.id}>
