@@ -13,7 +13,7 @@ const Container = styled.div`
     margin: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(auto, 1fr);
+    grid-template-rows: auto;
     grid-gap: 65px 0;
 `;
 
