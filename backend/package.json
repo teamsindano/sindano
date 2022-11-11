@@ -1,0 +1,20 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "endpoint for emails",
+    "main": "index.js",
+    "scripts": {
+      "dev": "nodemon server.js",
+      "start": "node server.js"
+    },
+    "author": "peter staal",
+    "license": "ISC",
+    "dependencies": {
+      "dotenv": "^16.0.3",
+      "express": "^4.18.2",
+      "nodemailer": "^6.8.0"
+    },
+    "devDependencies": {
+      "nodemon": "^2.0.20"
+    }
+  }
