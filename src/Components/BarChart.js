@@ -69,7 +69,7 @@ const BarChart = () => {
           height="317px"
         ></Bar>
       </Container>
-      <Source info="Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source" fontColor={"white"}/>
+      <Source info="Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source" fontColor={"#EC1E7B"}/>
     </Container>
   );
 };

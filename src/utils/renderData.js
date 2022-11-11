@@ -15,7 +15,7 @@ const renderData = (id) => {
         return (
           <>
             <DataFigure data={cardData}/>
-            <Source info={cardData.source} fontColor={"blue"}/>
+            <Source info={cardData.source} fontColor={"#283592"}/>
           </>
         )
       } 
@@ -24,7 +24,7 @@ const renderData = (id) => {
         return ( 
           <>
             <Pie plugins={[ChartDataLabels]} options={cardData.options} data={cardData.data}/>
-            <Source info={cardData.source} fontColor={"blue"}/>
+            <Source info={cardData.source} fontColor={"#283592"}/>
           </>
         )
       }
@@ -33,7 +33,7 @@ const renderData = (id) => {
         return (
             <>
               <Bar plugins={[ChartDataLabels]} options={cardData.options} data={cardData.data}/>
-              <Source info={cardData.source} fontColor={"blue"}/>
+              <Source info={cardData.source} fontColor={"#283592"}/>
             </>
         )
       }

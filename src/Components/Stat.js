@@ -63,7 +63,7 @@ const Stat = ({ id, cardHeader, cardText, source }) => {
      >
       <Number>{cardHeader}</Number>
       <Caption>{cardText}</Caption>
-      <Source info={source} fontColor={"white"}/>
+      <Source info={source} fontColor={"#fff"}/>
     </Container>
   );
 };

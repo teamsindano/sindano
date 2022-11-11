@@ -34,7 +34,7 @@ export const ModalContext = createContext();
 function App() {
 
 
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalConfirmation, setIsModalConfirmation] = useState(false);
 
   const openModal = () => {
@@ -76,7 +76,7 @@ function App() {
         <WorkSection/>
         <Faq/>
         <Footer/>
-        <ModalWrapper isModalOpen={isModalOpen}>
+        <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
             <ModalContent isModalConfirmation={isModalConfirmation} handleSuccess={handleSuccess}/>
         </ModalWrapper>

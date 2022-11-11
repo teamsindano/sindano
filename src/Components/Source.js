@@ -23,6 +23,7 @@ const Container = styled.figure`
   position: absolute;
   bottom: -65px;
   right: 0;
+  z-index: 2;
 `;
 
 const Info = styled.p`
@@ -42,7 +43,7 @@ font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
 line-height: 1.25;
 background-color: transparent;
 border: none;
-color: ${(props) => props.fontColor === "white" ? props.theme.colors.alt_text_white : props.theme.colors.default_component_blue };
+color: ${(props) => props.fontColor};
 position: absolute;
 bottom: 16px;
 right: 20px;

@@ -56,7 +56,21 @@ const dropIn = {
 
 }
 
-function ModalWrapper({ children, isModalOpen }) {
+function ModalWrapper({ children, isModalOpen, closeModal }) {
+
+    React.useEffect(() => {
+        const closeOnEscape = (event) => {
+          if (event.key === "Escape") {
+            closeModal();
+          }
+        };
+    
+        window.addEventListener("keydown", closeOnEscape);
+    
+        return () => {
+          window.removeEventListener("keydown", closeOnEscape);
+        };
+      }, [closeModal]);
   
   return (
         <AnimatePresence>
@@ -64,6 +78,7 @@ function ModalWrapper({ children, isModalOpen }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                onClick={closeModal}
               >
                 <ModalContainer 
                     key="modal"
@@ -71,6 +86,7 @@ function ModalWrapper({ children, isModalOpen }) {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
+                    onClick={e => e.stopPropagation()}
                     >
                     {children}
                 </ModalContainer>

@@ -28,6 +28,9 @@ const UnfoldText = styled.p`
   line-height: 1.25;
   color: #fff;
   margin-bottom: 16px;
+  &:last-of-type {
+    margin-bottom: 40px;
+  }
 `;
 
 function UnfoldContent({ item }) {
