@@ -39,6 +39,7 @@ const Photo = styled.img`
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   margin: 0;
   padding; 0;
+  width: fit-content;
 `;
 
 const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`

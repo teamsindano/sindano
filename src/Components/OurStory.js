@@ -12,6 +12,7 @@ import Team from "./Team";
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   background-color: ${(props) => `${props.theme.colors.secondary_background}`};
+  max-width: 1440px;
   width: 1281px;
   height: fit-content;
   margin: 0;
@@ -32,7 +33,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
 
   &.story__founder {
     background-color: transparent;
-    width: 435px;
+    max-width: 455px;
     margin: 32px 0 0;
     padding: 0;
   }
@@ -45,8 +46,9 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   }
 
   &.team__container {
+    width: fit-content;
     background-color: transparent;
-    margin: 67px auto 0;
+    margin: 67px 0 0 36px;
     padding: 0;
   }
 `;

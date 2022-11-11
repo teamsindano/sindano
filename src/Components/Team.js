@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react';
-import { useState } from 'react';
 import styled from "styled-components";
 import { data } from "../utils/data";
 import TeamMember from "./Teammember";
@@ -12,6 +10,7 @@ import TeamMember from "./Teammember";
  */
 
 const Container = styled.div`
+    margin: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto, 1fr);
