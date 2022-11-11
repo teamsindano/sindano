@@ -4,8 +4,9 @@ import nandiAllman from '../images/team/nandi_allman.png';
 import anyaMarshall from '../images/team/anya_marshall.png';
 import coleBuckle from '../images/team/cole_buckle.png';
 import ritChowdhury from '../images/team/rit_chowdhury.png';
+import pieChart from "../images/piechart.svg";
 
-const data = {
+export const data = {
   statsCards: [
     {
       id: 1,
@@ -44,28 +45,33 @@ const data = {
   team: [
     {
       image: anshulaNathan,
-      name: 'Anshula Nathan (she/her)',
+      name: 'Anshula Nathan',
+      pronouns: '(she/her)',
       title: 'Director of Research and Health Informatics',
     },
     {
       image: nandiAllman,
-      name: 'Nandi K. Allman (they/them)',
+      name: 'Nandi K. Allman',
+      pronouns: '(they/them)',
       title: 'Director of Product and Community',
     },
     {
       image: anyaMarshall,
-      name: 'Anya Marshall (she/her)',
+      name: 'Anya Marshall',
+      pronouns: '(she/her)',
       title:
         'Key Technical Advisor - Software Engineering, Product Development and Data Engineering',
     },
     {
       image: coleBuckle,
-      name: 'Cole Buckle (she/her)',
-      title: 'Software Development',
+      name: 'Cole Buckle',
+      pronouns: '(she/her)',
+      title: 'Key Technical Advisor - Software Development',
     },
     {
       image: ritChowdhury,
-      name: 'Rit Chowdhury (he/him)',
+      name: 'Rit Chowdhury',
+      pronouns: '(he/him)',
       title: 'Consulting AI/ML Engineer',
     },
   ],
@@ -136,7 +142,7 @@ const data = {
         'Of full-time U.S. workers have left previous roles due, at least in part, to mental health reasons.',
         'This number Rises to:',
         '81% of Gen Z respondents',
-        '68% of Millenial respondens',
+        '68% of Millenial respondents',
         '32% when considering voluntary departures',
       ],
       source:
