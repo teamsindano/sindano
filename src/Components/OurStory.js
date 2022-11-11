@@ -4,7 +4,7 @@ import { data } from "../utils/data";
 import taraMarshall from "../images/team/tara_marshall_hill.png";
 
 /**
- * The Story Component
+ * The Our Story Component
  * @author [Sam](https://github.com/Samm96)
  *
  * Section about the Sindano Team
@@ -75,7 +75,7 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   }
 `;
 
-const Story = () => {
+const OurStory = () => {
   return (
     <Container>
       {/* replace with Content component*/}
@@ -123,4 +123,4 @@ const Story = () => {
   );
 };
 
-export default Story;
+export default OurStory;
