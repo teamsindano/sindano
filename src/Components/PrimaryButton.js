@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import { ModalContext } from "./App";
 
 const PrimaryButtonContainer = styled.button`
   font-family: ${(props) => props.theme.fonts.text.font_family[0]};
@@ -21,9 +23,11 @@ const PrimaryButtonContainer = styled.button`
 `;
 
 function PrimaryButton() {
+   
+    const { openModal } = useContext(ModalContext) 
 
     return (
-        <PrimaryButtonContainer>Request a call</PrimaryButtonContainer>
+        <PrimaryButtonContainer onClick={openModal}>Request a call</PrimaryButtonContainer>
     )
 };
 

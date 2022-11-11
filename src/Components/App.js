@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, createContext } from 'react';
 import Theme from "./Theme";
 import { data } from '../utils/data';
 import styled from "styled-components";
@@ -11,6 +11,9 @@ import Faq from './Faq';
 import ChartSection from './ChartSection';
 import Insights from './Insights';
 import WorkSection from './WorkSection';
+import ModalWrapper from './Modal/ModalWrapper';
+import ModalHeader from './Modal/ModalHeader';
+import ModalContent from './Modal/ModalContent';
 
 const Page = styled.div`
   width: 1280px;
@@ -26,11 +29,31 @@ const StatsContainer = styled.div`
   margin-bottom: 160px;
 `;
 
+export const ModalContext = createContext();
+
 function App() {
+
+
+  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalConfirmation, setIsModalConfirmation] = useState(false);
+
+  const openModal = () => {
+   setIsModalOpen(true)
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setIsModalConfirmation(false)
+   };
+
+   const handleSuccess = () => {
+      setIsModalConfirmation(true)
+   };
 
   return (
    
     <Theme>
+        <ModalContext.Provider value={{openModal}}>
         <Page>
           <Hero/>
           <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America" marginBottom={80}/>
@@ -53,7 +76,12 @@ function App() {
         <WorkSection/>
         <Faq/>
         <Footer/>
+        <ModalWrapper isModalOpen={isModalOpen}>
+            <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
+            <ModalContent isModalConfirmation={isModalConfirmation} handleSuccess={handleSuccess}/>
+        </ModalWrapper>
         </Page>
+        </ModalContext.Provider>
       </Theme>
    
   );
