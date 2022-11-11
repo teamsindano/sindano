@@ -50,7 +50,7 @@ const Title = styled.h1`
 function Hero() {
   return (
     <HeroWrapper
-      as={motion.footer}
+      as={motion.section}
       variants={sectionVariants}
       initial="offscreen"
       whileInView="onscreen"

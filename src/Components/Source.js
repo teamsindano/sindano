@@ -22,6 +22,7 @@ const Container = styled.figure`
   z-index: 10;
   position: absolute;
   bottom: -65px;
+  right: 0;
 `;
 
 const Info = styled.p`

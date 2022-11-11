@@ -6,6 +6,32 @@ import coleBuckle from '../Images/team/cole_buckle.png';
 import ritChowdhury from '../Images/team/rit_chowdhury.png';
 
 export const data = {
+  chartStats: [
+    { content: "Covered by my health insurance plan", number: 78 },
+    { content: "Cost I have to pay", number: 74 },
+    { content: "Past experience was good", number: 74 },
+    {
+      content: "A clinician has good expertise (eg, training, schooling)",
+      number: 70,
+    },
+    { content: "Friendliness of the staff", number: 69 },
+    { content: "A facility has a good reputation/scored well", number: 68 },
+    { content: "A clinician has a good reputation/scored well", number: 68 },
+    { content: "Facilities were up-to-date/nice", number: 68 },
+    {
+      content: "How convenient the choices are for when can get care",
+      number: 67,
+    },
+    {
+      content: "How convenient the choices are for where to get care",
+      number: 66,
+    },
+    {
+      content: "The care provider has my medical history/information",
+      number: 64,
+    },
+    { content: "Following your clinician's recommendation", number: 62 },
+  ],
   statsCards: [
     {
       id: 1,
