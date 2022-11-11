@@ -9,6 +9,8 @@ import Hero from './Hero';
 import Footer from './Footer';
 import Faq from './Faq';
 import ChartSection from './ChartSection';
+import Insights from './Insights';
+import WorkSection from './WorkSection';
 
 const Page = styled.div`
   width: 1280px;
@@ -31,7 +33,7 @@ function App() {
     <Theme>
         <Page>
           <Hero/>
-          <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America"/>
+          <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America" marginBottom={80}/>
           <StatsContainer>
             {data.statsCards.map((card) => {
 
@@ -39,14 +41,16 @@ function App() {
             })
             }
           </StatsContainer>
+          <Insights/>
           <ChartSection/>
-          <Title text="What We Do"/>
+          <Title text="What We Do" marginBottom={40}/>
           {data.whatWeDoCard.map((item) => (
           <Unfold key={item.id}>
                 <Unfold.Header item={item} />
                 <Unfold.Content item={item} />
           </Unfold>
         ))}
+        <WorkSection/>
         <Faq/>
         <Footer/>
         </Page>

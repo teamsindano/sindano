@@ -7,6 +7,7 @@ import { sectionVariants } from "../utils/animationVariants";
 const ChartSectionContainer = styled.section`
 width: 100%;
 display: flex;
+margin-bottom: 160px;
 `
 
 const RequestDiv = styled.div`

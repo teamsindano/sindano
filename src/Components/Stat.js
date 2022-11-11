@@ -58,8 +58,8 @@ const Stat = ({ id, cardHeader, cardText, source }) => {
         initial="offscreen"
         whileInView="onscreen"
         variants={variants}
-        viewport={{ once: true }}
         transition={{ duration: 1, delay: delay}}
+        viewport={{ once: true }}
      >
       <Number>{cardHeader}</Number>
       <Caption>{cardText}</Caption>

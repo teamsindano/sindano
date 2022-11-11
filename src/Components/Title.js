@@ -8,12 +8,13 @@ const TitleContainer = styled.h2`
     line-height: 1;
     color: #283592;
     max-width: 950px;
+    margin-bottom: ${(props) => props.marginBottom + `px`};
 `;
 
-function Title({text}){
+function Title({text, marginBottom}){
 
     return (
-        <TitleContainer>{text}</TitleContainer>
+        <TitleContainer marginBottom={marginBottom}>{text}</TitleContainer>
     )
 }
 
