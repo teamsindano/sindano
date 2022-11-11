@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 import UnfoldHeader from "./UnfoldHeader";
 import UnfoldContent from "./UnfoldContent";
 import styled from "styled-components";
@@ -8,13 +8,12 @@ import styled from "styled-components";
  * @author [Peter Staal](https://github.com/pstaal)
  */
 
-
- const UnfoldWrapperDiv = styled.div`
- margin: 0;
- padding: 40px;
- background: #283592;
- border-radius: 20px;
- margin-bottom: 40px;
+const UnfoldWrapperDiv = styled.div`
+  margin: 0;
+  padding: 40px;
+  background: #283592;
+  border-radius: 20px;
+  margin-bottom: 40px;
 `;
 
 export const UnfoldContext = createContext();
@@ -22,27 +21,25 @@ export const UnfoldContext = createContext();
 function Unfold({ children }) {
   const [activeItem, setActiveItem] = useState(null);
 
-  const handleClick = (itemId) => {
-
-    if (itemId === activeItem) {
-     
-      setActiveItem(null)
-      return;
-    }
-    setActiveItem(itemId);
-  
-  };
+  const handleClick = useCallback(
+    (itemId) => {
+      if (itemId === activeItem) {
+        setActiveItem(null);
+        return;
+      }
+      setActiveItem(itemId);
+    },
+    [activeItem]
+  );
 
   return (
     <UnfoldContext.Provider value={{ activeItem, handleClick }}>
-      <UnfoldWrapperDiv>
       {children}
-      </UnfoldWrapperDiv>
     </UnfoldContext.Provider>
   );
 }
 
-
+Unfold.Wrapper = UnfoldWrapperDiv;
 Unfold.Header = UnfoldHeader;
 Unfold.Content = UnfoldContent;
 
