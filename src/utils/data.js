@@ -72,29 +72,34 @@ export const data = {
   team: [
     {
       image: anshulaNathan,
-      name: "Anshula Nathan (she/her)",
-      title: "Director of Research and Health Informatics",
+      name: 'Anshula Nathan',
+      pronouns: '(she/her)',
+      title: 'Director of Research and Health Informatics',
     },
     {
       image: nandiAllman,
-      name: "Nandi K. Allman (they/them)",
-      title: "Director of Product and Community",
+      name: 'Nandi K. Allman',
+      pronouns: '(they/them)',
+      title: 'Director of Product and Community',
     },
     {
       image: anyaMarshall,
-      name: "Anya Marshall (she/her)",
+      name: 'Anya Marshall',
+      pronouns: '(she/her)',
       title:
         "Key Technical Advisor - Software Engineering, Product Development and Data Engineering",
     },
     {
       image: coleBuckle,
-      name: "Cole Buckle (she/her)",
-      title: "Software Development",
+      name: 'Cole Buckle',
+      pronouns: '(she/her)',
+      title: 'Key Technical Advisor - Software Development',
     },
     {
       image: ritChowdhury,
-      name: "Rit Chowdhury (he/him)",
-      title: "Consulting AI/ML Engineer",
+      name: 'Rit Chowdhury',
+      pronouns: '(he/him)',
+      title: 'Consulting AI/ML Engineer',
     },
   ],
 
