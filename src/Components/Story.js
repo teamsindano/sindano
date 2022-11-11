@@ -34,7 +34,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   &.story__founder {
     background-color: transparent;
     width: 455px;
-    margin: 0;
+    margin: 32px 0 16px;
     padding: 0;
     grid-column: 2;
     justify-self: end;
@@ -43,7 +43,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   &.story__founder-quote {
     background-color: ${(props) => `${props.theme.colors.pink_opacity}`};
     width: 455px;
-    margin: 0;
+    margin: 16px 0 0;
     padding: 0;
     border-radius: 20px;
   }
