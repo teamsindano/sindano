@@ -51,15 +51,7 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const TeamMember = ({ photo, name, pronouns, headline }) => {
-  const placeholder = {
-    photo:
-      "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=962&q=80",
-    name: "Woofers",
-    pronouns: "(dog/retriever)",
-    headline:
-      "Good Boy with the bestest behavior. He deserves a treat. Woof woof woof",
-  };
-
+  
   const lineBreak = (title) => {
     const headlineSplit = title.includes("and")
       ? title.split("and")
@@ -80,22 +72,19 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
   return (
     <div className="teammember">
       <Container>
-        <Photo src={photo || placeholder.photo} alt={name || placeholder.name} />
+        <Photo src={photo} alt={name} />
         <Container className="teammember__text-container">
           <Container className="teammember__name-container">
-            <Name>{name || placeholder.name}</Name>
+            <Name>{name}</Name>
             <Name className="teammember__pronouns">
-              {pronouns || placeholder.pronouns}
+              {pronouns ? pronouns : ""}
             </Name>
           </Container>
-          {/* delete placeholder text, replace with logic underneath */}
-          <Text>{placeholder.headline}</Text>
-          {/* {headline.includes("and") ||
-          headline.includes("-") ? (
+          {headline.includes("and") || headline.includes("-") ? (
             lineBreak(headline)
           ) : (
             <Text>{headline}</Text>
-          )} */}
+          )}
         </Container>
       </Container>
     </div>
