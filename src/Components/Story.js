@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import TeamMember from "./Teammember";
+import { data } from "../utils/data";
+import taraMarshall from "../images/team/tara_marshall_hill.png";
 
 /**
  * The Story Component
@@ -96,7 +99,12 @@ const Story = () => {
           </Text>
         </Container>
         <Container className="story__founder">
-          {/* Add team-member component here for founder */}
+          <TeamMember
+            photo={taraMarshall}
+            name="Tara Marshall-Hill"
+            pronouns="(she/her)"
+            headline="Founder of Sidano Health"
+          />
           <Container className="story__founder-quote">
             <Text className="story__founder-quote-text">
               "As a queer Black woman, married to a queer Black&nbsp;nonbinary

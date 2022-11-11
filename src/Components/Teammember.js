@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { data } from "../utils/data";
 
 /**
  * The Team Member Component
@@ -51,7 +50,7 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const TeamMember = ({ photo, name, pronouns, headline }) => {
-  
+
   const lineBreak = (title) => {
     const headlineSplit = title.includes("and")
       ? title.split("and")
