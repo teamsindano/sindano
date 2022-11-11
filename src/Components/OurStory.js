@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import TeamMember from "./Teammember";
-import { data } from "../utils/data";
 import taraMarshall from "../images/team/tara_marshall_hill.png";
+import Team from "./Team";
 
 /**
  * The Our Story Component
@@ -119,6 +119,7 @@ const OurStory = () => {
           </Container>
         </Container>
       </Container>
+      <Team />
     </Container>
   );
 };

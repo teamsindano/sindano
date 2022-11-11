@@ -60,7 +60,7 @@ export const data = {
       name: 'Anya Marshall',
       pronouns: '(she/her)',
       title:
-        'Key Technical Advisor - Software Engineering, Product Development and Data Engineering',
+        'Key Technical Advisor — Software Engineering, Product Development and Data Engineering',
     },
     {
       image: coleBuckle,
