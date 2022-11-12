@@ -61,5 +61,10 @@ export const GlobalStyle = createGlobalStyle`
   font-style: normal;
   src: url(${OpenSauce400}) format('truetype');
 }
+
+html {
+		scroll-behavior: smooth;
+	}
+
 `;
 

@@ -50,13 +50,13 @@ function Header() {
       <nav>
         <StyledList>
           <StyledIcons>
-            <StyledLinks href="#">About</StyledLinks>
+            <StyledLinks href="#ourstory">About</StyledLinks>
           </StyledIcons>
           <StyledIcons>
-            <StyledLinks href="#">What we do</StyledLinks>
+            <StyledLinks href="#whatwedo">What we do</StyledLinks>
           </StyledIcons>
           <StyledIcons>
-            <StyledLinks href="#">FAQ</StyledLinks>
+            <StyledLinks href="#faq">FAQ</StyledLinks>
           </StyledIcons>
         </StyledList>
       </nav>

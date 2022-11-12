@@ -49,7 +49,8 @@ function Faq() {
 		<QuestionStyled as={motion.section}
         variants={sectionVariants}
         initial="offscreen"
-        whileInView="onscreen">
+        whileInView="onscreen"
+        id="faq">
 					<TitleStyled>{data.questions.title}</TitleStyled>
                     <QuestionSection>
                     {data.questions.cards.map((card) => {

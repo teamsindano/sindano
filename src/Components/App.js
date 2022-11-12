@@ -16,6 +16,7 @@ import ModalWrapper from './Modal/ModalWrapper';
 import ModalHeader from './Modal/ModalHeader';
 import ModalContent from './Modal/ModalContent';
 import Header from './Header';
+import OurStory from "./OurStory";
 
 const Page = styled.div`
   width: 1280px;
@@ -72,8 +73,11 @@ function App() {
           </StatsContainer>
           <Insights/>
           <ChartSection/>
+          </Page>
+          <OurStory/>
+          <Page>
           <Title text="What We Do" marginBottom={40}/>
-          <Unfold>
+          <Unfold id="whatwedo">
             {data.whatWeDoCard.map((item) => (
               <Unfold.Wrapper key={_.uniqueId("Unfold-Block-")}>
                 <Unfold.Header item={item} />

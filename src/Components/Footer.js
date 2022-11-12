@@ -103,13 +103,13 @@ function Footer() {
         <SecondColumn>
           <Navigation>
             <ListItem>
-              <FooterLink href="#">About</FooterLink>
+              <FooterLink href="#ourstory">About</FooterLink>
             </ListItem>
             <ListItem>
-              <FooterLink href="#">What we do</FooterLink>
+              <FooterLink href="#whatwedo">What we do</FooterLink>
             </ListItem>
             <ListItem>
-              <FooterLink href="#">FAQ</FooterLink>
+              <FooterLink href="#faq">FAQ</FooterLink>
             </ListItem>
             <ListItem>
               <FooterLink href="#">Privacy</FooterLink>
