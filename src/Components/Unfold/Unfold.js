@@ -34,13 +34,9 @@ function Unfold({ children }) {
 
   return (
     <UnfoldContext.Provider value={{ activeItem, handleClick }}>
-<<<<<<< HEAD
       
       {children}
       
-=======
-      {children}
->>>>>>> 01289dd6318c7175aa577db53ea7e03f7f87729d
     </UnfoldContext.Provider>
   );
 }

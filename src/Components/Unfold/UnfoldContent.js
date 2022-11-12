@@ -6,10 +6,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import renderData from "../../utils/renderData";
 import PrimaryButton from "../PrimaryButton";
 import _ from "lodash";
-<<<<<<< HEAD
-
-=======
->>>>>>> 01289dd6318c7175aa577db53ea7e03f7f87729d
 
 /**
  * Unfold Content Component
@@ -40,11 +36,7 @@ function UnfoldContent({ item }) {
 
   return (
     <AnimatePresence>
-<<<<<<< HEAD
          {activeItem === item.id && (
-=======
-      {activeItem === item.id && (
->>>>>>> 01289dd6318c7175aa577db53ea7e03f7f87729d
         <UnfoldContentDiv
           key={_.uniqueId("Unfold-")}
           initial={{
@@ -76,11 +68,7 @@ function UnfoldContent({ item }) {
             },
           }}
         >
-<<<<<<< HEAD
      <div>
-=======
-          <div>
->>>>>>> 01289dd6318c7175aa577db53ea7e03f7f87729d
             {item.text.map((paragraph) => {
               return (
                 <UnfoldText key={_.uniqueId("paragraph-")}>

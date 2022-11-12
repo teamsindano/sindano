@@ -1,6 +1,5 @@
 import _ from "lodash";
 import styled from "styled-components";
-import _ from "lodash";
 
 /**
  * Data Figure Component
@@ -25,7 +24,6 @@ const DataText = styled.p`
   color: #283592;
 `;
 
-<<<<<<< HEAD
 const DataFigure= ({data}) => {
      
     return (
@@ -38,17 +36,6 @@ const DataFigure= ({data}) => {
         </>
     )
 
-=======
-const DataFigure = ({ data }) => {
-  return (
-    <>
-      <DataFigureDiv>{data.dataTitle}</DataFigureDiv>
-      {data.dataContent.map((content) => {
-        return <DataText key={_.uniqueId("figure-")}>{content}</DataText>;
-      })}
-    </>
-  );
->>>>>>> 01289dd6318c7175aa577db53ea7e03f7f87729d
 };
 
 export default DataFigure;
