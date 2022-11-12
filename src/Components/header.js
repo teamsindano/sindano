@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import headerLogo from '../images/sindano_health_logo_black.svg';
 import Button from './Button.js';
+import { sectionVariants } from '../utils/animationVariants';
 
 export const HeaderStyle = styled.header`
   display: flex;
@@ -37,7 +39,12 @@ export const StyledLinks = styled.a`
 
 function Header() {
   return (
-    <HeaderStyle>
+    <HeaderStyle
+      as={motion.header}
+      variants={sectionVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+    >
       <LogoImage src={headerLogo} alt="Sindano logo"></LogoImage>
 
       <nav>
