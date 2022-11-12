@@ -1,12 +1,15 @@
 import React, { useContext } from "react";
-import Data from '../Data/Data';
+import Data from "../Data/Data";
 import styled from "styled-components";
 import { UnfoldContext } from "./Unfold";
 import { AnimatePresence, motion } from "framer-motion";
 import renderData from "../../utils/renderData";
 import PrimaryButton from "../PrimaryButton";
 import _ from "lodash";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 01289dd6318c7175aa577db53ea7e03f7f87729d
 
 /**
  * Unfold Content Component
@@ -16,7 +19,6 @@ import _ from "lodash";
 const UnfoldContentDiv = styled(motion.div)`
   display: flex;
   flex-direction: row;
-  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
 `;
 
 const UnfoldText = styled.p`
@@ -35,9 +37,14 @@ const UnfoldText = styled.p`
 
 function UnfoldContent({ item }) {
   const { activeItem } = useContext(UnfoldContext);
+
   return (
     <AnimatePresence>
+<<<<<<< HEAD
          {activeItem === item.id && (
+=======
+      {activeItem === item.id && (
+>>>>>>> 01289dd6318c7175aa577db53ea7e03f7f87729d
         <UnfoldContentDiv
           key={_.uniqueId("Unfold-")}
           initial={{
@@ -69,7 +76,11 @@ function UnfoldContent({ item }) {
             },
           }}
         >
+<<<<<<< HEAD
      <div>
+=======
+          <div>
+>>>>>>> 01289dd6318c7175aa577db53ea7e03f7f87729d
             {item.text.map((paragraph) => {
               return (
                 <UnfoldText key={_.uniqueId("paragraph-")}>
