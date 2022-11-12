@@ -14,6 +14,8 @@ import WorkSection from './WorkSection';
 import ModalWrapper from './Modal/ModalWrapper';
 import ModalHeader from './Modal/ModalHeader';
 import ModalContent from './Modal/ModalContent';
+import _ from "lodash";
+import Header from './Header';
 
 const Page = styled.div`
   width: 1280px;
@@ -55,6 +57,7 @@ function App() {
     <Theme>
         <ModalContext.Provider value={{openModal}}>
         <Page>
+          <Header/>
           <Hero/>
           <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America" marginBottom={80}/>
           <StatsContainer>
@@ -67,12 +70,14 @@ function App() {
           <Insights/>
           <ChartSection/>
           <Title text="What We Do" marginBottom={40}/>
-          {data.whatWeDoCard.map((item) => (
-          <Unfold key={item.id}>
+          <Unfold>
+            {data.whatWeDoCard.map((item) => (
+              <Unfold.Wrapper key={_.uniqueId("Unfold-Block-")}>
                 <Unfold.Header item={item} />
                 <Unfold.Content item={item} />
+              </Unfold.Wrapper>
+            ))}
           </Unfold>
-        ))}
         <WorkSection/>
         <Faq/>
         <Footer/>

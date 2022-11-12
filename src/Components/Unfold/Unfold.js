@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useCallback, useState } from "react";
 import UnfoldHeader from "./UnfoldHeader";
 import UnfoldContent from "./UnfoldContent";
 import styled from "styled-components";
@@ -22,27 +22,27 @@ export const UnfoldContext = createContext();
 function Unfold({ children }) {
   const [activeItem, setActiveItem] = useState(null);
 
-  const handleClick = (itemId) => {
-
-    if (itemId === activeItem) {
-     
-      setActiveItem(null)
-      return;
-    }
-    setActiveItem(itemId);
-  
-  };
+  const handleClick = useCallback(
+    (itemId) => {
+      if (itemId === activeItem) {
+        setActiveItem(null);
+        return;
+      }
+      setActiveItem(itemId);
+    },
+    [activeItem]
+  );
 
   return (
     <UnfoldContext.Provider value={{ activeItem, handleClick }}>
-      <UnfoldWrapperDiv>
+      
       {children}
-      </UnfoldWrapperDiv>
+      
     </UnfoldContext.Provider>
   );
 }
 
-
+Unfold.Wrapper = UnfoldWrapperDiv;
 Unfold.Header = UnfoldHeader;
 Unfold.Content = UnfoldContent;
 

@@ -5,6 +5,7 @@ import { UnfoldContext } from "./Unfold";
 import { AnimatePresence, motion } from "framer-motion";
 import renderData from "../../utils/renderData";
 import PrimaryButton from "../PrimaryButton";
+import _ from "lodash";
 
 
 /**
@@ -13,7 +14,6 @@ import PrimaryButton from "../PrimaryButton";
  */
 
 const UnfoldContentDiv = styled(motion.div)`
-  overflow: hidden;
   display: flex;
   flex-direction: row;
   transition: all 0.5s cubic-bezier(0, 1, 0, 1);
@@ -37,50 +37,54 @@ function UnfoldContent({ item }) {
   const { activeItem } = useContext(UnfoldContext);
   return (
     <AnimatePresence>
-    { (activeItem === item.id) && (<UnfoldContentDiv key={item.id}
-        initial={{
-                height: 0,
-                opacity: 0,
-              }}
-              animate={{
-                height: "auto",
-                opacity: 1,
-                transition: {
-                  height: {
-                    duration: 1,
-                  },
-                  opacity: {
-                    duration: 1,
-                  },
-                },
-              }}
-              exit={{
-                height: 0,
-                opacity: 0,
-                transition: {
-                  height: {
-                    duration: 1,
-                  },
-                  opacity: {
-                    duration: 1,
-                  },
-                },
-              }}
+         {activeItem === item.id && (
+        <UnfoldContentDiv
+          key={_.uniqueId("Unfold-")}
+          initial={{
+            height: 0,
+            opacity: 0,
+          }}
+          animate={{
+            height: "auto",
+            opacity: 1,
+            transition: {
+              height: {
+                duration: 0.5,
+              },
+              opacity: {
+                duration: 1,
+              },
+            },
+          }}
+          exit={{
+            height: 0,
+            opacity: 0,
+            transition: {
+              height: {
+                duration: 0.5,
+              },
+              opacity: {
+                duration: 0.25,
+              },
+            },
+          }}
         >
-      <div>
-        {item.text.map((paragraph) => {
-          return <UnfoldText key={item.id}>{paragraph}</UnfoldText>;
-        })}
-        <PrimaryButton/>
-      </div>
-      <div>
-        <Data>
-          {renderData(item.id)}
-        </Data>
-      </div>
-    </UnfoldContentDiv>)
-    }
-  </AnimatePresence>
+     <div>
+            {item.text.map((paragraph) => {
+              return (
+                <UnfoldText key={_.uniqueId("paragraph-")}>
+                  {paragraph}
+                </UnfoldText>
+              );
+            })}
+            <PrimaryButton />
+          </div>
+          <div>
+            <Data>{renderData(item.id)}</Data>
+          </div>
+        </UnfoldContentDiv>
+      )}
+    </AnimatePresence>
   );
 }
 

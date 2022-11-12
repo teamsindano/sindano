@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import _ from "lodash";
 
 /**
  * Data Figure Component
@@ -29,7 +30,7 @@ const DataFigure= ({data}) => {
         <>
         <DataFigureDiv>{data.dataTitle}</DataFigureDiv>
         {data.dataContent.map((content) => {
-           return <DataText>{content}</DataText> 
+           return <DataText key={_.uniqueId("figure-")}>{content}</DataText> 
         }) 
         }
         </>
