@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import headerLogo from '../src/images/header.svg';
+import headerLogo from '../images/sindano_health_logo_black.svg';
 import { Button, ButtonLabel } from './button.style.js';
-
-import { LogoImage } from './logoImage.style.js';
 
 export const HeaderStyle = styled.header`
   display: flex;
@@ -11,6 +9,11 @@ export const HeaderStyle = styled.header`
   align-items: center;
   margin: auto;
   max-width: 1440px;
+`;
+
+export const LogoImage = styled.img`
+  padding: 13px 0 23px 47px;
+  margin-right: auto;
 `;
 export const StyledList = styled.ul`
   display: inline-block;
