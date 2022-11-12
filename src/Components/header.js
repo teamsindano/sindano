@@ -28,18 +28,19 @@ export const StyledIcons = styled.li`
 
 export const StyledLinks = styled.a`
   text-decoration: none;
-  font-weight: 700;
-  font-size: 16px;
+  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
+  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
+  font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
+  color: ${(props) => `${props.theme.colors.default_text_color}`};
   line-height: 20px;
 `;
-export const StyledNav = styled.nav``;
 
 function Header() {
   return (
     <HeaderStyle>
       <LogoImage src={headerLogo} alt="Sindano logo"></LogoImage>
 
-      <StyledNav>
+      <nav>
         <StyledList>
           <StyledIcons>
             <StyledLinks href="#">About</StyledLinks>
@@ -51,7 +52,7 @@ function Header() {
             <StyledLinks href="#">FAQ</StyledLinks>
           </StyledIcons>
         </StyledList>
-      </StyledNav>
+      </nav>
 
       <Button>Request a call</Button>
     </HeaderStyle>
