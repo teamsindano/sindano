@@ -30,7 +30,7 @@ const Title = styled.h1`
   font-family: ${(props) => `${props.theme.fonts.header.font_family}`};
   font-size: ${(props) => `${props.theme.fonts.header.sizes.header_m}`};
   font-weight: ${(props) => `${props.theme.fonts.header.weight}`};
-  color: ${(props) => props.theme.colors.alt_text_white};
+  color: ${(props) => `${props.theme.colors.alt_text_white}`};
   background: radial-gradient(
     circle farthest-corner at top center,
     #f2c9d8 0%,

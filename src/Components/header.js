@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import headerLogo from '../images/sindano_health_logo_black.svg';
-import { Button, ButtonLabel } from './button.style.js';
+import Button from './Button.js';
 
 export const HeaderStyle = styled.header`
   display: flex;
@@ -53,9 +53,7 @@ function Header() {
         </StyledList>
       </StyledNav>
 
-      <Button backgroundColor="#EC1E7B">
-        <ButtonLabel>Request a call</ButtonLabel>
-      </Button>
+      <Button>Request a call</Button>
     </HeaderStyle>
   );
 }
