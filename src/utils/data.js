@@ -4,6 +4,9 @@ import nandiAllman from '../Images/team/nandi_allman.png';
 import anyaMarshall from '../Images/team/anya_marshall.png';
 import coleBuckle from '../Images/team/cole_buckle.png';
 import ritChowdhury from '../Images/team/rit_chowdhury.png';
+import taraMarshall from '../Images/team/tara_marshall_hill.png';
+import rylanRosario from '../Images/team/rylan_rosario.png';
+import ashAvilesBrizuela from '../Images/team/ash_aviles_brizuela.png';
 
 export const data = {
   chartStats: [
@@ -69,30 +72,52 @@ export const data = {
 
   team: [
     {
-      image: anshulaNathan,
-      name: 'Anshula Nathan (she/her)',
-      title: 'Director of Research and Health Informatics',
-    },
-    {
-      image: nandiAllman,
-      name: 'Nandi K. Allman (they/them)',
-      title: 'Director of Product and Community',
+      image: taraMarshall,
+      name: 'Tara Marshall-Hill',
+      pronouns: '(she/her)',
+      title: 'Founder of Sidano Health',
     },
     {
       image: anyaMarshall,
-      name: 'Anya Marshall (she/her)',
+      name: 'Anya Marshall',
+      pronouns: '(she/her)',
       title:
         'Key Technical Advisor - Software Engineering, Product Development and Data Engineering',
     },
     {
+      image: anshulaNathan,
+      name: 'Anshula Nathan',
+      pronouns: '(she/her)',
+      title: 'Director of Research and Health Informatics',
+    },
+    {
+      image: ashAvilesBrizuela,
+      name: 'Ash Aviles Brizuela',
+      pronouns: '(they/them)',
+      title: 'Head of Health Data Analytics',
+    },
+    {
       image: coleBuckle,
-      name: 'Cole Buckle (she/her)',
-      title: 'Software Development',
+      name: 'Cole Buckle',
+      pronouns: '(she/her)',
+      title: 'Key Technical Advisor - Software Development',
+    },
+    {
+      image: nandiAllman,
+      name: 'Nandi K. Allman',
+      pronouns: '(they/them)',
+      title: 'Director of Product and Community',
     },
     {
       image: ritChowdhury,
-      name: 'Rit Chowdhury (he/him)',
+      name: 'Rit Chowdhury',
+      pronouns: '(he/him)',
       title: 'Consulting AI/ML Engineer',
+    },
+    {
+      image: rylanRosario,
+      name: 'Rylan Rosario',
+      title: 'Chief Knowledge Officer & Head of Research',
     },
   ],
 
