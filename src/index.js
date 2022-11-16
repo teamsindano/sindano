@@ -1,15 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './Components/App';
-import reportWebVitals from './reportWebVitals';
-import { GlobalStyle } from './vendor/fonts/fonts';
-import './index.css';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { LinkedInCallback } from "react-linkedin-login-oauth2";
+import App from "./Components/App";
+import reportWebVitals from "./reportWebVitals";
+import { GlobalStyle } from "./vendor/fonts/fonts";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <GlobalStyle/>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/linkedin">
+          <LinkedInCallback />
+        </Route>
+        <Route exact path="/">
+          <GlobalStyle />
+          <App />
+        </Route>
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
