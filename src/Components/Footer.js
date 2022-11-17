@@ -14,7 +14,7 @@ import { sectionVariants } from '../utils/animationVariants';
 const StyledFooter = styled.footer`
   max-width: 1440px;
   margin: auto;
-  background: ${(props) => `${props.theme.colors.default_component_blue}`};
+  background: ${(props) => `${props.theme.colors.footer_background}`};
   color: ${(props) => `${props.theme.colors.alt_text_white}`};
   width: 100%;
   font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
