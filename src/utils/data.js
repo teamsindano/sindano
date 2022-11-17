@@ -1,4 +1,3 @@
-//images for team section
 import anshulaNathan from '../Images/team/anshula_nathan.png';
 import nandiAllman from '../Images/team/nandi_allman.png';
 import anyaMarshall from '../Images/team/anya_marshall.png';
@@ -40,6 +39,7 @@ export const data = {
     },
     { content: "Following your clinician's recommendation", number: 62 },
   ],
+  
   statsCards: [
     {
       id: 1,
@@ -232,7 +232,10 @@ export const data = {
       dataTitle: '50%',
       dataContent: [
         'Of full-time U.S. workers have left previous roles due, at least in part, to mental health reasons.',
-        'This number Rises to: 81% of Gen Z respondents 68% of Millenial respondents 32% when considering voluntary departures',
+        'This number Rises to:',
+        '81% of Gen Z respondents',
+        '68% of Millenial respondents',
+        '32% when considering voluntary departures',
       ],
       source:
         'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',

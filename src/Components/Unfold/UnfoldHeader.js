@@ -45,13 +45,10 @@ const HeaderTitle = styled.h3`
   font-family: ${(props) => props.theme.fonts.text.font_family[0]};
   padding: 0;
   margin: 0;
-  font-weight: 800;
-  font-size: 20px;
+  font-weight: ${(props) => `props.theme.fonts.text.weights.black`};
+  font-size: ${(props) => `props.theme.fonts.text.sizes.text_l_default`};
   line-height: 1.5;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: ${(props) => props.theme.gradients.text};
+  color: ${(props) => props.theme.colors.alt_text_white`};
 `;
 
 function UnfoldHeader({ item }) {
