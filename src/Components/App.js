@@ -22,6 +22,14 @@ const Page = styled.div`
   width: 1280px;
   margin: 0 auto;
   padding: 0 80px;
+  @media screen and (max-width: 1350px){
+    width: calc(100vw - 80px);
+    padding: 0 40px;
+  }
+  @media screen and (max-width: 100px){
+    width: calc(100vw - 32px);
+    padding: 0 16px;
+  }
 `;
 
 const StatsContainer = styled.div`

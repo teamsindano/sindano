@@ -48,10 +48,7 @@ const HeaderTitle = styled.h3`
   font-weight: 800;
   font-size: 20px;
   line-height: 1.5;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: ${(props) => props.theme.gradients.text};
+  color: #fff;
 `;
 
 function UnfoldHeader({ item }) {
