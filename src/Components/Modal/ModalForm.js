@@ -1,9 +1,9 @@
-import axios from "axios";
-import styled from "styled-components";
-import { useLinkedIn } from "react-linkedin-login-oauth2";
-import _ from "lodash";
-import linkedinIcon from "../../images/linkedin-icon.png";
-import useFormWithValidation from "../../utils/formValidationHook";
+import axios from 'axios';
+import styled from 'styled-components';
+import { useLinkedIn } from 'react-linkedin-login-oauth2';
+import _ from 'lodash';
+import linkedinIcon from '../../images/linkedin-icon.png';
+import useFormWithValidation from '../../utils/formValidationHook';
 
 /**
  * Modal Form Component
@@ -42,7 +42,7 @@ const Form = styled.form`
 
 const ModalLabel = styled.label`
   color: ${(props) =>
-    props.error === "" || props.error === undefined ? "#000" : "#FF1A1A"};
+    props.error === '' || props.error === undefined ? '#000' : '#FF1A1A'};
   padding: 0;
   margin: 0;
   width: 100%;
@@ -58,7 +58,7 @@ const ModalInput = styled.input`
   background: #ffffff;
   border: 1px solid
     ${(props) =>
-      props.error === "" || props.error === undefined ? "#000" : "#FF1A1A"};
+      props.error === '' || props.error === undefined ? '#000' : '#FF1A1A'};
   border-radius: 12px;
   padding: 15px 20px;
   box-sizing: border-box;
@@ -110,19 +110,19 @@ function ModalForm({ handleSuccess }) {
     useFormWithValidation();
 
   const { linkedInLogin } = useLinkedIn({
-    // TODO: replace this client_id
-    clientId: "86ad8izfkr32h5",
+    // TODO: replace this client_id (temp replaced)
+    clientId: '78i0gitxfdiyau',
     redirectUri: `${window.location.origin}/linkedin`,
-    scope: "r_liteprofile",
+    scope: 'r_liteprofile',
     onSuccess: _.debounce((code) => {
       axios
         // TODO: Replace this with deployed api address
-        .post("http://localhost:3001/authorize", {
+        .post('http://localhost:3001/authorize', {
           code,
         })
         .then(({ data }) => {
           console.log(data.access_token);
-          return axios.get("https://api.linkedin.com/v2/me", {
+          return axios.get('https://api.linkedin.com/v2/me', {
             headers: {
               Authorization: `Bearer ${data.access_token}`,
             },
@@ -141,11 +141,11 @@ function ModalForm({ handleSuccess }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:3001/", {
-      method: "POST",
+    fetch('http://localhost:3001/', {
+      method: 'POST',
       headers: {
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
     })
@@ -167,10 +167,10 @@ function ModalForm({ handleSuccess }) {
         </button>
       </ModalFormTitle>
       <ModalLabel error={errors.name} htmlFor="name">
-        Name{" "}
-        {errors.name !== "" && errors.name !== undefined
+        Name{' '}
+        {errors.name !== '' && errors.name !== undefined
           ? `(${errors.name})`
-          : ""}
+          : ''}
       </ModalLabel>
       <ModalInput
         error={errors.name}
@@ -181,15 +181,15 @@ function ModalForm({ handleSuccess }) {
         name="name"
         placeholder="Tara Marshall-Hill"
         onChange={handleChange}
-        value={values.name || ""}
+        value={values.name || ''}
       />
       <ModalInputContainer>
         <ModalInputContainerDiv>
           <ModalLabel error={errors.company} htmlFor="company">
-            Company{" "}
-            {errors.company !== "" && errors.company !== undefined
+            Company{' '}
+            {errors.company !== '' && errors.company !== undefined
               ? `(${errors.company})`
-              : ""}
+              : ''}
           </ModalLabel>
           <ModalInput
             error={errors.company}
@@ -200,15 +200,15 @@ function ModalForm({ handleSuccess }) {
             name="company"
             placeholder="Sindano Health"
             onChange={handleChange}
-            value={values.company || ""}
+            value={values.company || ''}
           />
         </ModalInputContainerDiv>
         <ModalInputContainerDiv>
           <ModalLabel error={errors.title} htmlFor="title">
-            Title{" "}
-            {errors.title !== "" && errors.title !== undefined
+            Title{' '}
+            {errors.title !== '' && errors.title !== undefined
               ? `(${errors.title})`
-              : ""}
+              : ''}
           </ModalLabel>
           <ModalInput
             error={errors.title}
@@ -219,15 +219,15 @@ function ModalForm({ handleSuccess }) {
             name="title"
             placeholder="Founder"
             onChange={handleChange}
-            value={values.title || ""}
+            value={values.title || ''}
           />
         </ModalInputContainerDiv>
       </ModalInputContainer>
       <ModalLabel error={errors.email} htmlFor="email">
-        Email{" "}
-        {errors.email !== "" && errors.email !== undefined
+        Email{' '}
+        {errors.email !== '' && errors.email !== undefined
           ? `(${errors.email})`
-          : ""}
+          : ''}
       </ModalLabel>
       <ModalInput
         error={errors.email}
@@ -237,7 +237,7 @@ function ModalForm({ handleSuccess }) {
         name="email"
         placeholder="TaraMarshallHill@sindanohealth.com"
         onChange={handleChange}
-        value={values.email || ""}
+        value={values.email || ''}
       />
       <ModalInputContainer>
         <ModalSubmitButton type="submit">Schedule Call</ModalSubmitButton>
