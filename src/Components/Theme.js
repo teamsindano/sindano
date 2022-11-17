@@ -13,6 +13,7 @@ import { ThemeProvider } from "styled-components";
 export const theme = {
   colors: {
     primary_background: "#f5f5f5",
+    footer_background: "#2D2D2D",
     default_text_color: "#000000",
     alt_text_white: "#ffff",
     default_button_aqua: "#1EA6AE",
