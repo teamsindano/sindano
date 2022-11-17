@@ -15,7 +15,7 @@ export const theme = {
     primary_background: "#f5f5f5",
     default_text_color: "#000000",
     alt_text_white: "#ffff",
-    default_button_pink: "#1EA6AE",
+    default_button_aqua: "#1EA6AE",
     default_component_blue: "#283592",
   },
 
