@@ -1,4 +1,3 @@
-//images for team section
 import anshulaNathan from '../Images/team/anshula_nathan.png';
 import nandiAllman from '../Images/team/nandi_allman.png';
 import anyaMarshall from '../Images/team/anya_marshall.png';
@@ -32,6 +31,7 @@ export const data = {
     },
     { content: "Following your clinician's recommendation", number: 62 },
   ],
+  
   statsCards: [
     {
       id: 1,
@@ -70,28 +70,33 @@ export const data = {
   team: [
     {
       image: anshulaNathan,
-      name: 'Anshula Nathan (she/her)',
+      name: 'Anshula Nathan',
+      pronouns: '(she/her)',
       title: 'Director of Research and Health Informatics',
     },
     {
       image: nandiAllman,
-      name: 'Nandi K. Allman (they/them)',
+      name: 'Nandi K. Allman',
+      pronouns: '(they/them)',
       title: 'Director of Product and Community',
     },
     {
       image: anyaMarshall,
-      name: 'Anya Marshall (she/her)',
+      name: 'Anya Marshall',
+      pronouns: '(she/her)',
       title:
         'Key Technical Advisor - Software Engineering, Product Development and Data Engineering',
     },
     {
       image: coleBuckle,
-      name: 'Cole Buckle (she/her)',
-      title: 'Software Development',
+      name: 'Cole Buckle',
+      pronouns: '(she/her)',
+      title: 'Key Technical Advisor - Software Development',
     },
     {
       image: ritChowdhury,
-      name: 'Rit Chowdhury (he/him)',
+      name: 'Rit Chowdhury',
+      pronouns: '(he/him)',
       title: 'Consulting AI/ML Engineer',
     },
   ],
@@ -192,7 +197,10 @@ export const data = {
       dataTitle: '50%',
       dataContent: [
         'Of full-time U.S. workers have left previous roles due, at least in part, to mental health reasons.',
-        'This number Rises to: 81% of Gen Z respondents 68% of Millenial respondents 32% when considering voluntary departures',
+        'This number Rises to:',
+        '81% of Gen Z respondents',
+        '68% of Millenial respondents',
+        '32% when considering voluntary departures',
       ],
       source:
         'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
