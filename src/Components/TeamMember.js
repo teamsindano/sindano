@@ -8,7 +8,8 @@ import styled from "styled-components";
  */
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  width: 240px;
+  max-width: 240px;
+  margin: 0 auto 0;
   display: flex;
   flex-direction: column;
   
@@ -23,6 +24,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     flex-direction: column;
     text-align: center;
   }
+
   &.teammember__name-container {
     display: flex;
     flex-direction: row;
@@ -40,7 +42,7 @@ const Photo = styled.img`
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
-  margin: 0;
+  margin: 0 auto 0;
   padding; 0;
   width: fit-content;
 `;
@@ -60,23 +62,6 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
 
 const TeamMember = ({ photo, name, pronouns, headline }) => {
 
-  const lineBreak = (title) => {
-    const headlineSplit = title.includes("and")
-      ? title.split("and")
-      : title.split("-");
-
-    return (
-      <>
-        <Text>
-          {title.includes("and") ? headlineSplit[0] : `${headlineSplit[0]} -`}
-        </Text>
-        <Text>
-          {title.includes("and") ? `and ${headlineSplit[1]}` : headlineSplit[1]}
-        </Text>
-      </>
-    );
-  };
-
   return (
     <div className="teammember">
       <Container>
@@ -88,11 +73,7 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
               {pronouns ? pronouns : ""}
             </Name>
           </Container>
-          {headline.includes("and") || headline.includes("-") ? (
-            lineBreak(headline)
-          ) : (
             <Text>{headline}</Text>
-          )}
         </Container>
       </Container>
     </div>

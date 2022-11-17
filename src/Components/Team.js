@@ -14,7 +14,7 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-    grid-gap: 65px 0;
+    grid-gap: 90px 100px;
 `;
 
 const Team = () => {
