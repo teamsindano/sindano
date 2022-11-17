@@ -10,7 +10,7 @@ import ashAvilesBrizuela from '../Images/team/ash_aviles_brizuela.png';
 
 /** Data
  *  @author [Ekaterina Cratcha](https://github.com/cratcha) 
- *  @author [Sam](https://github.com/Samm96)
+ *  @author [Sam](https://github.com/Samm96) // Added & adjusted some data
  * */
 
 export const data = {
