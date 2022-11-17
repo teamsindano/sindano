@@ -1,5 +1,5 @@
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import React from "react";
+import { ThemeProvider } from "styled-components";
 
 /**
  * The CSS Themes
@@ -11,47 +11,47 @@ import { ThemeProvider } from 'styled-components';
  */
 
 export const theme = {
-  colors: {
-    primary_background: '#f5f5f5',
-    secondary_background: '#bcaec6',
-    default_text_color: '#000000',
-    alt_text_white: '#ffff',
-    default_button_pink: '#ec1e7b',
-    default_component_blue: '#283592',
-    pink_opacity: 'rgba(236, 30, 123, 10%)',
-  },
+	colors: {
+		primary_background: "#f5f5f5",
+		secondary_background: "#bcaec6",
+		default_text_color: "#000000",
+		alt_text_white: "#ffff",
+		default_button_aquamarine: "#1EA6AE",
+		default_component_blue: "#283592",
+		pink_opacity: "rgba(236, 30, 123, 10%)",
+	},
 
-  fonts: {
-    header: {
-      font_family: ['League Spartan', 'sans-serif'],
-      sizes: {
-        header_s_default: '52px',
-        header_m: '56px',
-        header_l: '68px',
-      },
-      weight: '700',
-    },
+	fonts: {
+		header: {
+			font_family: ["League Spartan", "sans-serif"],
+			sizes: {
+				header_s_default: "52px",
+				header_m: "56px",
+				header_l: "68px",
+			},
+			weight: "700",
+		},
 
-    text: {
-      font_family: ['Open Source Sans', 'sans-serif'],
-      sizes: {
-        text_xs: '12px',
-        text_s: '14px',
-        text_m: '16px',
-        text_l_default: '20px',
-      },
-      weights: {
-        black: '800',
-        bold: '700',
-        semi_bold: '600',
-        normal: '400',
-      },
-      styles: 'italic',
-    },
-  },
+		text: {
+			font_family: ["Open Source Sans", "sans-serif"],
+			sizes: {
+				text_xs: "12px",
+				text_s: "14px",
+				text_m: "16px",
+				text_l_default: "20px",
+			},
+			weights: {
+				black: "800",
+				bold: "700",
+				semi_bold: "600",
+				normal: "400",
+			},
+			styles: "italic",
+		},
+	},
 
-  gradients: {
-    component: `linear-gradient(
+	gradients: {
+		component: `linear-gradient(
             0deg,
             rgba(233, 235, 244, 1) 100%,
             rgba(233, 235, 244, 1) 100%
@@ -72,7 +72,7 @@ export const theme = {
             rgba(255, 255, 255, 1) 100%
           )`,
 
-    button_hover: `radial-gradient(
+		button_hover: `radial-gradient(
         56.45% 249.34% at 0% -41%,
         rgba(255, 241, 113, 0.8) 0%,
         rgba(255, 241, 113, 0) 100%
@@ -88,7 +88,7 @@ export const theme = {
         rgba(255, 255, 255, 0) 100%
       )`,
 
-    text: `linear-gradient(
+		text: `linear-gradient(
         0deg,
         rgba(255, 252, 170, 0.2) 100%,
         rgba(255, 252, 170, 0.2) 100%
@@ -108,11 +108,11 @@ export const theme = {
         rgba(219, 204, 229, 1) 100%,
         rgba(40, 53, 146, 0.5) 100%
       )`,
-  },
+	},
 };
 
 const Theme = ({ children }) => {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+	return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
 };
 
 export default Theme;
