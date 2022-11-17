@@ -17,9 +17,6 @@ const PrimaryButtonContainer = styled.button`
   font-size: 16px;
   line-height: 1.25;
   cursor: pointer;
-  &:hover {
-    background: ${(props) => props.theme.gradients.button_hover};
-  }
 `;
 
 function PrimaryButton() {
