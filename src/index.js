@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import { LinkedInCallback } from 'react-linkedin-login-oauth2';
 import App from './Components/App';
