@@ -1,16 +1,16 @@
-import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import ReactDOM from "react-dom/client";
-import { LinkedInCallback } from "react-linkedin-login-oauth2";
-import App from "./Components/App";
-import reportWebVitals from "./reportWebVitals";
-import { GlobalStyle } from "./vendor/fonts/fonts";
-import "./index.css";
+import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import ReactDOM from 'react-dom/client';
+import { LinkedInCallback } from 'react-linkedin-login-oauth2';
+import App from './Components/App';
+import reportWebVitals from './reportWebVitals';
+import { GlobalStyle } from './vendor/fonts/fonts';
+import './index.css';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route exact path="/linkedin">
           <LinkedInCallback />
@@ -20,7 +20,7 @@ root.render(
           <App />
         </Route>
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
 
