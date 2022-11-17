@@ -13,12 +13,13 @@ import { sectionVariants } from "../utils/animationVariants";
  */
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  background-color: ${(props) => `${props.theme.colors.secondary_background}`};
+  background-color: ${(props) => `${props.theme.colors.primary_background}`};
   max-width: 1440px;
   width: 1281px;
   height: fit-content;
   margin: 0 auto;
   padding: 80px 80px 85px 80px;
+
   &.story {
     background-color: transparent;
     padding: 0;
@@ -27,21 +28,21 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   }
   &.story__story-container {
     background-color: transparent;
-    width: 550px;
+    width: 620px;
+    margin: 0;
     padding: 0;
   }
   &.story__founder {
     background-color: transparent;
-    max-width: 455px;
-    margin: 32px 0 0;
+    max-width: 608px;
+    margin: 32px 0 0 0;
     padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gird-template-rows: 1fr 1fr;
+    grid-gap: 16px;
   }
-  &.story__founder-quote {
-    background-color: transparent;
-    width: 455px;
-    margin: 16px 0 0;
-    padding: 0;
-  }
+
   &.team__container {
     width: fit-content;
     background-color: transparent;
@@ -65,16 +66,27 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   font-size: ${(props) => `${props.theme.fonts.text.sizes.text_l_default}`};
   line-height: 30px;
   margin: 32px 0 0;
-  &.story__founder-quote-text {
-    background-color: ${(props) => `${props.theme.colors.pink_opacity}`};
+
+  &.story__founder-quote {
     font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
     font-style: ${(props) => `${props.theme.fonts.text.styles}`};
-    border-radius: 20px;
-    width: 407px;
+    width: 608px;
     line-height: 22px;
     margin: 0;
-    padding: 24px 0 24px 24px;
+    padding: 0;
   }
+
+  &.story__founder-name {
+    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
+    margin: 0;
+    text-align: right;
+    grid-column: 2;
+  }
+`;
+
+const Line = styled.span`
+    border-left: 2px solid ${(props) => `${props.theme.colors.default_text_color}`};
+    height: 132px;
 `;
 
 const OurStory = () => {
@@ -106,25 +118,19 @@ const OurStory = () => {
           </Text>
         </Container>
         <Container className="story__founder">
-          <TeamMember
-            photo={taraMarshall}
-            name="Tara Marshall-Hill"
-            pronouns="(she/her)"
-            headline="Founder of Sidano Health"
-          />
-          <Container className="story__founder-quote">
-            <Text className="story__founder-quote-text">
-              "As a queer Black woman, married to a queer Black&nbsp;nonbinary
+          <Line></Line>
+            <Text className="story__founder-quote">
+              "As a queer Black woman, married to a queer Black nonbinary
               person, with a queer Black autistic daughter, I'm creating the
-              solution my family needs. As&nbsp;it&nbsp;turns out, it's also the
-              solution our communities&nbsp;need. Sindano Health exists so no
-              other&nbsp;queer person from a racially marginalized background
-              ever has to check out of the continuum of&nbsp;care due to lack of
+              solution my family needs. As it turns out, it's also the
+              solution our communities need. Sindano Health exists so no
+              other queer person from a racially marginalized background
+              ever has to check out of the continuum of care due to lack of
               access to appropriate mental healthcare. Sindano Health exists
               because we all deserve to thrive."
             </Text>
+            <Text className="story__founder-name">— Tara Marshall-Hill</Text>
           </Container>
-        </Container>
       </Container>
       <Container className="team__container">
         <Team />
