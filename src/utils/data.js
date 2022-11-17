@@ -8,6 +8,11 @@ import taraMarshall from '../Images/team/tara_marshall_hill.png';
 import rylanRosario from '../Images/team/rylan_rosario.png';
 import ashAvilesBrizuela from '../Images/team/ash_aviles_brizuela.png';
 
+/** Data
+ *  @author [Ekaterina Cratcha](https://github.com/cratcha) 
+ *  @author [Sam](https://github.com/Samm96)
+ * */
+
 export const data = {
   chartStats: [
     { content: "Covered by my health insurance plan", number: 78 },
