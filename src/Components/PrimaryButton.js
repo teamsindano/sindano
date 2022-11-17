@@ -17,7 +17,6 @@ const PrimaryButtonContainer = styled.button`
   font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
   line-height: 1.25;
   cursor: pointer;
-  opacity: 1;
 
   &:hover {
     opacity: 0.8;
@@ -26,11 +25,10 @@ const PrimaryButtonContainer = styled.button`
 
 function PrimaryButton() {
    
-    // const { openModal } = useContext(ModalContext) 
+    const { openModal } = useContext(ModalContext) 
 
     return (
-        // <PrimaryButtonContainer onClick={openModal}>Request a call</PrimaryButtonContainer>
-        <PrimaryButtonContainer>Request a call</PrimaryButtonContainer>
+        <PrimaryButtonContainer onClick={openModal}>Request a call</PrimaryButtonContainer>
     )
 };
 
