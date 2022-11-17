@@ -48,6 +48,29 @@ export const theme = {
       styles: "italic",
     },
   },
+
+  gradients: {
+    component: `linear-gradient(
+            0deg,
+            rgba(233, 235, 244, 1) 100%,
+            rgba(233, 235, 244, 1) 100%
+          ),
+          radial-gradient(
+            110.58% 110.58% at 40.19% 148.08%,
+            rgba(40, 53, 146, 0.5) 0%,
+            rgba(255, 255, 255, 0) 100%
+          ),
+          radial-gradient(
+            141.03% 3248.2% at 71.91% -110.26%,
+            rgba(255, 152, 198, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+          ),
+          radial-gradient(
+            93.91% 3215.11% at 1.53% 100%,
+            rgba(219, 204, 229, 1) 100%,
+            rgba(255, 255, 255, 1) 100%
+          )`,
+  }
 };
 
 const Theme = ({ children }) => {
