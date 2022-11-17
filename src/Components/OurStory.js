@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import TeamMember from "./TeamMember";
-import taraMarshall from "../Images/team/tara_marshall_hill.png";
 import Team from "./Team";
 import { motion } from "framer-motion";
 import { sectionVariants } from "../utils/animationVariants";
@@ -45,8 +43,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
 
   &.team__container {
     width: fit-content;
-    background-color: transparent;
-    margin: 67px 0 0 36px;
+    margin: 120px 0 20px 0;
     padding: 0;
   }
 `;
