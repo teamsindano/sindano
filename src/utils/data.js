@@ -78,10 +78,10 @@ export const data = {
   content: {
     ourStory: {
       header: 'Our Story',
-      paragraphs: {
-        first: 'Sindano Health was founded by Tara Marshall-Hill to address the problems she faced in finding appropriate mental healthcare. Motivated to create a solution to the months-long process of what felt like "a shot in the dark" to locate an appropriate and safe therapist for her family\'s needs, Tara and her team designed a solution.',
-        second: 'Sindano Health\'s insights provide greater patient experience visibility for all stakeholders to close the knowledge and competency gaps in mental healthcare for LGBTQ+&nbsp;communities.',
-      } 
+      paragraphs: [
+        'Sindano Health was founded by Tara Marshall-Hill to address the problems she faced in finding appropriate mental healthcare. Motivated to create a solution to the months-long process of what felt like "a shot in the dark" to locate an appropriate and safe therapist for her family\'s needs, Tara and her team designed a solution.',
+        'Sindano Health\'s insights provide greater patient experience visibility for all stakeholders to close the knowledge and competency gaps in mental healthcare for LGBTQ+&nbsp;communities.',
+      ],
     }
   },
 
