@@ -8,21 +8,27 @@ import styled from "styled-components";
  */
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  width: 399px;
+  max-width: 240px;
+  margin: 0 auto 0;
   display: flex;
+  flex-direction: column;
+  
   &.teammember__text-container {
     font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
     font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
     font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
     line-height: 20px;
     color: ${(props) => `${props.theme.colors.default_text_color}`};
-    margin: 0 0 0 20px;
-    max-width: 253px;
+    margin: 16px auto 0;
+    max-width: 240px;
     flex-direction: column;
-    justify-content: center;
+    text-align: center;
   }
+
   &.teammember__name-container {
-    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
   }
 `;
 
@@ -30,12 +36,13 @@ const Photo = styled.img`
   border-radius: 50%;
   width: 126px;
   height: 126px;
+  margin: 0 auto 0;
   object-fit: cover;
   object-position: center;
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
-  margin: 0;
+  margin: 0 auto 0;
   padding; 0;
   width: fit-content;
 `;
@@ -45,6 +52,7 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
   width: fit-content;
   margin: 0 3px 0 0;
   padding; 0;
+
   &.teammember__pronouns {
     width: fit-content;
     font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
@@ -53,23 +61,6 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const TeamMember = ({ photo, name, pronouns, headline }) => {
-
-  const lineBreak = (title) => {
-    const headlineSplit = title.includes("and")
-      ? title.split("and")
-      : title.split("-");
-
-    return (
-      <>
-        <Text>
-          {title.includes("and") ? headlineSplit[0] : `${headlineSplit[0]} -`}
-        </Text>
-        <Text>
-          {title.includes("and") ? `and ${headlineSplit[1]}` : headlineSplit[1]}
-        </Text>
-      </>
-    );
-  };
 
   return (
     <div className="teammember">
@@ -82,11 +73,7 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
               {pronouns ? pronouns : ""}
             </Name>
           </Container>
-          {headline.includes("and") || headline.includes("-") ? (
-            lineBreak(headline)
-          ) : (
             <Text>{headline}</Text>
-          )}
         </Container>
       </Container>
     </div>

@@ -3,6 +3,15 @@ import nandiAllman from '../images/team/nandi_allman.png';
 import anyaMarshall from '../images/team/anya_marshall.png';
 import coleBuckle from '../images/team/cole_buckle.png';
 import ritChowdhury from '../images/team/rit_chowdhury.png';
+import taraMarshall from '../images/team/tara_marshall_hill.png';
+import rylanRosario from '../images/team/rylan_rosario.png';
+import ashAvilesBrizuela from '../images/team/ash_aviles_brizuela.png';
+
+/** Data
+ *  @author [Ekaterina Cratcha](https://github.com/cratcha) 
+ *  @author [Sam](https://github.com/Samm96) // Added & adjusted some data
+ * */
+
 
 export const data = {
   chartStats: [
@@ -67,7 +76,30 @@ export const data = {
     },
   ],
 
+  content: {
+    ourStory: {
+      header: 'Our Story',
+      paragraphs: [
+        'Sindano Health was founded by Tara Marshall-Hill to address the problems she faced in finding appropriate mental healthcare. Motivated to create a solution to the months-long process of what felt like "a shot in the dark" to locate an appropriate and safe therapist for her family\'s needs, Tara and her team designed a solution.',
+        'Sindano Health\'s insights provide greater patient experience visibility for all stakeholders to close the knowledge and competency gaps in mental healthcare for LGBTQ+ communities.',
+      ],
+    }
+  },
+
   team: [
+    {
+      image: taraMarshall,
+      name: 'Tara Marshall-Hill',
+      pronouns: '(she/her)',
+      title: 'Founder of Sidano Health',
+    },
+    {
+      image: anyaMarshall,
+      name: 'Anya Marshall',
+      pronouns: '(she/her)',
+      title:
+        'Key Technical Advisor — Software Engineering, Product Development and Data Engineering',
+    },
     {
       image: anshulaNathan,
       name: 'Anshula Nathan',
@@ -75,17 +107,10 @@ export const data = {
       title: 'Director of Research and Health Informatics',
     },
     {
-      image: nandiAllman,
-      name: 'Nandi K. Allman',
+      image: ashAvilesBrizuela,
+      name: 'Ash Aviles Brizuela',
       pronouns: '(they/them)',
-      title: 'Director of Product and Community',
-    },
-    {
-      image: anyaMarshall,
-      name: 'Anya Marshall',
-      pronouns: '(she/her)',
-      title:
-        'Key Technical Advisor - Software Engineering, Product Development and Data Engineering',
+      title: 'Head of Health Data Analytics',
     },
     {
       image: coleBuckle,
@@ -94,10 +119,21 @@ export const data = {
       title: 'Key Technical Advisor - Software Development',
     },
     {
+      image: nandiAllman,
+      name: 'Nandi K. Allman',
+      pronouns: '(they/them)',
+      title: 'Director of Product and Community',
+    },
+    {
       image: ritChowdhury,
       name: 'Rit Chowdhury',
       pronouns: '(he/him)',
       title: 'Consulting AI/ML Engineer',
+    },
+    {
+      image: rylanRosario,
+      name: 'Rylan Rosario',
+      title: 'Chief Knowledge Officer & Head of Research',
     },
   ],
 

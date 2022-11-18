@@ -10,11 +10,11 @@ import TeamMember from './Teammember';
  */
 
 const Container = styled.div`
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 65px 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 90px 100px;
 `;
 
 const Team = () => {
