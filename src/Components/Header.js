@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import headerLogo from '../Images/sindano_health_logo_black.svg';
+import headerLogo from '../images/sindano_health_logo_black.svg';
 import PrimaryButton from './PrimaryButton';
 import { sectionVariants } from '../utils/animationVariants';
 
@@ -61,7 +61,7 @@ function Header() {
         </StyledList>
       </nav>
 
-      <PrimaryButton/>
+      <PrimaryButton />
     </HeaderStyle>
   );
 }

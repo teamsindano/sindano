@@ -1,9 +1,11 @@
+
 import styled from "styled-components";
 import Team from "./Team";
 import { motion } from "framer-motion";
 import { sectionVariants } from "../utils/animationVariants";
 import Content from "../Components/Content";
 import { data } from "../utils/data";
+
 
 /**
  * The Our Story Component
@@ -80,6 +82,10 @@ const OurStory = () => {
       initial="offscreen"
       whileInView="onscreen"
     >
+
+      {/* replace with Content component*/}
+      <Header>Our Story</Header>
+
       <Container className="story">
       <Content
         header={data.content.ourStory.header}

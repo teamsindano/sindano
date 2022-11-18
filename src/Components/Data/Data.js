@@ -10,11 +10,16 @@ const DataWrapper = styled.div`
     background-color: ${(props) => `${props.theme.colors.alt_text_white}`};
     padding: 16px;
     margin: 0;
+    width: 100%;
     margin-left: 185px;
     margin-right: 145px;
     width: 290px;
     border-radius: 20px;
     position: relative;
+    @media screen and (max-width: 1150px) {
+      margin-left: 45px;
+      margin-right: 40px;
+    }
 `;
 
 const Data = ({children}) => {

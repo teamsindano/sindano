@@ -5,11 +5,16 @@ import { sectionVariants } from "../utils/animationVariants";
 
 const QuestionStyled = styled.section`
 	display: flex;
+    width: 100%;
     flex-direction: column;
 	justify-content: center;
 	margin-top: 160px;
     margin-bottom: 230px;
     padding: 0 245px;
+    box-sizing: border-box;
+    @media screen and (max-width: 1200px) {
+        padding: 0;
+    }
 `;
 
 const TitleStyled = styled.h3`
@@ -28,6 +33,10 @@ const QuestionSection = styled.div`
     grid-template-columns: 1fr 1fr;
     row-gap: 32px;
     column-gap: 40px;
+    @media screen and (max-width: 700px) {
+        width: 700px;
+        grid-template-columns: none;
+    }
 `;
 
 const SubTitle = styled.h3`
@@ -35,6 +44,9 @@ const SubTitle = styled.h3`
 	max-width: 455px;
 	margin-top: 0;
 	margin-bottom: 16px;
+    @media screen and (max-width: 1200px) {
+        max-width: 600px;
+    }
 `;
 
 const Text = styled.p`
@@ -42,6 +54,9 @@ const Text = styled.p`
 	max-width: 455px;
 	margin-top: 0;
 	margin-bottom: 16px;
+    @media screen and (max-width: 1200px) {
+        max-width: 600px;
+    }
 `;
 
 function Faq() {

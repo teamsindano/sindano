@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { data } from "../utils/data";
-import TeamMember from "./TeamMember";
+import styled from 'styled-components';
+import { data } from '../utils/data';
+import TeamMember from './Teammember';
 
 /**
  * The Team Component

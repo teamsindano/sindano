@@ -1,7 +1,7 @@
-import { ReactComponent as Arrow } from "../../Images/downward-arrow.svg";
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { UnfoldContext } from "./Unfold";
+import { ReactComponent as Arrow } from '../../images/downward-arrow.svg';
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { UnfoldContext } from './Unfold';
 
 /**
  * Unfold Header Component
@@ -48,7 +48,7 @@ const HeaderTitle = styled.h3`
   font-weight: ${(props) => `props.theme.fonts.text.weights.black`};
   font-size: ${(props) => `props.theme.fonts.text.sizes.text_l_default`};
   line-height: 1.5;
-  color: ${(props) => props.theme.colors.alt_text_white`};
+  color: #fff;
 `;
 
 function UnfoldHeader({ item }) {
@@ -57,7 +57,7 @@ function UnfoldHeader({ item }) {
     <Header onClick={() => handleClick(item.id)}>
       <HeaderTitle>{item.cardTitle}</HeaderTitle>
       <HeaderButton openedItem={activeItem} id={item.id}>
-        <Arrow />
+        <Arrow /> 
       </HeaderButton>
     </Header>
   );
