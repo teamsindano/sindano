@@ -1,4 +1,4 @@
-//import { ReactComponent as Arrow } from '../../images/downward-arrow.svg';
+import { ReactComponent as Arrow } from '../../images/downward-arrow.svg';
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { UnfoldContext } from './Unfold';
@@ -57,7 +57,7 @@ function UnfoldHeader({ item }) {
     <Header onClick={() => handleClick(item.id)}>
       <HeaderTitle>{item.cardTitle}</HeaderTitle>
       <HeaderButton openedItem={activeItem} id={item.id}>
-        {/*<Arrow /> */}
+        <Arrow /> 
       </HeaderButton>
     </Header>
   );

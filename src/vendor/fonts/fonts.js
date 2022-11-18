@@ -11,11 +11,6 @@ import OpenSauce400Italic from './open-sauce-sans/OpenSauceSans-Italic.ttf';
 import OpenSauce400 from './open-sauce-sans/OpenSauceSans-Regular.ttf';
 
 export const GlobalStyle = createGlobalStyle`
-
-html {
-		scroll-behavior: smooth;
-}
-
 @font-face {
   font-family: 'League Spartan';
   font-weight: 700;
@@ -66,5 +61,10 @@ html {
   font-style: normal;
   src: url(${OpenSauce400}) format('truetype');
 }
+
+html {
+		scroll-behavior: smooth;
+}
+
 `;
 
