@@ -84,8 +84,7 @@ const OurStory = () => {
     >
 
       {/* replace with Content component*/}
-      <Header>Our Story</Header>
-
+     
       <Container className="story">
       <Content
         header={data.content.ourStory.header}

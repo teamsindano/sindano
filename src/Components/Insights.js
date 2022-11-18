@@ -7,8 +7,8 @@ import { sectionVariants } from "../utils/animationVariants";
 const InsightsSection = styled.section`
     width: 100%;
     display: flex;
-    margin-bottom: 200px;
     margin: 0 auto;
+    margin-bottom: 200px;
     @media screen and (max-width: 1450px){
         flex-direction: column;
     }

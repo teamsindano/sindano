@@ -43,6 +43,7 @@ const StatsContainer = styled.div`
   @media screen and (max-width: 1400px) {
     width: 800px;
     margin: 0 auto;
+    margin-bottom: 180px;
     justify-content: center;
   }
   @media screen and (max-width: 950px) {
