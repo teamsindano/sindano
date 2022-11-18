@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import TeamMember from "./TeamMember";
-import taraMarshall from "../Images/team/tara_marshall_hill.png";
-import Team from "./Team";
-import { motion } from "framer-motion";
-import { sectionVariants } from "../utils/animationVariants";
+import styled from 'styled-components';
+import TeamMember from './Teammember';
+import taraMarshall from '../images/team/tara_marshall_hill.png';
+import Team from './Team';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '../utils/animationVariants';
 
 /**
  * The Our Story Component
@@ -79,12 +79,13 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
 
 const OurStory = () => {
   return (
-    <Container   
-    id="ourstory"
-    as={motion.div}
-    variants={sectionVariants}
-    initial="offscreen"
-    whileInView="onscreen">
+    <Container
+      id="ourstory"
+      as={motion.div}
+      variants={sectionVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+    >
       {/* replace with Content component*/}
       <Header>Our Story</Header>
       <Container className="story">
