@@ -17,10 +17,13 @@ const PrimaryButtonContainer = styled.button`
   font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
   line-height: 1.25;
   cursor: pointer;
+<<<<<<< HEAD
+=======
 
   &:hover {
     opacity: 0.8;
   }
+>>>>>>> main
 `;
 
 function PrimaryButton() {

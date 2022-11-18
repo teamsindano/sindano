@@ -48,7 +48,11 @@ const HeaderTitle = styled.h3`
   font-weight: ${(props) => `props.theme.fonts.text.weights.black`};
   font-size: ${(props) => `props.theme.fonts.text.sizes.text_l_default`};
   line-height: 1.5;
+<<<<<<< HEAD
+  color: #fff;
+=======
   color: ${(props) => `props.theme.colors.alt_text_white`};
+>>>>>>> main
 `;
 
 function UnfoldHeader({ item }) {
