@@ -12,6 +12,9 @@ const InsightsSection = styled.section`
     @media screen and (max-width: 1450px){
         flex-direction: column;
     }
+    @media screen and (max-width: 900px){
+        margin-bottom: 100px;
+    }
 `;
 
 const InsightsImage = styled.img`

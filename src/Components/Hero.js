@@ -13,8 +13,12 @@ const HeroWrapper = styled.section`
   position: relative;
   margin: auto;
   height: 695px;
+  margin-bottom: 140px;
   @media screen and (max-width: 1050px) {
     height: 468px;
+  }
+  @media screen and (max-width: 600px) {
+    margin-bottom: 100px;
   }
 `;
 

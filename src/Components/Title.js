@@ -6,6 +6,7 @@ const TitleContainer = styled.h2`
     font-weight: 700;
     font-size: 52px;
     line-height: 1;
+    margin: 0;
     color: #283592;
     max-width: 950px;
     margin-bottom: ${(props) => props.marginBottom + `px`};

@@ -38,7 +38,7 @@ const StatsContainer = styled.div`
   flex-direction: row;
   justify-content: start;
   gap: 40px;
-  margin-bottom: 160px;
+  margin-bottom: 180px;
   flex-wrap: wrap;
   @media screen and (max-width: 1400px) {
     width: 800px;
@@ -48,6 +48,7 @@ const StatsContainer = styled.div`
   }
   @media screen and (max-width: 950px) {
     width: 600px;
+    margin-bottom: 100px;
   }
 `;
 
