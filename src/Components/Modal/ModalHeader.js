@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import closeIcon from '../../images/close-item.png';
+import closeIcon from '../../images/close-item.svg';
+
 
 /**
  * Modal Header Component

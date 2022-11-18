@@ -1,5 +1,7 @@
 import styled from 'styled-components';
-import heart from '../images/heart.png';
+//import heart from '../images/heart.png';
+import graphic from '../images/insights_graphic.svg';
+
 import Title from './Title';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
@@ -35,7 +37,7 @@ function Insights() {
       initial="offscreen"
       whileInView="onscreen"
     >
-      <InsightsImage src={heart} alt="heart" />
+      <InsightsImage src={graphic} alt="graphic" />
       <TextContainer>
         <Title
           text="Insights for transparent and equitable precision mental healthcare"
