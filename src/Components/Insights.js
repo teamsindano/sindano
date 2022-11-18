@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import insights from '../Images/insights.png';
+import insights from '../images/insights.png';
 import Title from "./Title";
 import { motion } from "framer-motion";
 import { sectionVariants } from "../utils/animationVariants";
@@ -52,7 +52,7 @@ function Insights() {
       initial="offscreen"
       whileInView="onscreen"
     >
-      <InsightsImage src={graphic} alt="graphic" />
+      <InsightsImage src={insights} alt="graphic" />
       <TextContainer>
         <Title
           text="Insights for transparent and equitable precision mental healthcare"
@@ -74,25 +74,4 @@ function Insights() {
   );
 }
 
-<<<<<<< HEAD
-    return (
-        <InsightsSection 
-         as={motion.section}
-            variants={sectionVariants}
-            initial="offscreen"
-            whileInView="onscreen"
-        >
-            <InsightsImage src={insights} alt="heart"/>
-            <TextContainer>
-                <Title text="Insights for transparent and equitable precision mental healthcare" marginBottom={32}/>
-                <Text>Sindano Health is a data analytics and SaaS technology company developing human-first AI solutions to address disparities in mental health outcomes for LGBTQ+ communities through a racial equity lens.</Text>
-                <Text>We empower mental healthcare systems and insurance plans with community-driven, actionable, real-time, and precise data insights that enable customized decision-making that identify and close care gaps for improved patient and practice outcomes.</Text>
-            </TextContainer>
-        </InsightsSection>
-    );
-};
-
 export default Insights;
-=======
-export default Insights;
->>>>>>> main
