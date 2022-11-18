@@ -12,36 +12,69 @@ const WorkSectionContainer = styled.section`
   margin-bottom: 160px;
   margin-top: 160px;
   justify-content: space-between;
+  @media screen and (max-width: 1450px) {
+    justify-content: center;
+  }
+  @media screen and (max-width: 980px) {
+    flex-direction: column;
+  }
+`;
+
+const CustomButton = styled(PrimaryButton)`
+   @media screen and (max-width: 580px) {
+    width: 100%;
+  }
 `;
 
 const LeftSection = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  @media screen and (max-width: 980px) {
+    order: 2;
+  }
 `;
 
 const FlexDiv = styled.div`
   display: flex;
+  @media screen and (max-width: 580px) {
+    flex-direction: column;
+  }
 `;
 
 const InputBox = styled.input`
   width: 291px;
+  display: block;
   height: 50px;
   border: 1px solid #000000;
+  box-sizing: border-box;
   border-radius: 12px;
   margin-right: 20px;
   padding: 0 20px;
   font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  @media screen and (max-width: 580px) {
+    margin-bottom: 12px;
+    width: 100%;
+  }
 `;
 
 const Image = styled.img`
-  display: block;
-  width: 600px;
+  width: 100%;
+  height: auto;
   border-radius: 12px;
 `;
 
 const RightSection = styled.div`
+  max-width: 620px;
   position: relative;
+  @media screen and (max-width: 1450px) {
+    max-width: 402px;
+    margin-left: 62px;
+  }
+  @media screen and (max-width: 980px) {
+    order: 1;
+    margin-left: 0;
+  }
 `;
 
 const Blur = styled.div`
@@ -74,6 +107,13 @@ const Blur = styled.div`
   z-index: -1;
 `;
 
+const LeftSectionDiv = styled.div`
+   @media screen and (max-width: 980px) {
+    margin-top: 32px;
+    margin-bottom: 60px;
+  }
+`
+
 function WorkSection() {
   return (
     <WorkSectionContainer
@@ -83,10 +123,10 @@ function WorkSection() {
       whileInView="onscreen"
     >
       <LeftSection>
-        <div>
+        <LeftSectionDiv>
           <Title text="See How We Work" marginBottom={32} />
-          <PrimaryButton />
-        </div>
+          <CustomButton />
+        </LeftSectionDiv>
         <div>
           <Title text="Get Product Updates" marginBottom={40} />
           <FlexDiv>
@@ -95,10 +135,10 @@ function WorkSection() {
           </FlexDiv>
         </div>
       </LeftSection>
-      <RightSection>
+      <RightSection> 
         <Image src={work} />
         <Blur />
-      </RightSection>
+      </RightSection> 
     </WorkSectionContainer>
   );
 }
