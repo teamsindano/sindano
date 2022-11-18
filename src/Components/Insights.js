@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import styled from "styled-components";
 import insights from '../Images/insights.png';
 import Title from "./Title";
@@ -35,28 +34,6 @@ const TextContainer = styled.div`
         margin-left: 0;
     }
 `
-=======
-import styled from 'styled-components';
-//import heart from '../images/heart.png';
-import graphic from '../images/insights_graphic.svg';
-import Title from './Title';
-import { motion } from 'framer-motion';
-import { sectionVariants } from '../utils/animationVariants';
-
-const InsightsSection = styled.section`
-  width: 100%;
-  display: flex;
-  margin-bottom: 200px;
-`;
-
-const InsightsImage = styled.img`
-  display: block;
-  align-self: center;
-`;
-const TextContainer = styled.div`
-  margin-left: 111px;
-`;
->>>>>>> main
 
 const Text = styled.p`
   font-weight: 400;
