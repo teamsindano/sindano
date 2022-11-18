@@ -60,7 +60,7 @@ app.post('/authorize', (req, res) => {
           // TODO: Replace this client_id (temp replaced)
           client_id: '78i0gitxfdiyau',
           client_secret: process.env.CLIENT_SECRET,
-          redirect_uri: 'http://localhost:3000/linkedin',
+          redirect_uri: 'https://pstaal.github.io/sindano/linkedin',
         },
       }
     )
