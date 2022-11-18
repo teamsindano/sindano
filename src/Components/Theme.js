@@ -1,5 +1,5 @@
-import React from "react";
-import { ThemeProvider } from "styled-components";
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
 /**
  * The CSS Themes
@@ -12,40 +12,41 @@ import { ThemeProvider } from "styled-components";
 
 export const theme = {
   colors: {
-    primary_background: "#f5f5f5",
-    footer_background: "#2D2D2D",
-    default_text_color: "#000000",
-    alt_text_white: "#ffff",
-    default_button_aqua: "#1EA6AE",
-    default_component_blue: "#283592",
+    primary_background: '#f5f5f5',
+    footer_background: '#2D2D2D',
+    default_text_color: '#000000',
+    alt_text_white: '#ffff',
+    default_button_aqua: '#1EA6AE',
+    default_component_blue: '#283592',
   },
 
   fonts: {
     header: {
-      font_family: ["League Spartan", "sans-serif"],
+      font_family: ['League Spartan', 'sans-serif'],
       sizes: {
-        header_s_default: "52px",
-        header_m: "56px",
-        header_l: "68px",
+        header_xs: '44px',
+        header_s_default: '52px',
+        header_m: '56px',
+        header_l: '80px',
       },
-      weight: "700",
+      weight: '700',
     },
 
     text: {
-      font_family: ["Open Sauce Sans", "sans-serif"],
+      font_family: ['Open Sauce Sans', 'sans-serif'],
       sizes: {
-        text_xs: "12px",
-        text_s: "14px",
-        text_m: "16px",
-        text_l_default: "20px",
+        text_xs: '12px',
+        text_s: '14px',
+        text_m: '16px',
+        text_l_default: '20px',
       },
       weights: {
-        black: "800",
-        bold: "700",
-        semi_bold: "600",
-        normal: "400",
+        black: '800',
+        bold: '700',
+        semi_bold: '600',
+        normal: '400',
       },
-      styles: "italic",
+      styles: 'italic',
     },
   },
 
@@ -70,7 +71,7 @@ export const theme = {
             rgba(219, 204, 229, 1) 100%,
             rgba(255, 255, 255, 1) 100%
           )`,
-  }
+  },
 };
 
 const Theme = ({ children }) => {
