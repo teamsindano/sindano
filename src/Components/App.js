@@ -19,7 +19,7 @@ import Header from './Header';
 import OurStory from "./OurStory";
 
 const Page = styled.div`
-  width: 1280px;
+  width: 80vw;
   margin: 0 auto;
   padding: 0 80px;
 `;
@@ -28,8 +28,18 @@ const StatsContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 40px;
   margin-bottom: 160px;
+  flex-wrap: wrap;
+  @media screen and (max-width: 1400px) {
+    width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  @media screen and (max-width: 950px) {
+    width: 600px;
+  }
 `;
 
 export const ModalContext = createContext();
@@ -54,9 +64,9 @@ function App() {
   return (
     <Theme>
       <ModalContext.Provider value={{ openModal }}>
-        <Page>
           <Header/>
           <Hero/>
+          <Page>
           <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America" marginBottom={80}/>
           <StatsContainer>
             {data.statsCards.map((card) => {

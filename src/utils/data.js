@@ -1,37 +1,37 @@
-//images for team section
-import anshulaNathan from '../Images/team/anshula_nathan.png';
-import nandiAllman from '../Images/team/nandi_allman.png';
-import anyaMarshall from '../Images/team/anya_marshall.png';
-import coleBuckle from '../Images/team/cole_buckle.png';
-import ritChowdhury from '../Images/team/rit_chowdhury.png';
+import anshulaNathan from '../images/team/anshula_nathan.png';
+import nandiAllman from '../images/team/nandi_allman.png';
+import anyaMarshall from '../images/team/anya_marshall.png';
+import coleBuckle from '../images/team/cole_buckle.png';
+import ritChowdhury from '../images/team/rit_chowdhury.png';
 
 export const data = {
   chartStats: [
-    { content: "Covered by my health insurance plan", number: 78 },
-    { content: "Cost I have to pay", number: 74 },
-    { content: "Past experience was good", number: 74 },
+    { content: 'Covered by my health insurance plan', number: 78 },
+    { content: 'Cost I have to pay', number: 74 },
+    { content: 'Past experience was good', number: 74 },
     {
-      content: "A clinician has good expertise (eg, training, schooling)",
+      content: 'A clinician has good expertise (eg, training, schooling)',
       number: 70,
     },
-    { content: "Friendliness of the staff", number: 69 },
-    { content: "A facility has a good reputation/scored well", number: 68 },
-    { content: "A clinician has a good reputation/scored well", number: 68 },
-    { content: "Facilities were up-to-date/nice", number: 68 },
+    { content: 'Friendliness of the staff', number: 69 },
+    { content: 'A facility has a good reputation/scored well', number: 68 },
+    { content: 'A clinician has a good reputation/scored well', number: 68 },
+    { content: 'Facilities were up-to-date/nice', number: 68 },
     {
-      content: "How convenient the choices are for when can get care",
+      content: 'How convenient the choices are for when can get care',
       number: 67,
     },
     {
-      content: "How convenient the choices are for where to get care",
+      content: 'How convenient the choices are for where to get care',
       number: 66,
     },
     {
-      content: "The care provider has my medical history/information",
+      content: 'The care provider has my medical history/information',
       number: 64,
     },
     { content: "Following your clinician's recommendation", number: 62 },
   ],
+
   statsCards: [
     {
       id: 1,
@@ -70,28 +70,33 @@ export const data = {
   team: [
     {
       image: anshulaNathan,
-      name: 'Anshula Nathan (she/her)',
+      name: 'Anshula Nathan',
+      pronouns: '(she/her)',
       title: 'Director of Research and Health Informatics',
     },
     {
       image: nandiAllman,
-      name: 'Nandi K. Allman (they/them)',
+      name: 'Nandi K. Allman',
+      pronouns: '(they/them)',
       title: 'Director of Product and Community',
     },
     {
       image: anyaMarshall,
-      name: 'Anya Marshall (she/her)',
+      name: 'Anya Marshall',
+      pronouns: '(she/her)',
       title:
         'Key Technical Advisor - Software Engineering, Product Development and Data Engineering',
     },
     {
       image: coleBuckle,
-      name: 'Cole Buckle (she/her)',
-      title: 'Software Development',
+      name: 'Cole Buckle',
+      pronouns: '(she/her)',
+      title: 'Key Technical Advisor - Software Development',
     },
     {
       image: ritChowdhury,
-      name: 'Rit Chowdhury (he/him)',
+      name: 'Rit Chowdhury',
+      pronouns: '(he/him)',
       title: 'Consulting AI/ML Engineer',
     },
   ],
@@ -145,45 +150,57 @@ export const data = {
     },
     {
       id: 2,
-      options: { plugins:
-        {
-        legend : {
+      options: {
+        plugins: {
+          legend: {
             display: true,
             position: 'bottom',
             align: 'start',
-            labels : {
-                textAlign: 'left',
-                boxWidth: 10, 
-                boxHeight: 10,
-                font: {
-                    size: 10,
-                    weight: 400,
-                }},
+            labels: {
+              textAlign: 'left',
+              boxWidth: 10,
+              boxHeight: 10,
+              font: {
+                size: 10,
+                weight: 400,
+              },
+            },
             title: {
-                text: 'In 1012 US$',
-                display: true,
-                padding: 10,
-                position: 'bottom',
-            }
-            }
-         },
-         datalabels: {
-            align: 'center',
-         } },
-      data: { labels: ['Mental disorders', 'Diabetis','Cardiovascular diseases', 'Chronic respiratory diseases', 'Cancer'],
-      datasets: [{
-        data: [16.3, 1.7, 15.6, 4.8, 8.3],
-        datalabels: {color: 'white'},
-        backgroundColor: [
-          '#EC1E7B',
-          '#A7A7A7',
-          '#BCAEC6',
-          '#1EA6AE',
-          '#283592'
+              text: 'In 1012 US$',
+              display: true,
+              padding: 10,
+              position: 'bottom',
+            },
+          },
+        },
+        datalabels: {
+          align: 'center',
+        },
+      },
+      data: {
+        labels: [
+          'Mental disorders',
+          'Diabetis',
+          'Cardiovascular diseases',
+          'Chronic respiratory diseases',
+          'Cancer',
         ],
-        borderWidth: 0.5,
-      }],
-      borderColor: "#fff",},
+        datasets: [
+          {
+            data: [16.3, 1.7, 15.6, 4.8, 8.3],
+            datalabels: { color: 'white' },
+            backgroundColor: [
+              '#EC1E7B',
+              '#A7A7A7',
+              '#BCAEC6',
+              '#1EA6AE',
+              '#283592',
+            ],
+            borderWidth: 0.5,
+          },
+        ],
+        borderColor: '#fff',
+      },
       source:
         'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
     },
@@ -192,84 +209,95 @@ export const data = {
       dataTitle: '50%',
       dataContent: [
         'Of full-time U.S. workers have left previous roles due, at least in part, to mental health reasons.',
-        'This number Rises to: 81% of Gen Z respondents 68% of Millenial respondents 32% when considering voluntary departures',
+        'This number Rises to:',
+        '81% of Gen Z respondents',
+        '68% of Millenial respondents',
+        '32% when considering voluntary departures',
       ],
       source:
         'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
     },
     {
       id: 4,
-      options: {  scales: {
-        x: {
-          ticks: {display: false},    
-          grid: {
-            display: false,
-            drawBorder: false,
-          },
-        },
-        y: {
-          ticks: {display: false},
-          grid: {
-            display: false,
-            drawBorder: false,
-          },
-        },
-      },
-    plugins: {
-            title: {
-                text: ['Discrimination deters', 'seeking care'],
-                color: '#283592',
-                position: 'top',
-                align: 'center',
-                display: true,
-                padding: {
-                    bottom: 21
-                },
-                font: {
-                    size: 16,
-                    weight: 'bold',
-                    lineHeight: 1.25
-                }
+      options: {
+        scales: {
+          x: {
+            ticks: { display: false },
+            grid: {
+              display: false,
+              drawBorder: false,
             },
-            legend: {
+          },
+          y: {
+            ticks: { display: false },
+            grid: {
+              display: false,
+              drawBorder: false,
+            },
+          },
+        },
+        plugins: {
+          title: {
+            text: ['Discrimination deters', 'seeking care'],
+            color: '#283592',
+            position: 'top',
+            align: 'center',
+            display: true,
+            padding: {
+              bottom: 21,
+            },
+            font: {
+              size: 16,
+              weight: 'bold',
+              lineHeight: 1.25,
+            },
+          },
+          legend: {
             labels: {
-                generateLabels: function(chart) {
+              generateLabels: function (chart) {
                 var labels = chart.data.labels;
                 var dataset = chart.data.datasets[0];
-                var legend = labels.map(function(label, index) {
-                   return {
-                      datasetIndex: 0,
-                      fillStyle: dataset.backgroundColor && dataset.backgroundColor[index],
-                      strokeStyle: dataset.borderColor && dataset.borderColor[index],
-                      lineWidth: dataset.borderWidth,
-                      text: label
-                   }
+                var legend = labels.map(function (label, index) {
+                  return {
+                    datasetIndex: 0,
+                    fillStyle:
+                      dataset.backgroundColor && dataset.backgroundColor[index],
+                    strokeStyle:
+                      dataset.borderColor && dataset.borderColor[index],
+                    lineWidth: dataset.borderWidth,
+                    text: label,
+                  };
                 });
                 return legend;
-             },
-             boxWidth: 10, 
-             boxHeight: 10,
+              },
+              boxWidth: 10,
+              boxHeight: 10,
             },
             position: 'bottom',
-            align: "start",
+            align: 'start',
+          },
+
+          datalabels: {
+            font: {
+              weight: 'bold',
             },
-           
-             datalabels: {
-                font: {
-                    weight: 'bold'
-                },
-                formatter: function(value, context) {
-                  return  value + '%';
-                }
-              }
-    },
-    indexAxis: 'y',},
-      data: { labels: ["Non-LGBTQIA+", "LGBTQIA+"],
-      datasets: [{
-          data: [7,23], 
-          datalabels: {color:"white"},
-          backgroundColor: [ '#BCAEC6', '#EC1E7B']
-      }],},
+            formatter: function (value, context) {
+              return value + '%';
+            },
+          },
+        },
+        indexAxis: 'y',
+      },
+      data: {
+        labels: ['Non-LGBTQIA+', 'LGBTQIA+'],
+        datasets: [
+          {
+            data: [7, 23],
+            datalabels: { color: 'white' },
+            backgroundColor: ['#BCAEC6', '#EC1E7B'],
+          },
+        ],
+      },
       source:
         'Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source',
     },

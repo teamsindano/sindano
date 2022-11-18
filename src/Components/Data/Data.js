@@ -7,7 +7,7 @@ import DataFigure from "./DataFigure";
  */
  
 const DataWrapper = styled.div`
-    background-color: #fff;
+    background-color: ${(props) => `${props.theme.colors.alt_text_white}`};
     padding: 16px;
     margin: 0;
     margin-left: 185px;
