@@ -22,6 +22,14 @@ const Page = styled.div`
   width: 80vw;
   margin: 0 auto;
   padding: 0 80px;
+  @media screen and (max-width: 1350px){
+    width: calc(100vw - 80px);
+    padding: 0 40px;
+  }
+  @media screen and (max-width: 100px){
+    width: calc(100vw - 32px);
+    padding: 0 16px;
+  }
 `;
 
 const StatsContainer = styled.div`
@@ -97,12 +105,12 @@ function App() {
           </Unfold>
         <WorkSection/>
         <Faq/>
+        </Page>
         <Footer/>
         <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
             <ModalContent isModalConfirmation={isModalConfirmation} handleSuccess={handleSuccess}/>
-        </ModalWrapper>
-        </Page>
+        </ModalWrapper>  
       </ModalContext.Provider>
     </Theme>
   );
