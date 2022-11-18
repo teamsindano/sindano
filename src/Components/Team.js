@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { data } from "../utils/data";
-import TeamMember from "./TeamMember";
+import styled from 'styled-components';
+import { data } from '../utils/data';
+import TeamMember from './Teammember';
 
 /**
  * The Team Component
@@ -10,11 +10,11 @@ import TeamMember from "./TeamMember";
  */
 
 const Container = styled.div`
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 65px 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 65px 0;
 `;
 
 const Team = () => {
