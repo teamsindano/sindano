@@ -116,8 +116,8 @@ function ModalForm({ handleSuccess }) {
     scope: 'r_liteprofile',
     onSuccess: _.debounce((code) => {
       axios
-        // TODO: Replace this with deployed api address
-        .post('http://localhost:3001/authorize', {
+        // TODO: Replace this with deployed api address (replaced)
+        .post('http://34.123.12.180/authorize', {
           code,
         })
         .then(({ data }) => {
