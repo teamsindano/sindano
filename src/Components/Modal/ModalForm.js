@@ -106,7 +106,7 @@ const SubmitText = styled.p`
 `;
 
 function ModalForm({ handleSuccess }) {
-  const { values, handleChange, errors, isValid, resetForm } =
+  const { values, handleChange, handleAutoFill, errors, isValid, resetForm } =
     useFormWithValidation();
 
   const { linkedInLogin } = useLinkedIn({
@@ -117,7 +117,7 @@ function ModalForm({ handleSuccess }) {
     onSuccess: _.debounce((code) => {
       axios
         // TODO: Replace this with deployed api address (replaced)
-        .post('http://34.123.12.180/authorize', {
+        .post('http://34.123.12.180:3001/authorize', {
           code,
         })
         .then(({ data }) => {
@@ -130,7 +130,7 @@ function ModalForm({ handleSuccess }) {
         })
         .then(({ data }) => {
           // Set state of inputs in form using `data` object
-          console.log(data);
+          handleAutoFill(data);
         })
         .catch((err) => {
           console.log(err);

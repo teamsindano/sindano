@@ -3,8 +3,12 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 let nodemailer = require('nodemailer');
+const { SecretManagerServiceClient } = require('@google-cloud/secret-manager');
 
 require('dotenv').config();
+
+// Instantiates a client
+const client = new SecretManagerServiceClient();
 
 const { PORT = 3001 } = process.env;
 app.use(cors());
@@ -49,25 +53,27 @@ app.post('/', (req, res) => {
 });
 
 app.post('/authorize', (req, res) => {
-  axios
-    .post(
-      'https://www.linkedin.com/oauth/v2/accessToken',
-      {},
-      {
-        params: {
-          grant_type: 'authorization_code',
-          code: req.body.code,
-          // TODO: Replace this client_id (temp replaced)
-          client_id: '78i0gitxfdiyau',
-          client_secret: process.env.CLIENT_SECRET,
-          redirect_uri: 'https://pstaal.github.io/sindano/linkedin',
-        },
-      }
-    )
-    .then(({ data }) => {
-      res.send(data);
-    })
-    .catch((err) => res.status(500).send(err));
+  client.getSecret({ name: 'CLIENT_SECRET' }).then(([secret]) => {
+    axios
+      .post(
+        'https://www.linkedin.com/oauth/v2/accessToken',
+        {},
+        {
+          params: {
+            grant_type: 'authorization_code',
+            code: req.body.code,
+            // TODO: Replace this client_id (temp replaced)
+            client_id: '78i0gitxfdiyau',
+            client_secret: secret,
+            redirect_uri: 'https://pstaal.github.io/sindano/linkedin',
+          },
+        }
+      )
+      .then(({ data }) => {
+        res.send(data);
+      })
+      .catch((err) => res.status(500).send(err));
+  });
 });
 
 app.listen(PORT, () => {
