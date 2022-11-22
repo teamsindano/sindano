@@ -19,7 +19,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   margin: 0 auto;
   padding: 80px 80px 210px 80px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     display: flex;
     flex-direction: column;
     margin: 0;
@@ -38,7 +38,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1200px) {
       max-width: 1024px;
     }
   }
@@ -58,7 +58,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     gird-template-rows: 1fr 1fr;
     grid-gap: 16px;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1200px) {
       max-width: 1024px;
       margin: 80px 0 0 0;
       justify-self: flex-end;
