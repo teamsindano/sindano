@@ -12,6 +12,10 @@ export const HeaderStyle = styled.header`
 	align-items: center;
 	margin: auto;
 	max-width: 1440px;
+	@media screen and (max-width: 480px) {
+		margin: 0;
+		padding: 0;
+	}
 `;
 
 export const LogoImage = styled.img`
@@ -46,28 +50,30 @@ export const StyledLinks = styled.a`
 
 function Header() {
 	return (
-		<HeaderStyle
-			as={motion.header}
-			variants={sectionVariants}
-			initial="offscreen"
-			whileInView="onscreen">
-			<LogoImage src={headerLogo} alt="Sindano logo"></LogoImage>
-			<nav>
-				<StyledList>
-					<StyledIcons>
-						<StyledLinks href="#ourstory">About</StyledLinks>
-					</StyledIcons>
-					<StyledIcons>
-						<StyledLinks href="#whatwedo">What we do</StyledLinks>
-					</StyledIcons>
-					<StyledIcons>
-						<StyledLinks href="#faq">FAQ</StyledLinks>
-					</StyledIcons>
-				</StyledList>
-			</nav>
-			<Burger />
-			<PrimaryButton />
-		</HeaderStyle>
+		<>
+			<HeaderStyle
+				as={motion.header}
+				variants={sectionVariants}
+				initial="offscreen"
+				whileInView="onscreen">
+				<LogoImage src={headerLogo} alt="Sindano logo"></LogoImage>
+				<nav>
+					<StyledList>
+						<StyledIcons>
+							<StyledLinks href="#ourstory">About</StyledLinks>
+						</StyledIcons>
+						<StyledIcons>
+							<StyledLinks href="#whatwedo">What we do</StyledLinks>
+						</StyledIcons>
+						<StyledIcons>
+							<StyledLinks href="#faq">FAQ</StyledLinks>
+						</StyledIcons>
+					</StyledList>
+				</nav>
+				<Burger />
+				<PrimaryButton />
+			</HeaderStyle>
+		</>
 	);
 }
 export default Header;
