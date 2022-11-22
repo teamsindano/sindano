@@ -65,8 +65,6 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
       grid-template-columns: 1fr;
       grid-gap: 16px 0;
     }
-
-    
   }
 
   &.team__container {
