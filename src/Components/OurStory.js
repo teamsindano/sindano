@@ -23,7 +23,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 80px 40px 210px 40px;
+    padding: 80px 40px 200px 40px;
   }
 
   &.story {
@@ -40,6 +40,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   }
 
   &.story__content {
+    margin: 0 40px 0 0;
     padding: 0;
   }
 

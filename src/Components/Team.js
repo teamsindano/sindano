@@ -16,6 +16,11 @@ const Container = styled.div`
     grid-template-rows: auto;
     grid-gap: 90px 100px;
     background-color: transparent;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 95px 100px;
+    }
 `;
 
 const Team = () => {

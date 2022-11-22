@@ -12,7 +12,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   margin: 0 auto 0;
   display: flex;
   flex-direction: column;
-  
+
   &.teammember__text-container {
     font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
     font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
@@ -26,6 +26,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   }
 
   &.teammember__name-container {
+    width: fit-content;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,7 +51,7 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
 const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
   font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
   width: fit-content;
-  margin: 0 3px 0 0;
+  margin: 0;
   padding; 0;
 
   &.teammember__pronouns {
@@ -61,19 +62,20 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const TeamMember = ({ photo, name, pronouns, headline }) => {
-
   return (
     <div className="teammember">
       <Container>
         <Photo src={photo} alt={name} />
         <Container className="teammember__text-container">
           <Container className="teammember__name-container">
-            <Name>{name}</Name>
-            <Name className="teammember__pronouns">
-              {pronouns ? pronouns : ""}
+            <Name>
+              {name}{" "}
+              <Name className="teammember__pronouns">
+                {pronouns ? pronouns : ""}
+              </Name>
             </Name>
           </Container>
-            <Text>{headline}</Text>
+          <Text>{headline}</Text>
         </Container>
       </Container>
     </div>
