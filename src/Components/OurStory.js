@@ -1,11 +1,9 @@
-
 import styled from "styled-components";
 import Team from "./Team";
 import { motion } from "framer-motion";
 import { sectionVariants } from "../utils/animationVariants";
 import Content from "../Components/Content";
 import { data } from "../utils/data";
-
 
 /**
  * The Our Story Component
@@ -21,23 +19,47 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   margin: 0 auto;
   padding: 80px 80px 210px 80px;
 
+  @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 80px 40px 210px 40px;
+  }
+
   &.story {
     background-color: transparent;
     max-width: 1281px;
+    width: 100%;
     padding: 0;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1024px) {
+      max-width: 1024px;
+    }
+  }
+
+  &.story__content {
+    padding: 0;
   }
 
   &.story__founder {
     background-color: transparent;
-    max-width: 608px;
+    max-width: 620px;
     margin: 88px 0 0 0;
     padding: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gird-template-rows: 1fr 1fr;
     grid-gap: 16px;
+
+    @media (max-width: 1024px) {
+      max-width: 1024px;
+      margin: 80px 0 0 0;
+      justify-self: flex-end;
+      grid-template-columns: 1fr;
+      grid-gap: 16px 0;
+    }
   }
 
   &.team__container {
@@ -61,6 +83,12 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
     font-style: ${(props) => `${props.theme.fonts.text.styles}`};
     width: 608px;
     line-height: 22px;
+
+    @media (max-width: 1024px) {
+      max-width: 561px;
+      width: 100%;
+      margin: 0 0 0 12px;
+    }
   }
 
   &.story__founder-name {
@@ -72,7 +100,8 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
 const Line = styled.span`
   border-left: 2px solid
     ${(props) => `${props.theme.colors.default_text_color}`};
-  height: 132px;
+  height: 100%;
+  justify-self: end;
 `;
 
 const OurStory = () => {
@@ -84,14 +113,13 @@ const OurStory = () => {
       initial="offscreen"
       whileInView="onscreen"
     >
-
-      {/* replace with Content component*/}
-     
       <Container className="story">
-      <Content
-        header={data.content.ourStory.header}
-        details={data.content.ourStory.paragraphs}
-      />
+        <Container className="story__content">
+          <Content
+            header={data.content.ourStory.header}
+            details={data.content.ourStory.paragraphs}
+          />
+        </Container>
         <Container className="story__founder">
           <Line></Line>
           <Text className="story__founder-quote">
