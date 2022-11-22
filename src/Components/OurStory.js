@@ -16,14 +16,14 @@ import { data } from "../utils/data";
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   background-color: ${(props) => `${props.theme.colors.primary_background}`};
-  max-width: 1440px;
-  width: 1281px;
+  max-width: 100%;
   height: fit-content;
   margin: 0 auto;
-  padding: 80px 80px 85px 80px;
+  padding: 80px 80px 210px 80px;
 
   &.story {
     background-color: transparent;
+    max-width: 1281px;
     padding: 0;
     display: flex;
     justify-content: space-between;
@@ -41,8 +41,10 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   }
 
   &.team__container {
+    background-color: transparent;
+    max-width: 1281px;
     width: fit-content;
-    margin: 120px 0 20px 0;
+    margin: 120px auto 0;
     padding: 0;
   }
 `;

@@ -15,6 +15,7 @@ const Container = styled.div`
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-gap: 90px 100px;
+    background-color: transparent;
 `;
 
 const Team = () => {
