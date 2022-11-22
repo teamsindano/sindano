@@ -21,6 +21,11 @@ const Container = styled.div`
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 95px 100px;
     }
+
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 11px;
+    }
 `;
 
 const Team = () => {

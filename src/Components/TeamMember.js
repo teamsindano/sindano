@@ -23,6 +23,10 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     max-width: 240px;
     flex-direction: column;
     text-align: center;
+
+    @media (max-width: 375px) {
+      max-width: 167px;
+    }
   }
 
   &.teammember__name-container {
@@ -46,6 +50,10 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   margin: 0 auto 0;
   padding; 0;
   width: fit-content;
+
+  @media (max-width: 375px) {
+    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_xs}`};
+  }
 `;
 
 const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
@@ -54,10 +62,20 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
   margin: 0;
   padding; 0;
 
+  @media (max-width: 375px) {
+    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_xs}`};
+    display: flex;
+    flex-direction: column;
+  }
+
   &.teammember__pronouns {
     width: fit-content;
     font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
     margin: 0;
+
+    @media (max-width: 375px) {
+      margin: 0 auto 0;
+    }
   }
 `;
 

@@ -26,6 +26,10 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     padding: 80px 40px 200px 40px;
   }
 
+  @media (max-width: 375px) {
+    padding: 100px 16px 100px 16px;
+  }
+
   &.story {
     background-color: transparent;
     max-width: 1281px;
@@ -61,6 +65,8 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
       grid-template-columns: 1fr;
       grid-gap: 16px 0;
     }
+
+    
   }
 
   &.team__container {
@@ -69,6 +75,14 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     width: fit-content;
     margin: 120px auto 0;
     padding: 0;
+
+    @media (max-width: 1024px) {
+      margin: 82px auto 0;
+    }
+
+    @media (max-width: 375px) {
+      margin: 40px auto 0;
+    }
   }
 `;
 
@@ -90,11 +104,19 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
       width: 100%;
       margin: 0 0 0 12px;
     }
+
+    @media (max-width: 375px) {
+      max-width: 343px;
+    }
   }
 
   &.story__founder-name {
     text-align: right;
     grid-column: 2;
+
+    @media (max-width: 375px) {
+      font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
+    }
   }
 `;
 
