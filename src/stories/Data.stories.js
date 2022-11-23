@@ -1,6 +1,6 @@
-import Data from "./Data";
-import { data } from "../../utils/data";
-import renderData from "../../utils/renderData";
+import Data from "../Components/Data/Data";
+import { data } from "../utils/data";
+import renderData from "../utils/renderData";
 
 
 
@@ -9,7 +9,7 @@ export default {
    * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: "Example",
+  title: "Data",
   component: Data,
 };
 
@@ -17,8 +17,8 @@ const Template = ({ children}) => (
   <Data>{children}</Data>
 );
 
-export const DataComponent = Template.bind({});
-DataComponent.args = {
+export const Default = Template.bind({});
+Default.args = {
   children: data.unfoldDataCard.map((child) => (
     <>
     {renderData(child.id)}

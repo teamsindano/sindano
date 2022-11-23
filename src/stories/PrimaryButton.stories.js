@@ -7,10 +7,8 @@ export default {
 };
 
 const Template = (args) => (
-  <PrimaryButton {...args}> {args.label}</PrimaryButton>
+  <PrimaryButton {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Request a call',
-};
+export const Primary = Template.bind({});
+
