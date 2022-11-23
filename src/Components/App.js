@@ -27,6 +27,10 @@ const PageWrapper = styled.body`
     padding: 0 41px 0;
   }
 
+  @media (max-width: 375px) {
+    padding: 0 10px 0;
+  }
+
   &.stats__wrapper {
     max-width: 1280px;
     width: 100%;
@@ -37,6 +41,7 @@ const PageWrapper = styled.body`
 
 const Page = styled.div`
   max-width: 1280px;
+  min-width: 375px;
   width: 100%;
   margin: 0;
   padding: 0 0 0 60px;
@@ -45,9 +50,9 @@ const Page = styled.div`
     width: calc(100vw - 80px);
     padding: 0;
   }
-  @media screen and (max-width: 100px){
+  @media screen and (max-width: 375px){
     width: calc(100vw - 32px);
-    padding: 0 16px;
+    padding: 0 6px;
   }
 `;
 
@@ -69,6 +74,10 @@ const StatsContainer = styled.div`
   @media screen and (max-width: 950px) {
     width: 600px;
     margin-bottom: 100px;
+  }
+
+  @media (max-width: 375px) {
+    width: 343px;
   }
 `;
 

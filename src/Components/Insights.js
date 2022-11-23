@@ -42,6 +42,10 @@ const TextContainer = styled.div`
       max-width: 939px;
       margin-left: 0;
     }
+
+    @media (max-width: 375px) {
+      max-width: 343px;
+    }
 `;
 
 const Text = styled.p`
