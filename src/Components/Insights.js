@@ -7,14 +7,16 @@ import { sectionVariants } from "../utils/animationVariants";
 const InsightsSection = styled.section`
     width: 100%;
     display: flex;
-    margin: 0 auto;
-    margin-bottom: 200px;
-    @media screen and (max-width: 1450px){
-        flex-direction: column;
-    }
+    margin: 0 0 200px;
+
     @media screen and (max-width: 900px){
-        margin-bottom: 100px;
+        margin: 0 0 100px;
     }
+`;
+
+const Wrapper = styled.div`
+    margin: 0 auto 0;
+    display: flex;
 `;
 
 const InsightsImage = styled.img`
@@ -22,7 +24,7 @@ const InsightsImage = styled.img`
     align-self: center;
     width: 482px;
     height: 482px;
-    @media screen and (max-width: 1450px){
+    @media screen and (max-width: 1440px){
         width: 350px;
         height: 350px;
     }
@@ -32,11 +34,13 @@ const InsightsImage = styled.img`
     }
 `
 const TextContainer = styled.div`
+    max-width: 620px;
     margin-left: 111px;
-    @media screen and (max-width: 1450px){
-        margin-left: 0;
+
+    @media screen and (max-width: 1440px){
+        margin-left: 127px;
     }
-`
+`;
 
 const Text = styled.p`
   font-weight: 400;
@@ -55,6 +59,7 @@ function Insights() {
       initial="offscreen"
       whileInView="onscreen"
     >
+      <Wrapper>
       <InsightsImage src={insights} alt="graphic" />
       <TextContainer>
         <Title
@@ -73,6 +78,7 @@ function Insights() {
           gaps for improved patient and practice outcomes.
         </Text>
       </TextContainer>
+      </Wrapper>
     </InsightsSection>
   );
 }

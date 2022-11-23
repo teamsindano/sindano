@@ -20,13 +20,22 @@ import OurStory from "./OurStory";
 
 const PageWrapper = styled.body`
   background-color: ${(props) => `${props.theme.colors.primary_background}`};
+  padding: 0 20px 0;
+  margin: 0;
+
+  &.stats__wrapper {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 const Page = styled.div`
-  max-width: 1440px;
-  width: 80vw;
-  margin: 0 auto;
-  padding: 0 80px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0;
+  padding: 0 0 0 60px;
 
   @media screen and (max-width: 1350px){
     width: calc(100vw - 80px);
@@ -42,13 +51,14 @@ const StatsContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: center;
   gap: 40px;
   margin-bottom: 180px;
   flex-wrap: wrap;
+  
   @media screen and (max-width: 1400px) {
     width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 0;
     margin-bottom: 180px;
     justify-content: center;
   }
@@ -84,6 +94,7 @@ function App() {
           <Header/>
           <Hero/>
           <Page>
+            <PageWrapper className="stats__wrapper">
           <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America" marginBottom={80}/>
           <StatsContainer>
             {data.statsCards.map((card) => {
@@ -98,6 +109,7 @@ function App() {
               );
             })}
           </StatsContainer>
+          </PageWrapper>
           <Insights/>
           <ChartSection/>
           </Page>
