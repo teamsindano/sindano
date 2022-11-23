@@ -72,7 +72,6 @@ const StatsContainer = styled.div`
     justify-content: center;
   }
   @media screen and (max-width: 950px) {
-    max-width: 600px;
     margin-bottom: 100px;
   }
 
