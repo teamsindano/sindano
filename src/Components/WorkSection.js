@@ -89,7 +89,7 @@ function WorkSection() {
       <LeftSection>
         <div>
           <Title text="See How We Work" marginBottom={32} />
-          <PrimaryButton onClick={openModal}/>
+          <PrimaryButton onClick={openModal} label="Request a call"/>
         </div>
         <div>
           <Title text="Get Product Updates" marginBottom={40} />

@@ -63,7 +63,7 @@ function Header() {
         </StyledList>
       </nav>
 
-      <PrimaryButton onClick={openModal}/>
+      <PrimaryButton onClick={openModal} label="Request a call"/>
     </HeaderStyle>
   );
 }
