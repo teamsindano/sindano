@@ -19,14 +19,14 @@ import Header from './Header';
 import OurStory from "./OurStory";
 
 const PageWrapper = styled.body`
-  background-color: ${(props) => `${props.theme.colors.primary_background}`};
+  max-width: 1440px;
   padding: 0 20px 0;
-  margin: 0;
+  margin: 0 auto 0;
 
   &.stats__wrapper {
     max-width: 1280px;
     width: 100%;
-    margin: 0;
+    margin: 0 auto 0;
     padding: 0;
   }
 `;

@@ -9,8 +9,7 @@ import { sectionVariants } from '../utils/animationVariants';
 const WorkSectionContainer = styled.section`
   width: 100%;
   display: flex;
-  margin-bottom: 160px;
-  margin-top: 160px;
+  margin: 160px auto;
   justify-content: space-between;
 `;
 

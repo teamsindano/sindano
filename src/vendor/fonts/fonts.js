@@ -67,6 +67,7 @@ html {
 }
 
 body {
+  background-color: #f5f5f5;
   box-sizing: border-box;
   width: 100%;
   margin: 0;
