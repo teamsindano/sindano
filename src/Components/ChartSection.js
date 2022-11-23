@@ -33,25 +33,6 @@ const RequestTitle = styled.h2`
   padding: 0;
 `;
 
-const Ellipse = styled.div`
-  position: absolute;
-  width: 324px;
-  height: 233px;
-  right: 20px;
-  bottom: -50px;
-  background: rgba(236, 30, 123, 0.1);
-  filter: blur(50px);
-  z-index: -1;
-`;
-
-const RightBlur = styled.div`
-  position: absolute;
-  top: 0;
-  left: -30px;
-  width: 798px;
-  height: 480px;
-`;
-
 const RightContainer = styled.div`
   position: relative;
 `;
@@ -69,14 +50,12 @@ function ChartSection() {
     >
       <RightContainer>
         <BarChart />
-        <RightBlur />
       </RightContainer>
       <RequestDiv>
         <RequestTitle>
           Want the LGBTQ+ Mental Healthcare Insights That Matter?
         </RequestTitle>
         <PrimaryButton onClick={openModal}/> 
-        <Ellipse />
       </RequestDiv>
     </ChartSectionContainer>
   );
