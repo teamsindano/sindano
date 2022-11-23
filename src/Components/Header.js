@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import headerLogo from '../images/sindano_health_logo_black.svg';
 import PrimaryButton from './PrimaryButton';
 import { sectionVariants } from '../utils/animationVariants';
+import { ModalContext } from './App';
 
 export const HeaderStyle = styled.header`
   display: flex;
@@ -38,6 +39,7 @@ export const StyledLinks = styled.a`
 `;
 
 function Header() {
+  const { openModal } = useContext(ModalContext);
   return (
     <HeaderStyle
       as={motion.header}
@@ -61,7 +63,7 @@ function Header() {
         </StyledList>
       </nav>
 
-      <PrimaryButton />
+      <PrimaryButton onClick={openModal}/>
     </HeaderStyle>
   );
 }

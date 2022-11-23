@@ -3,6 +3,8 @@ import BarChart from './BarChart';
 import PrimaryButton from './PrimaryButton';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
+import { useContext } from 'react';
+import { ModalContext } from './App'
 
 const ChartSectionContainer = styled.section`
   width: 100%;
@@ -55,6 +57,9 @@ const RightContainer = styled.div`
 `;
 
 function ChartSection() {
+
+  const { openModal } = useContext(ModalContext);
+
   return (
     <ChartSectionContainer
       as={motion.section}
@@ -70,7 +75,7 @@ function ChartSection() {
         <RequestTitle>
           Want the LGBTQ+ Mental Healthcare Insights That Matter?
         </RequestTitle>
-        <PrimaryButton />
+        <PrimaryButton onClick={openModal}/> 
         <Ellipse />
       </RequestDiv>
     </ChartSectionContainer>
