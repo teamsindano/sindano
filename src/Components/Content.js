@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import _ from 'lodash';
 
 /**
  * Content Component
@@ -41,7 +42,7 @@ const Content = ({ header, details }) => {
       <Title>{header}</Title>
       <Paragraphs>
         {details.map((paragraph) => {
-          return <Paragraph>{paragraph}</Paragraph>;
+          return <Paragraph key={_.uniqueId("chapter")}>{paragraph}</Paragraph>;
         })}
       </Paragraphs>
     </Section>

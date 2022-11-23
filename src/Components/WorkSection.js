@@ -5,6 +5,8 @@ import SecondaryButton from './SecondaryButton';
 import work from '../images/how_we_work_photo.png';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
+import { useContext } from 'react';
+import { ModalContext } from './App';
 
 const WorkSectionContainer = styled.section`
   width: 100%;
@@ -75,6 +77,8 @@ const Blur = styled.div`
 `;
 
 function WorkSection() {
+  const { openModal } = useContext(ModalContext);
+  
   return (
     <WorkSectionContainer
       as={motion.section}
@@ -85,7 +89,7 @@ function WorkSection() {
       <LeftSection>
         <div>
           <Title text="See How We Work" marginBottom={32} />
-          <PrimaryButton />
+          <PrimaryButton onClick={openModal}/>
         </div>
         <div>
           <Title text="Get Product Updates" marginBottom={40} />
