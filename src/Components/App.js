@@ -66,18 +66,19 @@ const StatsContainer = styled.div`
   flex-wrap: wrap;
   
   @media screen and (max-width: 1400px) {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto 0;
     margin-bottom: 180px;
     justify-content: center;
   }
   @media screen and (max-width: 950px) {
-    width: 600px;
+    max-width: 600px;
     margin-bottom: 100px;
   }
 
   @media (max-width: 375px) {
-    width: 343px;
+    max-width: 343px;
+    margin: 0 auto 0;
   }
 `;
 
