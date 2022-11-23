@@ -18,6 +18,10 @@ import ModalContent from './Modal/ModalContent';
 import Header from './Header';
 import OurStory from "./OurStory";
 
+const Background = styled.body`
+  background-color: ${(props) => `${props.theme.colors.primary_background}`};
+`;
+
 const Page = styled.div`
   width: 80vw;
   margin: 0 auto;
@@ -74,6 +78,7 @@ function App() {
   return (
     <Theme>
       <ModalContext.Provider value={{ openModal }}>
+        <Background>
           <Header/>
           <Hero/>
           <Page>
@@ -112,7 +117,8 @@ function App() {
         <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
             <ModalContent isModalConfirmation={isModalConfirmation} handleSuccess={handleSuccess}/>
-        </ModalWrapper>  
+        </ModalWrapper> 
+        </Background> 
       </ModalContext.Provider>
     </Theme>
   );

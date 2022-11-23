@@ -14,7 +14,7 @@ export const HeaderStyle = styled.header`
 `;
 
 export const LogoImage = styled.img`
-  padding: 13px 0 23px 47px;
+  padding: 13px 0 23px 0;
   margin-right: auto;
 `;
 export const StyledList = styled.ul`
