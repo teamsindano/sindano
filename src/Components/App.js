@@ -23,6 +23,10 @@ const PageWrapper = styled.body`
   padding: 0 20px 0;
   margin: 0 auto 0;
 
+  @media (max-width: 1024px) {
+    padding: 0 41px 0;
+  }
+
   &.stats__wrapper {
     max-width: 1280px;
     width: 100%;
@@ -39,7 +43,7 @@ const Page = styled.div`
 
   @media screen and (max-width: 1350px){
     width: calc(100vw - 80px);
-    padding: 0 40px;
+    padding: 0;
   }
   @media screen and (max-width: 100px){
     width: calc(100vw - 32px);
