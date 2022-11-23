@@ -19,11 +19,10 @@ const PrimaryButtonContainer = styled.button`
   cursor: pointer;
 `;
 
-function PrimaryButton() {
-  const { openModal } = useContext(ModalContext);
+function PrimaryButton({onClick}) {
 
   return (
-    <PrimaryButtonContainer onClick={openModal}>
+    <PrimaryButtonContainer onClick={onClick}>
       Request a call
     </PrimaryButtonContainer>
   );
