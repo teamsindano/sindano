@@ -18,14 +18,16 @@ import ModalContent from './Modal/ModalContent';
 import Header from './Header';
 import OurStory from "./OurStory";
 
-const Background = styled.body`
+const PageWrapper = styled.body`
   background-color: ${(props) => `${props.theme.colors.primary_background}`};
 `;
 
 const Page = styled.div`
+  max-width: 1440px;
   width: 80vw;
   margin: 0 auto;
   padding: 0 80px;
+
   @media screen and (max-width: 1350px){
     width: calc(100vw - 80px);
     padding: 0 40px;
@@ -78,7 +80,7 @@ function App() {
   return (
     <Theme>
       <ModalContext.Provider value={{ openModal }}>
-        <Background>
+        <PageWrapper>
           <Header/>
           <Hero/>
           <Page>
@@ -118,7 +120,7 @@ function App() {
             <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
             <ModalContent isModalConfirmation={isModalConfirmation} handleSuccess={handleSuccess}/>
         </ModalWrapper> 
-        </Background> 
+        </PageWrapper> 
       </ModalContext.Provider>
     </Theme>
   );

@@ -66,5 +66,11 @@ html {
 		scroll-behavior: smooth;
 }
 
+body {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+}
+
 `;
 
