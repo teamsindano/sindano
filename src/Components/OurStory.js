@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import TeamMember from './Teammember';
+import TeamMember from './TeamMember';
 import taraMarshall from '../images/team/tara_marshall_hill.png';
 import Team from './Team';
 import { motion } from 'framer-motion';

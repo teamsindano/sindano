@@ -19,7 +19,8 @@ const StyledFooter = styled.footer`
   width: 100%;
   font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
   font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
-  font-weight: ${(props) => `${props.theme.fonts.text.weights.semi_bold}`};
+  // font-weight: ${(props) => `${props.theme.fonts.text.weights.semi_bold}`};
+  font-weight: 500;
   line-hight: 20px;
 `;
 
@@ -34,6 +35,7 @@ const FirstColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 455px;
 `;
 
 const Logo = styled.img`
@@ -44,10 +46,13 @@ const SecondColumn = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-left: 40px;
 `;
 const Navigation = styled.ul`
   list-style: none;
   margin: 0;
+  padding: 0;
+  width: 169px;
 `;
 
 const ListItem = styled.li`
@@ -62,7 +67,9 @@ const ThirdColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-right: 285px;
+  margin-right: 205px;
+  margin-left: 161px;
+  width: 250px;
 `;
 const FooterSocials = styled.ul`
   display: flex;
