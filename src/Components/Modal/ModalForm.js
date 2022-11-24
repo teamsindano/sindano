@@ -112,7 +112,7 @@ function ModalForm({ handleSuccess }) {
   const { linkedInLogin } = useLinkedIn({
     // TODO: replace this client_id (temp replaced)
     clientId: '78i0gitxfdiyau',
-    redirectUri: `${window.location.origin}/linkedin`,
+    redirectUri: `${window.location.origin}/sindano/linkedin`,
     scope: 'r_liteprofile',
     onSuccess: _.debounce((code) => {
       axios
