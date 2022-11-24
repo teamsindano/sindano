@@ -113,7 +113,7 @@ function ModalForm({ handleSuccess }) {
     // TODO: replace this client_id (temp replaced)
     clientId: '78i0gitxfdiyau',
     redirectUri: `${window.location.origin}/sindano/linkedin`,
-    scope: 'r_basicprofile',
+    scope: 'r_liteprofile',
     onSuccess: _.debounce((code) => {
       axios
         // TODO: Replace this with deployed api address (replaced)
