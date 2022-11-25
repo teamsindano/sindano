@@ -11,11 +11,15 @@ import { ModalContext } from './App';
 const WorkSectionContainer = styled.section`
   width: 100%;
   margin: 160px auto;
+
+  @media (max-width: 375px) {
+    margin: 100px auto 0;
+  }
 `;
 
 const CustomButton = styled(PrimaryButton)`
-   @media screen and (max-width: 580px) {
-    width: 100%;
+   @media screen and (max-width: 375px) {
+    width: 375px; 
   }
 `;
 
@@ -40,6 +44,10 @@ const StyledDiv = styled.div`
 
     @media (max-width: 1024px) {
       margin: 31px 0 120px;
+    }
+
+    @media (max-width: 375px) {
+      margin: 31px 0 60px;
     }
   }
 
@@ -82,8 +90,8 @@ const Image = styled.img`
   }
 
   @media (max-width: 375px) {
-    max-width: 383px;
-    height: 450px;
+    width: 100%;
+    height: 383px;
   }
 `;
 
