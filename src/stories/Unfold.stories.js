@@ -1,5 +1,5 @@
-import Unfold from "./Unfold";
-import { data } from "../../utils/data";
+import Unfold from "../Components/Unfold/Unfold";
+import { data } from "../utils/data";
 
 export default {
   /* 👇 The title prop is optional.
