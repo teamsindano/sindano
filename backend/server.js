@@ -7,6 +7,10 @@ let nodemailer = require('nodemailer');
 require('dotenv').config();
 
 const { PORT = 3001 } = process.env;
+
+// ******* RECOMMENDATION *********
+// It would be nice to add a little structure to the whole /backend.
+// A good place to start would be moving these middlewares to their own directory under /backend
 app.use(cors());
 app.use(express.json());
 
@@ -19,6 +23,9 @@ app.use((req, res, next) => {
   next();
 });
 
+// ******* RECOMMENDATION *********
+// Similarly here, it would be good to make a directory structure around the various endpoints in this service.
+// Ideally, this entire file will be just a few lines long
 app.post('/', (req, res) => {
   console.log(req.body);
 

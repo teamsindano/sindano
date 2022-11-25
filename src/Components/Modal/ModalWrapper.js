@@ -72,6 +72,8 @@ function ModalWrapper({ children, isModalOpen, closeModal }) {
         };
       }, [closeModal]);
   
+    // ******* RECOMMENDATION *********
+    // Nitpick, but semantically, anything with an `onClick` should be either a button or an anchor
   return (
         <AnimatePresence>
             {isModalOpen && (<ModalPage 

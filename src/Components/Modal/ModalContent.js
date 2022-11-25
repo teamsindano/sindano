@@ -7,6 +7,8 @@ import ModalSuccess from "./ModalSuccess";
  * @author [Peter Staal](https://github.com/pstaal)
  */
 
+// ******* RECOMMENDATION *********
+// I think this component isn't necessary-- you could easily just move the ternary to App.js and eliminate this file
 function ModalContent ({isModalConfirmation, handleSuccess}) {
 
     return (

@@ -55,6 +55,7 @@ function Header() {
             <StyledLinks href="#ourstory">About</StyledLinks>
           </StyledIcons>
           <StyledIcons>
+            {/* This link still doesn't work */}
             <StyledLinks href="#whatwedo">What we do</StyledLinks>
           </StyledIcons>
           <StyledIcons>

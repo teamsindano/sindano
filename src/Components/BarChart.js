@@ -46,7 +46,9 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   }
 `;
 
-
+// ******* RECOMMENDATION *********
+// You could definitely make this a re-usable component by passing the heading in as a prop along
+// with the data for the chart
 const BarChart = () => {
   return (
     <Container>

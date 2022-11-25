@@ -12,6 +12,15 @@ import { ThemeProvider } from 'styled-components';
 
 export const theme = {
   colors: {
+    // ******* RECOMMENDATION *********
+    // I'd recommend calling neutral colors (white-black-gray) by name (for shades of gray, suggest using
+    // suffix indicating how dark the gray is. i.e closer numbers from 0-1000 where 0 is black and 1000 is white).
+    // For non-neutral colors, I'd name them something simple that doesn't include that color's "purpose". The reason
+    // for this is that you'll almost always end up using the color somewhere that you didn't originally intend
+    // on using it and then the variable name looks out of place in your styled-component. Use something like
+    // primary secondary accent danger muted
+    // or
+    // alpha beta gamma delta
     primary_background: '#f5f5f5',
     footer_background: '#2D2D2D',
     default_text_color: '#000000',
@@ -19,7 +28,11 @@ export const theme = {
     default_button_aqua: '#1EA6AE',
     default_component_blue: '#283592',
   },
-
+  // ******* RECOMMENDATION *********
+  // Suggest simplifying this object's structure a bit so you don't have to type long
+  // variable chains in styled component files. You could probably combine these so you have
+  // font.size.text_xs as well as font.size.header_m. Same thing for weights and families.
+  // i.e "font.family.header" and "font.family.copy".
   fonts: {
     header: {
       font_family: ['League Spartan', 'sans-serif'],
@@ -46,6 +59,7 @@ export const theme = {
         semi_bold: '600',
         normal: '400',
       },
+      // Probably don't need this one
       styles: 'italic',
     },
   },
