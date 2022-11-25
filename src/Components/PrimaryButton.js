@@ -18,8 +18,8 @@ const PrimaryButtonContainer = styled.button`
   cursor: pointer;
 `;
 
-function PrimaryButton({onClick, label}) {
 
+function PrimaryButton({onClick, label}) {
   return (
     <PrimaryButtonContainer onClick={onClick}>
       {label}
