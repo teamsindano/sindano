@@ -14,10 +14,10 @@ const HeroWrapper = styled.section`
   margin: auto;
   height: 695px;
   margin-bottom: 140px;
-  @media screen and (max-width: 1050px) {
+  @media screen and (max-width: 1024px) {
     height: 468px;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 375px) {
     margin-bottom: 100px;
   }
 `;
@@ -27,11 +27,8 @@ const BackgroundImage = styled.img`
   z-index: 1;
   position: absolute;
   width: 100%;
+  height: 100%;
   border-radius: 12px;
-  @media screen and (max-width: 400px) {
-    height: 468px;
-    object-fit: cover;
-  }
 `;
 
 const Title = styled.h1`
@@ -42,19 +39,12 @@ const Title = styled.h1`
   z-index: 3;
   position: absolute;
   margin-left: 5%;
-  margin-top: 35%;
-  @media screen and (max-width: 1210px) {
+  bottom: 0;
+  @media screen and (max-width: 1024px) {
     font-size: ${(props) => `${props.theme.fonts.header.sizes.header_m}`};
   }
-  @media screen and (max-width: 865px) {
+  @media screen and (max-width: 375px) {
     font-size: ${(props) => `${props.theme.fonts.header.sizes.header_xs}`};
-    margin-top: 30%;
-  }
-  @media screen and (max-width: 650px) {
-    margin-top: 25%;
-  }
-  @media screen and (max-width: 400px) {
-    margin-top: 70%;
   }
 `;
 

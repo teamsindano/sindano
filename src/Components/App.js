@@ -20,6 +20,7 @@ import OurStory from "./OurStory";
 
 const PageWrapper = styled.body`
   max-width: 1440px;
+  min-width: 375px;
   padding: 0 20px 0;
   margin: 0 auto 0;
 
@@ -36,6 +37,10 @@ const PageWrapper = styled.body`
     width: 100%;
     margin: 0 auto 0;
     padding: 0;
+
+    @media (max-width: 375px) {
+      margin: 0 auto 100px;
+    }
   }
 `;
 
