@@ -42,7 +42,7 @@ const StyledDiv = styled.div`
     margin-bottom: 60px;
   }
 
-  &.subscribe-div {
+  &.subscribe-section {
     display: flex;
     @media screen and (max-width: 580px) {
       flex-direction: column;
