@@ -98,10 +98,10 @@ function WorkSection() {
       <LeftSection>
         <LeftSectionDiv>
           <Title text="See How We Work" marginBottom={32} />
-          <CustomButton />
+          <CustomButton  onClick={openModal} label="Request a call"/>
         </LeftSectionDiv>
           <PrimaryButton onClick={openModal} label="Request a call"/>
-        </div>
+        
 
         <div>
           <Title text="Get Product Updates" marginBottom={40} />
