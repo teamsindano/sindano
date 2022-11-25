@@ -4,6 +4,7 @@ import PrimaryButton from '../Components/PrimaryButton';
 export default {
   title: 'Primary Button',
   component: PrimaryButton,
+  argTypes: { onClick: { action: 'open a Modal'} }
 };
 
 const Template = (args) => (
@@ -12,6 +13,6 @@ const Template = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  onClick: () => alert("hello!")
-}
+  label: "Request a call"
+};
 

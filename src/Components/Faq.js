@@ -15,6 +15,10 @@ const QuestionStyled = styled.section`
     @media screen and (max-width: 1200px) {
         padding: 0;
     }
+
+    @media (max-width: 375px) {
+        max-width: 343px;
+    }
 `;
 
 const TitleStyled = styled.h3`
@@ -36,6 +40,10 @@ const QuestionSection = styled.div`
     @media screen and (max-width: 700px) {
         width: 700px;
         grid-template-columns: none;
+    }
+
+    @media (max-width: 375px) {
+        max-width: 343px;
     }
 `;
 

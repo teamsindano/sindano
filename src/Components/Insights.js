@@ -7,13 +7,19 @@ import { sectionVariants } from "../utils/animationVariants";
 const InsightsSection = styled.section`
     width: 100%;
     display: flex;
-    margin: 0 auto;
-    margin-bottom: 200px;
-    @media screen and (max-width: 1450px){
-        flex-direction: column;
-    }
+    margin: 0 0 200px;
+
     @media screen and (max-width: 900px){
-        margin-bottom: 100px;
+        margin: 0 0 100px;
+    }
+`;
+
+const Wrapper = styled.div`
+    margin: 0 auto 0;
+    display: flex;
+
+    @media (max-width: 1024px) {
+      flex-direction: column;
     }
 `;
 
@@ -22,21 +28,25 @@ const InsightsImage = styled.img`
     align-self: center;
     width: 482px;
     height: 482px;
-    @media screen and (max-width: 1450px){
-        width: 350px;
-        height: 350px;
-    }
+
     @media screen and (max-width: 500px){
         width: 211px;
         height: 211px;
     }
 `
 const TextContainer = styled.div`
-    margin-left: 111px;
-    @media screen and (max-width: 1450px){
-        margin-left: 0;
+    max-width: 620px;
+    margin-left: 127px;
+
+    @media (max-width: 1024px) {
+      max-width: 939px;
+      margin-left: 0;
     }
-`
+
+    @media (max-width: 375px) {
+      max-width: 343px;
+    }
+`;
 
 const Text = styled.p`
   font-weight: 400;
@@ -45,6 +55,10 @@ const Text = styled.p`
   margin: 32px 0;
   padding: 0;
   font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+
+  @media (max-width: 1024px) {
+    max-width: 698px;
+  }
 `;
 
 function Insights() {
@@ -55,6 +69,7 @@ function Insights() {
       initial="offscreen"
       whileInView="onscreen"
     >
+      <Wrapper>
       <InsightsImage src={insights} alt="graphic" />
       <TextContainer>
         <Title
@@ -73,6 +88,7 @@ function Insights() {
           gaps for improved patient and practice outcomes.
         </Text>
       </TextContainer>
+      </Wrapper>
     </InsightsSection>
   );
 }
