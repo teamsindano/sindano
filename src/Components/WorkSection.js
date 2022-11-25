@@ -27,23 +27,44 @@ const CustomButton = styled(PrimaryButton)`
   }
 `;
 
-const LeftSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  @media screen and (max-width: 980px) {
-    order: 2;
-  }
-`;
-
-const FlexDiv = styled.div`
-  display: flex;
-  @media screen and (max-width: 580px) {
+const StyledDiv = styled.div`
+  &.left-section {
+    display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    @media screen and (max-width: 980px) {
+      order: 2;
+    }
   }
-`;
+
+  &.how-section {
+    margin-top: 32px;
+    margin-bottom: 60px;
+  }
+
+  &.subscribe-div {
+    display: flex;
+    @media screen and (max-width: 580px) {
+      flex-direction: column;
+    }
+  }
+
+  &.right-section {
+    max-width: 620px;
+    position: relative;
+    @media screen and (max-width: 1450px) {
+      max-width: 402px;
+      margin-left: 62px;
+    }
+    @media screen and (max-width: 980px) {
+      order: 1;
+      margin-left: 0;
+    }
+  }
+ `;
 
 const InputBox = styled.input`
+  background-color: ${(props) => props.theme.colors.primary_background};
   width: 291px;
   display: block;
   height: 50px;
@@ -65,25 +86,6 @@ const Image = styled.img`
   border-radius: 12px;
 `;
 
-const RightSection = styled.div`
-  max-width: 620px;
-  position: relative;
-  @media screen and (max-width: 1450px) {
-    max-width: 402px;
-    margin-left: 62px;
-  }
-  @media screen and (max-width: 980px) {
-    order: 1;
-    margin-left: 0;
-  }
-`;
-
-const LeftSectionDiv = styled.div`
-   @media screen and (max-width: 980px) {
-    margin-top: 32px;
-    margin-bottom: 60px;
-  }
-`
 
 function WorkSection() {
   const { openModal } = useContext(ModalContext);
@@ -95,24 +97,24 @@ function WorkSection() {
       initial="offscreen"
       whileInView="onscreen"
     >
-      <LeftSection>
-        <LeftSectionDiv>
+      <StyledDiv className="left-section">
+        <StyledDiv className="how-section">
           <Title text="See How We Work" marginBottom={32} />
           <CustomButton  onClick={openModal} label="Request a call"/>
-        </LeftSectionDiv>
+        </StyledDiv>
         
 
         <div>
           <Title text="Get Product Updates" marginBottom={40} />
-          <FlexDiv>
+          <StyledDiv className="subscribe-section">
             <InputBox placeholder="your e-mail" />
             <SecondaryButton>Subscribe</SecondaryButton>
-          </FlexDiv>
+          </StyledDiv>
         </div>
-      </LeftSection>
-      <RightSection> 
+      </StyledDiv>
+      <StyledDiv className="right-section"> 
         <Image src={work} />
-      </RightSection>
+      </StyledDiv>
     </WorkSectionContainer>
   );
 }
