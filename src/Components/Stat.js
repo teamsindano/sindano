@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import Source from './Source';
 import React from 'react';
 import { motion } from "framer-motion";
-import { data } from '../utils/data';
 
 /**
  * Stat Component
