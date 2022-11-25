@@ -18,6 +18,12 @@ import ModalContent from './Modal/ModalContent';
 import Header from './Header';
 import OurStory from "./OurStory";
 
+/**
+ * 
+ * Adjustments: @author [Sam](https://github.com/Samm96)
+ *
+ */
+
 const PageWrapper = styled.body`
   max-width: 1440px;
   min-width: 375px;

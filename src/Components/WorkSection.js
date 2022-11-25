@@ -8,6 +8,12 @@ import { sectionVariants } from '../utils/animationVariants';
 import { useContext } from 'react';
 import { ModalContext } from './App';
 
+/**
+ * Work Section
+ * Adjustments & CSS Refactoring: @author [Sam](https://github.com/Samm96)
+ *
+ */
+
 const WorkSectionContainer = styled.section`
   width: 100%;
   margin: 160px auto;
@@ -19,7 +25,7 @@ const WorkSectionContainer = styled.section`
 
 const CustomButton = styled(PrimaryButton)`
    @media screen and (max-width: 375px) {
-    width: 375px; 
+    padding: 15px 113px;
   }
 `;
 
@@ -53,7 +59,7 @@ const StyledDiv = styled.div`
 
   &.subscribe-section {
     display: flex;
-    @media screen and (max-width: 580px) {
+    @media screen and (max-width: 375px) {
       flex-direction: column;
     }
   }
