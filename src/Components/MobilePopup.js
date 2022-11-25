@@ -6,6 +6,7 @@ const Div = styled.div`
 	position: absolute;
 	z-index: 4;
 	display: flex;
+	align-items: center;
 `;
 
 const StyledList = styled.ul`
@@ -15,14 +16,13 @@ const StyledList = styled.ul`
 	z-index: 4;
 	flex-direction: column;
 	list-style: none;
-	height: 350px;
+	height: 375px;
+	max-width: 440px;
 	opacity: ${({ open }) => (open ? 1 : 0)};
 	display: ${({ open }) => (open ? "flex" : "none")};
 	margin-top: 460px;
 	align-items: center;
 	justify-content: center;
-	padding-left: 10px;
-	padding-right: 10px;
 `;
 
 export const StyledIcons = styled.li`
@@ -53,10 +53,9 @@ const BurgerButton = styled.button`
 	line-height: 1.25;
 	cursor: pointer;
 	height: 50px;
-	margin-top: 60px;
+	margin: 60px auto 0;
 	border: none;
-	padding-left: auto;
-	padding-right: auto;
+	padding: 0;
 `;
 const MobilePopup = ({ open }) => {
 	return (
