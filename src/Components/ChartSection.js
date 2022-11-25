@@ -55,7 +55,9 @@ function ChartSection() {
         <RequestTitle>
           Want the LGBTQ+ Mental Healthcare Insights That Matter?
         </RequestTitle>
-        <PrimaryButton onClick={openModal}/> 
+        <PrimaryButton onClick={openModal} label="Request a call"/> 
+        <Ellipse />
+
       </RequestDiv>
     </ChartSectionContainer>
   );
