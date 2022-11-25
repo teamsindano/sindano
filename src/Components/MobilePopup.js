@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import PrimaryButton from "./PrimaryButton";
+
+/**
+ * Content Component
+ * @author [Pedro Nepomuceno](https://github.com/Pedro-Nepomuceno)
+ */
 
 const Div = styled.div`
 	position: absolute;

@@ -48,6 +48,11 @@ export const StyledLinks = styled.a`
 	line-height: 20px;
 `;
 
+/**
+ * Content Component
+ * @author [Pedro Nepomuceno](https://github.com/Pedro-Nepomuceno)
+ */
+
 function Header() {
 	return (
 		<>

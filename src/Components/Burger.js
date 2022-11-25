@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MobilePopup from "./MobilePopup";
 
+/**
+ * Content Component
+ * @author [Pedro Nepomuceno](https://github.com/Pedro-Nepomuceno)
+ */
+
 const StyledBurger = styled.div`
 	width: 2rem;
 	height: 2rem;
