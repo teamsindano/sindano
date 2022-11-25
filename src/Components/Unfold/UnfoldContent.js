@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import renderData from "../../utils/renderData";
 import PrimaryButton from "../PrimaryButton";
 import _ from "lodash";
+import { ModalContext } from "../App";
 
 /**
  * Unfold Content Component
@@ -50,6 +51,7 @@ const ButtonDiv = styled.div`
 
 function UnfoldContent({ item }) {
   const { activeItem } = useContext(UnfoldContext);
+  const { openModal } = useContext(ModalContext);
 
   return (
     <AnimatePresence>
@@ -101,7 +103,7 @@ function UnfoldContent({ item }) {
           </div>
         </UnfoldContentDiv>
         <ButtonDiv>
-          <PrimaryButton />
+          <PrimaryButton onClick={openModal} label="Request a call"/>
         </ButtonDiv>
         </>
       )}

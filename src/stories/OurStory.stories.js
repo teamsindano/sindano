@@ -1,5 +1,6 @@
 import React from 'react';
 import OurStory from '../Components/OurStory';
+import { customViewports } from '../../.storybook/preview';
 
 /**
  * The OurStory Story
@@ -10,8 +11,23 @@ import OurStory from '../Components/OurStory';
 export default {
     title: 'Our Story',
     component: OurStory,
+    parameters: {
+        viewport: {
+            viewports: customViewports,
+            defaultViewport: 'Desktop',
+        }
+    }
 };
 
-export const StoryTemplate = (args) => <OurStory {...args} />;
+export const StoryTemplate = () => <OurStory />;
+StoryTemplate.parameters = {
+    viewport: {
+        defaultViewport: 'Smaller_Desktop',
+    },
+};
 
-export const Primary = StoryTemplate.bind({});
+StoryTemplate.parameters = {
+    viewport: {
+        defaultViewport: 'iPhone_Mini',
+    },
+};
