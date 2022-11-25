@@ -13,7 +13,6 @@ import { data } from "../utils/data";
  */
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  background-color: ${(props) => `${props.theme.colors.primary_background}`};
   max-width: 100%;
   height: fit-content;
   margin: 0 auto;
