@@ -12,24 +12,28 @@ import { sectionVariants } from '../utils/animationVariants';
  * @author [Ekaterina Cratcha](https://github.com/cratcha) */
 
 const StyledFooter = styled.footer`
-  max-width: 1440px;
   margin: auto;
   background: ${(props) => `${props.theme.colors.footer_background}`};
   color: ${(props) => `${props.theme.colors.alt_text_white}`};
   width: 100%;
   font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
   font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
-  // font-weight: ${(props) => `${props.theme.fonts.text.weights.semi_bold}`};
+  //font-weight: ${(props) => `${props.theme.fonts.text.weights.semi_bold}`};
   font-weight: 500;
   line-hight: 20px;
 `;
 
 const Wrapper = styled.div`
+  margin: 0 auto 0;
   padding: 40px 80px;
+  max-width: 1440px;
   min-height: 240px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media screen and (max-width: 1024px) {
+    padding: 40px 40px 44px 80px;
+  }
 `;
 const FirstColumn = styled.div`
   display: flex;
@@ -70,6 +74,10 @@ const ThirdColumn = styled.div`
   margin-right: 205px;
   margin-left: 161px;
   width: 250px;
+  @media screen and (max-width: 1024px) {
+    margin-right: 0px;
+    margin-left: 159px;
+  }
 `;
 const FooterSocials = styled.ul`
   display: flex;
