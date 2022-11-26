@@ -1,7 +1,5 @@
 import React from 'react';
 import whiteLogo from '../Images/sindano_health_logo_white.svg';
-import twitter from '../Images/social/icon_twitter.svg';
-import facebook from '../Images/social/icon_facebook.svg';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
@@ -20,7 +18,6 @@ const StyledFooter = styled.footer`
   line-height: 20px;
   margin: auto;
   width: 100%;
-  ul,
   p,
   a {
     margin: 0;
@@ -43,27 +40,49 @@ const Wrapper = styled.div`
   @media screen and (max-width: 1024px) {
     padding: 40px 40px 44px 80px;
   }
+  @media screen and (max-width: 895px) {
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 60px;
+  }
+  @media screen and (max-width: 465px) {
+    padding-left: 16px;
+  }
 `;
 const FirstColumn = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 455px;
+  @media screen and (max-width: 895px) {
+    div {
+      display: none;
+    }
+  }
 `;
 
 const Logo = styled.img`
   height: 58px;
   width: 132px;
+  @media screen and (max-width: 465px) {
+    height: 48px;
+    width: 110px;
+  }
 `;
 const SecondColumn = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   margin-left: 40px;
+  @media screen and (max-width: 895px) {
+    margin-left: 0px;
+  }
 `;
 const Navigation = styled.ul`
   list-style: none;
   width: 169px;
+  margin: 0;
+  padding: 0;
   li {
     margin-top: 10px;
   }
@@ -80,15 +99,28 @@ const ThirdColumn = styled.div`
     margin-top: 10px;
   }
   @media screen and (max-width: 1024px) {
-    margin-right: 0px;
+    margin-right: 20px;
     margin-left: 159px;
+  }
+  @media screen and (max-width: 895px) {
+    margin: 0px;
   }
 `;
 const FooterSocials = styled.ul`
   display: flex;
   list-style: none;
+  padding: 0;
   a {
     padding-right: 32px;
+  }
+  @media screen and (max-width: 465px) {
+    margin-bottom: 58px;
+  }
+`;
+
+const SmCopyright = styled.div`
+  @media screen and (min-width: 896px) {
+    display: none;
   }
 `;
 
@@ -135,6 +167,10 @@ function Footer() {
             <p>2748 Callison Lane, Newark, DE</p>
           </div>
         </ThirdColumn>
+        <SmCopyright>
+          <p>Copyright &copy; {currentYear} Sindano&#8482;</p>
+          <p>All Rights Reserved</p>
+        </SmCopyright>
       </Wrapper>
     </StyledFooter>
   );

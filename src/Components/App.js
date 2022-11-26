@@ -148,7 +148,6 @@ function App() {
             <WorkSection />
             <Faq />
           </Page>
-          <Footer />
           <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader
               closeModal={closeModal}
@@ -159,6 +158,7 @@ function App() {
               handleSuccess={handleSuccess}
             />
           </ModalWrapper>
+          <Footer />
         </PageWrapper>
       </ModalContext.Provider>
     </Theme>
