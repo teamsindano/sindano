@@ -1,9 +1,11 @@
-import styled from 'styled-components';
-import TeamMember from './TeamMember';
-import taraMarshall from '../images/team/tara_marshall_hill.png';
-import Team from './Team';
-import { motion } from 'framer-motion';
-import { sectionVariants } from '../utils/animationVariants';
+
+import styled from "styled-components";
+import Team from "./Team";
+import { motion } from "framer-motion";
+import { sectionVariants } from "../utils/animationVariants";
+import Content from "../Components/Content";
+import { data } from "../utils/data";
+
 
 /**
  * The Our Story Component
@@ -13,68 +15,115 @@ import { sectionVariants } from '../utils/animationVariants';
  */
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  background-color: ${(props) => `${props.theme.colors.secondary_background}`};
-  max-width: 1440px;
-  width: 1281px;
+  max-width: 100%;
   height: fit-content;
   margin: 0 auto;
-  padding: 80px 80px 85px 80px;
+  padding: 80px 80px 210px 80px;
+
+  @media (max-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 80px 40px 200px 40px;
+  }
+
+  @media (max-width: 375px) {
+    padding: 100px 16px 100px 16px;
+  }
+
   &.story {
     background-color: transparent;
+    max-width: 1281px;
+    width: 100%;
     padding: 0;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1200px) {
+      max-width: 1024px;
+    }
   }
-  &.story__story-container {
-    background-color: transparent;
-    width: 550px;
+
+  &.story__content {
+    margin: 0 40px 0 0;
     padding: 0;
   }
+
   &.story__founder {
     background-color: transparent;
-    max-width: 455px;
-    margin: 32px 0 0;
+    max-width: 620px;
+    margin: 88px 0 0 0;
     padding: 0;
-  }
-  &.story__founder-quote {
-    background-color: transparent;
-    width: 455px;
-    margin: 16px 0 0;
-    padding: 0;
-  }
-  &.team__container {
-    width: fit-content;
-    background-color: transparent;
-    margin: 67px 0 0 36px;
-    padding: 0;
-  }
-`;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gird-template-rows: 1fr 1fr;
+    grid-gap: 16px;
 
-const Header = styled.h2`
-  font-family: ${(props) => `${props.theme.fonts.header.font_family}`};
-  font-weight: ${(props) => `${props.theme.fonts.header.weight}`};
-  font-size: ${(props) => `${props.theme.fonts.header.sizes.header_s_default}`};
-  line-height: 52px;
-  color: ${(props) => `${props.theme.colors.default_component_blue}`};
-  margin: 0;
+    @media (max-width: 1200px) {
+      max-width: 1024px;
+      margin: 80px 0 0 0;
+      justify-self: flex-end;
+      grid-template-columns: 1fr;
+      grid-gap: 16px 0;
+    }
+  }
+
+  &.team__container {
+    background-color: transparent;
+    max-width: 1281px;
+    width: fit-content;
+    margin: 120px auto 0;
+    padding: 0;
+
+    @media (max-width: 1024px) {
+      margin: 82px auto 0;
+    }
+
+    @media (max-width: 375px) {
+      margin: 40px auto 0;
+    }
+  }
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
   font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
-  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_l_default}`};
+  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
   line-height: 30px;
-  margin: 32px 0 0;
-  &.story__founder-quote-text {
-    background-color: ${(props) => `${props.theme.colors.pink_opacity}`};
-    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
+  margin: 0;
+  padding: 0;
+
+  &.story__founder-quote {
     font-style: ${(props) => `${props.theme.fonts.text.styles}`};
-    border-radius: 20px;
-    width: 407px;
+    width: 608px;
     line-height: 22px;
-    margin: 0;
-    padding: 24px 0 24px 24px;
+
+    @media (max-width: 1024px) {
+      max-width: 561px;
+      width: 100%;
+      margin: 0 0 0 12px;
+    }
+
+    @media (max-width: 375px) {
+      max-width: 343px;
+    }
   }
+
+  &.story__founder-name {
+    text-align: right;
+    grid-column: 2;
+
+    @media (max-width: 375px) {
+      font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
+    }
+  }
+`;
+
+const Line = styled.span`
+  border-left: 2px solid
+    ${(props) => `${props.theme.colors.default_text_color}`};
+  height: 100%;
+  justify-self: end;
 `;
 
 const OurStory = () => {
@@ -86,45 +135,25 @@ const OurStory = () => {
       initial="offscreen"
       whileInView="onscreen"
     >
-      {/* replace with Content component*/}
-      <Header>Our Story</Header>
       <Container className="story">
-        <Container className="story__story-container">
-          {/* replace with Content component */}
-          <Text>
-            Sindano Health was founded by Tara Marshall-Hill to address the
-            problems she faced in finding appropriate mental healthcare.
-            Motivated to create a solution to the months-long process of what
-            felt like "a shot in the dark" to locate an&nbsp;appropriate and
-            safe therapist for her family's needs, Tara&nbsp;and her team
-            designed a solution.
-          </Text>
-          <Text>
-            Sindano Health's insights provide greater patient experience
-            visibility for all stakeholders to close the knowledge
-            and&nbsp;competency gaps in mental healthcare for
-            LGBTQ+&nbsp;communities.
-          </Text>
+        <Container className="story__content">
+          <Content
+            header={data.content.ourStory.header}
+            details={data.content.ourStory.paragraphs}
+          />
         </Container>
         <Container className="story__founder">
-          <TeamMember
-            photo={taraMarshall}
-            name="Tara Marshall-Hill"
-            pronouns="(she/her)"
-            headline="Founder of Sidano Health"
-          />
-          <Container className="story__founder-quote">
-            <Text className="story__founder-quote-text">
-              "As a queer Black woman, married to a queer Black&nbsp;nonbinary
-              person, with a queer Black autistic daughter, I'm creating the
-              solution my family needs. As&nbsp;it&nbsp;turns out, it's also the
-              solution our communities&nbsp;need. Sindano Health exists so no
-              other&nbsp;queer person from a racially marginalized background
-              ever has to check out of the continuum of&nbsp;care due to lack of
-              access to appropriate mental healthcare. Sindano Health exists
-              because we all deserve to thrive."
-            </Text>
-          </Container>
+          <Line></Line>
+          <Text className="story__founder-quote">
+            "As a queer Black woman, married to a queer Black nonbinary person,
+            with a queer Black autistic daughter, I'm creating the solution my
+            family needs. As it turns out, it's also the solution our
+            communities need. Sindano Health exists so no other queer person
+            from a racially marginalized background ever has to check out of the
+            continuum of care due to lack of access to appropriate mental
+            healthcare. Sindano Health exists because we all deserve to thrive."
+          </Text>
+          <Text className="story__founder-name">— Tara Marshall-Hill</Text>
         </Container>
       </Container>
       <Container className="team__container">

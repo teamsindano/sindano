@@ -1,5 +1,5 @@
 import React from 'react';
-import Teammember from '../Components/Teammember';
+import TeamMember from '../Components/TeamMember';
 
 /**
  * The Team Member Stories Component
@@ -9,7 +9,7 @@ import Teammember from '../Components/Teammember';
 
 export default {
     title: 'Teammember',
-    component: Teammember,
+    component: TeamMember,
     argTypes: {
         photo: { control: "text" },
         name: { control: "text" },
@@ -18,7 +18,7 @@ export default {
     }
 };
 
-const Template = (args) => <Teammember {...args}></Teammember>;
+const Template = (args) => <TeamMember {...args}></TeamMember>;
 
 export const Member = Template.bind({});
 Member.args = {

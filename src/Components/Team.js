@@ -10,11 +10,22 @@ import TeamMember from './TeamMember';
  */
 
 const Container = styled.div`
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  grid-gap: 65px 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 90px 100px;
+    background-color: transparent;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 95px 100px;
+    }
+
+    @media (max-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 11px;
+    }
 `;
 
 const Team = () => {
