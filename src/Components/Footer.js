@@ -11,6 +11,7 @@ import { sectionVariants } from '../utils/animationVariants';
  * Footer Section
  * @author [Ekaterina Cratcha](https://github.com/cratcha) */
 
+ // Height mis-spelled in a few places in this file
 const StyledFooter = styled.footer`
   max-width: 1440px;
   margin: auto;
@@ -22,6 +23,22 @@ const StyledFooter = styled.footer`
   font-weight: ${(props) => `${props.theme.fonts.text.weights.semi_bold}`};
   line-hight: 20px;
 `;
+
+// ******* RECOMMENDATION *********
+// See if you can reduce the amount of CSS you're writing in cases like this by
+// applying broad rules to things at higher levels. For instance, you could eliminate a few lines
+// or even entire styled components by adding the following rules to StyledFooter:
+// ul, p, a {
+//   margin: 0;
+//   color: white;
+// }
+// a {
+//   text-decoration: none;
+// }
+// ul {
+//   list-style: none;
+// }
+// Try and apply this kind of thinking to other component groups as well.
 
 const Wrapper = styled.div`
   padding: 40px 80px;
@@ -102,6 +119,9 @@ function Footer() {
         </FirstColumn>
         <SecondColumn>
           <Navigation>
+            {/* For things like this, it can be nice to make an array of objects representing
+            each link and then map over it instead of listing them all out, just to save space.
+            Same thing for the socials and contacts below */}
             <ListItem>
               <FooterLink href="#ourstory">About</FooterLink>
             </ListItem>

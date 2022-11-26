@@ -36,6 +36,9 @@ const Paragraph = styled.p`
   line-height: 1.5;
 `;
 
+// ******* RECOMMENDATION *********
+// It's not super clear to me what a <Content/> component would be just from looking at this--
+// I'd suggest a more specific name if possible
 const Content = ({ header, details }) => {
   return (
     <Section>

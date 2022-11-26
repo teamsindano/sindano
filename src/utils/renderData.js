@@ -5,7 +5,13 @@ import Chart from 'chart.js/auto';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import Source from "../Components/Source";
 
-
+// ******* RECOMMENDATION *********
+// It's unclear to me how this is different from a regular component and why it's in the utils directory.
+// I would suggest just making components for each of the three cases below and then using them wherever
+// this function was called. I'd also recommend NOT using the `id` to determine which one is rendered--
+// by doing that, you are strongly coupling the component to the data, which defeats the purpose of
+// putting all of that content / data in a central location (the purpose was to make it easier to change later
+// on for someone maintaining this project).
 const renderData = (id) => {
 
     const cardData =  data.unfoldDataCard.find(item => item.id === id); 

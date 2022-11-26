@@ -126,6 +126,10 @@ function ModalForm({ handleSuccess }) {
       });
   };
 
+  // ******* RECOMMENDATION *********
+  // Nothing in this component necessarily has to be inside of a Modal-- this is just a form with all of the
+  // things that a Form needs, but everything is named as if it is strongly coupled to the Modal. I'd recommend
+  // refactoring so that the form contents here are separate from the modal
   return (
     <Form onSubmit={handleSubmit}>
       <ModalFormTitle>

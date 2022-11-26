@@ -98,6 +98,7 @@ function WorkSection() {
       <LeftSection>
         <LeftSectionDiv>
           <Title text="See How We Work" marginBottom={32} />
+          {/* Oops, two buttons here */}
           <CustomButton  onClick={openModal} label="Request a call"/>
         </LeftSectionDiv>
           <PrimaryButton onClick={openModal} label="Request a call"/>

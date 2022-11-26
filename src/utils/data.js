@@ -272,6 +272,15 @@ export const data = {
             },
           },
         },
+        // ******* RECOMMENDATION *********
+        // If you make a component for each chart type to effectively wrap the chart.js component,
+        // you can put a lot of these options inside that component and remove them from the
+        // data file here. Really these options relate to how the component is rendered, not what the
+        // content of the component is (except maybe the title). I'd recommend pulling out any options from
+        // this `options` object that are not explicitly related to the CONTENT displayed in the chart
+        // and move those to an object in the component you are going to build. Once you have done that,
+        // you can merge the options object you have over there with the remaining options you have left here
+        // (such as the title below). Lodash has a great method for merging two objects like this (it's called merge).
         plugins: {
           title: {
             text: ['Discrimination deters', 'seeking care'],
