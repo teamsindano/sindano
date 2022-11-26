@@ -27,6 +27,8 @@ const StyledList = styled.ul`
 	margin-top: 460px;
 	align-items: center;
 	justify-content: center;
+	padding-left: 10px;
+	padding-right: 10px;
 `;
 
 export const StyledIcons = styled.li`
