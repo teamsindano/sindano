@@ -1,11 +1,11 @@
 import React from 'react';
 import whiteLogo from '../Images/sindano_health_logo_white.svg';
-import instagram from '../Images/social/icon_instagram.svg';
 import twitter from '../Images/social/icon_twitter.svg';
 import facebook from '../Images/social/icon_facebook.svg';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
+import { data } from '../utils/data';
 
 /**
  * Footer Section
@@ -13,14 +13,14 @@ import { sectionVariants } from '../utils/animationVariants';
 
 const StyledFooter = styled.footer`
   margin: auto;
-  background: ${(props) => `${props.theme.colors.footer_background}`};
-  color: ${(props) => `${props.theme.colors.alt_text_white}`};
+  background: ${(props) => props.theme.colors.footer_background};
+  color: ${(props) => props.theme.colors.alt_text_white};
   width: 100%;
-  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
-  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
-  //font-weight: ${(props) => `${props.theme.fonts.text.weights.semi_bold}`};
+  font-family: ${(props) => props.theme.fonts.text.font_family};
+  font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
+  //font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
   font-weight: 500;
-  line-hight: 20px;
+  line-height: 20px;
 `;
 
 const Wrapper = styled.div`
@@ -43,7 +43,7 @@ const FirstColumn = styled.div`
 `;
 
 const Logo = styled.img`
-  hight: 58px;
+  height: 58px;
   width: 132px;
 `;
 const SecondColumn = styled.nav`
@@ -98,6 +98,7 @@ const CopyrightItem = styled.p`
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+
   return (
     <StyledFooter
       as={motion.footer}
@@ -117,7 +118,12 @@ function Footer() {
         </FirstColumn>
         <SecondColumn>
           <Navigation>
-            <ListItem>
+            {data.footer.navigation.map((arrItem, index) => (
+              <ListItem key={index}>
+                <FooterLink href={arrItem.link}>{arrItem.name}</FooterLink>
+              </ListItem>
+            ))}
+            {/* <ListItem>
               <FooterLink href="#ourstory">About</FooterLink>
             </ListItem>
             <ListItem>
@@ -131,14 +137,21 @@ function Footer() {
             </ListItem>
             <ListItem>
               <FooterLink href="#">Terms and conditions</FooterLink>
-            </ListItem>
+            </ListItem> */}
           </Navigation>
         </SecondColumn>
         <ThirdColumn>
           <FooterSocials>
-            <li>
+            {data.footer.social.map((arrItem, index) => (
+              <li key={index}>
+                <SocialLink href={arrItem.link}>
+                  <img src={arrItem.image} alt="instagram icon"></img>
+                </SocialLink>
+              </li>
+            ))}
+            {/* <li>
               <SocialLink href="#">
-                <img src={instagram} alt="instagram icon"></img>
+                <img src="" alt="instagram icon"></img>
               </SocialLink>
             </li>
             <li>
@@ -150,7 +163,7 @@ function Footer() {
               <SocialLink href="#">
                 <img src={facebook} alt="facebook icon"></img>
               </SocialLink>
-            </li>
+            </li> */}
           </FooterSocials>
           <div>
             <ContactItem>(555)555-1234</ContactItem>
