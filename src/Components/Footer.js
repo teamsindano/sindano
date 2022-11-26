@@ -12,15 +12,24 @@ import { data } from '../utils/data';
  * @author [Ekaterina Cratcha](https://github.com/cratcha) */
 
 const StyledFooter = styled.footer`
-  margin: auto;
   background: ${(props) => props.theme.colors.footer_background};
   color: ${(props) => props.theme.colors.alt_text_white};
-  width: 100%;
   font-family: ${(props) => props.theme.fonts.text.font_family};
   font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
-  //font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
-  font-weight: 500;
+  font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
   line-height: 20px;
+  margin: auto;
+  width: 100%;
+  ul,
+  p,
+  a {
+    margin: 0;
+    color: white;
+    padding: 0;
+  }
+  a {
+    text-decoration: none;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -54,19 +63,12 @@ const SecondColumn = styled.nav`
 `;
 const Navigation = styled.ul`
   list-style: none;
-  margin: 0;
-  padding: 0;
   width: 169px;
+  li {
+    margin-top: 10px;
+  }
 `;
 
-const ListItem = styled.li`
-  margin-top: 10px;
-`;
-
-const FooterLink = styled.a`
-  text-decoration: none;
-  color: white;
-`;
 const ThirdColumn = styled.div`
   display: flex;
   flex-direction: column;
@@ -74,6 +76,9 @@ const ThirdColumn = styled.div`
   margin-right: 205px;
   margin-left: 161px;
   width: 250px;
+  p {
+    margin-top: 10px;
+  }
   @media screen and (max-width: 1024px) {
     margin-right: 0px;
     margin-left: 159px;
@@ -81,19 +86,10 @@ const ThirdColumn = styled.div`
 `;
 const FooterSocials = styled.ul`
   display: flex;
-  padding-left: 0;
   list-style: none;
-`;
-const SocialLink = styled.a`
-  text-decoration: none;
-  padding-right: 32px;
-`;
-const ContactItem = styled.p`
-  margin: 0;
-  margin-top: 10px;
-`;
-const CopyrightItem = styled.p`
-  margin: 0;
+  a {
+    padding-right: 32px;
+  }
 `;
 
 function Footer() {
@@ -110,65 +106,33 @@ function Footer() {
         <FirstColumn>
           <Logo src={whiteLogo} alt="Sindano logo"></Logo>
           <div>
-            <CopyrightItem>
-              Copyright &copy; {currentYear} Sindano&#8482;
-            </CopyrightItem>
-            <CopyrightItem>All Rights Reserved</CopyrightItem>
+            <p>Copyright &copy; {currentYear} Sindano&#8482;</p>
+            <p>All Rights Reserved</p>
           </div>
         </FirstColumn>
         <SecondColumn>
           <Navigation>
             {data.footer.navigation.map((arrItem, index) => (
-              <ListItem key={index}>
-                <FooterLink href={arrItem.link}>{arrItem.name}</FooterLink>
-              </ListItem>
+              <li key={index}>
+                <a href={arrItem.link}>{arrItem.name}</a>
+              </li>
             ))}
-            {/* <ListItem>
-              <FooterLink href="#ourstory">About</FooterLink>
-            </ListItem>
-            <ListItem>
-              <FooterLink href="#whatwedo">What we do</FooterLink>
-            </ListItem>
-            <ListItem>
-              <FooterLink href="#faq">FAQ</FooterLink>
-            </ListItem>
-            <ListItem>
-              <FooterLink href="#">Privacy</FooterLink>
-            </ListItem>
-            <ListItem>
-              <FooterLink href="#">Terms and conditions</FooterLink>
-            </ListItem> */}
           </Navigation>
         </SecondColumn>
         <ThirdColumn>
           <FooterSocials>
             {data.footer.social.map((arrItem, index) => (
               <li key={index}>
-                <SocialLink href={arrItem.link}>
+                <a href={arrItem.link}>
                   <img src={arrItem.image} alt="instagram icon"></img>
-                </SocialLink>
+                </a>
               </li>
             ))}
-            {/* <li>
-              <SocialLink href="#">
-                <img src="" alt="instagram icon"></img>
-              </SocialLink>
-            </li>
-            <li>
-              <SocialLink href="#">
-                <img src={twitter} alt="twitter icon"></img>
-              </SocialLink>
-            </li>
-            <li>
-              <SocialLink href="#">
-                <img src={facebook} alt="facebook icon"></img>
-              </SocialLink>
-            </li> */}
           </FooterSocials>
           <div>
-            <ContactItem>(555)555-1234</ContactItem>
-            <ContactItem>hello@sindanohealth.com</ContactItem>
-            <ContactItem>2748 Callison Lane, Newark, DE</ContactItem>
+            <p>(555)555-1234</p>
+            <p>hello@sindanohealth.com</p>
+            <p>2748 Callison Lane, Newark, DE</p>
           </div>
         </ThirdColumn>
       </Wrapper>
