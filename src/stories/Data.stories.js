@@ -22,7 +22,6 @@ Default.args = {
   children: data.unfoldDataCard.map((child) => (
     <>
     {renderData(child.id)}
-    <Data.Button/>
     </>
   )),
 };

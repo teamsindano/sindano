@@ -18,8 +18,8 @@ export const UnfoldComponent = Template.bind({});
 UnfoldComponent.args = {
   children: data.whatWeDoCard.map((child) => (
     <Unfold.Wrapper id={child.id}>
-      <Unfold.Header id={child.id} cardTitle={child.cardTitle} />
-      <Unfold.Content id={child.id} text={child.text} />
+      <Unfold.Header item={child} />
+      <Unfold.Content item={child} />
     </Unfold.Wrapper>
   )),
 };
