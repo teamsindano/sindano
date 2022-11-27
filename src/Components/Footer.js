@@ -27,6 +27,11 @@ const StyledFooter = styled.footer`
   a {
     text-decoration: none;
   }
+  @media screen and (max-width: 1445px) {
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
 `;
 
 const Wrapper = styled.div`
