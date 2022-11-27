@@ -2,8 +2,7 @@ import styled from "styled-components";
 import { Chart as ChartJS, BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip } from 'chart.js';
 import { Bar } from "react-chartjs-2";
 import Source from './Source';
-import ChartDataLabels from "chartjs-plugin-datalabels";
-ChartJS.register(ChartDataLabels);
+
 
 
 /**

@@ -6,11 +6,13 @@ import { sectionVariants } from '../utils/animationVariants';
 import { useContext } from 'react';
 import { ModalContext } from './App'
 import { barData, barOptions } from '../utils/chartConfig';
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 
 const data = {
     type:"horizontalBar",
-    data:{barData},
+    plugins:[ChartDataLabels],
+    data:{...barData},
     options:{barOptions},
     width:"100%",
     height:"317px",
