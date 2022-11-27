@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { Chart as ChartJS, BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip } from 'chart.js';
 import { Bar } from "react-chartjs-2";
-import { barData, barOptions } from "../utils/chartConfig";
-import ChartDataLabels from "chartjs-plugin-datalabels";
 import Source from './Source';
+import ChartDataLabels from "chartjs-plugin-datalabels";
+ChartJS.register(ChartDataLabels);
+
 
 /**
  * The Chart Component
@@ -43,30 +44,23 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
     font-weight: ${(props) => `${props.theme.fonts.header.weight}`};
     margin: 0;
     padding: 0;
+    text-align: center;
+    max-width: 330px;
   }
 `;
 
 
-const BarChart = () => {
+const BarChart = ({heading, text, data}) => {
   return (
     <Container>
       <Container className="chart__heading">
         <Text className="chart__text-heading">
-          The importance of information
-        </Text>
-        <Text className="chart__text-heading">
-          when deciding on where to receive care
+          {heading}
         </Text>
       </Container>
-      <Text>Respondents ranked 8-10 on a 10-point scale, %</Text>
+      <Text>{text}</Text>
       <Container className="chart__statistics">
-        <Bar
-          type="horizontalBar"
-          data={barData}
-          plugins={[ChartDataLabels]}
-          options={barOptions}
-          width="100%"
-          height="317px"
+        <Bar {...data}
         ></Bar>
       </Container>
       <Source info="Source: Jade Y. (2020), Data Report on mental health state of LGBTQ+ people in the U.S., source" fontColor={"#EC1E7B"}/>

@@ -5,6 +5,16 @@ import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
 import { useContext } from 'react';
 import { ModalContext } from './App'
+import { barData, barOptions } from '../utils/chartConfig';
+
+
+const data = {
+    type:"horizontalBar",
+    data:{barData},
+    options:{barOptions},
+    width:"100%",
+    height:"317px",
+}
 
 const ChartSectionContainer = styled.section`
   width: 100%;
@@ -49,7 +59,7 @@ function ChartSection() {
       whileInView="onscreen"
     >
       <RightContainer>
-        <BarChart />
+        <BarChart heading="The importance of information when deciding on where to receive care" text="Respondents ranked 8-10 on a 10-point scale, %" data={data}/>
       </RightContainer>
       <RequestDiv>
         <RequestTitle>
