@@ -31,7 +31,7 @@ const ModalFormIcon = styled.img`
 `;
 
 const Form = styled.form`
-  font-family: ${(props) => props.theme.fonts.font_families[1]};
+  font-family: ${(props) => props.theme.fonts.font_families.text};
   width: 100%;
   margin: 0;
   padding: 0;

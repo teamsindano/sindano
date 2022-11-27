@@ -22,7 +22,7 @@ const QuestionStyled = styled.section`
 `;
 
 const TitleStyled = styled.h3`
-    font-family: ${(props) => props.theme.fonts.font_families[0]};
+    font-family: ${(props) => props.theme.fonts.font_families.header};
 	font-size: 52px;
 	font-weight: 700;
 	color: #283592;
@@ -48,7 +48,7 @@ const QuestionSection = styled.div`
 `;
 
 const SubTitle = styled.h3`
-    font-family: ${(props) => props.theme.fonts.font_families[1]};
+    font-family: ${(props) => props.theme.fonts.font_families.text};
 	max-width: 455px;
 	margin-top: 0;
 	margin-bottom: 16px;
@@ -58,7 +58,7 @@ const SubTitle = styled.h3`
 `;
 
 const Text = styled.p`
-    font-family: ${(props) => props.theme.fonts.font_families[1]};
+    font-family: ${(props) => props.theme.fonts.font_families.text};
 	max-width: 455px;
 	margin-top: 0;
 	margin-bottom: 16px;

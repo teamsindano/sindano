@@ -23,8 +23,8 @@ export const theme = {
 
   fonts: {
     font_families: {
-      header_font_family: ['League Spartan', 'sans-serif'],
-      text_font_family: ['Open Sauce Sans', 'sans-serif'],
+      header: 'League Spartan, sans-serif',
+      text: 'Open Sauce Sans, sans-serif',
     },
 
     sizes: {
@@ -46,7 +46,7 @@ export const theme = {
       normal: '400',
     },
 
-    style: 'italic'
+    style: 'italic',
   },
 
   gradients: {

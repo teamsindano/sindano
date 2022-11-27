@@ -15,9 +15,9 @@ import Source from './Source';
  ChartJS.register(BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip);
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  font-family: ${(props) => `${props.theme.fonts.font_families[1]}`};
+  font-family: ${(props) => props.theme.fonts.font_families.text};
   width: 785px;
-  background: ${(props) => `${props.theme.gradients.component}`};
+  background: ${(props) => props.theme.gradients.component};
   border-radius: 20px;
   position: relative;
   &.chart__heading {
@@ -33,14 +33,14 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   margin: 16px 0 0;
-  font-size: ${(props) => `${props.theme.fonts.sizes.text_xs}`};
+  font-size: ${(props) => props.theme.fonts.sizes.text_xs};
   line-height: 14px;
-  font-weight: ${(props) => `${props.theme.fonts.weights.normal}`};
+  font-weight: ${(props) => props.theme.fonts.weights.normal};
   text-align: center;
   &.chart__text-heading {
-    font-size: ${(props) => `${props.theme.fonts.sizes.text_m}`};
+    font-size: ${(props) => props.theme.fonts.sizes.text_m};
     line-height: 20px;
-    font-weight: ${(props) => `${props.theme.fonts.weights.bold}`};
+    font-weight: ${(props) => props.theme.fonts.weights.bold};
     margin: 0;
     padding: 0;
   }

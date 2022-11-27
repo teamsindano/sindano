@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 const TitleContainer = styled.h2`
-    font-family: ${(props) => props.theme.fonts.font_families[0]};
+    font-family: ${(props) => props.theme.fonts.font_families.header};
     font-weight: 700;
     font-size: 52px;
     line-height: 1;

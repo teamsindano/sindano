@@ -15,10 +15,10 @@ const Section = styled.section`
 
 const Title = styled.h2`
   margin: 0;
-  font-family: ${(props) => `${props.theme.fonts.font_families[0]}`};
-  font-size: ${(props) => `${props.theme.fonts.sizes.header_s}`};
-  font-weight: ${(props) => `${props.theme.fonts.weights.bold}`};
-  color: ${(props) => `${props.theme.colors.blue_component_color}`};
+  font-family: ${(props) => props.theme.fonts.font_families.header};
+  font-size: ${(props) => props.theme.fonts.sizes.header_s};
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
+  color: ${(props) => props.theme.colors.blue_component_color};
   line-height: 1;
 `;
 
@@ -30,9 +30,9 @@ const Paragraphs = styled.div`
 
 const Paragraph = styled.p`
   margin: 0;
-  font-family: ${(props) => `${props.theme.fonts.font_families[1]}`};
-  font-size: ${(props) => `${props.theme.fonts.sizes.text_l}`};
-  font-weight: ${(props) => `${props.theme.fonts.weights.normal}`};
+  font-family: ${(props) => props.theme.fonts.font_families.text};
+  font-size: ${(props) => props.theme.fonts.sizes.text_l};
+  font-weight: ${(props) => props.theme.fonts.weights.normal};
   line-height: 1.5;
 `;
 
