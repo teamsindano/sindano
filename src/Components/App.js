@@ -24,7 +24,7 @@ import OurStory from "./OurStory";
  *
  */
 
-const PageWrapper = styled.body`
+const PageWrapper = styled.div`
   max-width: 1440px;
   min-width: 375px;
   padding: 0 20px 0;
