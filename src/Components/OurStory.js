@@ -84,7 +84,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
-  font-family: ${(props) => props.theme.fonts.font_families.text};
+  font-family: ${(props) => props.theme.fonts.families.text};
   font-weight: ${(props) => props.theme.fonts.weights.normal};
   font-size: ${(props) => props.theme.fonts.sizes.text_m};
   line-height: 30px;

@@ -15,7 +15,7 @@ const ModalHeaderDiv = styled.div`
 `;
 
 const ModalHeaderTitle = styled.h2`
-  font-family: ${(props) => props.theme.fonts.font_families.header};
+  font-family: ${(props) => props.theme.fonts.families.header};
   padding: 0;
   margin: 0;
   font-weight: 700;

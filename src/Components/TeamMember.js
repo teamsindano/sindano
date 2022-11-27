@@ -14,7 +14,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   flex-direction: column;
 
   &.teammember__text-container {
-    font-family: ${(props) => props.theme.fonts.font_families[1]};
+    font-family: ${(props) => props.theme.fonts.families.text};
     font-size: ${(props) => props.theme.fonts.sizes.text_s};
     font-weight: ${(props) => props.theme.fonts.weights.normal};
     line-height: 20px;

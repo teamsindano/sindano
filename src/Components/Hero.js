@@ -32,7 +32,7 @@ const BackgroundImage = styled.img`
 `;
 
 const Title = styled.h1`
-  font-family: ${(props) => props.theme.fonts.font_families.header};
+  font-family: ${(props) => props.theme.fonts.families.header};
   font-size: ${(props) => props.theme.fonts.sizes.header_l};
   font-weight: ${(props) => props.theme.fonts.weights.bold};
   color: ${(props) => props.theme.colors.white_text_color};

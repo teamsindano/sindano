@@ -15,7 +15,7 @@ import Source from './Source';
  ChartJS.register(BarElement, BarController, CategoryScale, LinearScale, Legend, Title, Tooltip);
 
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
-  font-family: ${(props) => props.theme.fonts.font_families.text};
+  font-family: ${(props) => props.theme.fonts.families.text};
   width: 785px;
   background: ${(props) => props.theme.gradients.component};
   border-radius: 20px;

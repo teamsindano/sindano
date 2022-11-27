@@ -43,7 +43,7 @@ export const barOptions = {
       display: false,
       labels: {
         font: {
-          family: `${theme.fonts.font_families[1]}`,
+          family: `${theme.fonts.families.text}`,
           weight: `${theme.fonts.weights.normal}`,
           size: 12,
           lineHeight: "14px",

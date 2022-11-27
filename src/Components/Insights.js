@@ -54,7 +54,7 @@ const Text = styled.p`
   line-height: 1.5;
   margin: 32px 0;
   padding: 0;
-  font-family: ${(props) => props.theme.fonts.font_families.text};
+  font-family: ${(props) => props.theme.fonts.families.text};
 
   @media (max-width: 1024px) {
     max-width: 698px;

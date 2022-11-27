@@ -15,7 +15,7 @@ const Section = styled.section`
 
 const Title = styled.h2`
   margin: 0;
-  font-family: ${(props) => props.theme.fonts.font_families.header};
+  font-family: ${(props) => props.theme.fonts.families.header};
   font-size: ${(props) => props.theme.fonts.sizes.header_s};
   font-weight: ${(props) => props.theme.fonts.weights.bold};
   color: ${(props) => props.theme.colors.blue_component_color};
@@ -30,7 +30,7 @@ const Paragraphs = styled.div`
 
 const Paragraph = styled.p`
   margin: 0;
-  font-family: ${(props) => props.theme.fonts.font_families.text};
+  font-family: ${(props) => props.theme.fonts.families.text};
   font-size: ${(props) => props.theme.fonts.sizes.text_l};
   font-weight: ${(props) => props.theme.fonts.weights.normal};
   line-height: 1.5;

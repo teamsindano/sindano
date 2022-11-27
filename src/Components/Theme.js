@@ -22,7 +22,7 @@ export const theme = {
   },
 
   fonts: {
-    font_families: {
+    families: {
       header: 'League Spartan, sans-serif',
       text: 'Open Sauce Sans, sans-serif',
     },
