@@ -13,7 +13,7 @@ const data = {
     type:"horizontalBar",
     plugins:[ChartDataLabels],
     data:{...barData},
-    options:{barOptions},
+    options:{...barOptions},
     width:"100%",
     height:"317px",
 }
