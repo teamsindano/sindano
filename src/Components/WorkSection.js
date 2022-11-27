@@ -25,7 +25,7 @@ const WorkSectionContainer = styled.section`
 
 const CustomButton = styled(PrimaryButton)`
    @media screen and (max-width: 375px) {
-    padding: 15px 113px;
+    width: 100%;
   }
 `;
 
@@ -116,7 +116,7 @@ function WorkSection() {
       <StyledDiv className="left-section">
         <StyledDiv className="how-section">
           <Title text="See How We Work" marginBottom={32} />
-          <CustomButton  onClick={openModal} label="Request a call"/>
+          <CustomButton onClick={openModal} label="Request a call"/>
         </StyledDiv>
         
 
