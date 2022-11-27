@@ -45,8 +45,8 @@ const HeaderTitle = styled.h3`
   font-family: ${(props) => props.theme.fonts.text.font_family[0]};
   padding: 0;
   margin: 0;
-  font-weight: ${(props) => `props.theme.fonts.text.weights.black`};
-  font-size: ${(props) => `props.theme.fonts.text.sizes.text_l_default`};
+  font-weight: ${(props) => props.theme.fonts.text.weights.black};
+  font-size: ${(props) => props.theme.fonts.text.sizes.text_l_default};
   line-height: 1.5;
   color: #fff;
 `;
