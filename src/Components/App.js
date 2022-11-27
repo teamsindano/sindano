@@ -14,7 +14,8 @@ import Insights from './Insights';
 import WorkSection from './WorkSection';
 import ModalWrapper from './Modal/ModalWrapper';
 import ModalHeader from './Modal/ModalHeader';
-import ModalContent from './Modal/ModalContent';
+import Form from './Modal/Form';
+import ModalSuccess from './Modal/ModalSuccess';
 import Header from './Header';
 import OurStory from "./OurStory";
 
@@ -148,7 +149,7 @@ function App() {
         <Footer/>
         <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
-            <ModalContent isModalConfirmation={isModalConfirmation} handleSuccess={handleSuccess}/>
+            {isModalConfirmation ? <ModalSuccess/> : <Form handleSuccess={handleSuccess}/>}
         </ModalWrapper> 
         </PageWrapper> 
       </ModalContext.Provider>
