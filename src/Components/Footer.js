@@ -59,6 +59,9 @@ const FirstColumn = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 455px;
+  @media screen and (max-width: 1026px) {
+    width: 310px;
+  }
   @media screen and (max-width: 895px) {
     div {
       display: none;
@@ -151,7 +154,9 @@ function Footer() {
           <Navigation>
             {data.footer.navigation.map((arrItem, index) => (
               <li key={index}>
-                <a href={arrItem.link}>{arrItem.name}</a>
+                <a href={arrItem.link} target={arrItem.target}>
+                  {arrItem.name}
+                </a>
               </li>
             ))}
           </Navigation>

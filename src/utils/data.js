@@ -13,6 +13,10 @@ import twitter from '../Images/social/icon_twitter.svg';
 import linkedIn from '../Images/social/icon_linkedin.svg';
 import facebook from '../Images/social/icon_facebook.svg';
 
+//PDFs for Footer section
+import TermsConditions from '../pdf/Sindano_Health_Website_Terms_of_Use.pdf';
+import Privacy from '../pdf/Online_Privacy_Policy.pdf';
+
 /** Data
  *  @author [Ekaterina Cratcha](https://github.com/cratcha)
  *  @author [Sam](https://github.com/Samm96) // Added & adjusted some data
@@ -408,12 +412,14 @@ export const data = {
       },
       {
         id: 4,
-        link: '#',
+        link: Privacy,
+        target: '_blank',
         name: 'Privacy',
       },
       {
         id: 5,
-        link: '#',
+        link: TermsConditions,
+        target: '_blank',
         name: 'Terms and conditions',
       },
     ],
