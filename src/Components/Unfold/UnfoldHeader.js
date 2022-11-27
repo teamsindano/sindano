@@ -42,7 +42,7 @@ const Header = styled.div`
 `;
 
 const HeaderTitle = styled.h3`
-  font-family: ${(props) => props.theme.fonts.font_families[1]};
+  font-family: ${(props) => props.theme.fonts.font_families.text};
   padding: 0;
   margin: 0;
   font-weight: ${(props) => props.theme.fonts.weights.black};
