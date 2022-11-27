@@ -20,7 +20,7 @@ const ModalFormText = styled.p`
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-  color: ${(props) => props.theme.colors.default_component_blue};
+  color: ${(props) => props.theme.colors.blue_component_color};
 `;
 
 const ModalFormIcon = styled.img`
@@ -31,7 +31,7 @@ const ModalFormIcon = styled.img`
 `;
 
 const Form = styled.form`
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.font_families[1]};
   width: 100%;
   margin: 0;
   padding: 0;
@@ -83,7 +83,7 @@ const ModalSubmitButton = styled.button`
   width: 168px;
   height: 50px;
   left: 451px;
-  background: ${(props) => props.theme.colors.default_button_pink};
+  background: ${(props) => props.theme.colors.pink_button_color};
   border-radius: 12px;
   color: #fff;
   padding: 15px 28px;
@@ -91,7 +91,8 @@ const ModalSubmitButton = styled.button`
   font-size: 16px;
   line-height: 1.25;
   &:hover {
-    background: ${(props) => props.theme.gradients.button_hover};
+    cursor: pointer;
+    opacity: 0.8;
   }
 `;
 

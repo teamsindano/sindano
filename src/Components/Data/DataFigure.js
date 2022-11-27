@@ -7,7 +7,7 @@ import styled from "styled-components";
  */
 
 const DataFigureDiv = styled.h2`
-  font-family: ${(props) => props.theme.fonts.header.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.font_families[0]};
   width: max-content;
   font-weight: 700;
   font-size: 68px;
@@ -17,7 +17,7 @@ const DataFigureDiv = styled.h2`
 `;
 
 const DataText = styled.p`
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.font_families[1]};
   font-weight: 600;
   font-size: 16px;
   line-height: 1.25;

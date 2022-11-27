@@ -31,10 +31,10 @@ export const StyledIcons = styled.li`
 
 export const StyledLinks = styled.a`
   text-decoration: none;
-  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
-  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
-  font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
-  color: ${(props) => `${props.theme.colors.default_text_color}`};
+  font-family: ${(props) => `${props.theme.fonts.font_families[1]}`};
+  font-size: ${(props) => `${props.theme.fonts.sizes.text_m}`};
+  font-weight: ${(props) => `${props.theme.fonts.weights.bold}`};
+  color: ${(props) => `${props.theme.colors.black_text_color}`};
   line-height: 20px;
 `;
 

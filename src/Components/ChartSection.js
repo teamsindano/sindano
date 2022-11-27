@@ -23,7 +23,7 @@ const RequestDiv = styled.div`
 
 const RequestTitle = styled.h2`
   width: 455px;
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.font_families[1]};
   font-weight: 700;
   font-size: 20px;
   line-height: 30px;

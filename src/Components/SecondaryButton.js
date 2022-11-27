@@ -6,13 +6,13 @@ import styled from 'styled-components';
  */
 
 const SecondaryButton = styled.button`
-  background-color: ${(props) => props.theme.colors.alt_text_white};
-  color: ${(props) => props.theme.colors.default_button_aqua};
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
-  font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
-  font-weight: ${(props) => props.theme.fonts.text.weights.bold};
+  background-color: ${(props) => props.theme.colors.white_text_color};
+  color: ${(props) => props.theme.colors.aqua_button_color};
+  font-family: ${(props) => props.theme.fonts.font_families[1]};
+  font-size: ${(props) => props.theme.fonts.sizes.text_m};
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
   border-radius: 12px;
-  border: 1px ${(props) => props.theme.colors.default_button_aqua} solid;
+  border: 1px ${(props) => props.theme.colors.aqua_button_color} solid;
   line-height: 1.25;
   padding: 14px 27px;
   cursor: pointer;
