@@ -7,6 +7,7 @@ import { sectionVariants } from "../utils/animationVariants";
 import Burger from "./Burger";
 
 export const HeaderStyle = styled.header`
+	position: relative;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;

@@ -8,8 +8,13 @@ import styled from "styled-components";
 
 const Div = styled.div`
 	position: absolute;
+	background-color: white;
 	z-index: 4;
 	display: flex;
+	top: 75px;
+	right: 0;
+	justify-content: center;
+	left: 0;
 	align-items: center;
 `;
 
@@ -20,15 +25,12 @@ const StyledList = styled.ul`
 	z-index: 4;
 	flex-direction: column;
 	list-style: none;
-	height: 375px;
 	max-width: 440px;
 	opacity: ${({ open }) => (open ? 1 : 0)};
 	display: ${({ open }) => (open ? "flex" : "none")};
-	margin-top: 460px;
 	align-items: center;
 	justify-content: center;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0;
 `;
 
 export const StyledIcons = styled.li`
