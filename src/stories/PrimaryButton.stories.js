@@ -4,13 +4,15 @@ import PrimaryButton from '../Components/PrimaryButton';
 export default {
   title: 'Primary Button',
   component: PrimaryButton,
+  argTypes: { onClick: { action: 'open a Modal'} }
 };
 
 const Template = (args) => (
-  <PrimaryButton {...args}> {args.label}</PrimaryButton>
+  <PrimaryButton {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  label: 'Request a call',
+export const Primary = Template.bind({});
+Primary.args = {
+  label: "Request a call"
 };
+

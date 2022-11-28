@@ -17,6 +17,7 @@ import Source from './Source';
 const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
   width: 785px;
+  background: ${(props) => `${props.theme.gradients.component}`};
   border-radius: 20px;
   position: relative;
   &.chart__heading {
