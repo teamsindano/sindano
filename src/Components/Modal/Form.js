@@ -107,7 +107,7 @@ const SubmitText = styled.p`
 `;
 
 function Form({ handleSuccess }) {
-  const { values, handleChange, errors, isValid, resetForm } =
+  const { values, handleChange, handleAutoFill, errors, isValid, resetForm } =
     useFormWithValidation();
 
   const { linkedInLogin } = useLinkedIn({
