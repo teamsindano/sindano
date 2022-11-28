@@ -7,14 +7,14 @@ import useFormWithValidation from '../../utils/formValidationHook';
  * @author [Peter Staal](https://github.com/pstaal)
  */
 
-const ModalFormTitle = styled.div`
+const FormTitle = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 32px;
 `;
 
-const ModalFormText = styled.p`
+const FormText = styled.p`
   margin: 0;
   padding: 0;
   font-weight: 700;
@@ -23,21 +23,21 @@ const ModalFormText = styled.p`
   color: ${(props) => props.theme.colors.default_component_blue};
 `;
 
-const ModalFormIcon = styled.img`
+const FormIcon = styled.img`
   display: block;
   width: 20px;
   height: 20px;
   margin-right: 9px;
 `;
 
-const Form = styled.form`
+const FormContainer = styled.form`
   font-family: ${(props) => props.theme.fonts.text.font_family[0]};
   width: 100%;
   margin: 0;
   padding: 0;
 `;
 
-const ModalLabel = styled.label`
+const Label = styled.label`
   color: ${(props) =>
     props.error === '' || props.error === undefined ? '#000' : '#FF1A1A'};
   padding: 0;
@@ -50,7 +50,7 @@ const ModalLabel = styled.label`
   display: inline-block;
 `;
 
-const ModalInput = styled.input`
+const Input = styled.input`
   width: 100%;
   background: #ffffff;
   border: 1px solid
@@ -66,24 +66,25 @@ const ModalInput = styled.input`
   }
 `;
 
-const ModalInputContainer = styled.div`
+const InputContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
 `;
 
-const ModalInputContainerDiv = styled.div`
+const InputContainerDiv = styled.div`
   width: 259px;
   display: flex;
   flex-direction: column;
 `;
 
-const ModalSubmitButton = styled.button`
+const SubmitButton = styled.button`
   border: none;
+  cursor: pointer;
   width: 168px;
   height: 50px;
   left: 451px;
-  background: ${(props) => props.theme.colors.default_button_pink};
+  background: ${(props) => props.theme.colors.default_button_aqua};
   border-radius: 12px;
   color: #fff;
   padding: 15px 28px;
@@ -102,7 +103,7 @@ const SubmitText = styled.p`
   line-height: 1.33;
 `;
 
-function ModalForm({ handleSuccess }) {
+function Form({ handleSuccess }) {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation();
 
@@ -127,18 +128,18 @@ function ModalForm({ handleSuccess }) {
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <ModalFormTitle>
-        <ModalFormIcon src={linkedinIcon} />
-        <ModalFormText>Auto-fill with LinkedIn</ModalFormText>
-      </ModalFormTitle>
-      <ModalLabel error={errors.name} htmlFor="name">
+    <FormContainer onSubmit={handleSubmit}>
+      <FormTitle>
+        <FormIcon src={linkedinIcon} />
+        <FormText>Auto-fill with LinkedIn</FormText>
+      </FormTitle>
+      <Label error={errors.name} htmlFor="name">
         Name{' '}
         {errors.name !== '' && errors.name !== undefined
           ? `(${errors.name})`
           : ''}
-      </ModalLabel>
-      <ModalInput
+      </Label>
+      <Input
         error={errors.name}
         required
         type="text"
@@ -149,15 +150,15 @@ function ModalForm({ handleSuccess }) {
         onChange={handleChange}
         value={values.name || ''}
       />
-      <ModalInputContainer>
-        <ModalInputContainerDiv>
-          <ModalLabel error={errors.company} htmlFor="company">
+      <InputContainer>
+        <InputContainerDiv>
+          <Label error={errors.company} htmlFor="company">
             Company{' '}
             {errors.company !== '' && errors.company !== undefined
               ? `(${errors.company})`
               : ''}
-          </ModalLabel>
-          <ModalInput
+          </Label>
+          <Input
             error={errors.company}
             required
             type="text"
@@ -168,15 +169,15 @@ function ModalForm({ handleSuccess }) {
             onChange={handleChange}
             value={values.company || ''}
           />
-        </ModalInputContainerDiv>
-        <ModalInputContainerDiv>
-          <ModalLabel error={errors.title} htmlFor="title">
+        </InputContainerDiv>
+        <InputContainerDiv>
+          <Label error={errors.title} htmlFor="title">
             Title{' '}
             {errors.title !== '' && errors.title !== undefined
               ? `(${errors.title})`
               : ''}
-          </ModalLabel>
-          <ModalInput
+          </Label>
+          <Input
             error={errors.title}
             required
             type="text"
@@ -187,15 +188,15 @@ function ModalForm({ handleSuccess }) {
             onChange={handleChange}
             value={values.title || ''}
           />
-        </ModalInputContainerDiv>
-      </ModalInputContainer>
-      <ModalLabel error={errors.email} htmlFor="email">
+        </InputContainerDiv>
+      </InputContainer>
+      <Label error={errors.email} htmlFor="email">
         Email{' '}
         {errors.email !== '' && errors.email !== undefined
           ? `(${errors.email})`
           : ''}
-      </ModalLabel>
-      <ModalInput
+      </Label>
+      <Input
         error={errors.email}
         required
         type="email"
@@ -205,15 +206,15 @@ function ModalForm({ handleSuccess }) {
         onChange={handleChange}
         value={values.email || ''}
       />
-      <ModalInputContainer>
-        <ModalSubmitButton type="submit">Schedule Call</ModalSubmitButton>
+      <InputContainer>
+        <SubmitButton type="submit">Schedule Call</SubmitButton>
         <SubmitText>
           A member of our team will be in touch with you to schedule a time to
           chat
         </SubmitText>
-      </ModalInputContainer>
-    </Form>
+      </InputContainer>
+    </FormContainer>
   );
 }
 
-export default ModalForm;
+export default Form;
