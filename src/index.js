@@ -16,7 +16,9 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 
 if (params.linkedin === 'true') {
   window.location.replace(
-    `https://pstaal.github.io/sindano/#/?linkedin=true&code=${params.code}`
+    `https://pstaal.github.io/sindano/#/?${new URLSearchParams(
+      params
+    ).toString()}`
   );
 }
 /*
