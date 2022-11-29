@@ -118,9 +118,12 @@ function Form({ handleSuccess }) {
     onSuccess: _.debounce((code) => {
       axios
         // TODO: Replace this with deployed api address (replaced)
-        .post('http://34.123.12.180:3001/authorize', {
-          code,
-        })
+        .post(
+          'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/authorize',
+          {
+            code,
+          }
+        )
         .then(({ data }) => {
           console.log(data.access_token);
           return axios.get('https://api.linkedin.com/v2/me', {
@@ -142,7 +145,7 @@ function Form({ handleSuccess }) {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch('http://localhost:3001/', {
+    fetch('https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/contact', {
       method: 'POST',
       headers: {
         Accept: 'application/json, text/plain, */*',
