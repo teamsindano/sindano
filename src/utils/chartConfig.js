@@ -24,7 +24,13 @@ export const barData = {
     {
       data: numbers,
       backgroundColor: theme.colors.default_component_blue,
-      barThickness: 10,
+      barThickness: function () {
+        if (document.documentElement.clientWidth < 375) {
+          return 5;
+        } else {
+          return 10;
+        }
+      },
       borderRadius: 2,
       borderSkipped: false,
     },
