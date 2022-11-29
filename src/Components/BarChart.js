@@ -44,6 +44,17 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
     margin: 0;
     padding: 0;
   }
+
+  @media (max-width: 375px) {
+    font-size: 7px;
+    line-height: 9px;
+    margin: 6px 0 0;
+
+    &.chart__text-heading {
+      font-size: 7px;
+      line-height: 9px;
+    }
+  }
 `;
 
 
