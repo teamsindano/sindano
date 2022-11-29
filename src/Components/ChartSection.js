@@ -24,6 +24,10 @@ const RequestDiv = styled.div`
   align-self: center;
   margin-left: 40px;
   position: relative;
+
+  @media (max-width: 1024px) {
+    margin: 0 auto 0;
+  }
 `;
 
 const RequestTitle = styled.h2`
