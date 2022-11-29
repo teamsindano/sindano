@@ -10,6 +10,10 @@ export default function useFormWithValidation() {
       ...values,
       name: `${data.localizedFirstName} ${data.localizedLastName}`,
     });
+    setValues({
+      ...values,
+      email: `${data.email}`,
+    });
   };
 
   const handleChange = (event) => {

@@ -114,7 +114,7 @@ function Form({ handleSuccess }) {
     // TODO: replace this client_id (temp replaced)
     clientId: '78i0gitxfdiyau',
     redirectUri: `${window.location.origin}/sindano?linkedin=true`,
-    scope: 'r_liteprofile',
+    scope: 'r_liteprofile r_emailaddress',
     onSuccess: _.debounce((code) => {
       axios
         // TODO: Replace this with deployed api address (replaced)
@@ -184,7 +184,7 @@ function Form({ handleSuccess }) {
         minLength="2"
         id="name"
         name="name"
-        placeholder="Tara Marshall-Hill"
+        placeholder="Name"
         onChange={handleChange}
         value={values.name || ''}
       />
@@ -203,7 +203,7 @@ function Form({ handleSuccess }) {
             minLength="2"
             id="company"
             name="company"
-            placeholder="Sindano Health"
+            placeholder="Company"
             onChange={handleChange}
             value={values.company || ''}
           />
@@ -222,7 +222,7 @@ function Form({ handleSuccess }) {
             minLength="2"
             id="title"
             name="title"
-            placeholder="Founder"
+            placeholder="Title"
             onChange={handleChange}
             value={values.title || ''}
           />
@@ -240,7 +240,7 @@ function Form({ handleSuccess }) {
         type="email"
         id="email"
         name="email"
-        placeholder="TaraMarshallHill@sindanohealth.com"
+        placeholder="Email"
         onChange={handleChange}
         value={values.email || ''}
       />
