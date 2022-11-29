@@ -47,6 +47,7 @@ const Photo = styled.img`
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
+  font-weight: ${(props) => props.theme.fonts.weights.normal};
   margin: 0 auto 0;
   padding; 0;
   width: fit-content;

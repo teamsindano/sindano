@@ -6,7 +6,7 @@ import styled from "styled-components";
  * @author [Peter Staal](https://github.com/pstaal)
  */
 
-const DataFigureDiv = styled.h2`
+const DataFigureHeader = styled.h2`
   font-family: ${(props) => props.theme.fonts.families.header};
   width: max-content;
   font-weight: 700;
@@ -28,7 +28,7 @@ const DataFigure= ({data}) => {
      
     return (
         <>
-        <DataFigureDiv>{data.dataTitle}</DataFigureDiv>
+        <DataFigureHeader>{data.dataTitle}</DataFigureHeader>
         {data.dataContent.map((content) => {
            return <DataText key={_.uniqueId("figure-")}>{content}</DataText> 
         }) 

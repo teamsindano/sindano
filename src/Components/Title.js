@@ -10,6 +10,11 @@ const TitleContainer = styled.h2`
     color: #283592;
     max-width: 950px;
     margin-bottom: ${(props) => props.marginBottom + `px`};
+
+    @media (max-width: 375px) {
+        max-width: 343px;
+        font-size: 40px;
+    }
 `;
 
 function Title({text, marginBottom}){

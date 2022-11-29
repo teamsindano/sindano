@@ -24,6 +24,14 @@ const UnfoldContentDiv = styled(motion.div)`
   }
 `;
 
+const StyledDataComponent = styled(Data)`
+  margin: 0;
+  @media screen and (max-width: 1150px) {
+      margin-left: 45px;
+      margin-right: 40px;
+    }
+`
+
 const UnfoldText = styled.p`
   margin: 0;
   padding: 0;
@@ -99,7 +107,7 @@ function UnfoldContent({ item }) {
             
           </div>
           <div>
-            <Data>{renderData(item.id)}</Data>
+            <StyledDataComponent>{renderData(item.id)}</StyledDataComponent>
           </div>
         </UnfoldContentDiv>
         <ButtonDiv>
