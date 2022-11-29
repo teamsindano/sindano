@@ -116,7 +116,9 @@ function App() {
   };
 
   return query.get('linkedin') === 'true' ? (
-    <Redirect to={`/linkedin?code=${query.get('code')}`} />
+    <Redirect
+      to={`/linkedin?code=${query.get('code')}&state=${query.get('state')}`}
+    />
   ) : (
     <Theme>
       <ModalContext.Provider value={{ openModal }}>
