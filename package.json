@@ -19,6 +19,7 @@
     "react-linkedin-login-oauth2": "^2.0.1",
     "react-router-dom": "^5.3.4",
     "react-scripts": "5.0.1",
+    "serverless-dotenv-plugin": "^4.0.2",
     "storybook": "^6.5.13",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
