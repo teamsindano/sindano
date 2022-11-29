@@ -167,7 +167,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669688282490-2022-11-29T02:18:02.490Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1669691133287-2022-11-29T03:05:33.287Z/sindano-backend.zip"
         },
         "Handler": "handler.authorize",
         "Runtime": "nodejs12.x",
@@ -197,7 +197,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669688282490-2022-11-29T02:18:02.490Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1669691133287-2022-11-29T03:05:33.287Z/sindano-backend.zip"
         },
         "Handler": "handler.contact",
         "Runtime": "nodejs12.x",
@@ -220,24 +220,24 @@
         "ContactLogGroup"
       ]
     },
-    "AuthorizeLambdaVersionc3kgTCxx2uWNCQOWSLOowok7Vsz9dcL2JvAGnjPK9gs": {
+    "AuthorizeLambdaVersion6NG9DjPlfzs7hq1kGpeAJ9bLcB9LipQKmSD0Q3qWkk": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AuthorizeLambdaFunction"
         },
-        "CodeSha256": "NOU05tLDcEfRI75uIJhlN9SutA+MWXalDukTla4TchE="
+        "CodeSha256": "udyR5RO08UjRxzNXjbR8iu/WMtLT4TUI7e2ruZmbHtY="
       }
     },
-    "ContactLambdaVersionha4bYLOqzlhYDlp8Tn837S1zGo0MDyOZcLB8l4NAg": {
+    "ContactLambdaVersioncg9VX8LJekxOjZzR17Qh2GrUFRJSuJdn1IEuEUTmos": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ContactLambdaFunction"
         },
-        "CodeSha256": "NOU05tLDcEfRI75uIJhlN9SutA+MWXalDukTla4TchE="
+        "CodeSha256": "udyR5RO08UjRxzNXjbR8iu/WMtLT4TUI7e2ruZmbHtY="
       }
     },
     "HttpApi": {
@@ -441,7 +441,7 @@
     "AuthorizeLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AuthorizeLambdaVersionc3kgTCxx2uWNCQOWSLOowok7Vsz9dcL2JvAGnjPK9gs"
+        "Ref": "AuthorizeLambdaVersion6NG9DjPlfzs7hq1kGpeAJ9bLcB9LipQKmSD0Q3qWkk"
       },
       "Export": {
         "Name": "sls-sindano-backend-dev-AuthorizeLambdaFunctionQualifiedArn"
@@ -450,7 +450,7 @@
     "ContactLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ContactLambdaVersionha4bYLOqzlhYDlp8Tn837S1zGo0MDyOZcLB8l4NAg"
+        "Ref": "ContactLambdaVersioncg9VX8LJekxOjZzR17Qh2GrUFRJSuJdn1IEuEUTmos"
       },
       "Export": {
         "Name": "sls-sindano-backend-dev-ContactLambdaFunctionQualifiedArn"

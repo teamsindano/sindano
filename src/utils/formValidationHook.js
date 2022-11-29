@@ -5,7 +5,9 @@ export default function useFormWithValidation() {
   const [errors, setErrors] = React.useState({});
   const [isValid, setIsValid] = React.useState(false);
 
-  const handleAutoFill = (data) => {};
+  const handleAutoFill = (data) => {
+    setValues({ ...values, name: `${data.firstName} ${data.lastName}` });
+  };
 
   const handleChange = (event) => {
     const target = event.target;

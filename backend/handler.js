@@ -16,7 +16,7 @@ module.exports.authorize = async (event) => {
           // TODO: Replace this client_id (temp replaced)
           client_id: '78i0gitxfdiyau',
           client_secret: process.env.CLIENT_SECRET,
-          redirect_uri: 'https://pstaal.github.io/sindano/linkedin',
+          redirect_uri: 'https://pstaal.github.io/sindano/#/linkedin',
         },
       }
     );
