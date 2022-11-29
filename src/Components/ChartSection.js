@@ -10,6 +10,11 @@ const ChartSectionContainer = styled.section`
   width: 100%;
   display: flex;
   margin-bottom: 160px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    margin-bottom: 200px;
+  }
 `;
 
 const RequestDiv = styled.div`
@@ -35,6 +40,10 @@ const RequestTitle = styled.h2`
 
 const RightContainer = styled.div`
   position: relative;
+
+  @media (max-width: 1024px) {
+    margin: 0 auto 100px;
+  }
 `;
 
 function ChartSection() {
