@@ -97,7 +97,7 @@ const StatsContainer = styled.div`
 export const ModalContext = createContext();
 
 function App() {
-  const { search } = useLocation();
+  const { search, pathname } = useLocation();
   const query = useMemo(() => new URLSearchParams(search), [search]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalConfirmation, setIsModalConfirmation] = useState(false);
@@ -115,9 +115,11 @@ function App() {
     setIsModalConfirmation(true);
   };
 
-  return query.get('linkedin') === 'true' ? (
+  return !pathname.includes('linkedin') && query.get('linkedin') === 'true' ? (
     <Redirect
-      to={`/linkedin?code=${query.get('code')}&state=${query.get('state')}`}
+      to={`/linkedin?linkedin=true&code=${query.get('code')}&state=${query.get(
+        'state'
+      )}`}
     />
   ) : (
     <Theme>
