@@ -106,6 +106,13 @@ const SubmitText = styled.p`
   line-height: 1.33;
 `;
 
+const LinkedinButton = styled.button`
+  display: flex;
+  flex-direction: row;
+  border: none;
+  background-color: transparent;
+`;
+
 function Form({ handleSuccess }) {
   const { values, handleChange, handleAutoFill, errors, isValid, resetForm } =
     useFormWithValidation();
@@ -166,10 +173,10 @@ function Form({ handleSuccess }) {
   return (
     <FormContainer onSubmit={handleSubmit}>
       <FormTitle>
-        <button onClick={linkedInLogin}>
+        <LinkedinButton onClick={linkedInLogin}>
           <FormIcon src={linkedinIcon} />
           <FormText>Auto-fill with LinkedIn</FormText>
-        </button>
+        </LinkedinButton>
       </FormTitle>
       <Label error={errors.name} htmlFor="name">
         Name{' '}
