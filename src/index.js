@@ -7,6 +7,20 @@ import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './utils/globalstyle';
 import './index.css';
 
+/*
+ ********** NEVER DO THIS *************
+ */
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
+if (params.linkedin === 'true') {
+  window.location.replace('https://pstaal.github.io/sindano/#/?linkedin=true');
+}
+/*
+ ********** NEVER DO THIS *************
+ */
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
