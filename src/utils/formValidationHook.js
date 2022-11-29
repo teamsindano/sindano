@@ -6,7 +6,10 @@ export default function useFormWithValidation() {
   const [isValid, setIsValid] = React.useState(false);
 
   const handleAutoFill = (data) => {
-    setValues({ ...values, name: `${data.firstName} ${data.lastName}` });
+    setValues({
+      ...values,
+      name: `${data.localizedFirstName} ${data.localizedLastName}`,
+    });
   };
 
   const handleChange = (event) => {
