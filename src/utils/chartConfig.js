@@ -25,11 +25,7 @@ export const barData = {
       data: numbers,
       backgroundColor: theme.colors.default_component_blue,
       barThickness: function () {
-        if (document.documentElement.clientWidth < 375) {
-          return 5;
-        } else {
-          return 10;
-        }
+        return document.documentElement.clientWidth < 375 ? 5 : 10;
       },
       borderRadius: 2,
       borderSkipped: false,
@@ -51,7 +47,6 @@ export const barOptions = {
         font: {
           family: `${theme.fonts.text.font_family[0]}`,
           weight: `${theme.fonts.text.weights.normal}`,
-          size: 12,
           lineHeight: "14px",
         },
       },
@@ -87,6 +82,11 @@ export const barOptions = {
         stepSize: 1,
         color: theme.colors.default_text_color,
         padding: 8,
+        font: {
+          size: function () {
+            return document.documentElement.clientWidth < 375 ? 6 : 12;
+          },
+        },
       },
       grid: {
         display: true,
