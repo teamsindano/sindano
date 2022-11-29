@@ -6,7 +6,7 @@ import styled from 'styled-components';
  */
 
 const SecondaryButton = styled.button`
-  background-color: ${(props) => props.theme.colors.alt_text_white};
+  background-color: ${(props) => props.theme.colors.primary_background};
   color: ${(props) => props.theme.colors.default_button_aqua};
   font-family: ${(props) => props.theme.fonts.text.font_family[0]};
   font-size: ${(props) => props.theme.fonts.text.sizes.text_m};

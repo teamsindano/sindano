@@ -1,0 +1,86 @@
+import { createGlobalStyle } from 'styled-components';
+
+import LeageSpartanWoff2 from '../vendor/fonts/league-spartan/league-spartan-v6-latin-700.woff2';
+import LeageSpartanWoff from '../vendor/fonts/league-spartan/league-spartan-v6-latin-700.woff';
+import LeageSpartanTtf from '../vendor/fonts/league-spartan/league-spartan-v6-latin-700.ttf';
+
+import OpenSauce800 from '../vendor/fonts/open-sauce-sans/OpenSauceSans-Black.ttf';
+import OpenSauce700 from '../vendor/fonts/open-sauce-sans/OpenSauceSans-ExtraBold.ttf';
+import OpenSauce600 from '../vendor/fonts/open-sauce-sans/OpenSauceSans-Bold.ttf'
+import OpenSauce400Italic from '../vendor/fonts/open-sauce-sans/OpenSauceSans-Italic.ttf';
+import OpenSauce400 from '../vendor/fonts/open-sauce-sans/OpenSauceSans-Regular.ttf';
+
+export const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: 'League Spartan';
+  font-weight: 700;
+  font-display: swap;
+  font-style: bold;
+  src: url(${LeageSpartanWoff2}) format('woff2'),
+       url(${LeageSpartanWoff}) format('woff'),
+       url(${LeageSpartanTtf}) format('truetype');
+}
+
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 800;
+  font-display: swap;
+  font-style: bold;
+  src: url(${OpenSauce800}) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 700;
+  font-display: swap;
+  font-style: bold;
+  src: url(${OpenSauce700}) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 600;
+  font-display: swap;
+  font-style: bold;
+  src: url(${OpenSauce600}) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+  src: url(${OpenSauce400Italic}) format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sauce Sans';
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+  src: url(${OpenSauce400}) format('truetype');
+}
+
+html {
+		scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+}
+
+p {
+  font-family: 'Open Sauce Sans';
+  font-weight: 600;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'League Spartan';
+}
+
+`;
+

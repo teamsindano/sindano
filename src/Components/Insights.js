@@ -4,6 +4,12 @@ import Title from './Title';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
 
+/**
+ * Insights Section
+ * Adjustments: @author [Sam](https://github.com/Samm96)
+ *
+ */
+
 const InsightsSection = styled.section`
   width: 100%;
   display: flex;

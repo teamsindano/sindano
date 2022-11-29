@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { LinkedInCallback } from 'react-linkedin-login-oauth2';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
-import { GlobalStyle } from './vendor/fonts/fonts';
+import { GlobalStyle } from './utils/globalstyle';
 import './index.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
