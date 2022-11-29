@@ -1,8 +1,9 @@
-import React, { useState, createContext } from "react";
-import _ from "lodash";
-import Theme from "./Theme";
-import { data } from "../utils/data";
-import styled from "styled-components";
+import React, { useState, useMemo, createContext } from 'react';
+import _ from 'lodash';
+import { useLocation, Redirect } from 'react-router-dom';
+import Theme from './Theme';
+import { data } from '../utils/data';
+import styled from 'styled-components';
 import Unfold from './Unfold/Unfold';
 import Stat from './Stat';
 import Title from './Title';
@@ -17,10 +18,10 @@ import ModalHeader from './Modal/ModalHeader';
 import Form from './Modal/Form';
 import ModalSuccess from './Modal/ModalSuccess';
 import Header from './Header';
-import OurStory from "./OurStory";
+import OurStory from './OurStory';
 
 /**
- * 
+ *
  * Adjustments: @author [Sam](https://github.com/Samm96)
  *
  */
@@ -58,11 +59,11 @@ const Page = styled.div`
   margin: 0;
   padding: 0 0 0 60px;
 
-  @media screen and (max-width: 1350px){
+  @media screen and (max-width: 1350px) {
     width: calc(100vw - 80px);
     padding: 0;
   }
-  @media screen and (max-width: 375px){
+  @media screen and (max-width: 375px) {
     width: calc(100vw - 32px);
     padding: 0 6px;
   }
@@ -76,7 +77,7 @@ const StatsContainer = styled.div`
   gap: 40px;
   margin-bottom: 180px;
   flex-wrap: wrap;
-  
+
   @media screen and (max-width: 1400px) {
     max-width: 800px;
     margin: 0 auto 0;
@@ -96,6 +97,8 @@ const StatsContainer = styled.div`
 export const ModalContext = createContext();
 
 function App() {
+  const { search } = useLocation();
+  const query = useMemo(() => new URLSearchParams(search), [search]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalConfirmation, setIsModalConfirmation] = useState(false);
 
@@ -112,52 +115,64 @@ function App() {
     setIsModalConfirmation(true);
   };
 
-  return (
+  return query.get('linkedin') === 'true' ? (
+    <Redirect to={`/linkedin?code=${query.get('code')}`} />
+  ) : (
     <Theme>
       <ModalContext.Provider value={{ openModal }}>
         <PageWrapper>
-          <Header/>
-          <Hero/>
+          <Header />
+          <Hero />
           <Page>
             <PageWrapper className="stats__wrapper">
-          <Title text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America" marginBottom={80}/>
-          <StatsContainer>
-            {data.statsCards.map((card) => {
-              return (
-                <Stat
-                  id={card.id}
-                  key={card.id}
-                  source={card.source}
-                  cardHeader={card.cardHeader}
-                  cardText={card.cardText}
-                />
-              );
-            })}
-          </StatsContainer>
-          </PageWrapper>
-          <Insights/>
-          <ChartSection/>
+              <Title
+                text="The Mental Health Crisis in LGBTQ+ Communities is an Economic Crisis for America"
+                marginBottom={80}
+              />
+              <StatsContainer>
+                {data.statsCards.map((card) => {
+                  return (
+                    <Stat
+                      id={card.id}
+                      key={card.id}
+                      source={card.source}
+                      cardHeader={card.cardHeader}
+                      cardText={card.cardText}
+                    />
+                  );
+                })}
+              </StatsContainer>
+            </PageWrapper>
+            <Insights />
+            <ChartSection />
           </Page>
-          <OurStory/>
+          <OurStory />
           <Page>
-          <Title text="What We Do" marginBottom={40}/>
-          <Unfold id="whatwedo">
-            {data.whatWeDoCard.map((item) => (
-              <Unfold.Wrapper key={_.uniqueId("Unfold-Block-")}>
-                <Unfold.Header item={item} />
-                <Unfold.Content item={item} />
-              </Unfold.Wrapper>
-            ))}
-          </Unfold>
-        <WorkSection/>
-        <Faq/>
-        </Page>
-        <Footer/>
-        <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
-            <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
-            {isModalConfirmation ? <ModalSuccess/> : <Form handleSuccess={handleSuccess}/>}
-        </ModalWrapper> 
-        </PageWrapper> 
+            <Title text="What We Do" marginBottom={40} />
+            <Unfold id="whatwedo">
+              {data.whatWeDoCard.map((item) => (
+                <Unfold.Wrapper key={_.uniqueId('Unfold-Block-')}>
+                  <Unfold.Header item={item} />
+                  <Unfold.Content item={item} />
+                </Unfold.Wrapper>
+              ))}
+            </Unfold>
+            <WorkSection />
+            <Faq />
+          </Page>
+          <Footer />
+          <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
+            <ModalHeader
+              closeModal={closeModal}
+              isModalConfirmation={isModalConfirmation}
+            />
+            {isModalConfirmation ? (
+              <ModalSuccess />
+            ) : (
+              <Form handleSuccess={handleSuccess} />
+            )}
+          </ModalWrapper>
+        </PageWrapper>
       </ModalContext.Provider>
     </Theme>
   );

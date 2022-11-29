@@ -185,7 +185,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sindano-backend/dev/1669691133287-2022-11-29T03:05:33.287Z/sindano-backend.zip"
+                "S3Key": "serverless/sindano-backend/dev/1669691890593-2022-11-29T03:18:10.593Z/sindano-backend.zip"
               },
               "Handler": "handler.authorize",
               "Runtime": "nodejs12.x",
@@ -215,7 +215,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sindano-backend/dev/1669691133287-2022-11-29T03:05:33.287Z/sindano-backend.zip"
+                "S3Key": "serverless/sindano-backend/dev/1669691890593-2022-11-29T03:18:10.593Z/sindano-backend.zip"
               },
               "Handler": "handler.contact",
               "Runtime": "nodejs12.x",
@@ -238,24 +238,24 @@
               "ContactLogGroup"
             ]
           },
-          "AuthorizeLambdaVersion6NG9DjPlfzs7hq1kGpeAJ9bLcB9LipQKmSD0Q3qWkk": {
+          "AuthorizeLambdaVersionv9KNnJFgtWkPsPFII7dhi7sOOaQI8gZRiosN7tDZw": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AuthorizeLambdaFunction"
               },
-              "CodeSha256": "udyR5RO08UjRxzNXjbR8iu/WMtLT4TUI7e2ruZmbHtY="
+              "CodeSha256": "Ffl1gJTbyauQczkfYzVBeE9QLo7sSaZsYqtUa7u4LO0="
             }
           },
-          "ContactLambdaVersioncg9VX8LJekxOjZzR17Qh2GrUFRJSuJdn1IEuEUTmos": {
+          "ContactLambdaVersionZR3w8loMyW3SAYavyYRebdQ6aC5TuqdvghubZ5uHY": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ContactLambdaFunction"
               },
-              "CodeSha256": "udyR5RO08UjRxzNXjbR8iu/WMtLT4TUI7e2ruZmbHtY="
+              "CodeSha256": "Ffl1gJTbyauQczkfYzVBeE9QLo7sSaZsYqtUa7u4LO0="
             }
           },
           "HttpApi": {
@@ -453,7 +453,7 @@
           "AuthorizeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AuthorizeLambdaVersion6NG9DjPlfzs7hq1kGpeAJ9bLcB9LipQKmSD0Q3qWkk"
+              "Ref": "AuthorizeLambdaVersionv9KNnJFgtWkPsPFII7dhi7sOOaQI8gZRiosN7tDZw"
             },
             "Export": {
               "Name": "sls-sindano-backend-dev-AuthorizeLambdaFunctionQualifiedArn"
@@ -462,7 +462,7 @@
           "ContactLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ContactLambdaVersioncg9VX8LJekxOjZzR17Qh2GrUFRJSuJdn1IEuEUTmos"
+              "Ref": "ContactLambdaVersionZR3w8loMyW3SAYavyYRebdQ6aC5TuqdvghubZ5uHY"
             },
             "Export": {
               "Name": "sls-sindano-backend-dev-ContactLambdaFunctionQualifiedArn"
@@ -611,7 +611,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AuthorizeLambdaVersion6NG9DjPlfzs7hq1kGpeAJ9bLcB9LipQKmSD0Q3qWkk"
+        "versionLogicalId": "AuthorizeLambdaVersionv9KNnJFgtWkPsPFII7dhi7sOOaQI8gZRiosN7tDZw"
       },
       "contact": {
         "handler": "handler.contact",
@@ -631,7 +631,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ContactLambdaVersioncg9VX8LJekxOjZzR17Qh2GrUFRJSuJdn1IEuEUTmos"
+        "versionLogicalId": "ContactLambdaVersionZR3w8loMyW3SAYavyYRebdQ6aC5TuqdvghubZ5uHY"
       }
     },
     "configValidationMode": "warn",
@@ -655,7 +655,7 @@
     "artifact": "/Users/katyacratcha/Projects/Practicum/apiary-sindano/sindano/backend/.serverless/sindano-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/sindano-backend/dev/1669691133287-2022-11-29T03:05:33.287Z",
+    "artifactDirectoryName": "serverless/sindano-backend/dev/1669691890593-2022-11-29T03:18:10.593Z",
     "artifact": "sindano-backend.zip"
   }
 }
