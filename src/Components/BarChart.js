@@ -29,6 +29,15 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     margin: 20px auto 0;
     padding: 0 0 47px;
   }
+
+  @media (max-width: 375px) {
+    width: 343px;
+
+    &.chart__statistics {
+      margin: 0 auto 0;
+      padding: 0 0 20px;
+    }
+  }
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
