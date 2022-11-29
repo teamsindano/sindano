@@ -114,7 +114,7 @@ function Form({ handleSuccess }) {
     // TODO: replace this client_id (temp replaced)
     clientId: '78i0gitxfdiyau',
     redirectUri: `${window.location.origin}/sindano?linkedin=true`,
-    scope: 'r_liteprofile%20r_emailaddress',
+    scope: 'r_liteprofile r_emailaddress',
     onSuccess: _.debounce((code) => {
       axios
         // TODO: Replace this with deployed api address (replaced)
