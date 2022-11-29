@@ -78,6 +78,12 @@ functions:
       - httpApi:
           path: /contact
           method: post
+  me:
+    handler: handler.me
+    events:
+      - httpApi:
+          path: /me
+          method: post
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details

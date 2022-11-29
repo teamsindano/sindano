@@ -126,11 +126,12 @@ function Form({ handleSuccess }) {
         )
         .then(({ data }) => {
           console.log(data.access_token);
-          return axios.get('https://api.linkedin.com/v2/me', {
-            headers: {
-              Authorization: `Bearer ${data.access_token}`,
-            },
-          });
+          return axios.post(
+            'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/me',
+            {
+              access_token: data.access_token,
+            }
+          );
         })
         .then(({ data }) => {
           // Set state of inputs in form using `data` object

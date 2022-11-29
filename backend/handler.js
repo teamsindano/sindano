@@ -74,3 +74,32 @@ module.exports.contact = async (event) => {
     statusCode,
   };
 };
+
+module.exports.me = async (event) => {
+  const body = JSON.parse(event.body);
+  try {
+    const result = await axios.get('https://api.linkedin.com/v2/me', {
+      headers: {
+        Authorization: `Bearer ${body.access_token}`,
+      },
+    });
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify(result.data, null, 2),
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify(
+        {
+          message: 'An error occurred',
+          input: event,
+          error,
+        },
+        null,
+        2
+      ),
+    };
+  }
+};
