@@ -4,7 +4,7 @@ let nodemailer = require('nodemailer');
 const axios = require('axios');
 
 module.exports.authorize = async (event) => {
-  const body = JSON.parse(Buffer.from(event.body, 'base64').toString());
+  const body = JSON.parse(event.body);
   try {
     const result = await axios.post(
       'https://www.linkedin.com/oauth/v2/accessToken',
@@ -42,7 +42,7 @@ module.exports.authorize = async (event) => {
 };
 
 module.exports.contact = async (event) => {
-  const body = JSON.parse(Buffer.from(event.body, 'base64').toString());
+  const body = JSON.parse(event.body);
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {

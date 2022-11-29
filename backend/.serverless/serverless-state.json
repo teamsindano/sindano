@@ -7,6 +7,9 @@
     "provider": {
       "name": "aws",
       "runtime": "nodejs12.x",
+      "httpApi": {
+        "cors": true
+      },
       "stage": "dev",
       "region": "us-east-1",
       "versionFunctions": true,
@@ -182,7 +185,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sindano-backend/dev/1669686251797-2022-11-29T01:44:11.797Z/sindano-backend.zip"
+                "S3Key": "serverless/sindano-backend/dev/1669688282490-2022-11-29T02:18:02.490Z/sindano-backend.zip"
               },
               "Handler": "handler.authorize",
               "Runtime": "nodejs12.x",
@@ -212,7 +215,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/sindano-backend/dev/1669686251797-2022-11-29T01:44:11.797Z/sindano-backend.zip"
+                "S3Key": "serverless/sindano-backend/dev/1669688282490-2022-11-29T02:18:02.490Z/sindano-backend.zip"
               },
               "Handler": "handler.contact",
               "Runtime": "nodejs12.x",
@@ -235,31 +238,49 @@
               "ContactLogGroup"
             ]
           },
-          "AuthorizeLambdaVersionUEE7JBofDKZEhzQyOkv9qGC4laNL3aEhZrJqWTsU4": {
+          "AuthorizeLambdaVersionc3kgTCxx2uWNCQOWSLOowok7Vsz9dcL2JvAGnjPK9gs": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "AuthorizeLambdaFunction"
               },
-              "CodeSha256": "awObRLSwVCxCX/0IOp+4GGtrrp4y7Hsur6Kvb2zao1I="
+              "CodeSha256": "NOU05tLDcEfRI75uIJhlN9SutA+MWXalDukTla4TchE="
             }
           },
-          "ContactLambdaVersionjsMStQmgnekoKgGteItoLh07fuePXmktjPC8ch62I": {
+          "ContactLambdaVersionha4bYLOqzlhYDlp8Tn837S1zGo0MDyOZcLB8l4NAg": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ContactLambdaFunction"
               },
-              "CodeSha256": "awObRLSwVCxCX/0IOp+4GGtrrp4y7Hsur6Kvb2zao1I="
+              "CodeSha256": "NOU05tLDcEfRI75uIJhlN9SutA+MWXalDukTla4TchE="
             }
           },
           "HttpApi": {
             "Type": "AWS::ApiGatewayV2::Api",
             "Properties": {
               "Name": "dev-sindano-backend",
-              "ProtocolType": "HTTP"
+              "ProtocolType": "HTTP",
+              "CorsConfiguration": {
+                "AllowHeaders": [
+                  "Content-Type",
+                  "X-Amz-Date",
+                  "Authorization",
+                  "X-Api-Key",
+                  "X-Amz-Security-Token",
+                  "X-Amz-User-Agent",
+                  "X-Amzn-Trace-Id"
+                ],
+                "AllowMethods": [
+                  "OPTIONS",
+                  "POST"
+                ],
+                "AllowOrigins": [
+                  "*"
+                ]
+              }
             }
           },
           "HttpApiStage": {
@@ -432,7 +453,7 @@
           "AuthorizeLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "AuthorizeLambdaVersionUEE7JBofDKZEhzQyOkv9qGC4laNL3aEhZrJqWTsU4"
+              "Ref": "AuthorizeLambdaVersionc3kgTCxx2uWNCQOWSLOowok7Vsz9dcL2JvAGnjPK9gs"
             },
             "Export": {
               "Name": "sls-sindano-backend-dev-AuthorizeLambdaFunctionQualifiedArn"
@@ -441,7 +462,7 @@
           "ContactLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ContactLambdaVersionjsMStQmgnekoKgGteItoLh07fuePXmktjPC8ch62I"
+              "Ref": "ContactLambdaVersionha4bYLOqzlhYDlp8Tn837S1zGo0MDyOZcLB8l4NAg"
             },
             "Export": {
               "Name": "sls-sindano-backend-dev-ContactLambdaFunctionQualifiedArn"
@@ -590,7 +611,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "AuthorizeLambdaVersionUEE7JBofDKZEhzQyOkv9qGC4laNL3aEhZrJqWTsU4"
+        "versionLogicalId": "AuthorizeLambdaVersionc3kgTCxx2uWNCQOWSLOowok7Vsz9dcL2JvAGnjPK9gs"
       },
       "contact": {
         "handler": "handler.contact",
@@ -610,7 +631,7 @@
         "timeout": 6,
         "runtime": "nodejs12.x",
         "vpc": {},
-        "versionLogicalId": "ContactLambdaVersionjsMStQmgnekoKgGteItoLh07fuePXmktjPC8ch62I"
+        "versionLogicalId": "ContactLambdaVersionha4bYLOqzlhYDlp8Tn837S1zGo0MDyOZcLB8l4NAg"
       }
     },
     "configValidationMode": "warn",
@@ -634,7 +655,7 @@
     "artifact": "/Users/katyacratcha/Projects/Practicum/apiary-sindano/sindano/backend/.serverless/sindano-backend.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/sindano-backend/dev/1669686251797-2022-11-29T01:44:11.797Z",
+    "artifactDirectoryName": "serverless/sindano-backend/dev/1669688282490-2022-11-29T02:18:02.490Z",
     "artifact": "sindano-backend.zip"
   }
 }

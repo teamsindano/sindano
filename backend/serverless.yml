@@ -28,6 +28,8 @@ useDotenv: true
 provider:
   name: aws
   runtime: nodejs12.x
+  httpApi:
+    cors: true
 
 # you can overwrite defaults here
 #  stage: dev
@@ -70,14 +72,12 @@ functions:
       - httpApi:
           path: /authorize
           method: post
-          cors: true
   contact:
     handler: handler.contact
     events:
       - httpApi:
           path: /contact
           method: post
-          cors: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
 #    Check the event documentation for details
