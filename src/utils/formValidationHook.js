@@ -9,9 +9,6 @@ export default function useFormWithValidation() {
     setValues({
       ...values,
       name: `${data.localizedFirstName} ${data.localizedLastName}`,
-    });
-    setValues({
-      ...values,
       email: `${data.email}`,
     });
   };
