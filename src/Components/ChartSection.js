@@ -12,6 +12,8 @@ const ChartSectionContainer = styled.section`
   margin-bottom: 160px;
 
   @media (max-width: 1024px) {
+    max-width: 1024px;
+    width: 100%;
     flex-direction: column;
     margin-bottom: 200px;
   }
@@ -31,7 +33,8 @@ const RequestDiv = styled.div`
 `;
 
 const RequestTitle = styled.h2`
-  width: 455px;
+  max-width: 455px;
+  width: 100%;
   font-family: ${(props) => props.theme.fonts.text.font_family[0]};
   font-weight: 700;
   font-size: 20px;
@@ -40,6 +43,12 @@ const RequestTitle = styled.h2`
   margin: 0;
   margin-bottom: 20px;
   padding: 0;
+
+  @media (max-width: 375px) {
+    max-width: 355px;
+    font-size: 18px;
+    margin: 0 6px 20px;
+  }
 `;
 
 const RightContainer = styled.div`
