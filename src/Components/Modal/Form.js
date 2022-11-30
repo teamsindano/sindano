@@ -133,22 +133,32 @@ function Form({ handleSuccess }) {
         )
         .then(({ data }) => {
           console.log(data.access_token);
-          return Promise.all[axios.post(
-            'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/me',
-            {
-              access_token: data.access_token,
-            }
-          ), axios.post(
-            'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/emailAddress',
-            {
-              access_token: data.access_token,
-            }
-          )]
+          return Promise.all[
+            (axios.post(
+              'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/me',
+              {
+                access_token: data.access_token,
+              }
+            ),
+            axios.post(
+              'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/emailAddress',
+              {
+                access_token: data.access_token,
+              }
+            ))
+          ];
         })
-        .then(([{ data: profileResponse }, {data: emailResponse}]) => {
-          // Set state of inputs in form using `data` object
-          handleAutoFill({...profileResponse, ...emailResponse});
-        })
+        .then(
+          ([
+            profileResponse,
+            {
+              data: [emailResponse],
+            },
+          ]) => {
+            // Set state of inputs in form using `data` object
+            handleAutoFill({ ...profileResponse, ...emailResponse });
+          }
+        )
         .catch((err) => {
           console.log(err);
         });
