@@ -154,12 +154,12 @@ function App() {
         <WorkSection/>
         <Faq/>
         </Page>
-        <Footer/>
         <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
             {isModalConfirmation ? <ModalSuccess/> : <Form handleSuccess={handleSuccess}/>}
         </ModalWrapper> 
         </PageWrapper> 
+        <Footer/>
       </ModalContext.Provider>
     </Theme>
   );
