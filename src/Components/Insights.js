@@ -1,8 +1,14 @@
 import styled from 'styled-components';
-import insights from '../Images/insights.png';
+import insights from '../images/insights.png';
 import Title from './Title';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
+
+/**
+ * Insights Section
+ * Adjustments: @author [Sam](https://github.com/Samm96)
+ *
+ */
 
 const InsightsSection = styled.section`
   width: 100%;

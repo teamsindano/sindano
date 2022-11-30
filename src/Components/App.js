@@ -14,11 +14,18 @@ import Insights from './Insights';
 import WorkSection from './WorkSection';
 import ModalWrapper from './Modal/ModalWrapper';
 import ModalHeader from './Modal/ModalHeader';
-import ModalContent from './Modal/ModalContent';
+import Form from './Modal/Form';
+import ModalSuccess from './Modal/ModalSuccess';
 import Header from './Header';
 import OurStory from './OurStory';
 
-const PageWrapper = styled.body`
+/**
+ * 
+ * Adjustments: @author [Sam](https://github.com/Samm96)
+ *
+ */
+
+const PageWrapper = styled.div`
   max-width: 1440px;
   min-width: 375px;
   padding: 0 20px 0;
@@ -135,30 +142,24 @@ function App() {
           </Page>
           <OurStory />
           <Page>
-            <Title text="What We Do" marginBottom={40} />
-            <Unfold id="whatwedo">
-              {data.whatWeDoCard.map((item) => (
-                <Unfold.Wrapper key={_.uniqueId('Unfold-Block-')}>
-                  <Unfold.Header item={item} />
-                  <Unfold.Content item={item} />
-                </Unfold.Wrapper>
-              ))}
-            </Unfold>
-            <WorkSection />
-            <Faq />
-          </Page>
-          <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
-            <ModalHeader
-              closeModal={closeModal}
-              isModalConfirmation={isModalConfirmation}
-            />
-            <ModalContent
-              isModalConfirmation={isModalConfirmation}
-              handleSuccess={handleSuccess}
-            />
-          </ModalWrapper>
-          <Footer />
-        </PageWrapper>
+          <Title text="What We Do" marginBottom={40}/>
+          <Unfold id="whatwedo">
+            {data.whatWeDoCard.map((item) => (
+              <Unfold.Wrapper key={_.uniqueId("Unfold-Block-")}>
+                <Unfold.Header item={item} />
+                <Unfold.Content item={item} />
+              </Unfold.Wrapper>
+            ))}
+          </Unfold>
+        <WorkSection/>
+        <Faq/>
+        </Page>
+        <Footer/>
+        <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
+            <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
+            {isModalConfirmation ? <ModalSuccess/> : <Form handleSuccess={handleSuccess}/>}
+        </ModalWrapper> 
+        </PageWrapper> 
       </ModalContext.Provider>
     </Theme>
   );

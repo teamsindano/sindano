@@ -2,48 +2,73 @@ import styled from 'styled-components';
 import Title from './Title';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
-import work from '../Images/how_we_work_photo.png';
+import work from '../images/how_we_work_photo.png';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
 import { useContext } from 'react';
 import { ModalContext } from './App';
 
+/**
+ * Work Section
+ * Adjustments & CSS Refactoring: @author [Sam](https://github.com/Samm96)
+ *
+ */
+
 const WorkSectionContainer = styled.section`
   width: 100%;
-  display: flex;
   margin: 160px auto;
-  justify-content: space-between;
-  @media screen and (max-width: 1450px) {
-    justify-content: center;
-  }
-  @media screen and (max-width: 980px) {
-    flex-direction: column;
+
+  @media (max-width: 375px) {
+    margin: 100px auto 0;
   }
 `;
 
 const CustomButton = styled(PrimaryButton)`
-  @media screen and (max-width: 580px) {
-    width: 100%;
+  &.custom-button {
+    @media screen and (max-width: 375px) {
+      width: 100%;
+    }
   }
 `;
 
-const LeftSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  @media screen and (max-width: 980px) {
-    order: 2;
-  }
-`;
+const StyledDiv = styled.div`
+  &.work-wrapper {
+    display: flex;
+    justify-content: space-between;
 
-const FlexDiv = styled.div`
-  display: flex;
-  @media screen and (max-width: 580px) {
+    @media (max-width: 375px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &.left-section {
+    display: flex;
     flex-direction: column;
+    justify-content: space-around;
   }
-`;
+
+  &.how-section {
+    margin: 31px 0 60px;
+
+    @media (max-width: 1024px) {
+      margin: 31px 0 120px;
+    }
+
+    @media (max-width: 375px) {
+      margin: 31px 0 60px;
+    }
+  }
+
+  &.subscribe-section {
+    display: flex;
+    @media screen and (max-width: 375px) {
+      flex-direction: column;
+    }
+  }
+ `;
 
 const InputBox = styled.input`
+  background-color: ${(props) => props.theme.colors.primary_background};
   width: 291px;
   display: block;
   height: 50px;
@@ -60,30 +85,24 @@ const InputBox = styled.input`
 `;
 
 const Image = styled.img`
+  max-width: 814px;
   width: 100%;
-  height: auto;
+  max-height: 543px;
+  heigh: 100%;
   border-radius: 12px;
-`;
 
-const RightSection = styled.div`
-  max-width: 620px;
-  position: relative;
-  @media screen and (max-width: 1450px) {
+  @media (max-width: 1024px) {
+    object-fit: cover;
     max-width: 402px;
-    margin-left: 62px;
+    height: 451px;
   }
-  @media screen and (max-width: 980px) {
-    order: 1;
-    margin-left: 0;
+
+  @media (max-width: 375px) {
+    width: 100%;
+    height: 383px;
   }
 `;
 
-const LeftSectionDiv = styled.div`
-  @media screen and (max-width: 980px) {
-    margin-top: 32px;
-    margin-bottom: 60px;
-  }
-`;
 
 function WorkSection() {
   const { openModal } = useContext(ModalContext);
@@ -95,24 +114,26 @@ function WorkSection() {
       initial="offscreen"
       whileInView="onscreen"
     >
-      <LeftSection>
-        <LeftSectionDiv>
+      <StyledDiv className="work-wrapper">
+      <StyledDiv className="left-section">
+        <StyledDiv className="how-section">
           <Title text="See How We Work" marginBottom={32} />
-          <CustomButton onClick={openModal} label="Request a call" />
-        </LeftSectionDiv>
-        <PrimaryButton onClick={openModal} label="Request a call" />
+          <CustomButton onClick={openModal} className="custom-button" label="Request a call"/>
+        </StyledDiv>
+        
 
         <div>
           <Title text="Get Product Updates" marginBottom={40} />
-          <FlexDiv>
+          <StyledDiv className="subscribe-section">
             <InputBox placeholder="your e-mail" />
             <SecondaryButton>Subscribe</SecondaryButton>
-          </FlexDiv>
+          </StyledDiv>
         </div>
-      </LeftSection>
-      <RightSection>
+      </StyledDiv>
+      <StyledDiv className="right-section"> 
         <Image src={work} />
-      </RightSection>
+      </StyledDiv>
+      </StyledDiv>
     </WorkSectionContainer>
   );
 }
