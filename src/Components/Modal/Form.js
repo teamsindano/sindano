@@ -141,6 +141,14 @@ function Form({ handleSuccess }) {
           );
         })
         .then(({ data }) => {
+          return axios.post(
+            'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/emailAddress',
+            {
+              access_token: data.access_token,
+            }
+          );
+        })
+        .then(({ data }) => {
           // Set state of inputs in form using `data` object
           handleAutoFill(data);
         })
