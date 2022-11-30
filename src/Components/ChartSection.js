@@ -3,11 +3,10 @@ import BarChart from './BarChart';
 import PrimaryButton from './PrimaryButton';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
-import { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ModalContext } from './App'
 import { barData, barOptions } from '../utils/chartConfig';
 import ChartDataLabels from "chartjs-plugin-datalabels";
-
 
 const data = {
     type:"horizontalBar",
@@ -72,8 +71,14 @@ const RightContainer = styled.div`
 `;
 
 function ChartSection() {
-
   const { openModal } = useContext(ModalContext);
+
+  useEffect(() => {
+    if (document.documentElement.clientWidth <= 375) {
+      data.options.scales.yAxis.ticks.font.size = 6;
+      data.options.scales.yAxis.ticks.padding = 13;
+    }
+  }, []);
 
   return (
     <ChartSectionContainer

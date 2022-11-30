@@ -32,6 +32,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
 
   @media (max-width: 375px) {
     width: 343px;
+    height: 100%;
 
     &.chart__statistics {
       margin: 0 auto 0;

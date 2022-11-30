@@ -11,6 +11,13 @@ import { theme } from "../Components/Theme";
  */
 
 const labels = data.chartStats.map((d) => {
+  if (d.content.length > 31 && document.documentElement.clientWidth <= 375) {
+    const splitPoint = d.content.split(" ");
+    return [
+      [splitPoint.slice(0, splitPoint.length / 2).join(" ")],
+      [splitPoint.slice((splitPoint.length / 2)).join(" ")],
+    ];
+  }
   return d.content;
 });
 
@@ -52,11 +59,11 @@ export const barOptions = {
       },
     },
     datalabels: {
-      font: function(context) {
+      font: function (context) {
         var width = context.chart.width;
-        var size = Math.round(width / 70);
-         return {
-           size: document.documentElement.clientWidth < 375 ? size : "12px",
+        var size = Math.round(width / 50);
+        return {
+          size: document.documentElement.clientWidth < 375 ? size : "12px",
         };
       },
       anchor: "end",
@@ -86,16 +93,14 @@ export const barOptions = {
       ticks: {
         autoSkip: false,
         beginAtZero: true,
-        categoryPercentage: 0.5,
-        barPercentage: 1,
         stepSize: 1,
         color: theme.colors.default_text_color,
         padding: 8,
         font: {
-          size: function () {
-            return document.documentElement.clientWidth < 375 ? 6 : 12;
+          size: function() {
+            return document.documentElement.clientWidth < 375 ? 8 : 12;
           },
-        },
+      },
       },
       grid: {
         display: true,
