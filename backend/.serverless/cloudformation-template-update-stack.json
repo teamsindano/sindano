@@ -179,7 +179,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669777333148-2022-11-30T03:02:13.148Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1669835850775-2022-11-30T19:17:30.775Z/sindano-backend.zip"
         },
         "Handler": "handler.authorize",
         "Runtime": "nodejs12.x",
@@ -209,7 +209,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669777333148-2022-11-30T03:02:13.148Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1669835850775-2022-11-30T19:17:30.775Z/sindano-backend.zip"
         },
         "Handler": "handler.contact",
         "Runtime": "nodejs12.x",
@@ -239,7 +239,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669777333148-2022-11-30T03:02:13.148Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1669835850775-2022-11-30T19:17:30.775Z/sindano-backend.zip"
         },
         "Handler": "handler.me",
         "Runtime": "nodejs12.x",
@@ -269,7 +269,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669777333148-2022-11-30T03:02:13.148Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1669835850775-2022-11-30T19:17:30.775Z/sindano-backend.zip"
         },
         "Handler": "handler.email",
         "Runtime": "nodejs12.x",
