@@ -19,9 +19,9 @@ const PrimaryButtonContainer = styled.button`
 `;
 
 
-function PrimaryButton({onClick, label}) {
+function PrimaryButton({onClick, label, className}) {
   return (
-    <PrimaryButtonContainer onClick={onClick}>
+    <PrimaryButtonContainer onClick={onClick} className={className}>
       {label}
     </PrimaryButtonContainer>
   );

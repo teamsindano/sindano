@@ -14,11 +14,18 @@ import Insights from './Insights';
 import WorkSection from './WorkSection';
 import ModalWrapper from './Modal/ModalWrapper';
 import ModalHeader from './Modal/ModalHeader';
-import ModalContent from './Modal/ModalContent';
+import Form from './Modal/Form';
+import ModalSuccess from './Modal/ModalSuccess';
 import Header from './Header';
 import OurStory from "./OurStory";
 
-const PageWrapper = styled.body`
+/**
+ * 
+ * Adjustments: @author [Sam](https://github.com/Samm96)
+ *
+ */
+
+const PageWrapper = styled.div`
   max-width: 1440px;
   min-width: 375px;
   padding: 0 20px 0;
@@ -148,7 +155,7 @@ function App() {
         <Footer/>
         <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
-            <ModalContent isModalConfirmation={isModalConfirmation} handleSuccess={handleSuccess}/>
+            {isModalConfirmation ? <ModalSuccess/> : <Form handleSuccess={handleSuccess}/>}
         </ModalWrapper> 
         </PageWrapper> 
       </ModalContext.Provider>
