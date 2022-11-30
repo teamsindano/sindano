@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import headerLogo from '../images/sindano_health_logo_black.svg';
@@ -63,7 +63,7 @@ function Header() {
         </StyledList>
       </nav>
 
-      <PrimaryButton onClick={openModal} label="Request a call"/>
+      <PrimaryButton onClick={openModal} label="Request a call" />
     </HeaderStyle>
   );
 }
