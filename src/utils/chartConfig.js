@@ -52,6 +52,13 @@ export const barOptions = {
       },
     },
     datalabels: {
+      font: function(context) {
+        var width = context.chart.width;
+        var size = Math.round(width / 70);
+         return {
+           size: document.documentElement.clientWidth < 375 ? size : "12px",
+        };
+      },
       anchor: "end",
       align: "right",
       color: `${theme.colors.default_text_color}`,
@@ -79,6 +86,8 @@ export const barOptions = {
       ticks: {
         autoSkip: false,
         beginAtZero: true,
+        categoryPercentage: 0.5,
+        barPercentage: 1,
         stepSize: 1,
         color: theme.colors.default_text_color,
         padding: 8,
