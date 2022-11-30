@@ -152,7 +152,7 @@ function Form({ handleSuccess }) {
           ([
             profileResponse,
             {
-              data: [emailResponse],
+              elements: [emailResponse],
             },
           ]) => {
             // Set state of inputs in form using `data` object
