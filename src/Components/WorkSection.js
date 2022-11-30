@@ -106,7 +106,7 @@ const Image = styled.img`
 
 function WorkSection() {
   const { openModal } = useContext(ModalContext);
-  
+
   return (
     <WorkSectionContainer
       as={motion.section}

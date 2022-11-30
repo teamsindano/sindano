@@ -57,7 +57,7 @@ function UnfoldHeader({ item }) {
     <Header onClick={() => handleClick(item.id)}>
       <HeaderTitle>{item.cardTitle}</HeaderTitle>
       <HeaderButton openedItem={activeItem} id={item.id}>
-        <Arrow /> 
+        <Arrow />
       </HeaderButton>
     </Header>
   );

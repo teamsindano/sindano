@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 /**
  * The Team Member Component
@@ -12,7 +12,6 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   margin: 0 auto 0;
   display: flex;
   flex-direction: column;
-
   &.teammember__text-container {
     font-family: ${(props) => props.theme.fonts.families.text};
     font-size: ${(props) => props.theme.fonts.sizes.text_s};
@@ -23,12 +22,10 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     max-width: 240px;
     flex-direction: column;
     text-align: center;
-
     @media (max-width: 375px) {
       max-width: 167px;
     }
   }
-
   &.teammember__name-container {
     width: fit-content;
     display: flex;
@@ -51,7 +48,6 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
   margin: 0 auto 0;
   padding; 0;
   width: fit-content;
-
   @media (max-width: 375px) {
     font-size: ${(props) => props.theme.fonts.sizes.text_xs};
   }
@@ -62,18 +58,15 @@ const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
   width: fit-content;
   margin: 0;
   padding; 0;
-
   @media (max-width: 375px) {
     font-size: ${(props) => props.theme.fonts.sizes.text_xs};
     display: flex;
     flex-direction: column;
   }
-
   &.teammember__pronouns {
     width: fit-content;
     font-weight: ${(props) => props.theme.fonts.weights.normal};
     margin: 0;
-
     @media (max-width: 375px) {
       margin: 0 auto 0;
     }
@@ -88,9 +81,9 @@ const TeamMember = ({ photo, name, pronouns, headline }) => {
         <Container className="teammember__text-container">
           <Container className="teammember__name-container">
             <Name>
-              {name}{" "}
+              {name}{' '}
               <Name className="teammember__pronouns">
-                {pronouns ? pronouns : ""}
+                {pronouns ? pronouns : ''}
               </Name>
             </Name>
           </Container>
