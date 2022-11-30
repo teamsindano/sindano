@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function useFormWithValidation() {
   const [values, setValues] = React.useState({});
@@ -9,7 +9,7 @@ export default function useFormWithValidation() {
     setValues({
       ...values,
       name: `${data.localizedFirstName} ${data.localizedLastName}`,
-      email: `${data.emailAddress}`,
+      email: `${data["handle~"].emailAddress}`,
     });
   };
 
@@ -20,7 +20,7 @@ export default function useFormWithValidation() {
     setValues({ ...values, [name]: value });
     setErrors({ ...errors, [name]: target.validationMessage });
     console.log(errors);
-    setIsValid(target.closest('form').checkValidity());
+    setIsValid(target.closest("form").checkValidity());
   };
 
   const resetForm = React.useCallback(
