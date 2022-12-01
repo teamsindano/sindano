@@ -13,8 +13,6 @@ const data = {
     plugins:[ChartDataLabels],
     data:{...barData},
     options:{...barOptions},
-    width:"100%",
-    height:"317px",
 }
 
 const ChartSectionContainer = styled.section`
