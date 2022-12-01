@@ -1,19 +1,13 @@
-import styled from 'styled-components';
-import BarChart from './BarChart';
-import PrimaryButton from './PrimaryButton';
-import { motion } from 'framer-motion';
-import { sectionVariants } from '../utils/animationVariants';
-import React, { useContext, useEffect } from 'react';
-import { ModalContext } from './App'
-import { barData, barOptions } from '../utils/chartConfig';
+import styled from "styled-components";
+import BarChart from "./BarChart";
+import PrimaryButton from "./PrimaryButton";
+import { motion } from "framer-motion";
+import { sectionVariants } from "../utils/animationVariants";
+import React, { useContext, useEffect, useState } from "react";
+import { ModalContext } from "./App";
+import { barData, barOptions, smallBarData } from "../utils/chartConfig";
 import ChartDataLabels from "chartjs-plugin-datalabels";
-
-const data = {
-    type:"horizontalBar",
-    plugins:[ChartDataLabels],
-    data:{...barData},
-    options:{...barOptions},
-}
+import { Chart } from "react-chartjs-2";
 
 const ChartSectionContainer = styled.section`
   width: 100%;
@@ -71,12 +65,30 @@ const RightContainer = styled.div`
 function ChartSection() {
   const { openModal } = useContext(ModalContext);
 
+  const data = {
+    type: "horizontalBar",
+    plugins: [ChartDataLabels],
+    data: { ...barData },
+    options: { ...barOptions },
+  };
+
+  const newLabels =  barData.labels.map((d) => {
+      if (d.length > 31 && document.documentElement.clientWidth <= 580) {
+      const splitPoint = d.split(" ");
+      return [
+        [splitPoint.slice(0, splitPoint.length / 2).join(" ")],
+        [splitPoint.slice((splitPoint.length / 2)).join(" ")],
+      ]};
+      return d;
+  });
+
   useEffect(() => {
     if (document.documentElement.clientWidth <= 375) {
       data.options.scales.yAxis.ticks.font.size = 6;
       data.options.scales.yAxis.ticks.padding = 13;
-    }
-  }, []);
+      data.data.labels = newLabels;
+    } 
+  }, [data, data.options.scales.yAxis.ticks, newLabels]);
 
   return (
     <ChartSectionContainer
@@ -86,15 +98,17 @@ function ChartSection() {
       whileInView="onscreen"
     >
       <RightContainer>
-        <BarChart heading="The importance of information when deciding on where to receive care" text="Respondents ranked 8-10 on a 10-point scale, %" data={data}/>
+        <BarChart
+          heading="The importance of information when deciding on where to receive care"
+          text="Respondents ranked 8-10 on a 10-point scale, %"
+          data={data}
+        />
       </RightContainer>
       <RequestDiv>
         <RequestTitle>
           Want the LGBTQ+ Mental Healthcare Insights That Matter?
         </RequestTitle>
-        <PrimaryButton onClick={openModal} label="Request a call"/> 
-  
-
+        <PrimaryButton onClick={openModal} label="Request a call" />
       </RequestDiv>
     </ChartSectionContainer>
   );

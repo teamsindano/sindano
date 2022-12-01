@@ -11,13 +11,6 @@ import { theme } from "../Components/Theme";
  */
 
 const labels = data.chartStats.map((d) => {
-  if (d.content.length > 31 && document.documentElement.clientWidth <= 375) {
-    const splitPoint = d.content.split(" ");
-    return [
-      [splitPoint.slice(0, splitPoint.length / 2).join(" ")],
-      [splitPoint.slice((splitPoint.length / 2)).join(" ")],
-    ];
-  }
   return d.content;
 });
 
@@ -31,9 +24,7 @@ export const barData = {
     {
       data: numbers,
       backgroundColor: theme.colors.blue_component_color,
-      barThickness: function () {
-        return document.documentElement.clientWidth < 375 ? 5 : 10;
-      },
+      barThickness: 10,
       borderRadius: 2,
       borderSkipped: false,
     },
