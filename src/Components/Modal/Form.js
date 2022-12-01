@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import linkedinIcon from '../../images/linkedin-icon.svg';
-import useFormWithValidation from '../../utils/formValidationHook';
+import styled from "styled-components";
+import linkedinIcon from "../../images/linkedin-icon.svg";
+import useFormWithValidation from "../../utils/formValidationHook";
 
 /**
  * Modal Form Component
@@ -17,10 +17,10 @@ const FormTitle = styled.div`
 const FormText = styled.p`
   margin: 0;
   padding: 0;
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
+  font-size: ${(props) => props.theme.fonts.sizes.text_m};
   line-height: 20px;
-  color: ${(props) => props.theme.colors.default_component_blue};
+  color: ${(props) => props.theme.colors.blue_component_color};
 `;
 
 const FormIcon = styled.img`
@@ -31,7 +31,7 @@ const FormIcon = styled.img`
 `;
 
 const FormContainer = styled.form`
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.families.text};
   width: 100%;
   margin: 0;
   padding: 0;
@@ -84,7 +84,7 @@ const SubmitButton = styled.button`
   width: 168px;
   height: 50px;
   left: 451px;
-  background: ${(props) => props.theme.colors.default_button_aqua};
+  background: ${(props) => props.theme.colors.aqua_button_color};
   border-radius: 12px;
   color: #fff;
   padding: 15px 28px;
@@ -92,40 +92,41 @@ const SubmitButton = styled.button`
   font-size: 16px;
   line-height: 1.25;
   &:hover {
-    background: ${(props) => props.theme.gradients.button_hover};
+    cursor: pointer;
+    opacity: 0.8;
   }
 `;
 
 const SubmitText = styled.p`
-  width: 349px;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.33;
+	width: 349px;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 1.33;
 `;
 
 function Form({ handleSuccess }) {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+	const handleSubmit = (event) => {
+		event.preventDefault();
 
-    fetch('http://localhost:3001/', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(values),
-    })
-      .then((res) => {
-        resetForm();
-        handleSuccess();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+		fetch("http://localhost:3001/", {
+			method: "POST",
+			headers: {
+				Accept: "application/json, text/plain, */*",
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(values),
+		})
+			.then((res) => {
+				resetForm();
+				handleSuccess();
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
 
   return (
     <FormContainer onSubmit={handleSubmit}>

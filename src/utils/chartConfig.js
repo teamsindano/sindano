@@ -30,7 +30,7 @@ export const barData = {
   datasets: [
     {
       data: numbers,
-      backgroundColor: theme.colors.default_component_blue,
+      backgroundColor: theme.colors.blue_component_color,
       barThickness: function () {
         return document.documentElement.clientWidth < 375 ? 5 : 10;
       },
@@ -52,8 +52,9 @@ export const barOptions = {
       display: false,
       labels: {
         font: {
-          family: `${theme.fonts.text.font_family[0]}`,
-          weight: `${theme.fonts.text.weights.normal}`,
+          family: `${theme.fonts.families.text}`,
+          weight: `${theme.fonts.weights.normal}`,
+          size: 12,
           lineHeight: "14px",
         },
       },
@@ -68,7 +69,7 @@ export const barOptions = {
       },
       anchor: "end",
       align: "right",
-      color: `${theme.colors.default_text_color}`,
+      color: `${theme.colors.black_text_color}`,
     },
   },
   layout: {
@@ -94,7 +95,7 @@ export const barOptions = {
         autoSkip: false,
         beginAtZero: true,
         stepSize: 1,
-        color: theme.colors.default_text_color,
+        color: theme.colors.black_text_color,
         padding: 8,
         font: {
           size: function() {
@@ -107,7 +108,7 @@ export const barOptions = {
         drawOnChartArea: false,
         drawBorder: false,
         drawTicks: false,
-        color: theme.colors.default_text_color,
+        color: theme.colors.black_text_color,
       },
     },
   },

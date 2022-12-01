@@ -11,7 +11,7 @@ const Container = styled.figure`
   visibility: hidden;
   margin: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  color: ${(props) => props.theme.colors.alt_text_white};
+  color: ${(props) => props.theme.colors.white_text_color};
   width: 290px;
   box-sizing: border-box;
   border-radius: 8px;
@@ -28,18 +28,18 @@ const Container = styled.figure`
 
 const Info = styled.p`
   margin: 0;
-  font: ${(props) => props.theme.fonts.text.font_family};
-  font-size: ${(props) => props.theme.fonts.text.sizes.text_xs};
-  font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
+  font: ${(props) => props.theme.fonts.families.text};
+  font-size: ${(props) => props.theme.fonts.sizes.text_xs};
+  font-weight: ${(props) => props.theme.fonts.weights.semi_bold};
   line-height: 1.33;
 `;
 
 const Icon = styled.button`
 cursor: pointer;
 margin: 0;
-font: ${(props) => props.theme.fonts.text.font_family};
-font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
-font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
+font: ${(props) => props.theme.fonts.families.text};
+font-size: ${(props) => props.theme.fonts.sizes.text_m};
+font-weight: ${(props) => props.theme.fonts.weights.semi_bold};
 line-height: 1.25;
 background-color: transparent;
 border: none;

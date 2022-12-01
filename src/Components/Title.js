@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
+/**
+ * 
+ * Responsive CSS: @author [Sam](https://github.com/Samm96)
+ *
+ */
 
 const TitleContainer = styled.h2`
-    font-family: ${(props) => props.theme.fonts.header.font_family[0]};
+    font-family: ${(props) => props.theme.fonts.families.header};
     font-weight: 700;
     font-size: 52px;
     line-height: 1;
@@ -17,11 +22,12 @@ const TitleContainer = styled.h2`
     }
 `;
 
-function Title({text, marginBottom}){
-
-    return (
-        <TitleContainer marginBottom={marginBottom}>{text}</TitleContainer>
-    )
+function Title({ text, marginBottom }) {
+	return (
+		<TitleContainer id="whatwedo" marginBottom={marginBottom}>
+			{text}
+		</TitleContainer>
+	);
 }
 
 export default Title;

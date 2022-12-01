@@ -1,8 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import background from '../images/hero_photo.png';
-import { motion } from 'framer-motion';
-import { sectionVariants } from '../utils/animationVariants';
+import React from "react";
+import styled from "styled-components";
+import background from "../images/hero_photo.png";
+import { motion } from "framer-motion";
+import { sectionVariants } from "../utils/animationVariants";
 
 /** Hero Section
  *  @author [Ekaterina Cratcha](https://github.com/cratcha) */
@@ -32,39 +32,37 @@ const BackgroundImage = styled.img`
 `;
 
 const Title = styled.h1`
-  font-family: ${(props) => `${props.theme.fonts.header.font_family}`};
-  font-size: ${(props) => `${props.theme.fonts.header.sizes.header_l}`};
-  font-weight: ${(props) => `${props.theme.fonts.header.weight}`};
-  color: ${(props) => props.theme.colors.alt_text_white};
+  font-family: ${(props) => props.theme.fonts.families.header};
+  font-size: ${(props) => props.theme.fonts.sizes.header_l};
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
+  color: ${(props) => props.theme.colors.white_text_color};
   z-index: 3;
   position: absolute;
   margin-left: 5%;
   bottom: 0;
   @media screen and (max-width: 1024px) {
-    font-size: ${(props) => `${props.theme.fonts.header.sizes.header_m}`};
+    font-size: ${(props) => props.theme.fonts.sizes.header_m};
   }
   @media screen and (max-width: 375px) {
-    font-size: ${(props) => `${props.theme.fonts.header.sizes.header_xs}`};
+    font-size: ${(props) => props.theme.fonts.sizes.header_xs};
   }
 `;
 
 function Hero() {
-  return (
-    <HeroWrapper
-      as={motion.section}
-      variants={sectionVariants}
-      initial="offscreen"
-      whileInView="onscreen"
-    >
-      <BackgroundImage
-        src={background}
-        alt="background photo of two women lying on the ground and holding hands"
-      ></BackgroundImage>
-      <Title>
-        Empowering Insights <br></br>for Equitable Mental Healthcare
-      </Title>
-    </HeroWrapper>
-  );
+	return (
+		<HeroWrapper
+			as={motion.section}
+			variants={sectionVariants}
+			initial="offscreen"
+			whileInView="onscreen">
+			<BackgroundImage
+				src={background}
+				alt="background photo of two women lying on the ground and holding hands"></BackgroundImage>
+			<Title>
+				Empowering Insights <br></br>for Equitable Mental Healthcare
+			</Title>
+		</HeroWrapper>
+	);
 }
 
 export default Hero;
