@@ -134,7 +134,7 @@ function Form({ handleSuccess }) {
         .then(({ data }) => {
           console.log(data.access_token);
           return Promise.all([
-            (axios.post(
+            axios.post(
               'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/me',
               {
                 access_token: data.access_token,
@@ -145,7 +145,7 @@ function Form({ handleSuccess }) {
               {
                 access_token: data.access_token,
               }
-            )),
+            ),
           ]);
         })
         .then((profileResponse, { elements: [emailResponse] }) => {
