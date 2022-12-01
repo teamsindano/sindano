@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const Div = styled.div`
 	position: absolute;
-	background-color: white;
+	background-color: ${(props) => props.theme.colors.primary_background};
 	z-index: 4;
 	display: flex;
 	top: 75px;
@@ -21,7 +21,7 @@ const Div = styled.div`
 const StyledList = styled.ul`
 	position: relative;
 	display: flex;
-	background-color: #ffffff;
+	background-color: ${(props) => props.theme.colors.primary_background};
 	z-index: 4;
 	flex-direction: column;
 	list-style: none;
@@ -50,7 +50,7 @@ export const StyledLinks = styled.a`
 `;
 const BurgerButton = styled.button`
 	width: 343px;
-	font-family: ${(props) => props.theme.fonts.families.header};
+	font-family: ${(props) => props.theme.fonts.families.text};
 	display: inline-block;
 	white-space: nowrap;
 	color: ${(props) => props.theme.colors.white_text_color};
