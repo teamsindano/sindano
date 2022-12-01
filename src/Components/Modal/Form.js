@@ -151,7 +151,6 @@ function Form({ handleSuccess }) {
         .then(
           (
             profileResponse
-            //emailResponse
             // {
             //   elements: [emailResponse],
             // },
