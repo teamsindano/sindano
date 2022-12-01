@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sindano/static/css/main.31d6cfe0.css",
-    "main.js": "/sindano/static/js/main.998fda7d.js",
+    "main.js": "/sindano/static/js/main.17f982af.js",
     "static/js/787.d97691e0.chunk.js": "/sindano/static/js/787.d97691e0.chunk.js",
     "static/media/hero_photo.png": "/sindano/static/media/hero_photo.59f99ae654986cdac06c.png",
     "static/media/sindano_health_logo_black.svg": "/sindano/static/media/sindano_health_logo_black.428fd426db27b6cf3421a6c3f4f3dc90.svg",
@@ -29,11 +29,11 @@
     "index.html": "/sindano/index.html",
     "static/media/icon_facebook.svg": "/sindano/static/media/icon_facebook.22d3320ffd89f4249496a3b7303eeaa5.svg",
     "static/media/downward-arrow.svg": "/sindano/static/media/downward-arrow.d174f6248592884a32316c6261ffe7e1.svg",
-    "main.998fda7d.js.map": "/sindano/static/js/main.998fda7d.js.map",
+    "main.17f982af.js.map": "/sindano/static/js/main.17f982af.js.map",
     "787.d97691e0.chunk.js.map": "/sindano/static/js/787.d97691e0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.998fda7d.js"
+    "static/js/main.17f982af.js"
   ]
 }
