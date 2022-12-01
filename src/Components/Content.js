@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import _ from 'lodash';
 
 /**
  * Content Component
@@ -14,10 +15,10 @@ const Section = styled.section`
 
 const Title = styled.h2`
   margin: 0;
-  font-family: ${(props) => `${props.theme.fonts.header.font_family}`};
-  font-size: ${(props) => `${props.theme.fonts.header.sizes.header_s_default}`};
-  font-weight: ${(props) => `${props.theme.fonts.header.weight}`};
-  color: ${(props) => `${props.theme.colors.default_component_blue}`};
+  font-family: ${(props) => props.theme.fonts.families.header};
+  font-size: ${(props) => props.theme.fonts.sizes.header_s};
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
+  color: ${(props) => props.theme.colors.blue_component_color};
   line-height: 1;
 `;
 
@@ -29,9 +30,9 @@ const Paragraphs = styled.div`
 
 const Paragraph = styled.p`
   margin: 0;
-  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
-  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_l_default}`};
-  font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
+  font-family: ${(props) => props.theme.fonts.families.text};
+  font-size: ${(props) => props.theme.fonts.sizes.text_l};
+  font-weight: ${(props) => props.theme.fonts.weights.normal};
   line-height: 1.5;
 `;
 
@@ -41,7 +42,7 @@ const Content = ({ header, details }) => {
       <Title>{header}</Title>
       <Paragraphs>
         {details.map((paragraph) => {
-          return <Paragraph>{paragraph}</Paragraph>;
+          return <Paragraph key={_.uniqueId("chapter")}>{paragraph}</Paragraph>;
         })}
       </Paragraphs>
     </Section>

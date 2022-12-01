@@ -1,4 +1,4 @@
-import { ReactComponent as Arrow } from "../../Images/downward-arrow.svg";
+import { ReactComponent as Arrow } from "../../images/downward-arrow.svg";
 import React, { useContext } from "react";
 import styled from "styled-components";
 import { UnfoldContext } from "./Unfold";
@@ -42,25 +42,25 @@ const Header = styled.div`
 `;
 
 const HeaderTitle = styled.h3`
-	font-family: ${(props) => props.theme.fonts.text.font_family[0]};
-	padding: 0;
-	margin: 0;
-	font-weight: ${(props) => `props.theme.fonts.text.weights.black`};
-	font-size: ${(props) => `props.theme.fonts.text.sizes.text_l_default`};
-	line-height: 1.5;
-	color: #fff;
+  font-family: ${(props) => props.theme.fonts.families.text};
+  padding: 0;
+  margin: 0;
+  font-weight: ${(props) => props.theme.fonts.weights.black};
+  font-size: ${(props) => props.theme.fonts.text_l};
+  line-height: 1.5;
+  color: #fff;
 `;
 
 function UnfoldHeader({ item }) {
-	const { activeItem, handleClick } = useContext(UnfoldContext);
-	return (
-		<Header onClick={() => handleClick(item.id)}>
-			<HeaderTitle>{item.cardTitle}</HeaderTitle>
-			<HeaderButton openedItem={activeItem} id={item.id}>
-				<Arrow />
-			</HeaderButton>
-		</Header>
-	);
+  const { activeItem, handleClick } = useContext(UnfoldContext);
+  return (
+    <Header onClick={() => handleClick(item.id)}>
+      <HeaderTitle>{item.cardTitle}</HeaderTitle>
+      <HeaderButton openedItem={activeItem} id={item.id}>
+        <Arrow />
+      </HeaderButton>
+    </Header>
+  );
 }
 
 export default UnfoldHeader;

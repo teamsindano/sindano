@@ -43,21 +43,21 @@ export const StyledIcons = styled.li`
 
 export const StyledLinks = styled.a`
 	text-decoration: none;
-	font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
-	font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
-	font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
-	color: ${(props) => `${props.theme.colors.default_text_color}`};
+	font-family: ${(props) => `${props.theme.fonts.families.text}`};
+	font-size: ${(props) => `${props.theme.fonts.sizes.text_m}`};
+	font-weight: ${(props) => `${props.theme.fonts.weights.bold}`};
+	color: ${(props) => `${props.theme.colors.black_text_color}`};
 `;
 const BurgerButton = styled.button`
 	width: 343px;
-	font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+	font-family: ${(props) => props.theme.fonts.families.header};
 	display: inline-block;
 	white-space: nowrap;
-	color: ${(props) => props.theme.colors.alt_text_white};
-	background-color: ${(props) => props.theme.colors.default_button_aqua};
+	color: ${(props) => props.theme.colors.white_text_color};
+	background-color: ${(props) => props.theme.colors.aqua_button_color};
 	border-radius: 12px;
-	font-weight: ${(props) => props.theme.fonts.text.weights.bold};
-	font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
+	font-weight: ${(props) => props.theme.fonts.weights.bold};
+	font-size: ${(props) => props.theme.fonts.sizes.text_m};
 	line-height: 1.25;
 	cursor: pointer;
 	height: 50px;

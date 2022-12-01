@@ -1,105 +1,141 @@
-import styled from "styled-components";
-import Title from "./Title";
-import PrimaryButton from "./PrimaryButton";
-import SecondaryButton from "./SecondaryButton";
-import work from "../Images/how_we_work_photo.png";
-import { motion } from "framer-motion";
-import { sectionVariants } from "../utils/animationVariants";
+import styled from 'styled-components';
+import Title from './Title';
+import PrimaryButton from './PrimaryButton';
+import SecondaryButton from './SecondaryButton';
+import work from '../images/how_we_work_photo.png';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '../utils/animationVariants';
+import { useContext } from 'react';
+import { ModalContext } from './App';
+
+/**
+ * Work Section
+ * Adjustments & CSS Refactoring: @author [Sam](https://github.com/Samm96)
+ *
+ */
 
 const WorkSectionContainer = styled.section`
-	width: 100%;
-	display: flex;
-	margin-bottom: 160px;
-	margin-top: 160px;
-	justify-content: space-between;
+  width: 100%;
+  margin: 160px auto;
+
+  @media (max-width: 375px) {
+    margin: 100px auto 0;
+  }
 `;
 
-const LeftSection = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+const CustomButton = styled(PrimaryButton)`
+  &.custom-button {
+    @media screen and (max-width: 375px) {
+      width: 100%;
+    }
+  }
 `;
 
-const FlexDiv = styled.div`
-	display: flex;
-`;
+const StyledDiv = styled.div`
+  &.work-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 375px) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &.how-section {
+    margin: 31px 0 60px;
+
+    @media (max-width: 1024px) {
+      margin: 31px 0 120px;
+    }
+
+    @media (max-width: 375px) {
+      margin: 31px 0 60px;
+    }
+  }
+
+  &.subscribe-section {
+    display: flex;
+    @media screen and (max-width: 375px) {
+      flex-direction: column;
+    }
+  }
+ `;
 
 const InputBox = styled.input`
-	width: 291px;
-	height: 50px;
-	border: 1px solid #000000;
-	border-radius: 12px;
-	margin-right: 20px;
-	padding: 0 20px;
-	font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  background-color: ${(props) => props.theme.colors.primary_background};
+  width: 291px;
+  display: block;
+  height: 50px;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 12px;
+  margin-right: 20px;
+  padding: 0 20px;
+  font-family: ${(props) => props.theme.fonts.families.text};
+  @media screen and (max-width: 580px) {
+    margin-bottom: 12px;
+    width: 100%;
+  }
 `;
 
 const Image = styled.img`
-	display: block;
-	width: 600px;
-	border-radius: 12px;
+  max-width: 814px;
+  width: 100%;
+  max-height: 543px;
+  heigh: 100%;
+  border-radius: 12px;
+
+  @media (max-width: 1024px) {
+    object-fit: cover;
+    max-width: 402px;
+    height: 451px;
+  }
+
+  @media (max-width: 375px) {
+    width: 100%;
+    height: 383px;
+  }
 `;
 
-const RightSection = styled.div`
-	position: relative;
-`;
-
-const Blur = styled.div`
-	position: absolute;
-	top: 0;
-	width: 750px;
-	height: 611px;
-	background-image: linear-gradient(
-			0deg,
-			rgba(255, 252, 170, 0.2),
-			rgba(255, 252, 170, 0.2)
-		),
-		radial-gradient(
-				110.58% 110.58% at 40.19% 148.08%,
-				rgba(40, 53, 146, 0.5) 0%,
-				rgba(255, 255, 255, 0) 100%
-			)
-			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-		radial-gradient(
-				141.03% 3248.2% at 71.91% -110.26%,
-				#ff98c6 0%,
-				rgba(255, 255, 255, 0) 100%
-			)
-			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-		radial-gradient(93.91% 3215.11% at 1.53% 100%, #dbcce5 0%, #ffffff 100%)
-			/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-	filter: blur(77px);
-	border-radius: 60px;
-	transform: matrix(-1, 0, 0, 1, 0, 0);
-	z-index: -1;
-`;
 
 function WorkSection() {
-	return (
-		<WorkSectionContainer
-			as={motion.section}
-			variants={sectionVariants}
-			initial="offscreen"
-			whileInView="onscreen">
-			<LeftSection>
-				<div>
-					<Title text="See How We Work" marginBottom={32} />
-					<PrimaryButton />
-				</div>
-				<div>
-					<Title text="Get Product Updates" marginBottom={40} />
-					<FlexDiv>
-						<InputBox placeholder="your e-mail" />
-						<SecondaryButton>Subscribe</SecondaryButton>
-					</FlexDiv>
-				</div>
-			</LeftSection>
-			<RightSection>
-				<Image src={work} />
-				<Blur />
-			</RightSection>
-		</WorkSectionContainer>
-	);
+  const { openModal } = useContext(ModalContext);
+
+  return (
+    <WorkSectionContainer
+      as={motion.section}
+      variants={sectionVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+    >
+      <StyledDiv className="work-wrapper">
+      <StyledDiv className="left-section">
+        <StyledDiv className="how-section">
+          <Title text="See How We Work" marginBottom={32} />
+          <CustomButton onClick={openModal} className="custom-button" label="Request a call"/>
+        </StyledDiv>
+        
+
+        <div>
+          <Title text="Get Product Updates" marginBottom={40} />
+          <StyledDiv className="subscribe-section">
+            <InputBox placeholder="your e-mail" />
+            <SecondaryButton>Subscribe</SecondaryButton>
+          </StyledDiv>
+        </div>
+      </StyledDiv>
+      <StyledDiv className="right-section"> 
+        <Image src={work} />
+      </StyledDiv>
+      </StyledDiv>
+    </WorkSectionContainer>
+  );
 }
 
 export default WorkSection;

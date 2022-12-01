@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import renderData from "../../utils/renderData";
 import PrimaryButton from "../PrimaryButton";
 import _ from "lodash";
+import { ModalContext } from "../App";
 
 /**
  * Unfold Content Component
@@ -23,10 +24,18 @@ const UnfoldContentDiv = styled(motion.div)`
   }
 `;
 
+const StyledDataComponent = styled(Data)`
+  margin: 0;
+  @media screen and (max-width: 1150px) {
+      margin-left: 45px;
+      margin-right: 40px;
+    }
+`
+
 const UnfoldText = styled.p`
   margin: 0;
   padding: 0;
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.families.text};
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
@@ -50,6 +59,7 @@ const ButtonDiv = styled.div`
 
 function UnfoldContent({ item }) {
   const { activeItem } = useContext(UnfoldContext);
+  const { openModal } = useContext(ModalContext);
 
   return (
     <AnimatePresence>
@@ -97,11 +107,11 @@ function UnfoldContent({ item }) {
             
           </div>
           <div>
-            <Data>{renderData(item.id)}</Data>
+            <StyledDataComponent>{renderData(item.id)}</StyledDataComponent>
           </div>
         </UnfoldContentDiv>
         <ButtonDiv>
-          <PrimaryButton />
+          <PrimaryButton onClick={openModal} label="Request a call"/>
         </ButtonDiv>
         </>
       )}

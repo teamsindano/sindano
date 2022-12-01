@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import closeIcon from "../../Images/close-icon.png";
+import closeIcon from "../../images/close-icon.png";
 
 /**
  * Modal Header Component
@@ -15,13 +15,13 @@ const ModalHeaderDiv = styled.div`
 `;
 
 const ModalHeaderTitle = styled.h2`
-	font-family: ${(props) => props.theme.fonts.header.font_family[0]};
-	padding: 0;
-	margin: 0;
-	font-weight: 700;
-	font-size: 52px;
-	line-height: 1;
-	color: ${(props) => props.theme.colors.default_component_blue};
+  font-family: ${(props) => props.theme.fonts.families.header};
+  padding: 0;
+  margin: 0;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1;
+  color: ${(props) => props.theme.colors.blue_component_color};
 `;
 
 const ModalHeaderButton = styled.button`
