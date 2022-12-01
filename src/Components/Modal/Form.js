@@ -150,14 +150,14 @@ function Form({ handleSuccess }) {
         })
         .then(
           (
-            profileResponse,
-            emailResponse
+            profileResponse
+            //emailResponse
             // {
             //   elements: [emailResponse],
             // },
           ) => {
             // Set state of inputs in form using `data` object
-            handleAutoFill({ ...profileResponse, ...emailResponse });
+            handleAutoFill({ ...profileResponse[0], ...profileResponse[1] });
           }
         )
         .catch((err) => {
