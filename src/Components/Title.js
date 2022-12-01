@@ -22,9 +22,9 @@ const TitleContainer = styled.h2`
     }
 `;
 
-function Title({ text, marginBottom }) {
+function Title({ text, marginBottom, className }) {
 	return (
-		<TitleContainer id="whatwedo" marginBottom={marginBottom}>
+		<TitleContainer className={className} id="whatwedo" marginBottom={marginBottom}>
 			{text}
 		</TitleContainer>
 	);
