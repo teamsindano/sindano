@@ -156,8 +156,7 @@ function Form({ handleSuccess }) {
             // },
           ) => {
             // Set state of inputs in form using `data` object
-            //handleAutoFill({ ...profileResponse[0], ...profileResponse[1] });
-            handleAutoFill(profileResponse[0], profileResponse[1]);
+            handleAutoFill({ ...profileResponse[0], ...profileResponse[1] });
           }
         )
         .catch((err) => {
