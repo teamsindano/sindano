@@ -1,5 +1,10 @@
 'use strict';
 
+/**
+ * Modal Form Component
+ * @author [Peter Staal](https://github.com/pstaal)
+ * @author [Ekaterina Cratcha](https://github.com/cratcha) */
+
 let nodemailer = require('nodemailer');
 const axios = require('axios');
 

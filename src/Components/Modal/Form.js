@@ -8,7 +8,7 @@ import useFormWithValidation from '../../utils/formValidationHook';
 /**
  * Modal Form Component
  * @author [Peter Staal](https://github.com/pstaal)
- */
+ * @author [Ekaterina Cratcha](https://github.com/cratcha) Linkedin login feature */
 
 const FormTitle = styled.div`
   width: 100%;
@@ -148,20 +148,13 @@ function Form({ handleSuccess }) {
             ),
           ]);
         })
-        .then(
-          (
-            profileResponse
-            // {
-            //   elements: [emailResponse],
-            // },
-          ) => {
-            // Set state of inputs in form using `data` object
-            handleAutoFill({
-              ...profileResponse[0].data,
-              ...profileResponse[1].data,
-            });
-          }
-        )
+        .then((profileResponse) => {
+          // Set state of inputs in form using `data` object
+          handleAutoFill({
+            ...profileResponse[0].data,
+            ...profileResponse[1].data,
+          });
+        })
         .catch((err) => {
           console.log(err);
         });
