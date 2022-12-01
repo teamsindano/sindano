@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 const PrimaryButtonContainer = styled.button`
-  font-family: ${(props) => props.theme.fonts.families.header};
+  font-family: ${(props) => props.theme.fonts.families.text};
   white-space: nowrap;
   width: 170px;
   height: 50px;

@@ -24,7 +24,6 @@ const WorkSectionContainer = styled.section`
 `;
 
 const CustomButton = styled(PrimaryButton)`
-  font-family: ${(props) => props.theme.fonts.families.text};
   &.custom-button {
     @media screen and (max-width: 375px) {
       width: 100%;
