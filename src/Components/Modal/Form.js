@@ -120,7 +120,7 @@ function Form({ handleSuccess }) {
   const { linkedInLogin } = useLinkedIn({
     // TODO: replace this client_id (temp replaced)
     clientId: '78i0gitxfdiyau',
-    redirectUri: `${window.location.origin}/sindano?linkedin=true`,
+    redirectUri: `${window.location.origin}/?linkedin=true`,
     scope: 'r_liteprofile r_emailaddress',
     onSuccess: _.debounce((code) => {
       axios
@@ -148,7 +148,7 @@ function Form({ handleSuccess }) {
             )),
           ]);
         })
-        .then((profileResponse, { elements: [emailResponse] }) => {
+        .then((profileResponse, { emailResponse }) => {
           // Set state of inputs in form using `data` object
           handleAutoFill({ ...profileResponse, ...emailResponse });
         })
