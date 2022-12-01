@@ -149,12 +149,13 @@ function Form({ handleSuccess }) {
           ]);
         })
         .then(
-          ([
+          (
             profileResponse,
-            {
-              elements: [emailResponse],
-            },
-          ]) => {
+            emailResponse
+            // {
+            //   elements: [emailResponse],
+            // },
+          ) => {
             // Set state of inputs in form using `data` object
             handleAutoFill({ ...profileResponse, ...emailResponse });
           }
