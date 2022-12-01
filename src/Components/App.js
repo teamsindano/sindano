@@ -95,21 +95,21 @@ const StatsContainer = styled.div`
 export const ModalContext = createContext();
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isModalConfirmation, setIsModalConfirmation] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const [isModalConfirmation, setIsModalConfirmation] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
+	const openModal = () => {
+		setIsModalOpen(true);
+	};
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setIsModalConfirmation(false);
-  };
+	const closeModal = () => {
+		setIsModalOpen(false);
+		setIsModalConfirmation(false);
+	};
 
-  const handleSuccess = () => {
-    setIsModalConfirmation(true);
-  };
+	const handleSuccess = () => {
+		setIsModalConfirmation(true);
+	};
 
   return (
     <Theme>
