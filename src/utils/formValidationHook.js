@@ -9,7 +9,8 @@ export default function useFormWithValidation() {
     setValues({
       ...values,
       name: `${data.localizedFirstName} ${data.localizedLastName}`,
-      email: `${data.elements['handle~'].emailAddress}`,
+      email: `${data.elements.emailAddress}`,
+      // email: `${data.elements['handle~'].emailAddress}`,
     });
   };
 
