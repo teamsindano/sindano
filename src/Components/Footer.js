@@ -11,14 +11,15 @@ import { data } from '../utils/data';
 
 const StyledFooter = styled.footer`
   background: ${(props) => props.theme.colors.footer_background};
-  color: ${(props) => props.theme.colors.alt_text_white};
-  font-family: ${(props) => props.theme.fonts.text.font_family};
-  font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
-  font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
+  color: ${(props) => props.theme.colors.white_text_color};
+  font-family: ${(props) => props.theme.fonts.families.text};
+  font-size: ${(props) => props.theme.fonts.sizes.text_m};
+  font-weight: ${(props) => props.theme.fonts.weights.semi_bold};
   line-height: 20px;
   margin: auto;
   min-width: 375px;
   width: 100%;
+  line-hight: 20px;
   p,
   a {
     margin: 0;

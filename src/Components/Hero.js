@@ -32,19 +32,19 @@ const BackgroundImage = styled.img`
 `;
 
 const Title = styled.h1`
-  font-family: ${(props) => `${props.theme.fonts.header.font_family}`};
-  font-size: ${(props) => `${props.theme.fonts.header.sizes.header_l}`};
-  font-weight: ${(props) => `${props.theme.fonts.header.weight}`};
-  color: ${(props) => props.theme.colors.alt_text_white};
+  font-family: ${(props) => props.theme.fonts.families.header};
+  font-size: ${(props) => props.theme.fonts.sizes.header_l};
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
+  color: ${(props) => props.theme.colors.white_text_color};
   z-index: 3;
   position: absolute;
   margin-left: 5%;
   bottom: 0;
   @media screen and (max-width: 1024px) {
-    font-size: ${(props) => `${props.theme.fonts.header.sizes.header_m}`};
+    font-size: ${(props) => props.theme.fonts.sizes.header_m};
   }
   @media screen and (max-width: 375px) {
-    font-size: ${(props) => `${props.theme.fonts.header.sizes.header_xs}`};
+    font-size: ${(props) => props.theme.fonts.sizes.header_xs};
   }
 `;
 

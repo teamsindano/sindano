@@ -86,15 +86,15 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
-  font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
-  font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
-  font-size: ${(props) => `${props.theme.fonts.text.sizes.text_m}`};
+  font-family: ${(props) => props.theme.fonts.families.text};
+  font-weight: ${(props) => props.theme.fonts.weights.normal};
+  font-size: ${(props) => props.theme.fonts.sizes.text_m};
   line-height: 30px;
   margin: 0;
   padding: 0;
 
   &.story__founder-quote {
-    font-style: ${(props) => `${props.theme.fonts.text.styles}`};
+    font-style: ${(props) => props.theme.fonts.style};
     width: 608px;
     line-height: 22px;
 
@@ -114,14 +114,14 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
     grid-column: 2;
 
     @media (max-width: 375px) {
-      font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
+      font-size: ${(props) => props.theme.fonts.sizes.text_s};
     }
   }
 `;
 
 const Line = styled.span`
   border-left: 2px solid
-    ${(props) => `${props.theme.colors.default_text_color}`};
+    ${(props) => props.theme.colors.black_text_color};
   height: 100%;
   justify-self: end;
 `;

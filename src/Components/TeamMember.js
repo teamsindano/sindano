@@ -13,11 +13,11 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   display: flex;
   flex-direction: column;
   &.teammember__text-container {
-    font-family: ${(props) => `${props.theme.fonts.text.font_family}`};
-    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_s}`};
-    font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
+    font-family: ${(props) => props.theme.fonts.families.text};
+    font-size: ${(props) => props.theme.fonts.sizes.text_s};
+    font-weight: ${(props) => props.theme.fonts.weights.normal};
     line-height: 20px;
-    color: ${(props) => `${props.theme.colors.default_text_color}`};
+    color: ${(props) => props.theme.colors.black_text_color};
     margin: 16px auto 0;
     max-width: 240px;
     flex-direction: column;
@@ -44,28 +44,28 @@ const Photo = styled.img`
 `;
 
 const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
-  font-weight: ${(props) => props.theme.fonts.text.weights.normal};
+  font-weight: ${(props) => props.theme.fonts.weights.normal};
   margin: 0 auto 0;
   padding; 0;
   width: fit-content;
   @media (max-width: 375px) {
-    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_xs}`};
+    font-size: ${(props) => props.theme.fonts.sizes.text_xs};
   }
 `;
 
 const Name = styled.span.attrs(() => ({ tabIndex: 0 }))`
-  font-weight: ${(props) => `${props.theme.fonts.text.weights.bold}`};
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
   width: fit-content;
   margin: 0;
   padding; 0;
   @media (max-width: 375px) {
-    font-size: ${(props) => `${props.theme.fonts.text.sizes.text_xs}`};
+    font-size: ${(props) => props.theme.fonts.sizes.text_xs};
     display: flex;
     flex-direction: column;
   }
   &.teammember__pronouns {
     width: fit-content;
-    font-weight: ${(props) => `${props.theme.fonts.text.weights.normal}`};
+    font-weight: ${(props) => props.theme.fonts.weights.normal};
     margin: 0;
     @media (max-width: 375px) {
       margin: 0 auto 0;

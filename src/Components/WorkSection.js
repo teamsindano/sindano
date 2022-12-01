@@ -77,7 +77,7 @@ const InputBox = styled.input`
   border-radius: 12px;
   margin-right: 20px;
   padding: 0 20px;
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.families.text};
   @media screen and (max-width: 580px) {
     margin-bottom: 12px;
     width: 100%;
