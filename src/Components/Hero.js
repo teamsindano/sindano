@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import background from '../Images/hero_photo.png';
+import background from '../photos/hero_photo.png';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import whiteLogo from '../Images/sindano_health_logo_white.svg';
-import twitter from '../Images/social/icon_twitter.svg';
-import facebook from '../Images/social/icon_facebook.svg';
+import whiteLogo from '../photos/sindano_health_logo_white.svg';
+import twitter from '../photos/social/icon_twitter.svg';
+import facebook from '../photos/social/icon_facebook.svg';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';

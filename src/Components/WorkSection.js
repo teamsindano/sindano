@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Title from './Title';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
-import work from '../Images/how_we_work_photo.png';
+import work from '../photos/how_we_work_photo.png';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
 import { useContext } from 'react';

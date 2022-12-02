@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import insights from '../Images/insights.png';
+import insights from '../photos/insights.png';
 import Title from './Title';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';

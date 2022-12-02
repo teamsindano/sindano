@@ -2,7 +2,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import { useLinkedIn } from 'react-linkedin-login-oauth2';
 import _ from 'lodash';
-import linkedinIcon from '../../Images/linkedin-icon.svg';
+import linkedinIcon from '../../photos/linkedin-icon.svg';
 import useFormWithValidation from '../../utils/formValidationHook';
 
 /**

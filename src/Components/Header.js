@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import headerLogo from '../Images/sindano_health_logo_black.svg';
+import headerLogo from '../photos/sindano_health_logo_black.svg';
 import PrimaryButton from './PrimaryButton';
 import { sectionVariants } from '../utils/animationVariants';
 import { ModalContext } from './App';
