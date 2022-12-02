@@ -1,7 +1,8 @@
 import React from 'react';
-import whiteLogo from '../photos/sindano_health_logo_white.svg';
-import twitter from '../photos/social/icon_twitter.svg';
-import facebook from '../photos/social/icon_facebook.svg';
+import whiteLogo from '../images/sindano_health_logo_white.svg';
+import linkedIn from '../images/social/icon_linkedin.svg';
+import twitter from '../images/social/icon_twitter.svg';
+import facebook from '../images/social/icon_facebook.svg';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
@@ -122,7 +123,7 @@ function Footer() {
           <FooterSocials>
             <li>
               <SocialLink href="#">
-                <img src="#" alt="instagram icon"></img>
+                <img src={linkedIn} alt="linkedin icon"></img>
               </SocialLink>
             </li>
             <li>

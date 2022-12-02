@@ -1,12 +1,12 @@
 //images for team section
-import anshulaNathan from '../photos/team/anshula_nathan.png';
-import nandiAllman from '../photos/team/nandi_allman.png';
-import anyaMarshall from '../photos/team/anya_marshall.png';
-import coleBuckle from '../photos/team/cole_buckle.png';
-import ritChowdhury from '../photos/team/rit_chowdhury.png';
-import taraMarshall from '../photos/team/tara_marshall_hill.png';
-import rylanRosario from '../photos/team/rylan_rosario.png';
-import ashAvilesBrizuela from '../photos/team/ash_aviles_brizuela.png';
+import anshulaNathan from '../images/team/anshula_nathan.png';
+import nandiAllman from '../images/team/nandi_allman.png';
+import anyaMarshall from '../images/team/anya_marshall.png';
+import coleBuckle from '../images/team/cole_buckle.png';
+import ritChowdhury from '../images/team/rit_chowdhury.png';
+import taraMarshall from '../images/team/tara_marshall_hill.png';
+import rylanRosario from '../images/team/rylan_rosario.png';
+import ashAvilesBrizuela from '../images/team/ash_aviles_brizuela.png';
 
 /** Data
  *  @author [Ekaterina Cratcha](https://github.com/cratcha)
