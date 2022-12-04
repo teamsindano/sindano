@@ -15,8 +15,6 @@ const ChartSectionContainer = styled.section`
   margin-bottom: 160px;
 
   @media (max-width: 1024px) {
-    max-width: 1024px;
-    width: 100%;
     flex-direction: column;
     margin-bottom: 200px;
   }
@@ -71,24 +69,6 @@ function ChartSection() {
     data: { ...barData },
     options: { ...barOptions },
   };
-
-  const newLabels =  barData.labels.map((d) => {
-      if (d.length > 31 && document.documentElement.clientWidth <= 580) {
-      const splitPoint = d.split(" ");
-      return [
-        [splitPoint.slice(0, splitPoint.length / 2).join(" ")],
-        [splitPoint.slice((splitPoint.length / 2)).join(" ")],
-      ]};
-      return d;
-  });
-
-  useEffect(() => {
-    if (document.documentElement.clientWidth <= 375) {
-      data.options.scales.yAxis.ticks.font.size = 6;
-      data.options.scales.yAxis.ticks.padding = 13;
-      data.data.labels = newLabels;
-    } 
-  }, [data, data.options.scales.yAxis.ticks, newLabels]);
 
   return (
     <ChartSectionContainer

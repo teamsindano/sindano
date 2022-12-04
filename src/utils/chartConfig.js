@@ -53,9 +53,9 @@ export const barOptions = {
     datalabels: {
       font: function (context) {
         var width = context.chart.width;
-        var size = Math.round(width / 50);
+        var size = Math.round(width / 58);
         return {
-          size: document.documentElement.clientWidth < 375 ? size : "12px",
+          size: document.documentElement.clientWidth < 690 ? size : "12px",
         };
       },
       anchor: "end",
@@ -65,8 +65,8 @@ export const barOptions = {
   },
   layout: {
     padding: {
-      right: 45,
-      left: 34,
+      right: document.documentElement.clientWidth < 690 ? 30 : 45,
+      left: document.documentElement.clientWidth < 690 ? 20 : 34,
     },
   },
   scales: {
@@ -88,11 +88,13 @@ export const barOptions = {
         stepSize: 1,
         color: theme.colors.black_text_color,
         padding: 8,
-        font: {
-          size: function() {
-            return document.documentElement.clientWidth < 375 ? 8 : 12;
-          },
-      },
+        font: function (context) {
+          var width = context.chart.width;
+          var size = Math.round(width / 58);
+          return {
+            size: document.documentElement.clientWidth < 690 ? size : "12px",
+          };
+        },
       },
       grid: {
         display: true,

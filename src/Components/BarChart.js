@@ -26,26 +26,27 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     padding: 24px 0 0;
   }
   &.chart__statistics {
-    width: 785px;
+    max-width: 785px;
+    width: 100%;
     height: 300px;
     margin: 20px auto 0;
     padding: 0 0 47px;
   }
 
   @media (max-width: 712px) {
-    width: 485px;
+    width: 552px;
 
     &.chart__statistics {
-      width: 485px;
+      width: 100%;
     }
   }
 
   @media (max-width: 375px) {
-    width: 343px;
-    height: 100%;
+    width: 380px;
 
     &.chart__statistics {
-      width: 343px;
+      width: 100%;
+      height: 210px;
       margin: 0 auto 0;
       padding: 0 0 20px;
     }
