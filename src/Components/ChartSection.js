@@ -3,9 +3,9 @@ import BarChart from "./BarChart";
 import PrimaryButton from "./PrimaryButton";
 import { motion } from "framer-motion";
 import { sectionVariants } from "../utils/animationVariants";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { ModalContext } from "./App";
-import { barData, barOptions, smallBarData } from "../utils/chartConfig";
+import { barData, barOptions } from "../utils/chartConfig";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Chart } from "react-chartjs-2";
 
