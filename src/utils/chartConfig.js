@@ -10,7 +10,14 @@ import { theme } from "../Components/Theme";
  * Statistics chart config located in Main
  */
 
-const labels = data.chartStats.map((d) => {
+ const labels = data.chartStats.map((d) => {
+  if (d.content.length > 31 && document.documentElement.clientWidth <= 375) {
+    const splitPoint = d.content.split(" ");
+    return [
+      [splitPoint.slice(0, splitPoint.length / 2).join(" ")],
+      [splitPoint.slice((splitPoint.length / 2)).join(" ")],
+    ];
+  }
   return d.content;
 });
 
