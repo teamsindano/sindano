@@ -33,8 +33,8 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     padding: 0 0 47px;
   }
 
-  @media (max-width: 712px) {
-    width: 552px;
+  @media (max-width: 750px) {
+    width: 470px;
 
     &.chart__statistics {
       width: 100%;
@@ -42,7 +42,7 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
   }
 
   @media (max-width: 375px) {
-    width: 380px;
+    width: 340px;
 
     &.chart__statistics {
       width: 100%;

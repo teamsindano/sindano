@@ -24,7 +24,7 @@ export const barData = {
     {
       data: numbers,
       backgroundColor: theme.colors.blue_component_color,
-      barThickness: 10,
+      barThickness: document.documentElement.clientWidth <= 375 ? 5 : 10,
       borderRadius: 2,
       borderSkipped: false,
     },
@@ -65,7 +65,7 @@ export const barOptions = {
   },
   layout: {
     padding: {
-      right: document.documentElement.clientWidth < 690 ? 30 : 45,
+      right: document.documentElement.clientWidth < 690 ? 20 : 45,
       left: document.documentElement.clientWidth < 690 ? 20 : 34,
     },
   },
