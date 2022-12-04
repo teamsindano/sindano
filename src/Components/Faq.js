@@ -42,7 +42,7 @@ const QuestionSection = styled.div`
         grid-template-columns: none;
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 580px) {
         max-width: 343px;
     }
 `;
