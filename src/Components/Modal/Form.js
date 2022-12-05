@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import linkedinIcon from "../../images/linkedin-icon.svg";
-import useFormWithValidation from "../../utils/formValidationHook";
+import styled from 'styled-components';
+import linkedinIcon from '../../images/linkedin-icon.svg';
+import useFormWithValidation from '../../utils/formValidationHook';
 
 /**
  * Modal Form Component
@@ -98,35 +98,35 @@ const SubmitButton = styled.button`
 `;
 
 const SubmitText = styled.p`
-	width: 349px;
-	font-weight: 400;
-	font-size: 12px;
-	line-height: 1.33;
+  width: 349px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
 `;
 
 function Form({ handleSuccess }) {
   const { values, handleChange, errors, isValid, resetForm } =
     useFormWithValidation();
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-		fetch("http://localhost:3001/", {
-			method: "POST",
-			headers: {
-				Accept: "application/json, text/plain, */*",
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify(values),
-		})
-			.then((res) => {
-				resetForm();
-				handleSuccess();
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	};
+    fetch('http://localhost:3001/', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(values),
+    })
+      .then((res) => {
+        resetForm();
+        handleSuccess();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <FormContainer onSubmit={handleSubmit}>

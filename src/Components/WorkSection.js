@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import Title from "./Title";
-import PrimaryButton from "./PrimaryButton";
-import SecondaryButton from "./SecondaryButton";
-import work from "../images/how_we_work_photo.png";
-import { motion } from "framer-motion";
-import { sectionVariants } from "../utils/animationVariants";
-import { useContext } from "react";
-import { ModalContext } from "./App";
+import styled from 'styled-components';
+import Title from './Title';
+import PrimaryButton from './PrimaryButton';
+import SecondaryButton from './SecondaryButton';
+import work from '../images/how_we_work_photo.png';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '../utils/animationVariants';
+import { useContext } from 'react';
+import { ModalContext } from './App';
 
 /**
  * Work Section

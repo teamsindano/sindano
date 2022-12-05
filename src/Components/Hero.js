@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import background from "../images/hero_photo.png";
-import { motion } from "framer-motion";
-import { sectionVariants } from "../utils/animationVariants";
+import React from 'react';
+import styled from 'styled-components';
+import background from '../images/hero_photo.png';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '../utils/animationVariants';
 
 /** Hero Section
  *  @author [Ekaterina Cratcha](https://github.com/cratcha) */
@@ -49,20 +49,22 @@ const Title = styled.h1`
 `;
 
 function Hero() {
-	return (
-		<HeroWrapper
-			as={motion.section}
-			variants={sectionVariants}
-			initial="offscreen"
-			whileInView="onscreen">
-			<BackgroundImage
-				src={background}
-				alt="background photo of two women lying on the ground and holding hands"></BackgroundImage>
-			<Title>
-				Empowering Insights <br></br>for Equitable Mental Healthcare
-			</Title>
-		</HeroWrapper>
-	);
+  return (
+    <HeroWrapper
+      as={motion.section}
+      variants={sectionVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+    >
+      <BackgroundImage
+        src={background}
+        alt="background photo of two women lying on the ground and holding hands"
+      ></BackgroundImage>
+      <Title>
+        Empowering Insights <br></br>for Equitable Mental Healthcare
+      </Title>
+    </HeroWrapper>
+  );
 }
 
 export default Hero;

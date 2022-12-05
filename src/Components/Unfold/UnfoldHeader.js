@@ -1,7 +1,7 @@
-import { ReactComponent as Arrow } from "../../images/downward-arrow.svg";
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { UnfoldContext } from "./Unfold";
+import { ReactComponent as Arrow } from '../../images/downward-arrow.svg';
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { UnfoldContext } from './Unfold';
 
 /**
  * Unfold Header Component
@@ -9,36 +9,36 @@ import { UnfoldContext } from "./Unfold";
  */
 
 const HeaderButton = styled.button`
-	width: 28px;
-	height: 14px;
-	padding: 0;
-	border: 0;
-	margin: 0;
-	background: none;
-	align-self: center;
-	transition: 0.5s;
-	:hover {
-		margin-top: 10px;
-	}
-	${(props) => {
-		if (props.openedItem === props.id) {
-			return `
+  width: 28px;
+  height: 14px;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: none;
+  align-self: center;
+  transition: 0.5s;
+  :hover {
+    margin-top: 10px;
+  }
+  ${(props) => {
+    if (props.openedItem === props.id) {
+      return `
             transform-origin: center;
             transform: rotate(-180deg);
             margin-top: 10px;
         `;
-		} else {
-			return ``;
-		}
-	}}
+    } else {
+      return ``;
+    }
+  }}
 `;
 
 const Header = styled.div`
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: space-between;
-	cursor: pointer;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
 `;
 
 const HeaderTitle = styled.h3`

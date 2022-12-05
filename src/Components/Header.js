@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import headerLogo from "../images/sindano_health_logo_black.svg";
-import PrimaryButton from "./PrimaryButton";
-import { sectionVariants } from "../utils/animationVariants";
-import Burger from "./Burger";
-import { ModalContext } from "./App";
+import React, { useContext } from 'react';
+import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import headerLogo from '../images/sindano_health_logo_black.svg';
+import PrimaryButton from './PrimaryButton';
+import { sectionVariants } from '../utils/animationVariants';
+import Burger from './Burger';
+import { ModalContext } from './App';
 
 export const HeaderStyle = styled.header`
   position: relative;
