@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/sindano/static/css/main.31d6cfe0.css",
-    "main.js": "/sindano/static/js/main.51e7923d.js",
+    "main.js": "/sindano/static/js/main.3a1bd79b.js",
     "static/js/787.d97691e0.chunk.js": "/sindano/static/js/787.d97691e0.chunk.js",
     "static/media/hero_photo.png": "/sindano/static/media/hero_photo.59f99ae654986cdac06c.png",
     "static/media/sindano_health_logo_black.svg": "/sindano/static/media/sindano_health_logo_black.428fd426db27b6cf3421a6c3f4f3dc90.svg",
@@ -11,8 +11,10 @@
     "static/media/OpenSauceSans-Black.ttf": "/sindano/static/media/OpenSauceSans-Black.9b1d52a3604aaed201c5.ttf",
     "static/media/OpenSauceSans-Italic.ttf": "/sindano/static/media/OpenSauceSans-Italic.825182a86bb74cc4cfda.ttf",
     "static/media/OpenSauceSans-ExtraBold.ttf": "/sindano/static/media/OpenSauceSans-ExtraBold.aa3f5099a28901d706c2.ttf",
+    "static/media/Sindano_Health_Website_Terms_of_Use.pdf": "/sindano/static/media/Sindano_Health_Website_Terms_of_Use.0e5bbc900fd823884c60.pdf",
     "static/media/OpenSauceSans-Bold.ttf": "/sindano/static/media/OpenSauceSans-Bold.383a786e9c533e9cda9c.ttf",
     "static/media/OpenSauceSans-Regular.ttf": "/sindano/static/media/OpenSauceSans-Regular.8328c8e5b6675425322a.ttf",
+    "static/media/Online_Privacy_Policy.pdf": "/sindano/static/media/Online_Privacy_Policy.5d4e00c33bf3d3425e09.pdf",
     "static/media/ash_aviles_brizuela.png": "/sindano/static/media/ash_aviles_brizuela.ecc0d655beadda449174.png",
     "static/media/rit_chowdhury.png": "/sindano/static/media/rit_chowdhury.6577f426070fc7aebdef.png",
     "static/media/cole_buckle.png": "/sindano/static/media/cole_buckle.1b5e7b3916dc18bdaa4c.png",
@@ -30,11 +32,11 @@
     "index.html": "/sindano/index.html",
     "static/media/icon_facebook.svg": "/sindano/static/media/icon_facebook.22d3320ffd89f4249496a3b7303eeaa5.svg",
     "static/media/downward-arrow.svg": "/sindano/static/media/downward-arrow.d174f6248592884a32316c6261ffe7e1.svg",
-    "main.51e7923d.js.map": "/sindano/static/js/main.51e7923d.js.map",
+    "main.3a1bd79b.js.map": "/sindano/static/js/main.3a1bd79b.js.map",
     "787.d97691e0.chunk.js.map": "/sindano/static/js/787.d97691e0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.51e7923d.js"
+    "static/js/main.3a1bd79b.js"
   ]
 }
