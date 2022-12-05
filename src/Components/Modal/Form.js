@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import linkedinIcon from '../../photos/linkedin-icon.svg';
+import linkedinIcon from '../../images/linkedin-icon.svg';
 import useFormWithValidation from '../../utils/formValidationHook';
 
 /**

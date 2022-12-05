@@ -1,5 +1,5 @@
 import React from 'react';
-import whiteLogo from '../photos/sindano_health_logo_white.svg';
+import whiteLogo from '../images/sindano_health_logo_white.svg';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
