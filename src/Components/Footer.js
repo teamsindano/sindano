@@ -16,9 +16,8 @@ const StyledFooter = styled.footer`
   font-size: ${(props) => props.theme.fonts.sizes.text_m};
   font-weight: ${(props) => props.theme.fonts.weights.semi_bold};
   line-height: 20px;
-  margin: auto;
+  margin: 0;
   min-width: 375px;
-  width: 100%;
   line-hight: 20px;
   p,
   a {
@@ -38,10 +37,9 @@ const StyledFooter = styled.footer`
 
 const Wrapper = styled.div`
   margin: 0 auto 0;
-  padding: 40px 0 44px 80px;
+  padding: 40px 39px 44px 80px;
   max-width: 1280px;
   min-width: 375px;
-  width: 100%;
   min-height: 240px;
   display: flex;
   flex-direction: row;
@@ -112,7 +110,6 @@ const ThirdColumn = styled.div`
   }
   @media screen and (max-width: 1024px) {
     margin-right: 20px;
-    margin-left: 159px;
   }
   @media screen and (max-width: 895px) {
     margin: 0px;
