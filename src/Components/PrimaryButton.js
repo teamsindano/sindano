@@ -16,10 +16,6 @@ const PrimaryButtonContainer = styled.button`
   font-size: ${(props) => props.theme.fonts.sizes.text_m};
   line-height: 1.25;
   cursor: pointer;
-
-  @media screen and (max-width: 480px) {
-		display: none;
-	}
 `;
 
 

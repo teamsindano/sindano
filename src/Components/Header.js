@@ -50,6 +50,12 @@ export const StyledLinks = styled.a`
   line-height: 20px;
 `;
 
+const CustomButton = styled(PrimaryButton)`
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
+`;
+
 /**
  * Content Component
  * @author [Pedro Nepomuceno](https://github.com/Pedro-Nepomuceno)
@@ -80,7 +86,11 @@ function Header() {
           </StyledList>
         </nav>
         <Burger />
-        <PrimaryButton onClick={openModal} label="Request a call" />
+        <CustomButton
+          className="header-button"
+          onClick={openModal}
+          label="Request a call"
+        />
       </HeaderStyle>
     </>
   );
