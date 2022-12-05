@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Title from './Title';
 import PrimaryButton from './PrimaryButton';
 import SecondaryButton from './SecondaryButton';
-import work from '../images/how_we_work_photo.png';
+import work from '../photos/how_we_work_photo.png';
 import { motion } from 'framer-motion';
 import { sectionVariants } from '../utils/animationVariants';
 import { useContext } from 'react';
@@ -65,7 +65,7 @@ const StyledDiv = styled.div`
       flex-direction: column;
     }
   }
- `;
+`;
 
 const InputBox = styled.input`
   background-color: ${(props) => props.theme.colors.primary_background};
@@ -103,7 +103,6 @@ const Image = styled.img`
   }
 `;
 
-
 function WorkSection() {
   const { openModal } = useContext(ModalContext);
 
@@ -115,24 +114,27 @@ function WorkSection() {
       whileInView="onscreen"
     >
       <StyledDiv className="work-wrapper">
-      <StyledDiv className="left-section">
-        <StyledDiv className="how-section">
-          <Title text="See How We Work" marginBottom={32} />
-          <CustomButton onClick={openModal} className="custom-button" label="Request a call"/>
-        </StyledDiv>
-        
-
-        <div>
-          <Title text="Get Product Updates" marginBottom={40} />
-          <StyledDiv className="subscribe-section">
-            <InputBox placeholder="your e-mail" />
-            <SecondaryButton>Subscribe</SecondaryButton>
+        <StyledDiv className="left-section">
+          <StyledDiv className="how-section">
+            <Title text="See How We Work" marginBottom={32} />
+            <CustomButton
+              onClick={openModal}
+              className="custom-button"
+              label="Request a call"
+            />
           </StyledDiv>
-        </div>
-      </StyledDiv>
-      <StyledDiv className="right-section"> 
-        <Image src={work} />
-      </StyledDiv>
+
+          <div>
+            <Title text="Get Product Updates" marginBottom={40} />
+            <StyledDiv className="subscribe-section">
+              <InputBox placeholder="your e-mail" />
+              <SecondaryButton>Subscribe</SecondaryButton>
+            </StyledDiv>
+          </div>
+        </StyledDiv>
+        <StyledDiv className="right-section">
+          <Image src={work} />
+        </StyledDiv>
       </StyledDiv>
     </WorkSectionContainer>
   );
