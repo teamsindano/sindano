@@ -35,7 +35,7 @@ const StyledDataComponent = styled(Data)`
 const UnfoldText = styled.p`
   margin: 0;
   padding: 0;
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.families.text};
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;

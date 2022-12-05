@@ -10,8 +10,8 @@ import { motion } from "framer-motion";
 
 const Container = styled(motion.figure)`
   margin: 0;
-  background-color: ${(props) => props.theme.colors.default_component_blue};
-  color: ${(props) => props.theme.colors.alt_text_white};
+  background-color: ${(props) => props.theme.colors.blue_component_color};
+  color: ${(props) => props.theme.colors.white_text_color};
   height: 283px;
   width: 290px;
   box-sizing: border-box;
@@ -26,16 +26,16 @@ const Container = styled(motion.figure)`
 
 const Number = styled.h4`
   margin: 0;
-  font-family: ${(props) => props.theme.fonts.header.font_family[0]};
-  font-size: ${(props) => props.theme.fonts.header.sizes.header_l};
-  font-weight: ${(props) => props.theme.fonts.header.weight};
+  font-family: ${(props) => props.theme.fonts.families.header};
+  font-size: ${(props) => props.theme.fonts.sizes.header_l};
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
   line-height: 0.93;
 `;
 const Caption = styled.figcaption`
   margin: 0;
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
-  font-size: ${(props) => props.theme.fonts.text.sizes.text_m};
-  font-weight: ${(props) => props.theme.fonts.text.weights.semi_bold};
+  font-family: ${(props) => props.theme.fonts.families.text};
+  font-size: ${(props) => props.theme.fonts.sizes.text_m};
+  font-weight: ${(props) => props.theme.fonts.weights.semi_bold};
   line-height: 1.25;
   max-width: 258px;
 `;

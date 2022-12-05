@@ -20,10 +20,10 @@ const FormTitle = styled.div`
 const FormText = styled.p`
   margin: 0;
   padding: 0;
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: ${(props) => props.theme.fonts.weights.bold};
+  font-size: ${(props) => props.theme.fonts.sizes.text_m};
   line-height: 20px;
-  color: ${(props) => props.theme.colors.default_component_blue};
+  color: ${(props) => props.theme.colors.blue_component_color};
 `;
 
 const FormIcon = styled.img`
@@ -34,7 +34,7 @@ const FormIcon = styled.img`
 `;
 
 const FormContainer = styled.form`
-  font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+  font-family: ${(props) => props.theme.fonts.families.text};
   width: 100%;
   margin: 0;
   padding: 0;
@@ -87,7 +87,7 @@ const SubmitButton = styled.button`
   width: 168px;
   height: 50px;
   left: 451px;
-  background: ${(props) => props.theme.colors.default_button_aqua};
+  background: ${(props) => props.theme.colors.aqua_button_color};
   border-radius: 12px;
   color: #fff;
   padding: 15px 28px;
@@ -95,7 +95,8 @@ const SubmitButton = styled.button`
   font-size: 16px;
   line-height: 1.25;
   &:hover {
-    background: ${(props) => props.theme.gradients.button_hover};
+    cursor: pointer;
+    opacity: 0.8;
   }
 `;
 

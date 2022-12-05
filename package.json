@@ -1,6 +1,7 @@
 {
   "name": "sindano",
   "version": "0.1.0",
+  "homepage": "http://sindanohealth.com",
   "private": true,
   "homepage": "https://pstaal.github.io/sindano/",
   "dependencies": {

@@ -31,7 +31,6 @@ const PageWrapper = styled.div`
   min-width: 375px;
   padding: 0 20px 0;
   margin: 0 auto 0;
-
   @media (max-width: 1024px) {
     padding: 0 41px 0;
   }
@@ -164,7 +163,6 @@ function App() {
             <WorkSection />
             <Faq />
           </Page>
-          <Footer />
           <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader
               closeModal={closeModal}
@@ -177,6 +175,7 @@ function App() {
             )}
           </ModalWrapper>
         </PageWrapper>
+        <Footer />
       </ModalContext.Provider>
     </Theme>
   );

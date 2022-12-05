@@ -22,7 +22,7 @@ const QuestionStyled = styled.section`
 `;
 
 const TitleStyled = styled.h3`
-    font-family: ${(props) => props.theme.fonts.header.font_family[0]};
+    font-family: ${(props) => props.theme.fonts.families.header};
 	font-size: 52px;
 	font-weight: 700;
 	color: #283592;
@@ -42,13 +42,13 @@ const QuestionSection = styled.div`
         grid-template-columns: none;
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 580px) {
         max-width: 343px;
     }
 `;
 
 const SubTitle = styled.h3`
-    font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+    font-family: ${(props) => props.theme.fonts.families.text};
 	max-width: 455px;
 	margin-top: 0;
 	margin-bottom: 16px;
@@ -58,7 +58,7 @@ const SubTitle = styled.h3`
 `;
 
 const Text = styled.p`
-    font-family: ${(props) => props.theme.fonts.text.font_family[0]};
+    font-family: ${(props) => props.theme.fonts.families.text};
 	max-width: 455px;
 	margin-top: 0;
 	margin-bottom: 16px;

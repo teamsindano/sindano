@@ -1,4 +1,5 @@
-//images for team section
+//Images for Team section
+
 import anshulaNathan from '../images/team/anshula_nathan.png';
 import nandiAllman from '../images/team/nandi_allman.png';
 import anyaMarshall from '../images/team/anya_marshall.png';
@@ -7,6 +8,15 @@ import ritChowdhury from '../images/team/rit_chowdhury.png';
 import taraMarshall from '../images/team/tara_marshall_hill.png';
 import rylanRosario from '../images/team/rylan_rosario.png';
 import ashAvilesBrizuela from '../images/team/ash_aviles_brizuela.png';
+
+//Images for Footer section
+import twitter from '../images/social/icon_twitter.svg';
+import linkedIn from '../images/social/icon_linkedin.svg';
+import facebook from '../images/social/icon_facebook.svg';
+
+//PDFs for Footer section
+import TermsConditions from '../pdf/Sindano_Health_Website_Terms_of_Use.pdf';
+import Privacy from '../pdf/Online_Privacy_Policy.pdf';
 
 /** Data
  *  @author [Ekaterina Cratcha](https://github.com/cratcha)
@@ -365,6 +375,54 @@ export const data = {
         question: 'Q: What is Lorem Ipsum?',
         answer:
           "A: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      },
+    ],
+  },
+  footer: {
+    social: [
+      {
+        id: 1,
+        link: 'https://www.linkedin.com/company/sindano',
+        image: linkedIn,
+      },
+      {
+        id: 2,
+        link: 'https://twitter.com/join_sindano',
+        image: twitter,
+      },
+      {
+        id: 3,
+        link: 'https://www.facebook.com/sindanohealth',
+        image: facebook,
+      },
+    ],
+    navigation: [
+      {
+        id: 1,
+        link: '#ourstory',
+        name: 'About',
+      },
+      {
+        id: 2,
+        link: '#whatwedo',
+        name: 'What we do',
+      },
+      {
+        id: 3,
+        link: '#faq',
+        name: 'FAQ',
+      },
+      {
+        id: 4,
+        link: Privacy,
+        target: '_blank',
+        name: 'Privacy',
+      },
+      {
+        id: 5,
+        link: TermsConditions,
+        target: '_blank',
+        name: 'Terms and conditions',
       },
     ],
   },
