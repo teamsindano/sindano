@@ -179,7 +179,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669835850775-2022-11-30T19:17:30.775Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1670384680498-2022-12-07T03:44:40.498Z/sindano-backend.zip"
         },
         "Handler": "handler.authorize",
         "Runtime": "nodejs12.x",
@@ -209,7 +209,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669835850775-2022-11-30T19:17:30.775Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1670384680498-2022-12-07T03:44:40.498Z/sindano-backend.zip"
         },
         "Handler": "handler.contact",
         "Runtime": "nodejs12.x",
@@ -239,7 +239,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669835850775-2022-11-30T19:17:30.775Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1670384680498-2022-12-07T03:44:40.498Z/sindano-backend.zip"
         },
         "Handler": "handler.me",
         "Runtime": "nodejs12.x",
@@ -269,7 +269,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669835850775-2022-11-30T19:17:30.775Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1670384680498-2022-12-07T03:44:40.498Z/sindano-backend.zip"
         },
         "Handler": "handler.email",
         "Runtime": "nodejs12.x",
@@ -292,44 +292,44 @@
         "EmailLogGroup"
       ]
     },
-    "AuthorizeLambdaVersionbtMxJ7OzOvEE7XLqmitPbAzRfyaiCTssJZObnCPFo": {
+    "AuthorizeLambdaVersionINr1QMRHhfF993m7EWrBYQddlU3uaqrktD7wJgfUko": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AuthorizeLambdaFunction"
         },
-        "CodeSha256": "XEQdgqMLZROYv83rB3eA6sr+WTuyfefi+faE89vajuw="
+        "CodeSha256": "vkqOwVC8FsF2w2IKroxx0EVWFEsO2ZRVda4YdbdpcNQ="
       }
     },
-    "ContactLambdaVersionfFzzBjGoAkFzW2TlfuMyXez0PtIX2QL1LW1iCyRo": {
+    "ContactLambdaVersionoFJaPLTNrI0DGbvJwP6EX716mNkJMpwBHUROPyppGu8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ContactLambdaFunction"
         },
-        "CodeSha256": "XEQdgqMLZROYv83rB3eA6sr+WTuyfefi+faE89vajuw="
+        "CodeSha256": "vkqOwVC8FsF2w2IKroxx0EVWFEsO2ZRVda4YdbdpcNQ="
       }
     },
-    "MeLambdaVersionzLkuHGUzGEhIBoakBMdq4i0EA5FG2VPPbFwyYs": {
+    "MeLambdaVersionwqR0XVgQ7zEPCIudVLaoGzmhTP84s8pHIi7pNw9kbg": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MeLambdaFunction"
         },
-        "CodeSha256": "XEQdgqMLZROYv83rB3eA6sr+WTuyfefi+faE89vajuw="
+        "CodeSha256": "vkqOwVC8FsF2w2IKroxx0EVWFEsO2ZRVda4YdbdpcNQ="
       }
     },
-    "EmailLambdaVersionlX7mkKatcrmTNwPV1sGed6GheSQb8tnn6Kd11YKIMg": {
+    "EmailLambdaVersion86nb8Hvy6TJVMqdw2KqZI7fnkqmGptXhVqQgBIVNuBQ": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "EmailLambdaFunction"
         },
-        "CodeSha256": "XEQdgqMLZROYv83rB3eA6sr+WTuyfefi+faE89vajuw="
+        "CodeSha256": "vkqOwVC8FsF2w2IKroxx0EVWFEsO2ZRVda4YdbdpcNQ="
       }
     },
     "HttpApi": {
@@ -683,7 +683,7 @@
     "AuthorizeLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AuthorizeLambdaVersionbtMxJ7OzOvEE7XLqmitPbAzRfyaiCTssJZObnCPFo"
+        "Ref": "AuthorizeLambdaVersionINr1QMRHhfF993m7EWrBYQddlU3uaqrktD7wJgfUko"
       },
       "Export": {
         "Name": "sls-sindano-backend-dev-AuthorizeLambdaFunctionQualifiedArn"
@@ -692,7 +692,7 @@
     "ContactLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ContactLambdaVersionfFzzBjGoAkFzW2TlfuMyXez0PtIX2QL1LW1iCyRo"
+        "Ref": "ContactLambdaVersionoFJaPLTNrI0DGbvJwP6EX716mNkJMpwBHUROPyppGu8"
       },
       "Export": {
         "Name": "sls-sindano-backend-dev-ContactLambdaFunctionQualifiedArn"
@@ -701,7 +701,7 @@
     "MeLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MeLambdaVersionzLkuHGUzGEhIBoakBMdq4i0EA5FG2VPPbFwyYs"
+        "Ref": "MeLambdaVersionwqR0XVgQ7zEPCIudVLaoGzmhTP84s8pHIi7pNw9kbg"
       },
       "Export": {
         "Name": "sls-sindano-backend-dev-MeLambdaFunctionQualifiedArn"
@@ -710,7 +710,7 @@
     "EmailLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "EmailLambdaVersionlX7mkKatcrmTNwPV1sGed6GheSQb8tnn6Kd11YKIMg"
+        "Ref": "EmailLambdaVersion86nb8Hvy6TJVMqdw2KqZI7fnkqmGptXhVqQgBIVNuBQ"
       },
       "Export": {
         "Name": "sls-sindano-backend-dev-EmailLambdaFunctionQualifiedArn"
