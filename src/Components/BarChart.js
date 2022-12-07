@@ -26,8 +26,30 @@ const Container = styled.div.attrs(() => ({ tabIndex: 0 }))`
     padding: 24px 0 0;
   }
   &.chart__statistics {
+    max-width: 785px;
+    width: 100%;
+    height: 300px;
     margin: 20px auto 0;
     padding: 0 0 47px;
+  }
+
+  @media (max-width: 750px) {
+    width: 470px;
+
+    &.chart__statistics {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 340px;
+
+    &.chart__statistics {
+      width: 100%;
+      height: 210px;
+      margin: 0 auto 0;
+      padding: 0 0 20px;
+    }
   }
 `;
 
@@ -45,6 +67,17 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
     padding: 0;
     text-align: center;
     max-width: 330px;
+  }
+
+  @media (max-width: 375px) {
+    font-size: 7px;
+    line-height: 9px;
+    margin: 6px 0 0;
+
+    &.chart__text-heading {
+      font-size: 7px;
+      line-height: 9px;
+    }
   }
 `;
 
