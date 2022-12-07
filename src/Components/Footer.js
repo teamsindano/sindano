@@ -39,7 +39,6 @@ const Wrapper = styled.div`
   margin: 0 auto 0;
   padding: 40px 39px 44px 80px;
   max-width: 1280px;
-  min-width: 375px;
   min-height: 240px;
   display: flex;
   flex-direction: row;

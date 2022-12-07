@@ -83,6 +83,18 @@
         "LogGroupName": "/aws/lambda/sindano-backend-dev-contact"
       }
     },
+    "MeLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/sindano-backend-dev-me"
+      }
+    },
+    "EmailLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/sindano-backend-dev-email"
+      }
+    },
     "IamRoleLambdaExecution": {
       "Type": "AWS::IAM::Role",
       "Properties": {
@@ -167,7 +179,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669688282490-2022-11-29T02:18:02.490Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1670384680498-2022-12-07T03:44:40.498Z/sindano-backend.zip"
         },
         "Handler": "handler.authorize",
         "Runtime": "nodejs12.x",
@@ -197,7 +209,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/sindano-backend/dev/1669688282490-2022-11-29T02:18:02.490Z/sindano-backend.zip"
+          "S3Key": "serverless/sindano-backend/dev/1670384680498-2022-12-07T03:44:40.498Z/sindano-backend.zip"
         },
         "Handler": "handler.contact",
         "Runtime": "nodejs12.x",
@@ -220,24 +232,104 @@
         "ContactLogGroup"
       ]
     },
-    "AuthorizeLambdaVersionc3kgTCxx2uWNCQOWSLOowok7Vsz9dcL2JvAGnjPK9gs": {
+    "MeLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/sindano-backend/dev/1670384680498-2022-12-07T03:44:40.498Z/sindano-backend.zip"
+        },
+        "Handler": "handler.me",
+        "Runtime": "nodejs12.x",
+        "FunctionName": "sindano-backend-dev-me",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "CLIENT_SECRET": "TmmKoElk9Dxg8D6l"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "MeLogGroup"
+      ]
+    },
+    "EmailLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/sindano-backend/dev/1670384680498-2022-12-07T03:44:40.498Z/sindano-backend.zip"
+        },
+        "Handler": "handler.email",
+        "Runtime": "nodejs12.x",
+        "FunctionName": "sindano-backend-dev-email",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "CLIENT_SECRET": "TmmKoElk9Dxg8D6l"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "EmailLogGroup"
+      ]
+    },
+    "AuthorizeLambdaVersionINr1QMRHhfF993m7EWrBYQddlU3uaqrktD7wJgfUko": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AuthorizeLambdaFunction"
         },
-        "CodeSha256": "NOU05tLDcEfRI75uIJhlN9SutA+MWXalDukTla4TchE="
+        "CodeSha256": "vkqOwVC8FsF2w2IKroxx0EVWFEsO2ZRVda4YdbdpcNQ="
       }
     },
-    "ContactLambdaVersionha4bYLOqzlhYDlp8Tn837S1zGo0MDyOZcLB8l4NAg": {
+    "ContactLambdaVersionoFJaPLTNrI0DGbvJwP6EX716mNkJMpwBHUROPyppGu8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "ContactLambdaFunction"
         },
-        "CodeSha256": "NOU05tLDcEfRI75uIJhlN9SutA+MWXalDukTla4TchE="
+        "CodeSha256": "vkqOwVC8FsF2w2IKroxx0EVWFEsO2ZRVda4YdbdpcNQ="
+      }
+    },
+    "MeLambdaVersionwqR0XVgQ7zEPCIudVLaoGzmhTP84s8pHIi7pNw9kbg": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "MeLambdaFunction"
+        },
+        "CodeSha256": "vkqOwVC8FsF2w2IKroxx0EVWFEsO2ZRVda4YdbdpcNQ="
+      }
+    },
+    "EmailLambdaVersion86nb8Hvy6TJVMqdw2KqZI7fnkqmGptXhVqQgBIVNuBQ": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "EmailLambdaFunction"
+        },
+        "CodeSha256": "vkqOwVC8FsF2w2IKroxx0EVWFEsO2ZRVda4YdbdpcNQ="
       }
     },
     "HttpApi": {
@@ -427,6 +519,156 @@
         }
       },
       "DependsOn": "HttpApiIntegrationContact"
+    },
+    "MeLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "MeLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationMe": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "MeLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRoutePostMe": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "POST /me",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationMe"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationMe"
+    },
+    "EmailLambdaPermissionHttpApi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "EmailLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "HttpApi"
+              },
+              "/*"
+            ]
+          ]
+        }
+      }
+    },
+    "HttpApiIntegrationEmail": {
+      "Type": "AWS::ApiGatewayV2::Integration",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "IntegrationType": "AWS_PROXY",
+        "IntegrationUri": {
+          "Fn::GetAtt": [
+            "EmailLambdaFunction",
+            "Arn"
+          ]
+        },
+        "PayloadFormatVersion": "2.0",
+        "TimeoutInMillis": 30000
+      }
+    },
+    "HttpApiRoutePostEmailaddress": {
+      "Type": "AWS::ApiGatewayV2::Route",
+      "Properties": {
+        "ApiId": {
+          "Ref": "HttpApi"
+        },
+        "RouteKey": "POST /emailAddress",
+        "Target": {
+          "Fn::Join": [
+            "/",
+            [
+              "integrations",
+              {
+                "Ref": "HttpApiIntegrationEmail"
+              }
+            ]
+          ]
+        }
+      },
+      "DependsOn": "HttpApiIntegrationEmail"
     }
   },
   "Outputs": {
@@ -441,7 +683,7 @@
     "AuthorizeLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AuthorizeLambdaVersionc3kgTCxx2uWNCQOWSLOowok7Vsz9dcL2JvAGnjPK9gs"
+        "Ref": "AuthorizeLambdaVersionINr1QMRHhfF993m7EWrBYQddlU3uaqrktD7wJgfUko"
       },
       "Export": {
         "Name": "sls-sindano-backend-dev-AuthorizeLambdaFunctionQualifiedArn"
@@ -450,10 +692,28 @@
     "ContactLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "ContactLambdaVersionha4bYLOqzlhYDlp8Tn837S1zGo0MDyOZcLB8l4NAg"
+        "Ref": "ContactLambdaVersionoFJaPLTNrI0DGbvJwP6EX716mNkJMpwBHUROPyppGu8"
       },
       "Export": {
         "Name": "sls-sindano-backend-dev-ContactLambdaFunctionQualifiedArn"
+      }
+    },
+    "MeLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "MeLambdaVersionwqR0XVgQ7zEPCIudVLaoGzmhTP84s8pHIi7pNw9kbg"
+      },
+      "Export": {
+        "Name": "sls-sindano-backend-dev-MeLambdaFunctionQualifiedArn"
+      }
+    },
+    "EmailLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "EmailLambdaVersion86nb8Hvy6TJVMqdw2KqZI7fnkqmGptXhVqQgBIVNuBQ"
+      },
+      "Export": {
+        "Name": "sls-sindano-backend-dev-EmailLambdaFunctionQualifiedArn"
       }
     },
     "HttpApiId": {

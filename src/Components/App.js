@@ -1,5 +1,6 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useMemo, createContext } from 'react';
 import _ from 'lodash';
+import { useLocation, Redirect } from 'react-router-dom';
 import Theme from './Theme';
 import { data } from '../utils/data';
 import styled from 'styled-components';
@@ -20,7 +21,7 @@ import Header from './Header';
 import OurStory from './OurStory';
 
 /**
- * 
+ *
  * Adjustments: @author [Sam](https://github.com/Samm96)
  *
  */
@@ -95,23 +96,31 @@ const StatsContainer = styled.div`
 export const ModalContext = createContext();
 
 function App() {
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const [isModalConfirmation, setIsModalConfirmation] = useState(false);
+  const { search, pathname } = useLocation();
+  const query = useMemo(() => new URLSearchParams(search), [search]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalConfirmation, setIsModalConfirmation] = useState(false);
 
-	const openModal = () => {
-		setIsModalOpen(true);
-	};
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
 
-	const closeModal = () => {
-		setIsModalOpen(false);
-		setIsModalConfirmation(false);
-	};
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setIsModalConfirmation(false);
+  };
 
-	const handleSuccess = () => {
-		setIsModalConfirmation(true);
-	};
+  const handleSuccess = () => {
+    setIsModalConfirmation(true);
+  };
 
-  return (
+  return !pathname.includes('linkedin') && query.get('linkedin') === 'true' ? (
+    <Redirect
+      to={`/linkedin?linkedin=true&code=${query.get('code')}&state=${query.get(
+        'state'
+      )}`}
+    />
+  ) : (
     <Theme>
       <ModalContext.Provider value={{ openModal }}>
         <PageWrapper>
@@ -142,24 +151,31 @@ function App() {
           </Page>
           <OurStory />
           <Page>
-          <Title text="What We Do" marginBottom={40}/>
-          <Unfold id="whatwedo">
-            {data.whatWeDoCard.map((item) => (
-              <Unfold.Wrapper key={_.uniqueId("Unfold-Block-")}>
-                <Unfold.Header item={item} />
-                <Unfold.Content item={item} />
-              </Unfold.Wrapper>
-            ))}
-          </Unfold>
-        <WorkSection/>
-        <Faq/>
-        </Page>
-        <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
-            <ModalHeader closeModal={closeModal} isModalConfirmation={isModalConfirmation} />
-            {isModalConfirmation ? <ModalSuccess/> : <Form handleSuccess={handleSuccess}/>}
-        </ModalWrapper> 
-        </PageWrapper> 
-        <Footer/>
+            <Title text="What We Do" marginBottom={40} />
+            <Unfold id="whatwedo">
+              {data.whatWeDoCard.map((item) => (
+                <Unfold.Wrapper key={_.uniqueId('Unfold-Block-')}>
+                  <Unfold.Header item={item} />
+                  <Unfold.Content item={item} />
+                </Unfold.Wrapper>
+              ))}
+            </Unfold>
+            <WorkSection />
+            <Faq />
+          </Page>
+          <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
+            <ModalHeader
+              closeModal={closeModal}
+              isModalConfirmation={isModalConfirmation}
+            />
+            {isModalConfirmation ? (
+              <ModalSuccess />
+            ) : (
+              <Form handleSuccess={handleSuccess} />
+            )}
+          </ModalWrapper>
+        </PageWrapper>
+        <Footer />
       </ModalContext.Provider>
     </Theme>
   );

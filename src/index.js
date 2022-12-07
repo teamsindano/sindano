@@ -1,15 +1,42 @@
 import React from 'react';
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
+import { LinkedInCallback } from 'react-linkedin-login-oauth2';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './utils/globalstyle';
 import './index.css';
 
+/*
+ ********** NEVER DO THIS *************
+ */
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
+if (params.linkedin === 'true') {
+  window.location.replace(
+    `https://jahorwitz.github.io/sindano/#/${window.location.search}`
+  );
+}
+/*
+ ********** NEVER DO THIS *************
+ */
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GlobalStyle/>
-    <App />
+    <HashRouter>
+      <Switch>
+        <Route exact path="/linkedin">
+          <LinkedInCallback />
+        </Route>
+        <Route exact path="/">
+          <GlobalStyle />
+          <App />
+        </Route>
+      </Switch>
+    </HashRouter>
   </React.StrictMode>
 );
 

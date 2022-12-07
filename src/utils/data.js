@@ -1,4 +1,5 @@
 //Images for Team section
+
 import anshulaNathan from '../images/team/anshula_nathan.png';
 import nandiAllman from '../images/team/nandi_allman.png';
 import anyaMarshall from '../images/team/anya_marshall.png';
@@ -244,6 +245,7 @@ export const data = {
             borderWidth: 0.5,
           },
         ],
+
         borderColor: '#fff',
       },
       source:

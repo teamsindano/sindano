@@ -1,11 +1,14 @@
+import axios from 'axios';
 import styled from 'styled-components';
+import { useLinkedIn } from 'react-linkedin-login-oauth2';
+import _ from 'lodash';
 import linkedinIcon from '../../images/linkedin-icon.svg';
 import useFormWithValidation from '../../utils/formValidationHook';
 
 /**
  * Modal Form Component
  * @author [Peter Staal](https://github.com/pstaal)
- */
+ * @author [Ekaterina Cratcha](https://github.com/cratcha) Linkedin login feature */
 
 const FormTitle = styled.div`
   width: 100%;
@@ -104,14 +107,65 @@ const SubmitText = styled.p`
   line-height: 1.33;
 `;
 
+const LinkedinButton = styled.button`
+  display: flex;
+  flex-direction: row;
+  border: none;
+  background-color: transparent;
+`;
+
 function Form({ handleSuccess }) {
-  const { values, handleChange, errors, isValid, resetForm } =
+  const { values, handleChange, handleAutoFill, errors, isValid, resetForm } =
     useFormWithValidation();
+
+  const { linkedInLogin } = useLinkedIn({
+    // TODO: replace this client_id (temp replaced)
+    clientId: '78i0gitxfdiyau',
+    redirectUri: `${window.location.origin}/sindano?linkedin=true`,
+    scope: 'r_liteprofile r_emailaddress',
+    onSuccess: _.debounce((code) => {
+      axios
+        // TODO: Replace this with deployed api address (replaced)
+        .post(
+          'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/authorize',
+          {
+            code,
+          }
+        )
+        .then(({ data }) => {
+          console.log(data.access_token);
+          return Promise.all([
+            axios.post(
+              'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/me',
+              {
+                access_token: data.access_token,
+              }
+            ),
+            axios.post(
+              'https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/emailAddress',
+              {
+                access_token: data.access_token,
+              }
+            ),
+          ]);
+        })
+        .then((profileResponse) => {
+          // Set state of inputs in form using `data` object
+          handleAutoFill({
+            ...profileResponse[0].data,
+            ...profileResponse[1].data,
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, 1000),
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch('http://localhost:3001/', {
+    fetch('https://0w69ckhjj2.execute-api.us-east-1.amazonaws.com/contact', {
       method: 'POST',
       headers: {
         Accept: 'application/json, text/plain, */*',
@@ -131,8 +185,10 @@ function Form({ handleSuccess }) {
   return (
     <FormContainer onSubmit={handleSubmit}>
       <FormTitle>
-        <FormIcon src={linkedinIcon} />
-        <FormText>Auto-fill with LinkedIn</FormText>
+        <LinkedinButton onClick={linkedInLogin}>
+          <FormIcon src={linkedinIcon} />
+          <FormText>Auto-fill with LinkedIn</FormText>
+        </LinkedinButton>
       </FormTitle>
       <Label error={errors.name} htmlFor="name">
         Name{' '}
@@ -147,7 +203,7 @@ function Form({ handleSuccess }) {
         minLength="2"
         id="name"
         name="name"
-        placeholder="Tara Marshall-Hill"
+        placeholder="Name"
         onChange={handleChange}
         value={values.name || ''}
       />
@@ -166,7 +222,7 @@ function Form({ handleSuccess }) {
             minLength="2"
             id="company"
             name="company"
-            placeholder="Sindano Health"
+            placeholder="Company"
             onChange={handleChange}
             value={values.company || ''}
           />
@@ -185,7 +241,7 @@ function Form({ handleSuccess }) {
             minLength="2"
             id="title"
             name="title"
-            placeholder="Founder"
+            placeholder="Title"
             onChange={handleChange}
             value={values.title || ''}
           />
@@ -203,7 +259,7 @@ function Form({ handleSuccess }) {
         type="email"
         id="email"
         name="email"
-        placeholder="TaraMarshallHill@sindanohealth.com"
+        placeholder="Email"
         onChange={handleChange}
         value={values.email || ''}
       />

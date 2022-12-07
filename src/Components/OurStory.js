@@ -1,11 +1,9 @@
-
-import styled from "styled-components";
-import Team from "./Team";
-import { motion } from "framer-motion";
-import { sectionVariants } from "../utils/animationVariants";
-import Content from "../Components/Content";
-import { data } from "../utils/data";
-
+import styled from 'styled-components';
+import Team from './Team';
+import { motion } from 'framer-motion';
+import { sectionVariants } from '../utils/animationVariants';
+import Content from '../Components/Content';
+import { data } from '../utils/data';
 
 /**
  * The Our Story Component
@@ -120,8 +118,7 @@ const Text = styled.p.attrs(() => ({ tabIndex: 0 }))`
 `;
 
 const Line = styled.span`
-  border-left: 2px solid
-    ${(props) => props.theme.colors.black_text_color};
+  border-left: 2px solid ${(props) => props.theme.colors.black_text_color};
   height: 100%;
   justify-self: end;
 `;
