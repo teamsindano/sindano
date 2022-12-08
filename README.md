@@ -18,7 +18,7 @@ The **frontend** of the app is divided into six folders:
 * **_vendor_** : Files for the fonts used in the app or any third-party sources.
 
 For the sake of organization and keeping everything that was related together as well as the use frequency of the method in the tech industry, we decided to make use of [Styled Components](https://styled-components.com/) when applying CSS to the app. This reduces the amount of files in the app.
-`Index.js` handles the routing between the app and the LinkedIn element.
+`index.js` handles the routing between the app and the LinkedIn element.
 
 The backend code has its own folder, handling the Serverless code.
 
