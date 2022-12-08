@@ -33,7 +33,7 @@ The backend code has its own folder, handling the Serverless code.
 * The best solution was to surround the chart canvas in a `div` and set the height and/or width on said `div` instead of the canvas.
 * In order to see the change in the chart when going from screen size `1024px` to `375px`, the page needs to be refreshed at `375px`.
 * The same goes when resizing the screen from `375px` to `1024px`. The page needs to be refreshed in order to see the changes.
-* Even with this issue, the chart is set to change only when the screen is shrunk to `580px`. It should show up fine on the larger screen sizes larger than `580px`.
+* Even with this issue, the chart is set to change only when the screen is shrunk to `580px`. It should show up fine on screen sizes larger than `580px`.
 
 
 ### LinkedIn Feature 👤
