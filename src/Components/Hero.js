@@ -61,7 +61,7 @@ function Hero() {
         alt="background photo of two women lying on the ground and holding hands"
       ></BackgroundImage>
       <Title>
-        Empowering Insights <br></br>for Equitable Mental Healthcare
+        Actionable Insights <br></br>for Equitable Mental Healthcare
       </Title>
     </HeroWrapper>
   );
