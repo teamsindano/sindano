@@ -33,13 +33,14 @@ To update the LinkedIn feature you need:
    * Find **Client ID** and **Client Secret**. 
    * Update redirect URL: {website URL}?linkedin=true
 
-**Frontend**
+**Frontend**  
 3. In src => Components => Modal => Form.js **Client ID** needs to be replaced with the id from Linkedin app. 
 
-**Backend**
+**Backend**  
 4. In the file `.env` **Client Secret** needs to be replaced with the secret from the Linkedin app.
 5. In `handler.js` **Client ID** needs to be replaced with the id from the Linkedin app. 
   
+
 
 
 ## Issues and Limitations ⏳
