@@ -1,8 +1,6 @@
 # Sindano project for Apiary
 This project is part of Apiary from Practicum. Students work on a real client. This particular project is a landing page for the Sinadano company. It is built using React and Storybook. 
 
-# Instructions
-Please find all the instruction on [Notion](https://www.notion.so/Sindano-394de17457e94490b41ab4a1ff099e06)
 
 <hr>
 
@@ -25,6 +23,25 @@ The backend code has its own folder, handling the Serverless code.
 
 <hr>
 
+## Updates
+
+### LinkedIn autofill feature
+
+To update the LinkedIn feature you need:
+1. Go to [LinkedIn Developer Solutions](https://developer.linkedin.com)
+2. Create App
+   * Find **Client ID** and **Client Secret**. 
+   * Update redirect URL: {website URL}?linkedin=true
+
+**Frontend**
+3. In src => Components => Modal => Form.js **Client ID** needs to be replaced with the id from Linkedin app. 
+
+**Backend**
+4. In the file `.env` **Client Secret** needs to be replaced with the secret from the Linkedin app.
+5. In `handler.js` **Client ID** needs to be replaced with the id from the Linkedin app. 
+  
+
+
 ## Issues and Limitations ⏳
 
 ### Chart 📊
@@ -39,4 +56,4 @@ The backend code has its own folder, handling the Serverless code.
 ### LinkedIn Feature 👤
 * When opening the modal to request a demo, referencing the option to fill in information from LinkedIn instead of manually, seems to only work properly if the user is on the Chrome browser. It doesn’t function on the Safari browser— instead of filling out information in the appropriate field, Safari opens the landing page. Other browsers have not been tested.
 
-* Notice the comment in `index.js` marked “NEVER DO THIS”. The code between those comments are NOT to be deleted. It is just marked as bad practice to code it that way, but there was no other way to make the LinkedIn feature to function.
+* Notice the comment in `index.js` marked “NEVER DO THIS”. The code between those comments are NOT to be deleted. 
