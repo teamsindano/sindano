@@ -80,9 +80,9 @@ function Header() {
             <StyledIcons>
               <StyledLinks href="#whatwedo">What we do</StyledLinks>
             </StyledIcons>
-            <StyledIcons>
+            {/* <StyledIcons>
               <StyledLinks href="#faq">FAQ</StyledLinks>
-            </StyledIcons>
+            </StyledIcons> */}
           </StyledList>
         </nav>
         <Burger />

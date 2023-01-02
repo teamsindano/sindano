@@ -9,7 +9,7 @@ import Stat from './Stat';
 import Title from './Title';
 import Hero from './Hero';
 import Footer from './Footer';
-import Faq from './Faq';
+// import Faq from './Faq';
 import ChartSection from './ChartSection';
 import Insights from './Insights';
 import WorkSection from './WorkSection';
@@ -151,8 +151,8 @@ function App() {
           </Page>
           <OurStory />
           <Page>
-            <Title text="What We Do" marginBottom={40} />
-            <Unfold id="whatwedo">
+            <Title id="whatwedo" text="What We Do" marginBottom={40} />
+            <Unfold id="whatwedounfold">
               {data.whatWeDoCard.map((item) => (
                 <Unfold.Wrapper key={_.uniqueId('Unfold-Block-')}>
                   <Unfold.Header item={item} />
@@ -161,7 +161,7 @@ function App() {
               ))}
             </Unfold>
             <WorkSection />
-            <Faq />
+            {/* <Faq /> */}
           </Page>
           <ModalWrapper isModalOpen={isModalOpen} closeModal={closeModal}>
             <ModalHeader
